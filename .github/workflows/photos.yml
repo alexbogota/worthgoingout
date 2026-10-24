@@ -1,0 +1,32 @@
+name: Find photos
+
+# Looks for freely licensed photos on Wikimedia Commons (data/photo-queries.json) and puts candidates on the branch `photos`.
+on:
+  push:
+    branches: [main]
+    paths: ['data/photo-queries.json', 'scripts/fetch-photos.mjs']
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  find:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: npm
+      - run: npm ci
+      - run: node scripts/fetch-photos.mjs
+      - name: Put the candidates on the branch photos
+        run: |
+          cd out
+          git init -q -b photos
+          git config user.name "github-actions[bot]"
+          git config user.email "41898283+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git commit -q -m "Photo candidates $(date -u +%F)"
+          git push -q --force "https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git" photos
