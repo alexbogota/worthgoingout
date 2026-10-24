@@ -1,0 +1,122 @@
+/* Worth Going Out: twilight ink, corona gold, and three verdict colours. Dark by default, light on request or by system setting. */
+:root {
+  --bg: #0f1230;
+  --panel: #171b47;
+  --raise: #20255a;
+  --line: #2d3373;
+  --text: #e4e7f7;
+  --muted: #a6acd8;
+  --heading: #ffffff;
+  --gold: #f4c86a;
+  --on-gold: #1c1600;
+  --link: #f4c86a;
+  --focus: #ffe3a3;
+  --go: #62d9a6;
+  --go-bg: #123a3a;
+  --maybe: #f2ab55;
+  --maybe-bg: #3d2d1b;
+  --skip: #f58983;
+  --skip-bg: #432234;
+  --moon: #070a1f;
+  --footer: #0b0e27;
+  --font-head: 'Young Serif', Georgia, serif;
+  --font-body: 'Atkinson Hyperlegible Next', system-ui, sans-serif;
+  color-scheme: dark;
+}
+:root[data-theme='light'] {
+  --bg: #f4f5fc;
+  --panel: #ffffff;
+  --raise: #eceefa;
+  --line: #d2d6ee;
+  --text: #1c2046;
+  --muted: #4b5183;
+  --heading: #0f1230;
+  --gold: #e0a92c;
+  --on-gold: #1c1600;
+  --link: #7a4f00;
+  --focus: #7a4f00;
+  --go: #0b6b49;
+  --go-bg: #d9f3e8;
+  --maybe: #8a4f00;
+  --maybe-bg: #fbe9cf;
+  --skip: #a3302b;
+  --skip-bg: #fadfe0;
+  --moon: #0f1230;
+  --footer: #e8eaf8;
+  color-scheme: light;
+}
+
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0; background: var(--bg); color: var(--text);
+  font-family: var(--font-body); font-size: 1.0625rem; line-height: 1.65;
+  min-height: 100vh; display: flex; flex-direction: column;
+}
+main { flex: 1; }
+a { color: inherit; }
+a:focus-visible, button:focus-visible { outline: 3px solid var(--focus); outline-offset: 3px; border-radius: 3px; }
+img, svg { max-width: 100%; }
+
+.wrap { max-width: 1120px; margin: 0 auto; padding-left: 24px; padding-right: 24px; }
+.measure { max-width: 66ch; }
+
+h1, h2, h3 { font-family: var(--font-head); font-weight: 400; color: var(--heading); line-height: 1.12; margin: 0; letter-spacing: -0.01em; }
+h1 { font-size: clamp(2.4rem, 5.4vw, 4.1rem); }
+h2 { font-size: clamp(1.6rem, 3vw, 2.15rem); margin-top: 3.2rem; margin-bottom: 0.9rem; }
+h3 { font-size: 1.3rem; margin-top: 2rem; margin-bottom: 0.5rem; }
+p { margin: 0 0 1.1em; }
+.lead { font-size: 1.25rem; color: var(--text); line-height: 1.55; }
+.muted { color: var(--muted); }
+.small { font-size: 0.9375rem; }
+
+.prose a, .link { color: var(--link); text-decoration: underline; text-underline-offset: 3px; text-decoration-thickness: 1px; }
+.prose a:hover, .link:hover { text-decoration-thickness: 2px; }
+.prose ul, .prose ol { padding-left: 1.3em; margin: 0 0 1.1em; }
+.prose li { margin-bottom: 0.45em; }
+.prose strong { color: var(--heading); }
+
+/* Pages made of text: About, Privacy, guides */
+.page { padding: 64px 0 96px; }
+.page h1 { margin-bottom: 1.2rem; }
+.stamp { color: var(--muted); font-size: 0.9375rem; margin: -0.4rem 0 2rem; }
+
+.btn {
+  display: inline-flex; align-items: center; min-height: 48px; padding: 0 24px; border-radius: 6px;
+  background: var(--gold); color: var(--on-gold); font-weight: 700; text-decoration: none; border: 2px solid var(--gold);
+}
+.btn:hover { filter: brightness(1.07); }
+.btn.quiet { background: transparent; color: var(--heading); border-color: var(--line); }
+.btn.quiet:hover { border-color: var(--muted); }
+.actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 1.6rem; }
+
+/* Verdict plate: a short sign. Text carries the meaning; colour backs it up. */
+.verdict {
+  display: inline-block; min-width: 4.6rem; text-align: center; padding: 3px 12px; border-radius: 4px;
+  font-weight: 700; border: 2px solid currentColor; font-size: 1rem; line-height: 1.5;
+}
+.verdict.go { color: var(--go); background: var(--go-bg); }
+.verdict.maybe { color: var(--maybe); background: var(--maybe-bg); }
+.verdict.skip { color: var(--skip); background: var(--skip-bg); }
+
+/* Ruled list: dates on the left, content, then a verdict */
+.board { list-style: none; margin: 1.4rem 0 0; padding: 0; border-top: 2px solid var(--line); }
+.board li { display: grid; grid-template-columns: 9.5rem 1fr auto; gap: 8px 24px; align-items: start; padding: 18px 0; border-bottom: 1px solid var(--line); }
+.board .when { color: var(--muted); font-size: 0.9375rem; padding-top: 3px; }
+.board .what { margin: 0; font-family: var(--font-head); font-size: 1.3rem; color: var(--heading); line-height: 1.2; }
+.board .why { margin: 4px 0 0; color: var(--muted); font-size: 1rem; }
+@media (max-width: 640px) {
+  .board li { grid-template-columns: 1fr auto; }
+  .board .when { grid-column: 1 / -1; padding-top: 0; }
+}
+
+/* Plain callout for rules the reader must not miss */
+.callout { border-left: 4px solid var(--gold); background: var(--panel); padding: 16px 20px; margin: 1.6rem 0; border-radius: 0 6px 6px 0; }
+.callout p:last-child { margin-bottom: 0; }
+
+.sources { font-size: 0.9375rem; color: var(--muted); }
+.sources li { margin-bottom: 0.3em; }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation: none !important; transition: none !important; }
+}

@@ -1,0 +1,36 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { site } from '../lib/site';
+---
+<Layout title="Privacy policy" description="What data Worth Going Out collects (very little), what is stored in your browser, and what third parties may do when you click an affiliate link.">
+  <article class="wrap page prose">
+    <h1>Privacy policy</h1>
+    <p class="stamp">Last updated {site.legalUpdated}.</p>
+    <p class="lead measure">We built this site to collect as little as possible. We have no accounts, no comments, no newsletter form and no advertising scripts.</p>
+
+    <h2>What we collect</h2>
+    <ul class="measure">
+      <li><strong>Server logs.</strong> Our web host records technical details of each request, such as IP address, time, page and browser type, for security and to keep the site running. We do not use them to identify you.</li>
+      <li><strong>Email you send us.</strong> If you write to {site.email}, we keep your message and address to answer you, and delete them when they are no longer needed.</li>
+    </ul>
+
+    <h2>What is stored in your browser</h2>
+    <p class="measure">If you choose the light or dark theme, we save that choice in your browser's local storage under the name <code>wgo-theme</code>. It never leaves your device. We do not set tracking cookies.</p>
+
+    <h2>Analytics</h2>
+    <p class="measure">At the time of writing we run no analytics. If we add privacy-friendly analytics that do not use cookies or personal data, we will say so here before we do.</p>
+
+    <h2>Affiliate links and third parties</h2>
+    <p class="measure">Some links are affiliate links (see the <a href="/disclosure/">disclosure</a>). When you click one you leave our site, and the seller or an affiliate network may set cookies and process your data under their own policies. We receive only the information they report back to us about commissions, which does not identify you.</p>
+    <p class="measure">Pages may link to other sites, such as NASA or the International Meteor Organization. We are not responsible for their privacy practices.</p>
+
+    <h2>Your rights</h2>
+    <p class="measure">Depending on where you live, you may have the right to ask what data we hold about you, to have it corrected or deleted, or to object to its use. Write to <a href={`mailto:${site.email}`}>{site.email}</a>.</p>
+
+    <h2>Children</h2>
+    <p class="measure">The site is general interest and not aimed at children under 13. We do not knowingly collect data from them.</p>
+
+    <h2>Changes</h2>
+    <p class="measure">When this policy changes we update the date at the top.</p>
+  </article>
+</Layout>

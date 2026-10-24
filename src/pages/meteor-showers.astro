@@ -1,0 +1,56 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Verdict from '../components/Verdict.astro';
+import { upcomingShowers, calendar, RULE, nextMoon } from '../lib/sky';
+import { longDate } from '../lib/site';
+
+const showers = upcomingShowers();
+const night = (n: [string, string]) => `${new Date(`${n[0]}T00:00:00Z`).toLocaleDateString('en-GB', { day: 'numeric', month: 'short', timeZone: 'UTC' })} to ${new Date(`${n[1]}T00:00:00Z`).toLocaleDateString('en-GB', { day: 'numeric', month: 'short', year: 'numeric', timeZone: 'UTC' })}`;
+const range = (a: string, b: string) => `${new Date(a).toLocaleDateString('en-GB', { day: 'numeric', month: 'short', timeZone: 'UTC' })} to ${new Date(b).toLocaleDateString('en-GB', { day: 'numeric', month: 'short', timeZone: 'UTC' })}`;
+const moons = nextMoon().filter((p) => p.phase === 'New Moon' || p.phase === 'Full Moon').slice(0, 4);
+---
+<Layout
+  title="Meteor showers to mid-2027: which are worth going out for"
+  description="Every major meteor shower from now to August 2027 with its peak night, how many meteors to expect, how bright the Moon will be, and a plain verdict: Go, Maybe or Skip."
+>
+  <div class="wrap page">
+    <h1>Meteor showers: which are worth going out for</h1>
+    <p class="stamp">Last reviewed 24 October 2026. Peak dates from the International Meteor Organization. Moon figures are ours.</p>
+    <p class="lead measure">A shower is worth the trip when it is strong and the Moon is out of the way. We give each one a verdict from those two numbers, so you do not have to decode a calendar.</p>
+
+    <ul class="board">
+      {showers.map((s) => (
+        <li id={s.slug}>
+          <span class="when">Peak night<br />{night(s.night)}</span>
+          <div>
+            <h2 class="what">{s.name}</h2>
+            <p class="why">{s.why}</p>
+            <p class="why small">Active {range(s.start, s.end)}. Moon about {s.moonPercent}% lit at the peak. Up to {s.zhr} meteors an hour in ideal conditions.</p>
+          </div>
+          <Verdict verdict={s.verdict} />
+        </li>
+      ))}
+    </ul>
+
+    <div class="prose measure">
+      <h2>How to use this</h2>
+      <ul>
+        <li><strong>“Up to” numbers are the best case</strong> (astronomers call it ZHR): a perfectly dark, clear sky with the shower's point of origin high overhead. Expect fewer, especially near towns.</li>
+        <li>Meteors can be seen on the nights around the peak too, usually in smaller numbers.</li>
+        <li>Give your eyes 20 to 30 minutes in the dark. Phones and screens undo it.</li>
+      </ul>
+      <h2 id="moon">The Moon, next few months</h2>
+      <ul>
+        {moons.map((p) => <li>{p.phase}: {longDate(p.at)}</li>)}
+      </ul>
+      <p class="small muted">Moon phases are in universal time and can fall on the next or previous date where you are.</p>
+      <h2>The rule behind the verdicts</h2>
+      <p>Go: {RULE.goMinRate} meteors an hour or more, and the Moon {RULE.goMaxMoon}% lit or less. Skip: under {RULE.skipBelowRate} an hour, or the Moon {RULE.skipMoonFrom}% lit or more. Everything else is Maybe, and we say whether to look after the Moon sets or before it rises. <a href="/how-we-make-our-numbers/#verdicts">More on this rule.</a></p>
+      <h2>Sources</h2>
+      <ul class="sources">
+        <li>International Meteor Organization, <a href="https://www.imo.net/resources/calendar/">Meteor Shower Calendar</a>: peak nights, activity periods and rates, read 24 October 2026.</li>
+        <li>Moon light calculated by us: {calendar.method}. For every shower on the list it agrees with the IMO's own Moon figure to within 1 percentage point.</li>
+      </ul>
+    </div>
+  </div>
+</Layout>

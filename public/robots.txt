@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://worthgoingout.com/sitemap-index.xml

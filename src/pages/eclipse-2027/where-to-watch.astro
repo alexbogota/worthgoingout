@@ -1,0 +1,93 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { eclipse, fmtDuration, localTime, placeNote } from '../../lib/sky';
+
+const MAX = 400; // seconds that fill a full bar
+const total = eclipse.places.filter((p) => p.kind === 'total').sort((a, b) => b.totalitySeconds! - a.totalitySeconds!);
+const outside = eclipse.places.filter((p) => p.kind !== 'total').sort((a, b) => b.obscuration - a.obscuration);
+const rows = (list: typeof eclipse.places) => list.map((p) => {
+  const start = p.totalBegin ? localTime(p.totalBegin, p.tz) : null;
+  const peak = localTime(p.peak, p.tz);
+  return { ...p, start, peak, note: placeNote(p) };
+});
+---
+<Layout
+  title="Where to watch the 2027 eclipse: every place we calculated"
+  description={`Totality length, start time and Sun height for ${eclipse.places.length} places from Cádiz to Luxor to Yemen, plus the well-known places that miss totality, such as Cairo and Aswan.`}
+>
+  <div class="wrap page">
+    <h1>Where to watch: every place we calculated</h1>
+    <p class="stamp">Last reviewed 24 October 2026. Calculated with {eclipse.method}.</p>
+    <p class="lead measure">Totality lasts longest near Luxor and shrinks as you move towards the edge of the path. This table shows what each place gets, and which well-known places miss it.</p>
+    <div class="callout measure">
+      <p><strong>How to read it.</strong> Lengths are for the point we calculated, usually the town centre. A few kilometres can change them by several seconds, and near the edge of the path by a lot. Times are local, using the time-zone rules known today. The eclipse is on 2 August 2027. We have not ranked places by cloud, because we have no checked cloud figures yet.</p>
+    </div>
+
+    <h2>Places inside the path</h2>
+    <table class="places">
+      <caption class="sr">Places inside the path of totality, longest first</caption>
+      <thead><tr><th scope="col">Place</th><th scope="col">Totality</th><th scope="col">Starts (local)</th><th scope="col">Sun height</th></tr></thead>
+      <tbody>
+        {rows(total).map((p) => (
+          <tr>
+            <th scope="row" data-label="Place">{p.name}<span class="country">{p.country}</span>{p.note && <span class="note">{p.note}</span>}</th>
+            <td data-label="Totality"><span class="len">{fmtDuration(p.totalitySeconds!)}</span><span class="bar" aria-hidden="true"><i style={`width:${Math.min(100, (p.totalitySeconds! / MAX) * 100)}%`}></i></span></td>
+            <td data-label="Starts (local)">{p.start!.time} <span class="muted small">({p.start!.offset})</span></td>
+            <td data-label="Sun height">{p.sunAltitudeAtPeak}°</td>
+          </tr>
+        ))}
+      </tbody>
+    </table>
+
+    <h2>Well-known places that miss totality</h2>
+    <p class="measure">These get a deep partial eclipse. It is worth seeing with eclipse glasses, but the sky does not go dark.</p>
+    <table class="places">
+      <caption class="sr">Places outside the path, closest first</caption>
+      <thead><tr><th scope="col">Place</th><th scope="col">Sun covered at most</th><th scope="col">Greatest eclipse (local)</th><th scope="col">Sun height</th></tr></thead>
+      <tbody>
+        {rows(outside).map((p) => (
+          <tr>
+            <th scope="row" data-label="Place">{p.name}<span class="country">{p.country}</span><span class="note">{p.note}</span></th>
+            <td data-label="Sun covered at most">{(p.obscuration * 100).toFixed(1)}%</td>
+            <td data-label="Greatest eclipse (local)">{p.peak.time} <span class="muted small">({p.peak.offset})</span></td>
+            <td data-label="Sun height">{p.sunAltitudeAtPeak}°</td>
+          </tr>
+        ))}
+      </tbody>
+    </table>
+
+    <div class="prose measure">
+      <h2>Notes on the numbers</h2>
+      <ul>
+        <li>Our code runs a few seconds long, so we subtract the difference measured at one published point. At three other published points it then agrees within two seconds. <a href="/how-we-make-our-numbers/#eclipse">The test is on this page.</a></li>
+        <li>Mecca is on the path, but non-Muslims are not allowed to enter it. Check entry rules for every place before you plan.</li>
+        <li>Libya and Yemen, among others, may have travel warnings from your government. We list them because they are on the path, not because we recommend going.</li>
+      </ul>
+      <h2>Sources</h2>
+      <ul class="sources">
+        <li>Our calculation, {eclipse.method}, run on {eclipse.calculatedOn}. Path and reference figures: EclipseWise, <a href="https://www.eclipsewise.com/solar/SEprime/2001-2100/SE2027Aug02Tprime.html">Total Solar Eclipse of 2027 Aug 02</a>.</li>
+        <li>Space.com, <a href="https://space.com/stargazing/solar-eclipses/8-things-you-need-to-know-before-booking-the-2027-eclipse-of-the-century">8 things you need to know before booking the 2027 eclipse of the century</a>.</li>
+      </ul>
+    </div>
+  </div>
+</Layout>
+
+<style>
+  .sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+  .places { width: 100%; border-collapse: collapse; margin-top: 0.8rem; }
+  .places th, .places td { text-align: left; padding: 14px 16px 14px 0; border-bottom: 1px solid var(--line); vertical-align: top; }
+  .places thead th { color: var(--muted); font-size: 0.9375rem; font-weight: 700; border-bottom: 2px solid var(--line); }
+  .places tbody th { font-family: var(--font-head); font-weight: 400; font-size: 1.2rem; color: var(--heading); line-height: 1.2; }
+  .country { display: block; font-family: var(--font-body); font-size: 0.9375rem; color: var(--muted); }
+  .note { display: block; font-family: var(--font-body); font-size: 0.9375rem; color: var(--text); margin-top: 4px; max-width: 34ch; }
+  .len { display: block; font-weight: 700; color: var(--heading); }
+  .bar { display: block; height: 8px; width: 11rem; max-width: 100%; background: var(--raise); border-radius: 4px; margin-top: 6px; overflow: hidden; }
+  .bar i { display: block; height: 100%; background: var(--gold); border-radius: 4px; }
+  @media (max-width: 720px) {
+    .places thead { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); }
+    .places, .places tbody, .places tr, .places th, .places td { display: block; width: 100%; }
+    .places tr { padding: 14px 0; border-bottom: 1px solid var(--line); }
+    .places th, .places td { border: 0; padding: 2px 0; }
+    .places td::before { content: attr(data-label) ': '; color: var(--muted); }
+  }
+</style>

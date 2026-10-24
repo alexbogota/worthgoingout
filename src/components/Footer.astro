@@ -1,0 +1,42 @@
+---
+import { site } from '../lib/site';
+const explore = [
+  { href: '/eclipse-2027/', label: 'Eclipse 2027' },
+  { href: '/eclipse-2027/where-to-watch/', label: 'Where to watch' },
+  { href: '/meteor-showers/', label: 'Meteor showers' },
+  { href: '/how-we-make-our-numbers/', label: 'How we make our numbers' },
+];
+const about = [
+  { href: '/about/', label: 'About' },
+  { href: '/editorial-policy/', label: 'Editorial policy' },
+  { href: '/contact/', label: 'Contact' },
+  { href: '/disclosure/', label: 'Affiliate disclosure' },
+  { href: '/privacy/', label: 'Privacy policy' },
+  { href: '/terms/', label: 'Terms of use' },
+];
+---
+<footer>
+  <div class="wrap grid">
+    <div class="who">
+      <div class="brand">{site.name}</div>
+      <p>Is it worth going out? We calculate what each eclipse and meteor shower will look like from where you are, and say plainly whether it's worth the trip.</p>
+      <p class="small">Some links on this site may earn us a commission. We mark every one. <a class="link" href="/disclosure/">How we earn</a></p>
+    </div>
+    <nav aria-label="Explore"><h2>Explore</h2>{explore.map((l) => <a href={l.href}>{l.label}</a>)}</nav>
+    <nav aria-label="About and legal"><h2>About</h2>{about.map((l) => <a href={l.href}>{l.label}</a>)}</nav>
+  </div>
+  <div class="wrap legal">© {new Date().getFullYear()} {site.name}. Eclipse and sky data are calculated by us from open sources, credited on each page.</div>
+</footer>
+
+<style>
+  footer { border-top: 1px solid var(--line); background: var(--footer); margin-top: 48px; }
+  .grid { display: grid; grid-template-columns: 1.4fr 1fr 1fr; gap: 32px 48px; padding-top: 44px; padding-bottom: 28px; }
+  .brand { font-family: var(--font-head); font-size: 1.4rem; color: var(--heading); margin-bottom: 8px; }
+  .who p { color: var(--muted); margin-bottom: 0.8em; max-width: 44ch; }
+  nav { display: flex; flex-direction: column; }
+  nav h2 { font-size: 1.05rem; margin: 0 0 6px; }
+  nav a { display: inline-flex; align-items: center; min-height: 40px; color: var(--muted); text-decoration: none; }
+  nav a:hover { color: var(--heading); text-decoration: underline; }
+  .legal { padding-bottom: 36px; font-size: 0.875rem; color: var(--muted); }
+  @media (max-width: 760px) { .grid { grid-template-columns: 1fr; } }
+</style>

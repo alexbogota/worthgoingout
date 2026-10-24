@@ -1,0 +1,77 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { eclipse, RULE, calendar } from '../../lib/sky';
+const c = eclipse.calibration;
+---
+<Layout
+  title="How we make our numbers"
+  description="Where our eclipse lengths and meteor-shower verdicts come from, how we tested them against published figures, and what we have not checked."
+>
+  <article class="wrap page prose">
+    <h1>How we make our numbers</h1>
+    <p class="stamp">Last reviewed 24 October 2026.</p>
+    <p class="lead measure">Most pages here rest on two things we work out ourselves: how long totality lasts at each place, and whether a meteor shower is worth a trip. This page shows the method, the tests, and the limits.</p>
+
+    <h2 id="eclipse">Eclipse lengths for each place</h2>
+    <p class="measure">We use the open-source <a href="https://github.com/cosinekitty/astronomy">Astronomy Engine</a> library (MIT licence, version 2.1.19). For each place we give it the latitude, longitude and height above sea level, and it returns when the eclipse starts, peaks and ends there, how much of the Sun is covered, and how long totality lasts. We then convert the times to local time with the time-zone rules known today.</p>
+
+    <h3>The correction we apply</h3>
+    <p class="measure">At the point of greatest duration ({c.point}), EclipseWise publishes {c.publishedSeconds} seconds. Our code gives {c.rawSeconds} seconds there, so it runs about {c.offsetSeconds} seconds long. We subtract {c.offsetSeconds} seconds from every place. This is a single flat correction, chosen at one point and tested at others.</p>
+
+    <h3>The test</h3>
+    <p class="measure">After the correction, we compared three points that were not used to set it:</p>
+    <table class="plain">
+      <thead><tr><th scope="col">Point</th><th scope="col">Published</th><th scope="col">Ours</th><th scope="col">Difference</th></tr></thead>
+      <tbody>
+        {eclipse.tests.map((t) => (
+          <tr>
+            <th scope="row">{t.label}<span class="src">{t.source}</span></th>
+            <td>{t.publishedSeconds} s</td>
+            <td>{t.ourSeconds} s</td>
+            <td>{t.differenceSeconds > 0 ? '+' : ''}{t.differenceSeconds} s</td>
+          </tr>
+        ))}
+      </tbody>
+    </table>
+    <p class="measure">Two of the three published figures are rounded to the second or the minute by their authors, so differences of a second or two are inside the rounding. Three points is a small test. It is enough to tell us the method is sound, not enough to promise any single number to the second.</p>
+
+    <h3>What the numbers mean for you</h3>
+    <ul class="measure">
+      <li>Lengths are for one point per place, usually the town centre. Move a few kilometres and they change, a lot near the edge of the path.</li>
+      <li>Totality can be shortened by hills, buildings and cloud on the horizon. We do not model any of these.</li>
+      <li>Calculated on {eclipse.calculatedOn}. We will recalculate if the time-zone rules or the library change.</li>
+    </ul>
+
+    <h2 id="verdicts">Meteor-shower verdicts</h2>
+    <p class="measure">Each shower gets one of three verdicts, from two numbers only: how many meteors you could see in the best case, and how bright the Moon is on the peak night.</p>
+    <ul class="measure">
+      <li><strong>Go:</strong> {RULE.goMinRate} meteors an hour or more, and the Moon {RULE.goMaxMoon}% lit or less.</li>
+      <li><strong>Skip:</strong> fewer than {RULE.skipBelowRate} an hour, or the Moon {RULE.skipMoonFrom}% lit or more.</li>
+      <li><strong>Maybe:</strong> everything in between. If the Moon is waxing, it sets in the evening or night and the dark hours come after it sets. If it is waning, it rises late and the dark hours come before it rises.</li>
+    </ul>
+    <p class="measure">The rate is the ZHR (zenithal hourly rate) from the <a href="https://www.imo.net/resources/calendar/">International Meteor Organization's calendar</a>. It is the number one observer would count under a perfectly dark, clear sky with the shower's source point overhead. Real counts are lower, often much lower from a town.</p>
+    <p class="measure">Moon light is our own calculation: {calendar.method}. We checked it against the IMO's own Moon figure for all twelve showers on our list and it agrees within 1 percentage point.</p>
+    <p class="measure">The verdict does not look at your weather, your horizon or your light pollution. It tells you whether the shower and the Moon are on your side. Whether it is clear where you are is up to the forecast.</p>
+
+    <h2>How the pages are written</h2>
+    <p class="measure">Numbers come from the calculations above or from the sources listed on each page, never from memory. Text is drafted with the help of an AI assistant and then checked against those sources before it is published. If we find a mistake, we fix it and say so on the page. <a href="/editorial-policy/">Our editorial policy</a> has the details.</p>
+
+    <h2>What we have not checked</h2>
+    <ul class="measure">
+      <li>Cloud statistics for each eclipse location. Until we have a source we can verify, we do not rank places by weather.</li>
+      <li>Hotels, tours, flights and prices.</li>
+      <li>Visa and entry rules, and government travel warnings. Check them yourself for every country.</li>
+    </ul>
+
+    <h2>Found an error?</h2>
+    <p class="measure">Write to <a href="/contact/">us</a>. Tell us the page and the number, and, if you can, where the correct one is published.</p>
+  </article>
+</Layout>
+
+<style>
+  .plain { width: 100%; border-collapse: collapse; margin: 0.6rem 0 1.4rem; max-width: 66ch; }
+  .plain th, .plain td { text-align: left; padding: 10px 14px 10px 0; border-bottom: 1px solid var(--line); vertical-align: top; }
+  .plain thead th { color: var(--muted); font-size: 0.9375rem; border-bottom: 2px solid var(--line); }
+  .plain tbody th { font-weight: 700; color: var(--heading); }
+  .src { display: block; font-weight: 400; font-size: 0.875rem; color: var(--muted); }
+</style>

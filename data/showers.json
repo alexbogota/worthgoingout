@@ -1,0 +1,18 @@
+{
+  "source": "International Meteor Organization, Meteor Shower Calendar (imo.net/resources/calendar/), read 24 Oct 2026",
+  "note": "ZHR is the rate an observer would see under a perfectly dark, clear sky with the radiant overhead. Real rates are lower.",
+  "showers": [
+    { "slug": "orionids", "name": "Orionids", "start": "2026-10-02", "end": "2026-11-07", "night": ["2026-10-20", "2026-10-21"], "zhr": 20, "imoMoonPercent": 72 },
+    { "slug": "southern-taurids", "name": "Southern Taurids", "start": "2026-09-20", "end": "2026-11-20", "night": ["2026-11-04", "2026-11-05"], "zhr": 5, "imoMoonPercent": 18 },
+    { "slug": "northern-taurids", "name": "Northern Taurids", "start": "2026-10-20", "end": "2026-12-10", "night": ["2026-11-11", "2026-11-12"], "zhr": 5, "imoMoonPercent": 7 },
+    { "slug": "leonids", "name": "Leonids", "start": "2026-11-06", "end": "2026-11-30", "night": ["2026-11-16", "2026-11-17"], "zhr": 10, "imoMoonPercent": 45 },
+    { "slug": "geminids", "name": "Geminids", "start": "2026-12-01", "end": "2026-12-20", "night": ["2026-12-13", "2026-12-14"], "zhr": 150, "imoMoonPercent": 21 },
+    { "slug": "ursids", "name": "Ursids", "start": "2026-12-17", "end": "2026-12-26", "night": ["2026-12-21", "2026-12-22"], "zhr": 10, "imoMoonPercent": 94 },
+    { "slug": "quadrantids", "name": "Quadrantids", "start": "2026-12-28", "end": "2027-01-12", "night": ["2027-01-02", "2027-01-03"], "zhr": 80, "imoMoonPercent": 20 },
+    { "slug": "lyrids", "name": "Lyrids", "start": "2027-04-14", "end": "2027-04-30", "night": ["2027-04-22", "2027-04-23"], "zhr": 18, "imoMoonPercent": 95, "imoNote": "IMO text and its percentage disagree for this shower" },
+    { "slug": "eta-aquariids", "name": "eta Aquariids", "start": "2027-04-19", "end": "2027-05-28", "night": ["2027-05-05", "2027-05-06"], "zhr": 50, "imoMoonPercent": 0 },
+    { "slug": "southern-delta-aquariids", "name": "Southern delta Aquariids", "start": "2027-07-12", "end": "2027-08-23", "night": ["2027-07-30", "2027-07-31"], "zhr": 25, "imoMoonPercent": 9 },
+    { "slug": "alpha-capricornids", "name": "alpha Capricornids", "start": "2027-07-03", "end": "2027-08-15", "night": ["2027-07-30", "2027-07-31"], "zhr": 5, "imoMoonPercent": 9 },
+    { "slug": "perseids", "name": "Perseids", "start": "2027-07-17", "end": "2027-08-24", "night": ["2027-08-11", "2027-08-12"], "zhr": 100, "imoMoonPercent": 76 }
+  ]
+}

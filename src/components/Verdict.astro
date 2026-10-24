@@ -1,0 +1,6 @@
+---
+import { verdictLabel, type Verdict } from '../lib/sky';
+interface Props { verdict: Verdict }
+const { verdict } = Astro.props;
+---
+<span class={`verdict ${verdict}`}>{verdictLabel[verdict]}</span>

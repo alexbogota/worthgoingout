@@ -1,0 +1,98 @@
+---
+import Layout from '../layouts/Layout.astro';
+import EclipseGraphic from '../components/EclipseGraphic.astro';
+import Verdict from '../components/Verdict.astro';
+import { upcomingShowers, daysUntil, eclipse, fmtDuration, localTime } from '../lib/sky';
+import { longDate } from '../lib/site';
+
+const days = daysUntil('2027-08-02');
+const luxor = eclipse.places.find((p) => p.slug === 'luxor')!;
+const lux = localTime(luxor.totalBegin!, luxor.tz);
+const board = upcomingShowers().slice(0, 5);
+const nightText = (n: [string, string]) => {
+  const a = new Date(`${n[0]}T00:00:00Z`); const b = new Date(`${n[1]}T00:00:00Z`);
+  const m = (d: Date) => d.toLocaleDateString('en-GB', { month: 'short', timeZone: 'UTC' });
+  return a.getUTCMonth() === b.getUTCMonth() ? `${a.getUTCDate()}–${b.getUTCDate()} ${m(b)}` : `${a.getUTCDate()} ${m(a)}–${b.getUTCDate()} ${m(b)}`;
+};
+---
+<Layout
+  home
+  title="Worth Going Out: is the eclipse or meteor shower worth the trip?"
+  description="Plain answers on eclipses and meteor showers. We calculate what each place will see, say whether it is worth going out, and show where every number comes from."
+>
+  <section class="hero wrap">
+    <div class="copy">
+      <h1>Midday turns to night for up to 6 minutes 23 seconds on 2 August 2027.</h1>
+      <p class="lead measure">A total solar eclipse crosses southern Spain, North Africa and the Red Sea. The longest darkness falls just south-east of Luxor, Egypt. We worked out what each place on the path gets, so you can choose before you book.</p>
+      <p class="count"><strong id="days">{days}</strong> days to go until {longDate('2027-08-02')}.</p>
+      <div class="actions">
+        <a class="btn" href="/eclipse-2027/where-to-watch/">See where to watch</a>
+        <a class="btn quiet" href="/eclipse-2027/">Read the eclipse guide</a>
+      </div>
+    </div>
+    <div class="art"><EclipseGraphic /></div>
+  </section>
+
+  <section class="wrap band">
+    <h2>Worth going out, coming up</h2>
+    <p class="muted measure">Meteor showers on their peak nights, judged by how many meteors you can expect and how bright the Moon will be. <a class="link" href="/how-we-make-our-numbers/#verdicts">The rule is public.</a></p>
+    <ul class="board">
+      {board.map((s) => (
+        <li>
+          <span class="when">{nightText(s.night)}</span>
+          <div>
+            <a class="what" href={`/meteor-showers/#${s.slug}`}>{s.name}</a>
+            <p class="why">{s.why}</p>
+          </div>
+          <Verdict verdict={s.verdict} />
+        </li>
+      ))}
+    </ul>
+    <p class="small"><a class="link" href="/meteor-showers/">All meteor showers to mid-2027</a></p>
+  </section>
+
+  <section class="wrap band">
+    <h2>Numbers you can check</h2>
+    <div class="trio prose">
+      <div>
+        <h3>Calculated, not repeated</h3>
+        <p>Eclipse times and lengths for {eclipse.places.length} places are worked out with open astronomy code, not copied from other sites. In Luxor, totality starts at {lux.time} ({lux.offset}) and lasts about {fmtDuration(luxor.totalitySeconds!)}.</p>
+      </div>
+      <div>
+        <h3>Tested against published figures</h3>
+        <p>We tuned our eclipse code at one published point and then checked it at others. It matches published values to within about two seconds. <a href="/how-we-make-our-numbers/">See the test.</a></p>
+      </div>
+      <div>
+        <h3>Sources on every page</h3>
+        <p>Each page lists what it is based on and when we read it. Where we have not checked something, we say so instead of guessing.</p>
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<script>
+  // Keep the day count right for people who leave the page open or load a cached copy.
+  const el = document.getElementById('days');
+  if (el) {
+    const target = Date.UTC(2027, 7, 2);
+    const now = new Date();
+    const today = Date.UTC(now.getUTCFullYear(), now.getUTCMonth(), now.getUTCDate());
+    el.textContent = String(Math.max(0, Math.round((target - today) / 86400000)));
+  }
+</script>
+
+<style>
+  .hero { display: grid; grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr); gap: 32px 56px; align-items: center; padding-top: 56px; padding-bottom: 40px; }
+  .hero h1 { margin-bottom: 1.2rem; }
+  .count { margin: 1.2rem 0 0; color: var(--muted); font-size: 1.05rem; }
+  .count strong { color: var(--gold); font-family: var(--font-head); font-weight: 400; font-size: 1.6rem; }
+  .art { max-width: 440px; justify-self: center; width: 100%; }
+  .band { padding-top: 8px; padding-bottom: 8px; }
+  .trio { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px 40px; margin-top: 1rem; }
+  .trio h3 { margin-top: 0; }
+  @media (max-width: 860px) {
+    .hero { grid-template-columns: 1fr; padding-top: 28px; }
+    .art { max-width: 300px; order: -1; justify-self: start; }
+    .trio { grid-template-columns: 1fr; }
+  }
+</style>

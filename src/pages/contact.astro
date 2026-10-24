@@ -1,0 +1,18 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { site } from '../lib/site';
+---
+<Layout title="Contact" description="Write to Worth Going Out with corrections, questions, or suggestions.">
+  <article class="wrap page prose">
+    <h1>Contact</h1>
+    <p class="lead measure">The best way to reach us is email: <a href={`mailto:${site.email}`}>{site.email}</a>.</p>
+    <h2>What to write about</h2>
+    <ul class="measure">
+      <li><strong>An error.</strong> Tell us the page and the number, and if you can, where the right one is published. We check and correct.</li>
+      <li><strong>A question</strong> about how we calculated something.</li>
+      <li><strong>A suggestion</strong> for a place, a shower or an event to add.</li>
+      <li><strong>Business.</strong> We do not sell paid placements or reviews.</li>
+    </ul>
+    <p class="measure">We read everything. We cannot promise a personal reply to every message, and we cannot give travel, medical or legal advice.</p>
+  </article>
+</Layout>

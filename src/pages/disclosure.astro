@@ -1,0 +1,31 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { site } from '../lib/site';
+---
+<Layout title="Affiliate disclosure" description="How Worth Going Out earns money from links, how we mark them, and why it does not change what we recommend.">
+  <article class="wrap page prose">
+    <h1>Affiliate disclosure</h1>
+    <p class="stamp">Last updated {site.legalUpdated}.</p>
+    <p class="lead measure">Some links on this site are affiliate links. If you buy something after clicking one, we may earn a commission. It costs you nothing extra.</p>
+
+    <h2>What this means</h2>
+    <ul class="measure">
+      <li>We may link to tour and activity booking services, telescopes and astronomy equipment, and similar products, through affiliate programmes run by the sellers or by affiliate networks.</li>
+      <li>Every affiliate link is marked as an advertisement or affiliate link next to the link or at the top of the block it sits in.</li>
+      <li>We only link to things relevant to the page, and we say why.</li>
+    </ul>
+
+    <h2>What it does not mean</h2>
+    <ul class="measure">
+      <li>It does not change our numbers or verdicts. An eclipse lasts as long as it lasts whether or not we earn from the tour.</li>
+      <li>It does not mean we have tested a product unless we say so.</li>
+      <li>Prices and availability on seller sites can differ from what we describe. Check before you book.</li>
+    </ul>
+
+    <h2>Cookies on affiliate links</h2>
+    <p class="measure">When you click an affiliate link, the seller or network may set a cookie to record that you came from us. We do not control these cookies; see their privacy policies. Our own handling of data is in the <a href="/privacy/">privacy policy</a>.</p>
+
+    <h2>Questions</h2>
+    <p class="measure"><a href={`mailto:${site.email}`}>{site.email}</a></p>
+  </article>
+</Layout>

@@ -1,0 +1,31 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { site } from '../lib/site';
+---
+<Layout title="Terms of use" description="The terms for using Worth Going Out: informational use only, accuracy limits, safety, links, and copyright.">
+  <article class="wrap page prose">
+    <h1>Terms of use</h1>
+    <p class="stamp">Last updated {site.legalUpdated}.</p>
+
+    <h2>Information, not advice</h2>
+    <p class="measure">Everything on this site is general information about astronomy and travel. It is not professional, medical, legal or travel advice. Check entry rules, travel warnings, weather and local conditions yourself before you go anywhere.</p>
+
+    <h2>Accuracy</h2>
+    <p class="measure">We work hard to be accurate and we show our method, but we cannot guarantee that every figure is error-free or will stay current. Eclipse times and lengths for a place depend on the exact spot and on time-zone rules that can change. Use our numbers to plan, and confirm anything important with the sources we link.</p>
+
+    <h2>Eye safety</h2>
+    <p class="measure">Looking at the Sun without proper protection can cause permanent eye damage. Follow the guidance on our <a href="/eclipse-2027/#safe">eclipse page</a> and from NASA. You watch at your own risk.</p>
+
+    <h2>Links to other sites</h2>
+    <p class="measure">We link to sites we do not control and are not responsible for their content or the products and services they offer. Some links are affiliate links; see the <a href="/disclosure/">disclosure</a>.</p>
+
+    <h2>Our content</h2>
+    <p class="measure">The text, design and calculations on this site belong to Worth Going Out. You may quote short passages with a link back to the page. Data from other sources, such as EclipseWise or the International Meteor Organization, remains theirs and is credited on each page. Please do not copy whole pages.</p>
+
+    <h2>Limit of liability</h2>
+    <p class="measure">To the extent the law allows, we are not liable for losses arising from use of the site or from decisions made on the basis of it. Nothing here limits any right you have that cannot be limited by law.</p>
+
+    <h2>Changes and contact</h2>
+    <p class="measure">We may update these terms and will change the date above when we do. Questions: <a href={`mailto:${site.email}`}>{site.email}</a>.</p>
+  </article>
+</Layout>

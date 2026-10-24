@@ -1,0 +1,41 @@
+name: Deploy to hosting
+
+# Runs on every push to main, once a day (so day counts and "coming up" lists stay current), and by hand.
+on:
+  push:
+    branches: [main]
+  schedule:
+    - cron: '30 9 * * *'   # 04:30 Bogota
+  workflow_dispatch:
+
+concurrency:
+  group: deploy
+  cancel-in-progress: false
+
+permissions:
+  contents: read
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - name: Build the site into dist/
+        run: npm run build
+      - name: Check the built site
+        run: npm run check
+      - name: Upload dist/ to the hosting over FTPS
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+        with:
+          server: ${{ secrets.FTP_SERVER }}
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          port: 21
+          protocol: ftps
+          local-dir: ./dist/
+          server-dir: ${{ vars.FTP_SERVER_DIR || 'public_html/' }}

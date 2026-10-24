@@ -1,0 +1,40 @@
+{
+  "reference": { "label": "Point of greatest duration, 26 deg 48.8' N, 31 deg 08.0' E", "lat": 26.8133, "lon": 31.1333, "publishedSeconds": 383.24, "source": "EclipseWise (Espenak and Zeiler), Total Solar Eclipse of 2027 Aug 02" },
+  "tests": [
+    { "label": "Point of greatest eclipse, 25 deg 30.2' N, 33 deg 11.0' E", "lat": 25.5033, "lon": 33.1833, "elevation": 0, "publishedSeconds": 382.64, "source": "EclipseWise (Espenak and Zeiler), Total Solar Eclipse of 2027 Aug 02" },
+    { "label": "Luxor, Egypt (city centre)", "lat": 25.6872, "lon": 32.6396, "elevation": 75, "publishedSeconds": 382, "source": "High Point Scientific, 2027 solar eclipse guide (about 6 min 22 s)" },
+    { "label": "Nerja, Spain (city centre)", "lat": 36.7467, "lon": -3.875, "elevation": 20, "publishedSeconds": 93, "source": "Space.com, 8 things to know before booking the 2027 eclipse (about 1 min 33 s)" }
+  ],
+  "places": [
+    { "slug": "luxor", "name": "Luxor", "country": "Egypt", "lat": 25.6872, "lon": 32.6396, "elevation": 75, "tz": "Africa/Cairo" },
+    { "slug": "aswan", "name": "Aswan", "country": "Egypt", "lat": 24.0889, "lon": 32.8998, "elevation": 100, "tz": "Africa/Cairo" },
+    { "slug": "asyut", "name": "Asyut", "country": "Egypt", "lat": 27.1809, "lon": 31.1837, "elevation": 50, "tz": "Africa/Cairo" },
+    { "slug": "hurghada", "name": "Hurghada", "country": "Egypt", "lat": 27.2579, "lon": 33.8116, "elevation": 5, "tz": "Africa/Cairo" },
+    { "slug": "marsa-alam", "name": "Marsa Alam", "country": "Egypt", "lat": 25.0676, "lon": 34.8789, "elevation": 5, "tz": "Africa/Cairo" },
+    { "slug": "siwa", "name": "Siwa Oasis", "country": "Egypt", "lat": 29.2032, "lon": 25.5195, "elevation": -10, "tz": "Africa/Cairo" },
+    { "slug": "alexandria", "name": "Alexandria", "country": "Egypt", "lat": 31.2001, "lon": 29.9187, "elevation": 5, "tz": "Africa/Cairo" },
+    { "slug": "cairo", "name": "Cairo and Giza", "country": "Egypt", "lat": 30.0444, "lon": 31.2357, "elevation": 20, "tz": "Africa/Cairo" },
+    { "slug": "tangier", "name": "Tangier", "country": "Morocco", "lat": 35.7595, "lon": -5.834, "elevation": 20, "tz": "Africa/Casablanca" },
+    { "slug": "chefchaouen", "name": "Chefchaouen", "country": "Morocco", "lat": 35.1688, "lon": -5.2636, "elevation": 600, "tz": "Africa/Casablanca" },
+    { "slug": "ceuta", "name": "Ceuta", "country": "Spain", "lat": 35.8894, "lon": -5.3213, "elevation": 10, "tz": "Africa/Ceuta" },
+    { "slug": "tarifa", "name": "Tarifa", "country": "Spain", "lat": 36.0143, "lon": -5.6044, "elevation": 10, "tz": "Europe/Madrid" },
+    { "slug": "cadiz", "name": "Cádiz", "country": "Spain", "lat": 36.5271, "lon": -6.2886, "elevation": 5, "tz": "Europe/Madrid" },
+    { "slug": "seville", "name": "Seville", "country": "Spain", "lat": 37.3891, "lon": -5.9845, "elevation": 10, "tz": "Europe/Madrid" },
+    { "slug": "marbella", "name": "Marbella", "country": "Spain", "lat": 36.51, "lon": -4.8824, "elevation": 15, "tz": "Europe/Madrid" },
+    { "slug": "malaga", "name": "Málaga", "country": "Spain", "lat": 36.7213, "lon": -4.4214, "elevation": 10, "tz": "Europe/Madrid" },
+    { "slug": "nerja", "name": "Nerja", "country": "Spain", "lat": 36.7467, "lon": -3.875, "elevation": 20, "tz": "Europe/Madrid" },
+    { "slug": "granada", "name": "Granada", "country": "Spain", "lat": 37.1773, "lon": -3.5986, "elevation": 680, "tz": "Europe/Madrid" },
+    { "slug": "gibraltar", "name": "Gibraltar", "country": "Gibraltar", "lat": 36.1408, "lon": -5.3536, "elevation": 5, "tz": "Europe/Gibraltar" },
+    { "slug": "oran", "name": "Oran", "country": "Algeria", "lat": 35.6971, "lon": -0.6308, "elevation": 100, "tz": "Africa/Algiers" },
+    { "slug": "algiers", "name": "Algiers", "country": "Algeria", "lat": 36.7538, "lon": 3.0588, "elevation": 25, "tz": "Africa/Algiers" },
+    { "slug": "tunis", "name": "Tunis", "country": "Tunisia", "lat": 36.8065, "lon": 10.1815, "elevation": 5, "tz": "Africa/Tunis" },
+    { "slug": "sfax", "name": "Sfax", "country": "Tunisia", "lat": 34.7406, "lon": 10.7603, "elevation": 10, "tz": "Africa/Tunis" },
+    { "slug": "tripoli", "name": "Tripoli", "country": "Libya", "lat": 32.8872, "lon": 13.1913, "elevation": 10, "tz": "Africa/Tripoli" },
+    { "slug": "benghazi", "name": "Benghazi", "country": "Libya", "lat": 32.1194, "lon": 20.0868, "elevation": 10, "tz": "Africa/Tripoli" },
+    { "slug": "jeddah", "name": "Jeddah", "country": "Saudi Arabia", "lat": 21.4858, "lon": 39.1925, "elevation": 10, "tz": "Asia/Riyadh" },
+    { "slug": "mecca", "name": "Mecca", "country": "Saudi Arabia", "lat": 21.3891, "lon": 39.8579, "elevation": 300, "tz": "Asia/Riyadh" },
+    { "slug": "sanaa", "name": "Sanaa", "country": "Yemen", "lat": 15.3694, "lon": 44.191, "elevation": 2250, "tz": "Asia/Aden" },
+    { "slug": "aden", "name": "Aden", "country": "Yemen", "lat": 12.7855, "lon": 45.0187, "elevation": 10, "tz": "Asia/Aden" },
+    { "slug": "bosaso", "name": "Bosaso", "country": "Somalia", "lat": 11.2842, "lon": 49.1816, "elevation": 10, "tz": "Africa/Mogadishu" }
+  ]
+}

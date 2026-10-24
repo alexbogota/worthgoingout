@@ -1,0 +1,70 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { eclipse, daysUntil, fmtDuration, localTime } from '../../lib/sky';
+import { longDate } from '../../lib/site';
+
+const days = daysUntil('2027-08-02');
+const get = (slug: string) => eclipse.places.find((p) => p.slug === slug)!;
+const luxor = get('luxor'), tangier = get('tangier'), cadiz = get('cadiz'), cairo = get('cairo'), aswan = get('aswan');
+const t = (p: typeof luxor) => localTime(p.totalBegin!, p.tz);
+---
+<Layout
+  title="Total solar eclipse, 2 August 2027: where it crosses and what to know"
+  description="The 2 August 2027 total solar eclipse crosses Spain, North Africa and the Red Sea. What totality is, which places get the most, how high the Sun will be, and how to watch safely."
+>
+  <article class="wrap page prose">
+    <h1>Total solar eclipse, 2 August 2027</h1>
+    <p class="stamp">Last reviewed 24 October 2026. The day count updates itself.</p>
+
+    <p class="lead measure">On {longDate('2027-08-02')} the Moon will completely cover the Sun for people inside a band about 258 km wide. Outside it, the Sun is only partly covered and the day stays bright. That difference is the whole point of choosing a spot carefully.</p>
+    <p class="measure"><strong>{days} days to go.</strong> The path starts over the Atlantic, crosses southern Spain and Gibraltar, northern Morocco, Algeria, Tunisia, Libya and Egypt, then the Red Sea, south-western Saudi Arabia, Yemen and Somalia, and ends over the Indian Ocean.</p>
+
+    <h2>The numbers that matter</h2>
+    <ul class="measure">
+      <li><strong>Longest totality: 6 min 23 s</strong>, at 26.8° N, 31.1° E in Egypt, south-east of Luxor.</li>
+      <li><strong>Greatest eclipse</strong> (the Moon's shadow axis passes closest to the centre of the Earth): about 10:07 UTC at 25.5° N, 33.2° E. Totality there lasts 6 min 22.6 s.</li>
+      <li><strong>Path width:</strong> about 258 km at greatest eclipse.</li>
+      <li><strong>In Luxor</strong> totality starts at about {t(luxor).time} local time ({t(luxor).offset}), lasts about {fmtDuration(luxor.totalitySeconds!)}, and the Sun is {luxor.sunAltitudeAtPeak}° above the horizon.</li>
+      <li><strong>In Tangier</strong> it starts at about {t(tangier).time} ({t(tangier).offset}), lasts about {fmtDuration(tangier.totalitySeconds!)}, with the Sun {tangier.sunAltitudeAtPeak}° up.</li>
+      <li><strong>In Cádiz</strong> it starts at about {t(cadiz).time} ({t(cadiz).offset}) and lasts about {fmtDuration(cadiz.totalitySeconds!)}.</li>
+    </ul>
+    <p class="small muted measure">Lengths for places are our calculation, tested against published figures (<a href="/how-we-make-our-numbers/">how</a>). Path, width and the two greatest-eclipse figures are from EclipseWise.</p>
+
+    <h2>Not the longest of the century</h2>
+    <p class="measure">You will see this eclipse called "the longest of the century". It is not. The total eclipse of 22 July 2009 lasted up to 6 min 38.9 s, and the 2027 maximum is 6 min 23.2 s. Six minutes is still very long, and it is a good reason to travel, but nobody needs to believe a record to want to see it.</p>
+
+    <h2>Why a partial eclipse is not close enough</h2>
+    <p class="measure">Totality is a different experience from a partial eclipse: the sky darkens, the temperature drops, and for a short time you can look at the Sun's outer atmosphere, the corona. At 99% covered, the Sun is still too bright to call it dark.</p>
+    <p class="measure">That matters for planning. <a href="/eclipse-2027/where-to-watch/">Cairo and Giza get {(cairo.obscuration * 100).toFixed(1)}%</a>, and Aswan, which sits just outside the path, gets {(aswan.obscuration * 100).toFixed(1)}%. Neither sees totality. Check that your exact viewing spot, not just your city, is inside the path.</p>
+
+    <h2>What decides a good spot</h2>
+    <ul class="measure">
+      <li><strong>Length of totality.</strong> It is longest on the centre line and shrinks to nothing at the edges. In the table of places, Luxor is close to the maximum and Cádiz is under three minutes.</li>
+      <li><strong>Height of the Sun.</strong> About 37–40° in southern Spain and northern Morocco, and 75–82° in Egypt and Saudi Arabia. A high Sun is easier to see over buildings and hills but harder to photograph, and it is hotter.</li>
+      <li><strong>Heat.</strong> Space.com's travel guide warns of temperatures around 45 °C in parts of the path in August. Plan shade and water.</li>
+      <li><strong>Clouds.</strong> Nobody can promise clear skies. North Africa is very dry in August and southern Spain is usually sunny, but the final decision is made with the forecast days before. A trip you would enjoy even under clouds is the safe choice.</li>
+      <li><strong>Getting there.</strong> Check flights, visas and your government's travel advice for each country.</li>
+    </ul>
+
+    <h2 id="safe">Watching safely</h2>
+    <div class="callout measure">
+      <p><strong>Never look at the Sun without proper protection, except during the short time of total eclipse.</strong> NASA's rule: use eclipse glasses or handheld viewers that meet the ISO 12312-2 standard, check them for damage first, and put them back on as soon as any bright Sun reappears.</p>
+      <p>Ordinary sunglasses are not safe. Do not look at the Sun through a camera, binoculars or a telescope unless a proper solar filter is on the front of the lens, and never wear eclipse glasses together with such optics.</p>
+    </div>
+    <p class="measure">A pinhole projector, with your back to the Sun, is a safe way to watch the partial phases without glasses.</p>
+
+    <h2>What we have not checked yet</h2>
+    <p class="measure">We have not added cloud statistics for each place, so the table of places does not rank them by the chance of clear skies. We have not verified hotel availability, tour operators or prices. Time-zone rules are the ones in force in 2026 and can change before the eclipse.</p>
+
+    <p class="actions"><a class="btn" href="/eclipse-2027/where-to-watch/">See every place we calculated</a></p>
+
+    <h2 id="sources">Sources</h2>
+    <ul class="sources">
+      <li>EclipseWise (Fred Espenak and Michael Zeiler), <a href="https://www.eclipsewise.com/solar/SEprime/2001-2100/SE2027Aug02Tprime.html">Total Solar Eclipse of 2027 Aug 02</a>: path, width, greatest eclipse and greatest duration. Used with their permission terms: link and acknowledgment.</li>
+      <li>NASA, <a href="https://science.nasa.gov/eclipses/safety/">Eclipse safety</a>.</li>
+      <li>Space.com, <a href="https://space.com/stargazing/solar-eclipses/8-things-you-need-to-know-before-booking-the-2027-eclipse-of-the-century">8 things you need to know before booking the 2027 eclipse of the century</a>: countries on the path, heat, clouds in general terms.</li>
+      <li>Wikipedia, <a href="https://en.wikipedia.org/wiki/Solar_eclipse_of_July_22,_2009">Solar eclipse of July 22, 2009</a>: length of the 2009 eclipse.</li>
+      <li>Our own calculations: <a href="/how-we-make-our-numbers/">how we make our numbers</a>.</li>
+    </ul>
+  </article>
+</Layout>

@@ -1,0 +1,33 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { site } from '../lib/site';
+---
+<Layout title="Editorial policy" description="How Worth Going Out chooses what to publish, checks its numbers, uses AI in drafting, corrects errors and keeps recommendations separate from commissions.">
+  <article class="wrap page prose">
+    <h1>Editorial policy</h1>
+    <p class="stamp">Last updated {site.legalUpdated}.</p>
+
+    <h2>Sources and numbers</h2>
+    <ul class="measure">
+      <li>Every number is either calculated by us with a method described on <a href="/how-we-make-our-numbers/">this page</a>, or taken from a source named on the page where it appears.</li>
+      <li>We prefer primary sources: scientific bodies, space agencies, and the people who computed the data. We link to them.</li>
+      <li>We say when we read a source. Things change.</li>
+      <li>Where we have not checked something, the page says so rather than guessing.</li>
+    </ul>
+
+    <h2>Use of AI</h2>
+    <p class="measure">We use an AI assistant to help draft text and to write code. A person decides what to publish, and every figure is checked against its calculation or source before it goes live. AI is not a source: we never publish a number because a model produced it.</p>
+
+    <h2>Safety</h2>
+    <p class="measure">Eclipse viewing can permanently damage eyes. On those pages we follow NASA's safety guidance and link to it. We do not recommend a particular brand of eclipse glasses unless it appears on a published list of certified products, and we will say where that list comes from.</p>
+
+    <h2>Corrections</h2>
+    <p class="measure">If we get something wrong, we fix it and, for anything that matters, say what changed and when at the top of the page. To report an error write to <a href={`mailto:${site.email}`}>{site.email}</a>.</p>
+
+    <h2>Recommendations and money</h2>
+    <p class="measure">We decide what to recommend first and add links second. A commission never changes a verdict, a ranking or a number. Links that may earn us money are marked, as described in the <a href="/disclosure/">affiliate disclosure</a>. Nobody pays us to be listed.</p>
+
+    <h2>Independence</h2>
+    <p class="measure">We are not affiliated with NASA, the International Meteor Organization, EclipseWise or any tour operator. We use their published data and credit it.</p>
+  </article>
+</Layout>

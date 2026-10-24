@@ -1,0 +1,27 @@
+---
+// The one moving thing on the site: on load the Moon slides across the Sun and settles into totality, then the corona appears. Once.
+// With reduced motion the finished picture is shown at once.
+interface Props { size?: number }
+const { size = 520 } = Astro.props;
+const rays = Array.from({ length: 48 }, (_, i) => {
+  const a = (i / 48) * Math.PI * 2;
+  const long = i % 3 === 0 ? 118 : i % 3 === 1 ? 92 : 70;
+  const r0 = 126, r1 = r0 + long * (0.7 + 0.3 * Math.abs(Math.sin(i * 1.7)));
+  return { x1: 260 + r0 * Math.cos(a), y1: 260 + r0 * Math.sin(a), x2: 260 + r1 * Math.cos(a), y2: 260 + r1 * Math.sin(a), w: i % 3 === 0 ? 3 : 1.6 };
+});
+---
+<svg class="eclipse" width={size} height={size} viewBox="0 0 520 520" role="img" aria-label="Total solar eclipse: the Moon covers the Sun and a ring of white light, the corona, shows around it.">
+  <g class="rays" stroke="var(--gold)" stroke-linecap="round">
+    {rays.map((r) => <line x1={r.x1} y1={r.y1} x2={r.x2} y2={r.y2} stroke-width={r.w} />)}
+  </g>
+  <circle class="sun" cx="260" cy="260" r="118" fill="var(--gold)" />
+  <circle class="moon" cx="260" cy="260" r="121" fill="var(--moon)" />
+</svg>
+
+<style>
+  .eclipse { display: block; width: 100%; height: auto; overflow: visible; }
+  .rays { opacity: 1; animation: corona 1.1s ease-out 2.6s backwards; }
+  .moon { animation: pass 2.8s cubic-bezier(0.45, 0, 0.2, 1) backwards; }
+  @keyframes pass { from { transform: translateX(-250px); } to { transform: translateX(0); } }
+  @keyframes corona { from { opacity: 0; } to { opacity: 1; } }
+</style>
