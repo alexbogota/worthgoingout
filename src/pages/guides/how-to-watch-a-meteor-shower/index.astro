@@ -1,0 +1,56 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+import Verdict from '../../../components/Verdict.astro';
+import MoreGuides from '../../../components/MoreGuides.astro';
+import { upcomingShowers } from '../../../lib/sky';
+const next = upcomingShowers().filter((s) => s.verdict !== 'skip').slice(0, 3);
+const night = (n: [string, string]) => new Date(`${n[0]}T00:00:00Z`).toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric', timeZone: 'UTC' });
+---
+<Layout title="How to watch a meteor shower" description="When to go out, where to go, how long to give your eyes, and why the Moon matters more than the shower's name. A short practical guide with sources.">
+  <article class="wrap page prose">
+    <h1>How to watch a meteor shower</h1>
+    <p class="stamp">Last reviewed 24 October 2026.</p>
+    <p class="lead measure">You need no equipment, only a dark sky, a clear night and patience. The two things that decide how many meteors you see are how dark your sky is and where the Moon is.</p>
+
+    <h2>Pick the right night</h2>
+    <p class="measure">Every shower has a peak, usually one night, when the most meteors arrive. The headline rates you read about are best-case numbers for a perfectly dark sky; from a town you will see far fewer. A bright Moon on the peak night can wipe out most of a shower, so a strong shower under a full Moon can be worse than a modest one on a dark night. That is why our <a href="/meteor-showers/">meteor shower list</a> gives each peak a verdict from both numbers.</p>
+
+    <h2>Go late, not early</h2>
+    <p class="measure">The American Meteor Society puts it plainly: dusk is the worst time to watch, and the best is the period just before morning twilight begins. Meteor rates rise through the night, because after midnight your side of the Earth faces the direction the planet is moving in. For most showers, the hours after midnight are worth the lost sleep, and a nap beforehand helps.</p>
+
+    <h2>Get away from lights</h2>
+    <ul class="measure">
+      <li>City lights hide the fainter meteors, which are most of them. Even a short drive out of town makes a large difference.</li>
+      <li>Give your eyes 15 to 30 minutes in the dark to adjust before you judge the night. Every look at a bright phone screen sets you back.</li>
+      <li>If the Moon is up, sit with it behind you or behind a building or tree, and look at the darkest part of the sky.</li>
+    </ul>
+
+    <h2>Get comfortable</h2>
+    <ul class="measure">
+      <li>Lie back. A reclining chair or a mat lets you take in as much sky as possible without a stiff neck.</li>
+      <li>Meteors can appear anywhere in the sky. You do not need to stare at the shower’s point of origin; looking a little away from it shows longer trails.</li>
+      <li>Dress for a night much colder than it feels at sunset, and plan to stay at least an hour. Meteors come in bursts and lulls.</li>
+      <li>Binoculars and telescopes do not help: their field of view is too small. Your eyes are the right instrument.</li>
+    </ul>
+
+    <h2>The next nights worth it</h2>
+    <ul class="board">
+      {next.map((s) => (
+        <li>
+          <span class="when">{night(s.night)}</span>
+          <div><a class="what" href={`/meteor-showers/#${s.slug}`}>{s.name}</a><p class="why">{s.why}</p></div>
+          <Verdict verdict={s.verdict} />
+        </li>
+      ))}
+    </ul>
+
+    <MoreGuides />
+
+    <h2>Sources</h2>
+    <ul class="sources">
+      <li>American Meteor Society, <a href="https://amsmeteors.org/ams-programs/visual-observing/">Visual observing</a>: dark skies, the Moon, time of night, reclining chair, rest beforehand.</li>
+      <li>timeanddate.com, <a href="https://www.timeanddate.com/astronomy/meteor-shower/how-to-see.html">How to see meteor showers</a>: 15 to 30 minutes to let your eyes adjust.</li>
+      <li>International Meteor Organization, <a href="https://www.imo.net/resources/calendar/">Meteor Shower Calendar</a>: peak nights and rates, read 24 October 2026.</li>
+    </ul>
+  </article>
+</Layout>

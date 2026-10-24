@@ -7,7 +7,7 @@
     "dev": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "calc": "node scripts/calc-eclipse.mjs && node scripts/calc-sky.mjs",
+    "calc": "node scripts/calc-eclipse.mjs && node scripts/calc-sky.mjs && node scripts/calc-eclipse-list.mjs",
     "og": "node scripts/make-og.mjs",
     "check": "node scripts/check-site.mjs"
   },

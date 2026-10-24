@@ -5,7 +5,7 @@
 worthgoingout.com: сайт про затмения и метеорные потоки на английском («стоит ли выходить?»). Цель сейчас: хороший настоящий сайт для одобрения в партнёрских сетях (Viator напрямую, GetYourGuide через Travelpayouts, Unistellar на Awin). Постов пока нет. Black Friday не цель.
 
 ## Что работает
-- Astro, статика. 12 страниц: главная, `/eclipse-2027/`, `/eclipse-2027/where-to-watch/` (30 мест), `/meteor-showers/` (вердикты Go/Maybe/Skip), `/how-we-make-our-numbers/`, About, Editorial policy, Contact, Disclosure, Privacy, Terms, 404.
+- Astro, статика. 20 страниц (24.10): `/eclipses/` (все затмения до 2030 и что видят 47 городов, `npm run calc` → `data/eclipses.json`, проверка с Википедией, Space.com, IGN, National Eclipse), страны 2027 `/eclipse-2027/spain|egypt|morocco/` (тексты в `data/eclipse-countries.json`), гайды `/guides/` (метеоры, очки для затмения, сияние и Kp; список в `src/lib/guides.ts`). Остальные: главная, `/eclipse-2027/`, `/eclipse-2027/where-to-watch/` (30 мест), `/meteor-showers/` (вердикты Go/Maybe/Skip), `/how-we-make-our-numbers/`, About, Editorial policy, Contact, Disclosure, Privacy, Terms, 404.
 - Цифры затмения считает `npm run calc` (Astronomy Engine, поправка 3.1 с по точке EclipseWise, три проверочные точки). Луна по потокам сверена с IMO. Результат в `data/*.json`, коммитится.
 - `npm run build`, потом `npm run check` (alt, ссылки, якоря, title/description/h1).
 - Деплой: `.github/workflows/deploy.yml`, при push в main и раз в день 04:30 Богота (чтобы счётчик дней и список «ближайшее» обновлялись), Node 24: Astro 7 не идёт на Node 22.23.3. FTP-доступ открывается прямо в папке домена, поэтому файлы кладутся в корень (`./`), не в `public_html/`. Секреты FTP есть, сайт выложен 24.10.

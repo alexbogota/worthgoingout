@@ -4,6 +4,7 @@ import EclipseGraphic from '../components/EclipseGraphic.astro';
 import Verdict from '../components/Verdict.astro';
 import { upcomingShowers, daysUntil, eclipse, fmtDuration, localTime } from '../lib/sky';
 import { longDate } from '../lib/site';
+import { guides } from '../lib/guides';
 
 const days = daysUntil('2027-08-02');
 const luxor = eclipse.places.find((p) => p.slug === 'luxor')!;
@@ -49,6 +50,15 @@ const nightText = (n: [string, string]) => {
       ))}
     </ul>
     <p class="small"><a class="link" href="/meteor-showers/">All meteor showers to mid-2027</a></p>
+  </section>
+
+  <section class="wrap band">
+    <h2>Guides</h2>
+    <ul class="board">
+      {guides.map((g) => (
+        <li class="two"><div><a class="what" href={g.href}>{g.title}</a><p class="why">{g.blurb}</p></div></li>
+      ))}
+    </ul>
   </section>
 
   <section class="wrap band">

@@ -1,6 +1,7 @@
 ---
 import Layout from '../../layouts/Layout.astro';
 import { eclipse, RULE, calendar } from '../../lib/sky';
+import { eclipseList } from '../../lib/eclipses';
 const c = eclipse.calibration;
 ---
 <Layout
@@ -41,6 +42,21 @@ const c = eclipse.calibration;
       <li>Totality can be shortened by hills, buildings and cloud on the horizon. We do not model any of these.</li>
       <li>Calculated on {eclipse.calculatedOn}. We will recalculate if the time-zone rules or the library change.</li>
     </ul>
+
+    <h2 id="eclipse-list">Every eclipse to 2030</h2>
+    <p class="measure">For <a href="/eclipses/">the list of eclipses</a> we use the same library to find every solar and lunar eclipse to the end of 2030, and work out what {eclipseList.cities.length} cities see. We do not apply the 2027 correction there, so lengths can run a few seconds long. We compared them with published figures that we did not use to set anything:</p>
+    <table class="plain">
+      <thead><tr><th scope="col">Check</th><th scope="col">Published</th><th scope="col">Ours</th><th scope="col">Difference</th></tr></thead>
+      <tbody>
+        {eclipseList.tests.map((t) => (
+          <tr><th scope="row">{t.label}<span class="src"><a href={t.url}>{t.source}</a></span></th><td>{t.publishedSeconds} s</td><td>{t.ourSeconds} s</td><td>{t.differenceSeconds! > 0 ? '+' : ''}{t.differenceSeconds} s</td></tr>
+        ))}
+        {eclipseList.lunarTests.map((t) => (
+          <tr><th scope="row">{t.label}<span class="src"><a href={t.url}>{t.source}</a></span></th><td>{t.publishedMinutes} min</td><td>{t.ourMinutes} min</td><td>{t.differenceMinutes! > 0 ? '+' : ''}{t.differenceMinutes} min</td></tr>
+        ))}
+      </tbody>
+    </table>
+    <p class="measure">The Seville figure is published only to the nearest minute. Our city points are the city centre at sea level, so a few seconds either way is expected. The type and date of every eclipse on the list match NASA and National Eclipse.</p>
 
     <h2 id="verdicts">Meteor-shower verdicts</h2>
     <p class="measure">Each shower gets one of three verdicts, from two numbers only: how many meteors you could see in the best case, and how bright the Moon is on the peak night.</p>

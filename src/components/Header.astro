@@ -2,8 +2,9 @@
 const path = Astro.url.pathname;
 const links = [
   { href: '/eclipse-2027/', label: 'Eclipse 2027' },
+  { href: '/eclipses/', label: 'All eclipses' },
   { href: '/meteor-showers/', label: 'Meteor showers' },
-  { href: '/how-we-make-our-numbers/', label: 'Our numbers' },
+  { href: '/guides/', label: 'Guides' },
   { href: '/about/', label: 'About' },
 ];
 const active = (href: string) => (path === href || (href !== '/' && path.startsWith(href)) ? 'page' : undefined);

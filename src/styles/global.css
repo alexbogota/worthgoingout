@@ -104,6 +104,9 @@ p { margin: 0 0 1.1em; }
 .board li { display: grid; grid-template-columns: 9.5rem 1fr auto; gap: 8px 24px; align-items: start; padding: 18px 0; border-bottom: 1px solid var(--line); }
 .board .when { color: var(--muted); font-size: 0.9375rem; padding-top: 3px; }
 .board .what { margin: 0; font-family: var(--font-head); font-size: 1.3rem; color: var(--heading); line-height: 1.2; }
+.board li.two { grid-template-columns: 1fr; }
+.prose .board { padding-left: 0; }
+.prose .board li { margin-bottom: 0; }
 .board .why { margin: 4px 0 0; color: var(--muted); font-size: 1rem; }
 @media (max-width: 640px) {
   .board li { grid-template-columns: 1fr auto; }

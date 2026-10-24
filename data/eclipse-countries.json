@@ -1,0 +1,74 @@
+{
+  "countries": [
+    {
+      "slug": "spain",
+      "name": "Spain",
+      "include": [
+        "Spain",
+        "Gibraltar"
+      ],
+      "title": "2 August 2027 eclipse in Spain: which towns get totality",
+      "description": "Which towns in southern Spain see the 2 August 2027 total eclipse, for how long, at what time, and which well-known cities just miss it.",
+      "lead": "The path of totality clips the far south of Spain: the Strait of Gibraltar, the Costa de la Luz and the Costa del Sol. Most of Andalucía sees only a deep partial eclipse, including Seville and Granada.",
+      "points": [
+        "Totality is in the late morning, with the Sun about 37–40° above the horizon. That is high enough to clear most buildings, and the heat of the day has not peaked yet.",
+        "Length drops fast as you go east along the coast. Tarifa gets over four and a half minutes; Málaga and Nerja, near the edge of the path, get under two.",
+        "Ceuta, the Spanish city on the African side of the Strait, gets close to five minutes, more than anywhere on the Spanish mainland in our list.",
+        "Seville and Granada are outside the path. Over 98% of the Sun is covered there, but the sky does not go dark and you need glasses the whole time."
+      ],
+      "extra": "Spain is in the middle of three central eclipses in three years: the total eclipse of 12 August 2026 crossed the north of the country in the evening, with the Sun low, and an annular eclipse crosses most of Andalucía shortly before sunset on 26 January 2028, with about seven minutes of ring in Seville.",
+      "sources": [
+        [
+          "Instituto Geográfico Nacional, annular eclipse of 26 January 2028",
+          "https://astronomia.ign.es/en/eclipses-de-sol-y-luna/eclipse-anular-sol-de-26-de-enero-2028"
+        ],
+        [
+          "Instituto Geográfico Nacional, eclipses 2026–2028",
+          "https://eclipses.ign.es/en/introduccion.html"
+        ]
+      ]
+    },
+    {
+      "slug": "egypt",
+      "name": "Egypt",
+      "include": [
+        "Egypt"
+      ],
+      "title": "2 August 2027 eclipse in Egypt: Luxor, the Red Sea and the places that miss it",
+      "description": "Where in Egypt the 2 August 2027 total eclipse lasts longest, at what time, how high the Sun is, and why Cairo, Giza and Aswan miss totality.",
+      "lead": "Egypt has the longest totality of this eclipse. Just south-east of Luxor the Sun is fully covered for more than six minutes, almost straight overhead in the early afternoon.",
+      "points": [
+        "Luxor gets about 6 minutes 22 seconds, very close to the maximum for the whole eclipse.",
+        "The Sun is 75–82° above the horizon, nearly overhead. You will be looking almost straight up, so a reclining chair or a mat helps.",
+        "Cairo, Giza and Alexandria are outside the path. They get a partial eclipse of about 93–95%, which is not the same experience.",
+        "Aswan sits just outside the southern edge with 99.8% covered, and Hurghada on the Red Sea gets 98.5%. Marsa Alam, further south on the coast, is inside the path.",
+        "This is early August in Upper Egypt. Space.com’s travel guide warns of temperatures around 45 °C along parts of the path. Plan shade and water."
+      ],
+      "extra": "If you are based in Cairo or Hurghada, check the exact distance to the path before you travel. A short trip inside it is the difference between a partial eclipse and totality.",
+      "sources": [
+        [
+          "Space.com, 8 things you need to know before booking the 2027 eclipse",
+          "https://space.com/stargazing/solar-eclipses/8-things-you-need-to-know-before-booking-the-2027-eclipse-of-the-century"
+        ]
+      ]
+    },
+    {
+      "slug": "morocco",
+      "name": "Morocco",
+      "include": [
+        "Morocco"
+      ],
+      "title": "2 August 2027 eclipse in Morocco: Tangier and the north",
+      "description": "Totality in northern Morocco on 2 August 2027: how long it lasts in Tangier and Chefchaouen, at what time, and how high the Sun is.",
+      "lead": "The path of totality crosses the northern tip of Morocco, including Tangier and the hills around Chefchaouen, in the morning.",
+      "points": [
+        "Tangier gets almost five minutes of totality, a little more than Tarifa across the Strait.",
+        "Chefchaouen, inland in the Rif, gets over four minutes.",
+        "The Sun is about 38–39° high in the morning sky, so pick a spot with a clear view to the east.",
+        "Ceuta, the Spanish city next to the Moroccan border, gets a similar length to Tangier."
+      ],
+      "extra": "Times on this page use Morocco’s clock rules as they are today (UTC+1 outside Ramadan). Ramadan is not expected to fall in August 2027, but check your booking for the official time.",
+      "sources": []
+    }
+  ]
+}

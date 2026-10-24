@@ -1,0 +1,23 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { guides } from '../../lib/guides';
+---
+<Layout title="Guides" description="Practical guides to eclipses, meteor showers and the northern lights: what to bring, when to look, how to stay safe, and how to read the forecasts.">
+  <div class="wrap page">
+    <h1>Guides</h1>
+    <p class="lead measure">Short, practical answers for a night or a day under the sky. Each guide lists the sources it is based on.</p>
+    <ul class="board">
+      {guides.map((g) => (
+        <li class="two">
+          <div>
+            <a class="what" href={g.href}>{g.title}</a>
+            <p class="why">{g.blurb}</p>
+          </div>
+        </li>
+      ))}
+    </ul>
+  </div>
+</Layout>
+<style>
+  .board a.what { text-decoration: underline; text-underline-offset: 4px; text-decoration-thickness: 1px; }
+</style>

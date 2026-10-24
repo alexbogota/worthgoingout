@@ -1,0 +1,2394 @@
+{
+ "calculatedOn": "2026-10-24",
+ "method": "Astronomy Engine 2.1.19 (MIT licence)",
+ "cities": [
+  {
+   "slug": "reykjavik",
+   "name": "Reykjavík",
+   "country": "Iceland",
+   "lat": 64.1,
+   "lon": -21.9,
+   "tz": "Atlantic/Reykjavik",
+   "region": "Europe"
+  },
+  {
+   "slug": "london",
+   "name": "London",
+   "country": "United Kingdom",
+   "lat": 51.5,
+   "lon": -0.1,
+   "tz": "Europe/London",
+   "region": "Europe"
+  },
+  {
+   "slug": "paris",
+   "name": "Paris",
+   "country": "France",
+   "lat": 48.9,
+   "lon": 2.4,
+   "tz": "Europe/Paris",
+   "region": "Europe"
+  },
+  {
+   "slug": "berlin",
+   "name": "Berlin",
+   "country": "Germany",
+   "lat": 52.5,
+   "lon": 13.4,
+   "tz": "Europe/Berlin",
+   "region": "Europe"
+  },
+  {
+   "slug": "madrid",
+   "name": "Madrid",
+   "country": "Spain",
+   "lat": 40.4,
+   "lon": -3.7,
+   "tz": "Europe/Madrid",
+   "region": "Europe"
+  },
+  {
+   "slug": "seville",
+   "name": "Seville",
+   "country": "Spain",
+   "lat": 37.4,
+   "lon": -6,
+   "tz": "Europe/Madrid",
+   "region": "Europe"
+  },
+  {
+   "slug": "lisbon",
+   "name": "Lisbon",
+   "country": "Portugal",
+   "lat": 38.7,
+   "lon": -9.1,
+   "tz": "Europe/Lisbon",
+   "region": "Europe"
+  },
+  {
+   "slug": "rome",
+   "name": "Rome",
+   "country": "Italy",
+   "lat": 41.9,
+   "lon": 12.5,
+   "tz": "Europe/Rome",
+   "region": "Europe"
+  },
+  {
+   "slug": "athens",
+   "name": "Athens",
+   "country": "Greece",
+   "lat": 38,
+   "lon": 23.7,
+   "tz": "Europe/Athens",
+   "region": "Europe"
+  },
+  {
+   "slug": "istanbul",
+   "name": "Istanbul",
+   "country": "Turkey",
+   "lat": 41,
+   "lon": 29,
+   "tz": "Europe/Istanbul",
+   "region": "Europe"
+  },
+  {
+   "slug": "moscow",
+   "name": "Moscow",
+   "country": "Russia",
+   "lat": 55.8,
+   "lon": 37.6,
+   "tz": "Europe/Moscow",
+   "region": "Europe"
+  },
+  {
+   "slug": "cairo",
+   "name": "Cairo",
+   "country": "Egypt",
+   "lat": 30,
+   "lon": 31.2,
+   "tz": "Africa/Cairo",
+   "region": "Africa"
+  },
+  {
+   "slug": "tunis",
+   "name": "Tunis",
+   "country": "Tunisia",
+   "lat": 36.8,
+   "lon": 10.2,
+   "tz": "Africa/Tunis",
+   "region": "Africa"
+  },
+  {
+   "slug": "lagos",
+   "name": "Lagos",
+   "country": "Nigeria",
+   "lat": 6.5,
+   "lon": 3.4,
+   "tz": "Africa/Lagos",
+   "region": "Africa"
+  },
+  {
+   "slug": "nairobi",
+   "name": "Nairobi",
+   "country": "Kenya",
+   "lat": -1.3,
+   "lon": 36.8,
+   "tz": "Africa/Nairobi",
+   "region": "Africa"
+  },
+  {
+   "slug": "windhoek",
+   "name": "Windhoek",
+   "country": "Namibia",
+   "lat": -22.6,
+   "lon": 17.1,
+   "tz": "Africa/Windhoek",
+   "region": "Africa"
+  },
+  {
+   "slug": "johannesburg",
+   "name": "Johannesburg",
+   "country": "South Africa",
+   "lat": -26.2,
+   "lon": 28,
+   "tz": "Africa/Johannesburg",
+   "region": "Africa"
+  },
+  {
+   "slug": "cape-town",
+   "name": "Cape Town",
+   "country": "South Africa",
+   "lat": -33.9,
+   "lon": 18.4,
+   "tz": "Africa/Johannesburg",
+   "region": "Africa"
+  },
+  {
+   "slug": "dubai",
+   "name": "Dubai",
+   "country": "United Arab Emirates",
+   "lat": 25.2,
+   "lon": 55.3,
+   "tz": "Asia/Dubai",
+   "region": "Asia"
+  },
+  {
+   "slug": "riyadh",
+   "name": "Riyadh",
+   "country": "Saudi Arabia",
+   "lat": 24.7,
+   "lon": 46.7,
+   "tz": "Asia/Riyadh",
+   "region": "Asia"
+  },
+  {
+   "slug": "delhi",
+   "name": "Delhi",
+   "country": "India",
+   "lat": 28.6,
+   "lon": 77.2,
+   "tz": "Asia/Kolkata",
+   "region": "Asia"
+  },
+  {
+   "slug": "mumbai",
+   "name": "Mumbai",
+   "country": "India",
+   "lat": 19.1,
+   "lon": 72.9,
+   "tz": "Asia/Kolkata",
+   "region": "Asia"
+  },
+  {
+   "slug": "bangkok",
+   "name": "Bangkok",
+   "country": "Thailand",
+   "lat": 13.8,
+   "lon": 100.5,
+   "tz": "Asia/Bangkok",
+   "region": "Asia"
+  },
+  {
+   "slug": "singapore",
+   "name": "Singapore",
+   "country": "Singapore",
+   "lat": 1.3,
+   "lon": 103.8,
+   "tz": "Asia/Singapore",
+   "region": "Asia"
+  },
+  {
+   "slug": "beijing",
+   "name": "Beijing",
+   "country": "China",
+   "lat": 39.9,
+   "lon": 116.4,
+   "tz": "Asia/Shanghai",
+   "region": "Asia"
+  },
+  {
+   "slug": "seoul",
+   "name": "Seoul",
+   "country": "South Korea",
+   "lat": 37.6,
+   "lon": 127,
+   "tz": "Asia/Seoul",
+   "region": "Asia"
+  },
+  {
+   "slug": "tokyo",
+   "name": "Tokyo",
+   "country": "Japan",
+   "lat": 35.7,
+   "lon": 139.7,
+   "tz": "Asia/Tokyo",
+   "region": "Asia"
+  },
+  {
+   "slug": "perth",
+   "name": "Perth",
+   "country": "Australia",
+   "lat": -32,
+   "lon": 115.9,
+   "tz": "Australia/Perth",
+   "region": "Oceania"
+  },
+  {
+   "slug": "darwin",
+   "name": "Darwin",
+   "country": "Australia",
+   "lat": -12.5,
+   "lon": 130.8,
+   "tz": "Australia/Darwin",
+   "region": "Oceania"
+  },
+  {
+   "slug": "sydney",
+   "name": "Sydney",
+   "country": "Australia",
+   "lat": -33.9,
+   "lon": 151.2,
+   "tz": "Australia/Sydney",
+   "region": "Oceania"
+  },
+  {
+   "slug": "melbourne",
+   "name": "Melbourne",
+   "country": "Australia",
+   "lat": -37.8,
+   "lon": 145,
+   "tz": "Australia/Melbourne",
+   "region": "Oceania"
+  },
+  {
+   "slug": "auckland",
+   "name": "Auckland",
+   "country": "New Zealand",
+   "lat": -36.8,
+   "lon": 174.8,
+   "tz": "Pacific/Auckland",
+   "region": "Oceania"
+  },
+  {
+   "slug": "dunedin",
+   "name": "Dunedin",
+   "country": "New Zealand",
+   "lat": -45.9,
+   "lon": 170.5,
+   "tz": "Pacific/Auckland",
+   "region": "Oceania"
+  },
+  {
+   "slug": "honolulu",
+   "name": "Honolulu",
+   "country": "United States",
+   "lat": 21.3,
+   "lon": -157.9,
+   "tz": "Pacific/Honolulu",
+   "region": "Americas"
+  },
+  {
+   "slug": "anchorage",
+   "name": "Anchorage",
+   "country": "United States",
+   "lat": 61.2,
+   "lon": -149.9,
+   "tz": "America/Anchorage",
+   "region": "Americas"
+  },
+  {
+   "slug": "los-angeles",
+   "name": "Los Angeles",
+   "country": "United States",
+   "lat": 34.1,
+   "lon": -118.2,
+   "tz": "America/Los_Angeles",
+   "region": "Americas"
+  },
+  {
+   "slug": "denver",
+   "name": "Denver",
+   "country": "United States",
+   "lat": 39.7,
+   "lon": -105,
+   "tz": "America/Denver",
+   "region": "Americas"
+  },
+  {
+   "slug": "chicago",
+   "name": "Chicago",
+   "country": "United States",
+   "lat": 41.9,
+   "lon": -87.6,
+   "tz": "America/Chicago",
+   "region": "Americas"
+  },
+  {
+   "slug": "new-york",
+   "name": "New York",
+   "country": "United States",
+   "lat": 40.7,
+   "lon": -74,
+   "tz": "America/New_York",
+   "region": "Americas"
+  },
+  {
+   "slug": "toronto",
+   "name": "Toronto",
+   "country": "Canada",
+   "lat": 43.7,
+   "lon": -79.4,
+   "tz": "America/Toronto",
+   "region": "Americas"
+  },
+  {
+   "slug": "mexico-city",
+   "name": "Mexico City",
+   "country": "Mexico",
+   "lat": 19.4,
+   "lon": -99.1,
+   "tz": "America/Mexico_City",
+   "region": "Americas"
+  },
+  {
+   "slug": "bogota",
+   "name": "Bogotá",
+   "country": "Colombia",
+   "lat": 4.7,
+   "lon": -74.1,
+   "tz": "America/Bogota",
+   "region": "Americas"
+  },
+  {
+   "slug": "quito",
+   "name": "Quito",
+   "country": "Ecuador",
+   "lat": -0.2,
+   "lon": -78.5,
+   "tz": "America/Guayaquil",
+   "region": "Americas"
+  },
+  {
+   "slug": "lima",
+   "name": "Lima",
+   "country": "Peru",
+   "lat": -12,
+   "lon": -77,
+   "tz": "America/Lima",
+   "region": "Americas"
+  },
+  {
+   "slug": "sao-paulo",
+   "name": "São Paulo",
+   "country": "Brazil",
+   "lat": -23.6,
+   "lon": -46.6,
+   "tz": "America/Sao_Paulo",
+   "region": "Americas"
+  },
+  {
+   "slug": "buenos-aires",
+   "name": "Buenos Aires",
+   "country": "Argentina",
+   "lat": -34.6,
+   "lon": -58.4,
+   "tz": "America/Argentina/Buenos_Aires",
+   "region": "Americas"
+  },
+  {
+   "slug": "santiago",
+   "name": "Santiago",
+   "country": "Chile",
+   "lat": -33.4,
+   "lon": -70.7,
+   "tz": "America/Santiago",
+   "region": "Americas"
+  }
+ ],
+ "solar": [
+  {
+   "date": "2027-02-06",
+   "peak": "2027-02-06T15:59:32.957Z",
+   "kind": "annular",
+   "centre": {
+    "lat": -31.3,
+    "lon": -48.5
+   },
+   "cities": [
+    {
+     "city": "lagos",
+     "kind": "annular",
+     "obscuration": 0.837,
+     "peak": "2027-02-06T17:52:32.715Z",
+     "sunAltitude": 1,
+     "centralSeconds": 332
+    },
+    {
+     "city": "buenos-aires",
+     "kind": "partial",
+     "obscuration": 0.818,
+     "peak": "2027-02-06T15:31:42.060Z",
+     "sunAltitude": 69,
+     "centralSeconds": null
+    },
+    {
+     "city": "sao-paulo",
+     "kind": "partial",
+     "obscuration": 0.781,
+     "peak": "2027-02-06T16:21:27.605Z",
+     "sunAltitude": 74,
+     "centralSeconds": null
+    },
+    {
+     "city": "santiago",
+     "kind": "partial",
+     "obscuration": 0.613,
+     "peak": "2027-02-06T15:04:15.792Z",
+     "sunAltitude": 59,
+     "centralSeconds": null
+    },
+    {
+     "city": "windhoek",
+     "kind": "partial",
+     "obscuration": 0.138,
+     "peak": "2027-02-06T17:16:24.351Z",
+     "sunAltitude": 4,
+     "centralSeconds": null
+    },
+    {
+     "city": "cape-town",
+     "kind": "partial",
+     "obscuration": 0.023,
+     "peak": "2027-02-06T16:57:57.327Z",
+     "sunAltitude": 9,
+     "centralSeconds": null
+    },
+    {
+     "city": "lima",
+     "kind": "partial",
+     "obscuration": 0.019,
+     "peak": "2027-02-06T15:17:38.472Z",
+     "sunAltitude": 60,
+     "centralSeconds": null
+    }
+   ]
+  },
+  {
+   "date": "2027-08-02",
+   "peak": "2027-08-02T10:06:34.636Z",
+   "kind": "total",
+   "centre": {
+    "lat": 25.5,
+    "lon": 33.2
+   },
+   "cities": [
+    {
+     "city": "seville",
+     "kind": "partial",
+     "obscuration": 0.983,
+     "peak": "2027-08-02T08:47:23.657Z",
+     "sunAltitude": 38,
+     "centralSeconds": null
+    },
+    {
+     "city": "tunis",
+     "kind": "partial",
+     "obscuration": 0.97,
+     "peak": "2027-08-02T09:09:59.160Z",
+     "sunAltitude": 55,
+     "centralSeconds": null
+    },
+    {
+     "city": "cairo",
+     "kind": "partial",
+     "obscuration": 0.95,
+     "peak": "2027-08-02T09:55:42.787Z",
+     "sunAltitude": 78,
+     "centralSeconds": null
+    },
+    {
+     "city": "lisbon",
+     "kind": "partial",
+     "obscuration": 0.926,
+     "peak": "2027-08-02T08:44:46.109Z",
+     "sunAltitude": 35,
+     "centralSeconds": null
+    },
+    {
+     "city": "madrid",
+     "kind": "partial",
+     "obscuration": 0.863,
+     "peak": "2027-08-02T08:51:08.049Z",
+     "sunAltitude": 40,
+     "centralSeconds": null
+    },
+    {
+     "city": "athens",
+     "kind": "partial",
+     "obscuration": 0.782,
+     "peak": "2027-08-02T09:32:42.722Z",
+     "sunAltitude": 66,
+     "centralSeconds": null
+    },
+    {
+     "city": "riyadh",
+     "kind": "partial",
+     "obscuration": 0.758,
+     "peak": "2027-08-02T10:32:20.557Z",
+     "sunAltitude": 67,
+     "centralSeconds": null
+    },
+    {
+     "city": "rome",
+     "kind": "partial",
+     "obscuration": 0.744,
+     "peak": "2027-08-02T09:12:39.368Z",
+     "sunAltitude": 54,
+     "centralSeconds": null
+    },
+    {
+     "city": "istanbul",
+     "kind": "partial",
+     "obscuration": 0.593,
+     "peak": "2027-08-02T09:39:05.647Z",
+     "sunAltitude": 66,
+     "centralSeconds": null
+    },
+    {
+     "city": "dubai",
+     "kind": "partial",
+     "obscuration": 0.531,
+     "peak": "2027-08-02T10:43:45.352Z",
+     "sunAltitude": 57,
+     "centralSeconds": null
+    },
+    {
+     "city": "paris",
+     "kind": "partial",
+     "obscuration": 0.51,
+     "peak": "2027-08-02T09:01:10.504Z",
+     "sunAltitude": 43,
+     "centralSeconds": null
+    },
+    {
+     "city": "london",
+     "kind": "partial",
+     "obscuration": 0.418,
+     "peak": "2027-08-02T09:00:03.462Z",
+     "sunAltitude": 40,
+     "centralSeconds": null
+    },
+    {
+     "city": "berlin",
+     "kind": "partial",
+     "obscuration": 0.34,
+     "peak": "2027-08-02T09:13:47.471Z",
+     "sunAltitude": 48,
+     "centralSeconds": null
+    },
+    {
+     "city": "mumbai",
+     "kind": "partial",
+     "obscuration": 0.318,
+     "peak": "2027-08-02T11:11:32.467Z",
+     "sunAltitude": 34,
+     "centralSeconds": null
+    },
+    {
+     "city": "nairobi",
+     "kind": "partial",
+     "obscuration": 0.307,
+     "peak": "2027-08-02T11:01:18.332Z",
+     "sunAltitude": 62,
+     "centralSeconds": null
+    },
+    {
+     "city": "bangkok",
+     "kind": "partial",
+     "obscuration": 0.109,
+     "peak": "2027-08-02T11:26:02.922Z",
+     "sunAltitude": 4,
+     "centralSeconds": null
+    },
+    {
+     "city": "moscow",
+     "kind": "partial",
+     "obscuration": 0.091,
+     "peak": "2027-08-02T09:39:16.811Z",
+     "sunAltitude": 52,
+     "centralSeconds": null
+    },
+    {
+     "city": "delhi",
+     "kind": "partial",
+     "obscuration": 0.082,
+     "peak": "2027-08-02T10:59:04.345Z",
+     "sunAltitude": 34,
+     "centralSeconds": null
+    },
+    {
+     "city": "reykjavik",
+     "kind": "partial",
+     "obscuration": 0.057,
+     "peak": "2027-08-02T08:58:59.870Z",
+     "sunAltitude": 25,
+     "centralSeconds": null
+    },
+    {
+     "city": "lagos",
+     "kind": "partial",
+     "obscuration": 0.023,
+     "peak": "2027-08-02T09:13:41.888Z",
+     "sunAltitude": 50,
+     "centralSeconds": null
+    }
+   ]
+  },
+  {
+   "date": "2028-01-26",
+   "peak": "2028-01-26T15:07:42.381Z",
+   "kind": "annular",
+   "centre": {
+    "lat": 3,
+    "lon": -51.5
+   },
+   "cities": [
+    {
+     "city": "seville",
+     "kind": "annular",
+     "obscuration": 0.827,
+     "peak": "2028-01-26T16:55:51.273Z",
+     "sunAltitude": 7,
+     "centralSeconds": 431
+    },
+    {
+     "city": "madrid",
+     "kind": "partial",
+     "obscuration": 0.823,
+     "peak": "2028-01-26T16:55:34.090Z",
+     "sunAltitude": 4,
+     "centralSeconds": null
+    },
+    {
+     "city": "lisbon",
+     "kind": "partial",
+     "obscuration": 0.813,
+     "peak": "2028-01-26T16:54:07.317Z",
+     "sunAltitude": 9,
+     "centralSeconds": null
+    },
+    {
+     "city": "quito",
+     "kind": "partial",
+     "obscuration": 0.785,
+     "peak": "2028-01-26T13:41:59.601Z",
+     "sunAltitude": 32,
+     "centralSeconds": null
+    },
+    {
+     "city": "lima",
+     "kind": "partial",
+     "obscuration": 0.651,
+     "peak": "2028-01-26T13:37:22.998Z",
+     "sunAltitude": 36,
+     "centralSeconds": null
+    },
+    {
+     "city": "bogota",
+     "kind": "partial",
+     "obscuration": 0.635,
+     "peak": "2028-01-26T13:57:15.241Z",
+     "sunAltitude": 37,
+     "centralSeconds": null
+    },
+    {
+     "city": "mexico-city",
+     "kind": "partial",
+     "obscuration": 0.365,
+     "peak": "2028-01-26T13:35:39.294Z",
+     "sunAltitude": 4,
+     "centralSeconds": null
+    },
+    {
+     "city": "reykjavik",
+     "kind": "partial",
+     "obscuration": 0.16,
+     "peak": "2028-01-26T16:24:46.888Z",
+     "sunAltitude": 2,
+     "centralSeconds": null
+    },
+    {
+     "city": "sao-paulo",
+     "kind": "partial",
+     "obscuration": 0.142,
+     "peak": "2028-01-26T14:31:40.784Z",
+     "sunAltitude": 78,
+     "centralSeconds": null
+    },
+    {
+     "city": "santiago",
+     "kind": "partial",
+     "obscuration": 0.052,
+     "peak": "2028-01-26T13:44:45.119Z",
+     "sunAltitude": 45,
+     "centralSeconds": null
+    },
+    {
+     "city": "new-york",
+     "kind": "partial",
+     "obscuration": 0.029,
+     "peak": "2028-01-26T15:01:48.373Z",
+     "sunAltitude": 24,
+     "centralSeconds": null
+    },
+    {
+     "city": "lagos",
+     "kind": "partial",
+     "obscuration": 0.016,
+     "peak": "2028-01-26T16:47:36.393Z",
+     "sunAltitude": 15,
+     "centralSeconds": null
+    },
+    {
+     "city": "buenos-aires",
+     "kind": "partial",
+     "obscuration": 0.016,
+     "peak": "2028-01-26T14:01:44.272Z",
+     "sunAltitude": 58,
+     "centralSeconds": null
+    },
+    {
+     "city": "chicago",
+     "kind": "partial",
+     "obscuration": 0.014,
+     "peak": "2028-01-26T14:32:14.164Z",
+     "sunAltitude": 12,
+     "centralSeconds": null
+    },
+    {
+     "city": "toronto",
+     "kind": "partial",
+     "obscuration": 0.009,
+     "peak": "2028-01-26T14:53:20.678Z",
+     "sunAltitude": 18,
+     "centralSeconds": null
+    }
+   ]
+  },
+  {
+   "date": "2028-07-22",
+   "peak": "2028-07-22T02:55:24.627Z",
+   "kind": "total",
+   "centre": {
+    "lat": -15.6,
+    "lon": 126.7
+   },
+   "cities": [
+    {
+     "city": "sydney",
+     "kind": "total",
+     "obscuration": 1,
+     "peak": "2028-07-22T04:01:23.656Z",
+     "sunAltitude": 29,
+     "centralSeconds": 232
+    },
+    {
+     "city": "dunedin",
+     "kind": "total",
+     "obscuration": 1,
+     "peak": "2028-07-22T04:17:11.237Z",
+     "sunAltitude": 8,
+     "centralSeconds": 174
+    },
+    {
+     "city": "darwin",
+     "kind": "partial",
+     "obscuration": 0.882,
+     "peak": "2028-07-22T03:02:06.000Z",
+     "sunAltitude": 57,
+     "centralSeconds": null
+    },
+    {
+     "city": "melbourne",
+     "kind": "partial",
+     "obscuration": 0.815,
+     "peak": "2028-07-22T03:52:58.291Z",
+     "sunAltitude": 29,
+     "centralSeconds": null
+    },
+    {
+     "city": "auckland",
+     "kind": "partial",
+     "obscuration": 0.674,
+     "peak": "2028-07-22T04:23:34.510Z",
+     "sunAltitude": 10,
+     "centralSeconds": null
+    },
+    {
+     "city": "singapore",
+     "kind": "partial",
+     "obscuration": 0.599,
+     "peak": "2028-07-22T01:43:57.919Z",
+     "sunAltitude": 36,
+     "centralSeconds": null
+    },
+    {
+     "city": "perth",
+     "kind": "partial",
+     "obscuration": 0.501,
+     "peak": "2028-07-22T02:47:40.550Z",
+     "sunAltitude": 33,
+     "centralSeconds": null
+    },
+    {
+     "city": "bangkok",
+     "kind": "partial",
+     "obscuration": 0.156,
+     "peak": "2028-07-22T01:35:18.835Z",
+     "sunAltitude": 35,
+     "centralSeconds": null
+    }
+   ]
+  },
+  {
+   "date": "2029-01-14",
+   "peak": "2029-01-14T17:12:28.816Z",
+   "kind": "partial",
+   "centre": null,
+   "cities": [
+    {
+     "city": "denver",
+     "kind": "partial",
+     "obscuration": 0.639,
+     "peak": "2029-01-14T16:49:50.700Z",
+     "sunAltitude": 21,
+     "centralSeconds": null
+    },
+    {
+     "city": "chicago",
+     "kind": "partial",
+     "obscuration": 0.578,
+     "peak": "2029-01-14T17:25:38.518Z",
+     "sunAltitude": 26,
+     "centralSeconds": null
+    },
+    {
+     "city": "toronto",
+     "kind": "partial",
+     "obscuration": 0.518,
+     "peak": "2029-01-14T17:42:14.978Z",
+     "sunAltitude": 25,
+     "centralSeconds": null
+    },
+    {
+     "city": "los-angeles",
+     "kind": "partial",
+     "obscuration": 0.517,
+     "peak": "2029-01-14T16:21:30.606Z",
+     "sunAltitude": 14,
+     "centralSeconds": null
+    },
+    {
+     "city": "new-york",
+     "kind": "partial",
+     "obscuration": 0.407,
+     "peak": "2029-01-14T17:50:18.143Z",
+     "sunAltitude": 27,
+     "centralSeconds": null
+    },
+    {
+     "city": "mexico-city",
+     "kind": "partial",
+     "obscuration": 0.257,
+     "peak": "2029-01-14T16:33:42.870Z",
+     "sunAltitude": 38,
+     "centralSeconds": null
+    }
+   ]
+  },
+  {
+   "date": "2029-06-12",
+   "peak": "2029-06-12T04:04:55.151Z",
+   "kind": "partial",
+   "centre": null,
+   "cities": [
+    {
+     "city": "reykjavik",
+     "kind": "partial",
+     "obscuration": 0.277,
+     "peak": "2029-06-12T03:33:24.579Z",
+     "sunAltitude": 1,
+     "centralSeconds": null
+    },
+    {
+     "city": "anchorage",
+     "kind": "partial",
+     "obscuration": 0.121,
+     "peak": "2029-06-12T04:59:04.973Z",
+     "sunAltitude": 13,
+     "centralSeconds": null
+    },
+    {
+     "city": "berlin",
+     "kind": "partial",
+     "obscuration": 0.081,
+     "peak": "2029-06-12T02:57:45.705Z",
+     "sunAltitude": 1,
+     "centralSeconds": null
+    },
+    {
+     "city": "moscow",
+     "kind": "partial",
+     "obscuration": 0.016,
+     "peak": "2029-06-12T02:52:01.305Z",
+     "sunAltitude": 14,
+     "centralSeconds": null
+    }
+   ]
+  },
+  {
+   "date": "2029-07-11",
+   "peak": "2029-07-11T15:36:03.870Z",
+   "kind": "partial",
+   "centre": null,
+   "cities": []
+  },
+  {
+   "date": "2029-12-05",
+   "peak": "2029-12-05T15:02:39.906Z",
+   "kind": "partial",
+   "centre": null,
+   "cities": []
+  },
+  {
+   "date": "2030-06-01",
+   "peak": "2030-06-01T06:27:58.051Z",
+   "kind": "annular",
+   "centre": {
+    "lat": 56.5,
+    "lon": 80.1
+   },
+   "cities": [
+    {
+     "city": "istanbul",
+     "kind": "annular",
+     "obscuration": 0.881,
+     "peak": "2030-06-01T05:04:15.066Z",
+     "sunAltitude": 26,
+     "centralSeconds": 268
+    },
+    {
+     "city": "athens",
+     "kind": "annular",
+     "obscuration": 0.878,
+     "peak": "2030-06-01T04:57:59.069Z",
+     "sunAltitude": 20,
+     "centralSeconds": 242
+    },
+    {
+     "city": "tunis",
+     "kind": "partial",
+     "obscuration": 0.825,
+     "peak": "2030-06-01T04:57:02.757Z",
+     "sunAltitude": 9,
+     "centralSeconds": null
+    },
+    {
+     "city": "rome",
+     "kind": "partial",
+     "obscuration": 0.746,
+     "peak": "2030-06-01T05:04:12.444Z",
+     "sunAltitude": 14,
+     "centralSeconds": null
+    },
+    {
+     "city": "tokyo",
+     "kind": "partial",
+     "obscuration": 0.723,
+     "peak": "2030-06-01T08:07:45.495Z",
+     "sunAltitude": 19,
+     "centralSeconds": null
+    },
+    {
+     "city": "moscow",
+     "kind": "partial",
+     "obscuration": 0.711,
+     "peak": "2030-06-01T05:36:09.159Z",
+     "sunAltitude": 36,
+     "centralSeconds": null
+    },
+    {
+     "city": "cairo",
+     "kind": "partial",
+     "obscuration": 0.633,
+     "peak": "2030-06-01T04:46:49.197Z",
+     "sunAltitude": 22,
+     "centralSeconds": null
+    },
+    {
+     "city": "seoul",
+     "kind": "partial",
+     "obscuration": 0.632,
+     "peak": "2030-06-01T07:59:45.553Z",
+     "sunAltitude": 31,
+     "centralSeconds": null
+    },
+    {
+     "city": "madrid",
+     "kind": "partial",
+     "obscuration": 0.626,
+     "peak": "2030-06-01T05:06:48.023Z",
+     "sunAltitude": 3,
+     "centralSeconds": null
+    },
+    {
+     "city": "beijing",
+     "kind": "partial",
+     "obscuration": 0.584,
+     "peak": "2030-06-01T07:46:02.603Z",
+     "sunAltitude": 42,
+     "centralSeconds": null
+    },
+    {
+     "city": "berlin",
+     "kind": "partial",
+     "obscuration": 0.567,
+     "peak": "2030-06-01T05:21:57.843Z",
+     "sunAltitude": 20,
+     "centralSeconds": null
+    },
+    {
+     "city": "paris",
+     "kind": "partial",
+     "obscuration": 0.533,
+     "peak": "2030-06-01T05:16:57.664Z",
+     "sunAltitude": 12,
+     "centralSeconds": null
+    },
+    {
+     "city": "london",
+     "kind": "partial",
+     "obscuration": 0.477,
+     "peak": "2030-06-01T05:21:39.782Z",
+     "sunAltitude": 12,
+     "centralSeconds": null
+    },
+    {
+     "city": "riyadh",
+     "kind": "partial",
+     "obscuration": 0.304,
+     "peak": "2030-06-01T04:47:04.524Z",
+     "sunAltitude": 34,
+     "centralSeconds": null
+    },
+    {
+     "city": "reykjavik",
+     "kind": "partial",
+     "obscuration": 0.244,
+     "peak": "2030-06-01T05:47:54.912Z",
+     "sunAltitude": 10,
+     "centralSeconds": null
+    },
+    {
+     "city": "anchorage",
+     "kind": "partial",
+     "obscuration": 0.22,
+     "peak": "2030-06-01T07:08:25.975Z",
+     "sunAltitude": 0,
+     "centralSeconds": null
+    },
+    {
+     "city": "dubai",
+     "kind": "partial",
+     "obscuration": 0.215,
+     "peak": "2030-06-01T04:58:04.574Z",
+     "sunAltitude": 45,
+     "centralSeconds": null
+    },
+    {
+     "city": "delhi",
+     "kind": "partial",
+     "obscuration": 0.111,
+     "peak": "2030-06-01T06:02:41.117Z",
+     "sunAltitude": 78,
+     "centralSeconds": null
+    }
+   ]
+  },
+  {
+   "date": "2030-11-25",
+   "peak": "2030-11-25T06:50:19.626Z",
+   "kind": "total",
+   "centre": {
+    "lat": -43.6,
+    "lon": 71.2
+   },
+   "cities": [
+    {
+     "city": "windhoek",
+     "kind": "total",
+     "obscuration": 1,
+     "peak": "2030-11-25T05:19:50.470Z",
+     "sunAltitude": 17,
+     "centralSeconds": 117
+    },
+    {
+     "city": "johannesburg",
+     "kind": "partial",
+     "obscuration": 0.973,
+     "peak": "2030-11-25T05:27:56.330Z",
+     "sunAltitude": 29,
+     "centralSeconds": null
+    },
+    {
+     "city": "sydney",
+     "kind": "partial",
+     "obscuration": 0.789,
+     "peak": "2030-11-25T08:18:48.735Z",
+     "sunAltitude": 4,
+     "centralSeconds": null
+    },
+    {
+     "city": "perth",
+     "kind": "partial",
+     "obscuration": 0.775,
+     "peak": "2030-11-25T08:12:23.511Z",
+     "sunAltitude": 34,
+     "centralSeconds": null
+    },
+    {
+     "city": "melbourne",
+     "kind": "partial",
+     "obscuration": 0.747,
+     "peak": "2030-11-25T08:15:42.515Z",
+     "sunAltitude": 11,
+     "centralSeconds": null
+    },
+    {
+     "city": "cape-town",
+     "kind": "partial",
+     "obscuration": 0.719,
+     "peak": "2030-11-25T05:34:18.005Z",
+     "sunAltitude": 24,
+     "centralSeconds": null
+    },
+    {
+     "city": "dunedin",
+     "kind": "partial",
+     "obscuration": 0.301,
+     "peak": "2030-11-25T08:00:02.842Z",
+     "sunAltitude": 0,
+     "centralSeconds": null
+    },
+    {
+     "city": "darwin",
+     "kind": "partial",
+     "obscuration": 0.293,
+     "peak": "2030-11-25T08:36:49.368Z",
+     "sunAltitude": 11,
+     "centralSeconds": null
+    },
+    {
+     "city": "nairobi",
+     "kind": "partial",
+     "obscuration": 0.077,
+     "peak": "2030-11-25T05:08:27.351Z",
+     "sunAltitude": 26,
+     "centralSeconds": null
+    }
+   ]
+  }
+ ],
+ "lunar": [
+  {
+   "date": "2027-02-20",
+   "peak": "2027-02-20T23:12:44.142Z",
+   "kind": "penumbral",
+   "totalMinutes": 0,
+   "partialMinutes": 0,
+   "cities": [
+    {
+     "city": "lagos",
+     "moonAltitude": 78
+    },
+    {
+     "city": "nairobi",
+     "moonAltitude": 65
+    },
+    {
+     "city": "cairo",
+     "moonAltitude": 64
+    },
+    {
+     "city": "tunis",
+     "moonAltitude": 62
+    },
+    {
+     "city": "athens",
+     "moonAltitude": 60
+    },
+    {
+     "city": "rome",
+     "moonAltitude": 57
+    },
+    {
+     "city": "windhoek",
+     "moonAltitude": 57
+    },
+    {
+     "city": "seville",
+     "moonAltitude": 56
+    },
+    {
+     "city": "istanbul",
+     "moonAltitude": 56
+    },
+    {
+     "city": "riyadh",
+     "moonAltitude": 56
+    },
+    {
+     "city": "madrid",
+     "moonAltitude": 55
+    },
+    {
+     "city": "lisbon",
+     "moonAltitude": 53
+    },
+    {
+     "city": "johannesburg",
+     "moonAltitude": 51
+    },
+    {
+     "city": "paris",
+     "moonAltitude": 49
+    },
+    {
+     "city": "dubai",
+     "moonAltitude": 48
+    },
+    {
+     "city": "berlin",
+     "moonAltitude": 47
+    },
+    {
+     "city": "london",
+     "moonAltitude": 46
+    },
+    {
+     "city": "cape-town",
+     "moonAltitude": 45
+    },
+    {
+     "city": "moscow",
+     "moonAltitude": 40
+    },
+    {
+     "city": "mumbai",
+     "moonAltitude": 32
+    },
+    {
+     "city": "reykjavik",
+     "moonAltitude": 29
+    },
+    {
+     "city": "delhi",
+     "moonAltitude": 28
+    },
+    {
+     "city": "sao-paulo",
+     "moonAltitude": 21
+    },
+    {
+     "city": "buenos-aires",
+     "moonAltitude": 7
+    },
+    {
+     "city": "bangkok",
+     "moonAltitude": 6
+    },
+    {
+     "city": "new-york",
+     "moonAltitude": 6
+    },
+    {
+     "city": "toronto",
+     "moonAltitude": 3
+    },
+    {
+     "city": "singapore",
+     "moonAltitude": 1
+    },
+    {
+     "city": "bogota",
+     "moonAltitude": 1
+    }
+   ]
+  },
+  {
+   "date": "2027-07-18",
+   "peak": "2027-07-18T16:02:54.880Z",
+   "kind": "penumbral",
+   "totalMinutes": 0,
+   "partialMinutes": 0,
+   "cities": [
+    {
+     "city": "perth",
+     "moonAltitude": 79
+    },
+    {
+     "city": "darwin",
+     "moonAltitude": 76
+    },
+    {
+     "city": "melbourne",
+     "moonAltitude": 64
+    },
+    {
+     "city": "sydney",
+     "moonAltitude": 61
+    },
+    {
+     "city": "singapore",
+     "moonAltitude": 60
+    },
+    {
+     "city": "bangkok",
+     "moonAltitude": 48
+    },
+    {
+     "city": "dunedin",
+     "moonAltitude": 43
+    },
+    {
+     "city": "auckland",
+     "moonAltitude": 41
+    },
+    {
+     "city": "seoul",
+     "moonAltitude": 29
+    },
+    {
+     "city": "tokyo",
+     "moonAltitude": 29
+    },
+    {
+     "city": "beijing",
+     "moonAltitude": 27
+    },
+    {
+     "city": "mumbai",
+     "moonAltitude": 26
+    },
+    {
+     "city": "delhi",
+     "moonAltitude": 23
+    },
+    {
+     "city": "dubai",
+     "moonAltitude": 10
+    },
+    {
+     "city": "johannesburg",
+     "moonAltitude": 6
+    },
+    {
+     "city": "nairobi",
+     "moonAltitude": 5
+    },
+    {
+     "city": "riyadh",
+     "moonAltitude": 3
+    },
+    {
+     "city": "cape-town",
+     "moonAltitude": 2
+    }
+   ]
+  },
+  {
+   "date": "2027-08-17",
+   "peak": "2027-08-17T07:13:44.931Z",
+   "kind": "penumbral",
+   "totalMinutes": 0,
+   "partialMinutes": 0,
+   "cities": [
+    {
+     "city": "lima",
+     "moonAltitude": 59
+    },
+    {
+     "city": "quito",
+     "moonAltitude": 58
+    },
+    {
+     "city": "mexico-city",
+     "moonAltitude": 57
+    },
+    {
+     "city": "bogota",
+     "moonAltitude": 52
+    },
+    {
+     "city": "santiago",
+     "moonAltitude": 50
+    },
+    {
+     "city": "los-angeles",
+     "moonAltitude": 42
+    },
+    {
+     "city": "buenos-aires",
+     "moonAltitude": 39
+    },
+    {
+     "city": "denver",
+     "moonAltitude": 37
+    },
+    {
+     "city": "chicago",
+     "moonAltitude": 32
+    },
+    {
+     "city": "honolulu",
+     "moonAltitude": 30
+    },
+    {
+     "city": "sao-paulo",
+     "moonAltitude": 30
+    },
+    {
+     "city": "new-york",
+     "moonAltitude": 28
+    },
+    {
+     "city": "toronto",
+     "moonAltitude": 27
+    },
+    {
+     "city": "auckland",
+     "moonAltitude": 17
+    },
+    {
+     "city": "dunedin",
+     "moonAltitude": 14
+    },
+    {
+     "city": "anchorage",
+     "moonAltitude": 8
+    }
+   ]
+  },
+  {
+   "date": "2028-01-12",
+   "peak": "2028-01-12T04:13:00.859Z",
+   "kind": "partial",
+   "totalMinutes": 0,
+   "partialMinutes": 58,
+   "cities": [
+    {
+     "city": "new-york",
+     "moonAltitude": 69
+    },
+    {
+     "city": "bogota",
+     "moonAltitude": 68
+    },
+    {
+     "city": "toronto",
+     "moonAltitude": 64
+    },
+    {
+     "city": "quito",
+     "moonAltitude": 61
+    },
+    {
+     "city": "chicago",
+     "moonAltitude": 60
+    },
+    {
+     "city": "mexico-city",
+     "moonAltitude": 54
+    },
+    {
+     "city": "lima",
+     "moonAltitude": 51
+    },
+    {
+     "city": "denver",
+     "moonAltitude": 49
+    },
+    {
+     "city": "lisbon",
+     "moonAltitude": 43
+    },
+    {
+     "city": "reykjavik",
+     "moonAltitude": 41
+    },
+    {
+     "city": "sao-paulo",
+     "moonAltitude": 41
+    },
+    {
+     "city": "seville",
+     "moonAltitude": 40
+    },
+    {
+     "city": "madrid",
+     "moonAltitude": 38
+    },
+    {
+     "city": "los-angeles",
+     "moonAltitude": 38
+    },
+    {
+     "city": "london",
+     "moonAltitude": 35
+    },
+    {
+     "city": "paris",
+     "moonAltitude": 33
+    },
+    {
+     "city": "buenos-aires",
+     "moonAltitude": 32
+    },
+    {
+     "city": "santiago",
+     "moonAltitude": 32
+    },
+    {
+     "city": "tunis",
+     "moonAltitude": 27
+    },
+    {
+     "city": "berlin",
+     "moonAltitude": 26
+    },
+    {
+     "city": "rome",
+     "moonAltitude": 26
+    },
+    {
+     "city": "lagos",
+     "moonAltitude": 25
+    },
+    {
+     "city": "anchorage",
+     "moonAltitude": 19
+    },
+    {
+     "city": "athens",
+     "moonAltitude": 17
+    },
+    {
+     "city": "istanbul",
+     "moonAltitude": 14
+    },
+    {
+     "city": "moscow",
+     "moonAltitude": 13
+    },
+    {
+     "city": "cairo",
+     "moonAltitude": 8
+    },
+    {
+     "city": "windhoek",
+     "moonAltitude": 1
+    },
+    {
+     "city": "honolulu",
+     "moonAltitude": 1
+    }
+   ]
+  },
+  {
+   "date": "2028-07-06",
+   "peak": "2028-07-06T18:19:38.379Z",
+   "kind": "partial",
+   "totalMinutes": 0,
+   "partialMinutes": 143,
+   "cities": [
+    {
+     "city": "perth",
+     "moonAltitude": 62
+    },
+    {
+     "city": "singapore",
+     "moonAltitude": 60
+    },
+    {
+     "city": "bangkok",
+     "moonAltitude": 50
+    },
+    {
+     "city": "darwin",
+     "moonAltitude": 46
+    },
+    {
+     "city": "mumbai",
+     "moonAltitude": 45
+    },
+    {
+     "city": "melbourne",
+     "moonAltitude": 38
+    },
+    {
+     "city": "johannesburg",
+     "moonAltitude": 37
+    },
+    {
+     "city": "delhi",
+     "moonAltitude": 37
+    },
+    {
+     "city": "nairobi",
+     "moonAltitude": 36
+    },
+    {
+     "city": "dubai",
+     "moonAltitude": 32
+    },
+    {
+     "city": "sydney",
+     "moonAltitude": 32
+    },
+    {
+     "city": "cape-town",
+     "moonAltitude": 30
+    },
+    {
+     "city": "riyadh",
+     "moonAltitude": 28
+    },
+    {
+     "city": "windhoek",
+     "moonAltitude": 26
+    },
+    {
+     "city": "beijing",
+     "moonAltitude": 20
+    },
+    {
+     "city": "dunedin",
+     "moonAltitude": 20
+    },
+    {
+     "city": "seoul",
+     "moonAltitude": 17
+    },
+    {
+     "city": "cairo",
+     "moonAltitude": 14
+    },
+    {
+     "city": "auckland",
+     "moonAltitude": 14
+    },
+    {
+     "city": "tokyo",
+     "moonAltitude": 12
+    },
+    {
+     "city": "istanbul",
+     "moonAltitude": 6
+    },
+    {
+     "city": "athens",
+     "moonAltitude": 4
+    },
+    {
+     "city": "lagos",
+     "moonAltitude": 3
+    },
+    {
+     "city": "moscow",
+     "moonAltitude": 0
+    }
+   ]
+  },
+  {
+   "date": "2028-12-31",
+   "peak": "2028-12-31T16:51:54.549Z",
+   "kind": "total",
+   "totalMinutes": 72,
+   "partialMinutes": 209,
+   "cities": [
+    {
+     "city": "bangkok",
+     "moonAltitude": 78
+    },
+    {
+     "city": "beijing",
+     "moonAltitude": 72
+    },
+    {
+     "city": "seoul",
+     "moonAltitude": 68
+    },
+    {
+     "city": "singapore",
+     "moonAltitude": 67
+    },
+    {
+     "city": "delhi",
+     "moonAltitude": 62
+    },
+    {
+     "city": "tokyo",
+     "moonAltitude": 59
+    },
+    {
+     "city": "mumbai",
+     "moonAltitude": 57
+    },
+    {
+     "city": "darwin",
+     "moonAltitude": 47
+    },
+    {
+     "city": "dubai",
+     "moonAltitude": 42
+    },
+    {
+     "city": "riyadh",
+     "moonAltitude": 34
+    },
+    {
+     "city": "perth",
+     "moonAltitude": 33
+    },
+    {
+     "city": "moscow",
+     "moonAltitude": 29
+    },
+    {
+     "city": "istanbul",
+     "moonAltitude": 22
+    },
+    {
+     "city": "cairo",
+     "moonAltitude": 22
+    },
+    {
+     "city": "sydney",
+     "moonAltitude": 19
+    },
+    {
+     "city": "melbourne",
+     "moonAltitude": 19
+    },
+    {
+     "city": "athens",
+     "moonAltitude": 18
+    },
+    {
+     "city": "nairobi",
+     "moonAltitude": 16
+    },
+    {
+     "city": "berlin",
+     "moonAltitude": 15
+    },
+    {
+     "city": "anchorage",
+     "moonAltitude": 14
+    },
+    {
+     "city": "rome",
+     "moonAltitude": 11
+    },
+    {
+     "city": "london",
+     "moonAltitude": 7
+    },
+    {
+     "city": "paris",
+     "moonAltitude": 7
+    },
+    {
+     "city": "tunis",
+     "moonAltitude": 7
+    },
+    {
+     "city": "reykjavik",
+     "moonAltitude": 5
+    },
+    {
+     "city": "honolulu",
+     "moonAltitude": 4
+    },
+    {
+     "city": "auckland",
+     "moonAltitude": 2
+    },
+    {
+     "city": "dunedin",
+     "moonAltitude": 0
+    }
+   ]
+  },
+  {
+   "date": "2029-06-26",
+   "peak": "2029-06-26T03:22:06.538Z",
+   "kind": "total",
+   "totalMinutes": 103,
+   "partialMinutes": 220,
+   "cities": [
+    {
+     "city": "sao-paulo",
+     "moonAltitude": 87
+    },
+    {
+     "city": "buenos-aires",
+     "moonAltitude": 76
+    },
+    {
+     "city": "santiago",
+     "moonAltitude": 69
+    },
+    {
+     "city": "lima",
+     "moonAltitude": 61
+    },
+    {
+     "city": "bogota",
+     "moonAltitude": 53
+    },
+    {
+     "city": "quito",
+     "moonAltitude": 53
+    },
+    {
+     "city": "lagos",
+     "moonAltitude": 29
+    },
+    {
+     "city": "cape-town",
+     "moonAltitude": 29
+    },
+    {
+     "city": "windhoek",
+     "moonAltitude": 28
+    },
+    {
+     "city": "mexico-city",
+     "moonAltitude": 25
+    },
+    {
+     "city": "new-york",
+     "moonAltitude": 21
+    },
+    {
+     "city": "johannesburg",
+     "moonAltitude": 20
+    },
+    {
+     "city": "toronto",
+     "moonAltitude": 17
+    },
+    {
+     "city": "seville",
+     "moonAltitude": 16
+    },
+    {
+     "city": "lisbon",
+     "moonAltitude": 16
+    },
+    {
+     "city": "chicago",
+     "moonAltitude": 15
+    },
+    {
+     "city": "madrid",
+     "moonAltitude": 12
+    },
+    {
+     "city": "denver",
+     "moonAltitude": 8
+    },
+    {
+     "city": "tunis",
+     "moonAltitude": 7
+    },
+    {
+     "city": "london",
+     "moonAltitude": 3
+    },
+    {
+     "city": "paris",
+     "moonAltitude": 3
+    },
+    {
+     "city": "nairobi",
+     "moonAltitude": 3
+    },
+    {
+     "city": "los-angeles",
+     "moonAltitude": 3
+    },
+    {
+     "city": "rome",
+     "moonAltitude": 2
+    }
+   ]
+  },
+  {
+   "date": "2029-12-20",
+   "peak": "2029-12-20T22:41:54.610Z",
+   "kind": "total",
+   "totalMinutes": 55,
+   "partialMinutes": 214,
+   "cities": [
+    {
+     "city": "cairo",
+     "moonAltitude": 77
+    },
+    {
+     "city": "athens",
+     "moonAltitude": 74
+    },
+    {
+     "city": "tunis",
+     "moonAltitude": 74
+    },
+    {
+     "city": "rome",
+     "moonAltitude": 70
+    },
+    {
+     "city": "istanbul",
+     "moonAltitude": 70
+    },
+    {
+     "city": "lagos",
+     "moonAltitude": 67
+    },
+    {
+     "city": "madrid",
+     "moonAltitude": 64
+    },
+    {
+     "city": "seville",
+     "moonAltitude": 64
+    },
+    {
+     "city": "riyadh",
+     "moonAltitude": 64
+    },
+    {
+     "city": "paris",
+     "moonAltitude": 61
+    },
+    {
+     "city": "lisbon",
+     "moonAltitude": 61
+    },
+    {
+     "city": "berlin",
+     "moonAltitude": 60
+    },
+    {
+     "city": "nairobi",
+     "moonAltitude": 60
+    },
+    {
+     "city": "london",
+     "moonAltitude": 58
+    },
+    {
+     "city": "dubai",
+     "moonAltitude": 56
+    },
+    {
+     "city": "moscow",
+     "moonAltitude": 54
+    },
+    {
+     "city": "windhoek",
+     "moonAltitude": 44
+    },
+    {
+     "city": "reykjavik",
+     "moonAltitude": 40
+    },
+    {
+     "city": "johannesburg",
+     "moonAltitude": 39
+    },
+    {
+     "city": "mumbai",
+     "moonAltitude": 39
+    },
+    {
+     "city": "delhi",
+     "moonAltitude": 37
+    },
+    {
+     "city": "cape-town",
+     "moonAltitude": 32
+    },
+    {
+     "city": "bangkok",
+     "moonAltitude": 12
+    },
+    {
+     "city": "new-york",
+     "moonAltitude": 12
+    },
+    {
+     "city": "sao-paulo",
+     "moonAltitude": 10
+    },
+    {
+     "city": "toronto",
+     "moonAltitude": 9
+    },
+    {
+     "city": "beijing",
+     "moonAltitude": 8
+    },
+    {
+     "city": "singapore",
+     "moonAltitude": 5
+    },
+    {
+     "city": "chicago",
+     "moonAltitude": 3
+    },
+    {
+     "city": "seoul",
+     "moonAltitude": 0
+    }
+   ]
+  },
+  {
+   "date": "2030-06-15",
+   "peak": "2030-06-15T18:33:14.732Z",
+   "kind": "partial",
+   "totalMinutes": 0,
+   "partialMinutes": 145,
+   "cities": [
+    {
+     "city": "perth",
+     "moonAltitude": 58
+    },
+    {
+     "city": "singapore",
+     "moonAltitude": 57
+    },
+    {
+     "city": "bangkok",
+     "moonAltitude": 49
+    },
+    {
+     "city": "mumbai",
+     "moonAltitude": 47
+    },
+    {
+     "city": "darwin",
+     "moonAltitude": 42
+    },
+    {
+     "city": "nairobi",
+     "moonAltitude": 41
+    },
+    {
+     "city": "johannesburg",
+     "moonAltitude": 40
+    },
+    {
+     "city": "delhi",
+     "moonAltitude": 38
+    },
+    {
+     "city": "dubai",
+     "moonAltitude": 35
+    },
+    {
+     "city": "melbourne",
+     "moonAltitude": 34
+    },
+    {
+     "city": "cape-town",
+     "moonAltitude": 33
+    },
+    {
+     "city": "riyadh",
+     "moonAltitude": 31
+    },
+    {
+     "city": "windhoek",
+     "moonAltitude": 30
+    },
+    {
+     "city": "sydney",
+     "moonAltitude": 28
+    },
+    {
+     "city": "beijing",
+     "moonAltitude": 19
+    },
+    {
+     "city": "cairo",
+     "moonAltitude": 17
+    },
+    {
+     "city": "dunedin",
+     "moonAltitude": 16
+    },
+    {
+     "city": "seoul",
+     "moonAltitude": 15
+    },
+    {
+     "city": "auckland",
+     "moonAltitude": 10
+    },
+    {
+     "city": "istanbul",
+     "moonAltitude": 9
+    },
+    {
+     "city": "tokyo",
+     "moonAltitude": 9
+    },
+    {
+     "city": "athens",
+     "moonAltitude": 8
+    },
+    {
+     "city": "lagos",
+     "moonAltitude": 7
+    },
+    {
+     "city": "moscow",
+     "moonAltitude": 2
+    }
+   ]
+  },
+  {
+   "date": "2030-12-09",
+   "peak": "2030-12-09T22:27:32.805Z",
+   "kind": "penumbral",
+   "totalMinutes": 0,
+   "partialMinutes": 0,
+   "cities": [
+    {
+     "city": "cairo",
+     "moonAltitude": 78
+    },
+    {
+     "city": "athens",
+     "moonAltitude": 74
+    },
+    {
+     "city": "tunis",
+     "moonAltitude": 72
+    },
+    {
+     "city": "istanbul",
+     "moonAltitude": 70
+    },
+    {
+     "city": "rome",
+     "moonAltitude": 68
+    },
+    {
+     "city": "lagos",
+     "moonAltitude": 67
+    },
+    {
+     "city": "riyadh",
+     "moonAltitude": 66
+    },
+    {
+     "city": "madrid",
+     "moonAltitude": 62
+    },
+    {
+     "city": "nairobi",
+     "moonAltitude": 62
+    },
+    {
+     "city": "seville",
+     "moonAltitude": 61
+    },
+    {
+     "city": "paris",
+     "moonAltitude": 59
+    },
+    {
+     "city": "lisbon",
+     "moonAltitude": 59
+    },
+    {
+     "city": "berlin",
+     "moonAltitude": 58
+    },
+    {
+     "city": "dubai",
+     "moonAltitude": 58
+    },
+    {
+     "city": "london",
+     "moonAltitude": 56
+    },
+    {
+     "city": "moscow",
+     "moonAltitude": 53
+    },
+    {
+     "city": "windhoek",
+     "moonAltitude": 45
+    },
+    {
+     "city": "johannesburg",
+     "moonAltitude": 41
+    },
+    {
+     "city": "mumbai",
+     "moonAltitude": 41
+    },
+    {
+     "city": "delhi",
+     "moonAltitude": 39
+    },
+    {
+     "city": "reykjavik",
+     "moonAltitude": 38
+    },
+    {
+     "city": "cape-town",
+     "moonAltitude": 33
+    },
+    {
+     "city": "bangkok",
+     "moonAltitude": 14
+    },
+    {
+     "city": "new-york",
+     "moonAltitude": 10
+    },
+    {
+     "city": "beijing",
+     "moonAltitude": 9
+    },
+    {
+     "city": "sao-paulo",
+     "moonAltitude": 9
+    },
+    {
+     "city": "singapore",
+     "moonAltitude": 7
+    },
+    {
+     "city": "toronto",
+     "moonAltitude": 7
+    },
+    {
+     "city": "seoul",
+     "moonAltitude": 1
+    },
+    {
+     "city": "chicago",
+     "moonAltitude": 1
+    }
+   ]
+  }
+ ],
+ "tests": [
+  {
+   "date": "2030-06-01",
+   "city": "athens",
+   "label": "Athens, annular phase, 1 June 2030",
+   "publishedSeconds": 240,
+   "source": "Wikipedia, Solar eclipse of June 1, 2030 (4 min 0 s)",
+   "url": "https://en.wikipedia.org/wiki/Solar_eclipse_of_June_1,_2030",
+   "ourSeconds": 242,
+   "differenceSeconds": 2
+  },
+  {
+   "date": "2030-06-01",
+   "city": "istanbul",
+   "label": "Istanbul, annular phase, 1 June 2030",
+   "publishedSeconds": 271,
+   "source": "Wikipedia, Solar eclipse of June 1, 2030 (4 min 31 s)",
+   "url": "https://en.wikipedia.org/wiki/Solar_eclipse_of_June_1,_2030",
+   "ourSeconds": 268,
+   "differenceSeconds": -3
+  },
+  {
+   "date": "2030-11-25",
+   "city": "windhoek",
+   "label": "Windhoek, totality, 25 November 2030",
+   "publishedSeconds": 112,
+   "source": "Space.com, Total solar eclipse 2030 (about 1 min 52 s)",
+   "url": "https://space.com/stargazing/solar-eclipses/total-solar-eclipse-2030-everything-you-need-to-know-about-totality-in-southern-africa-and-southeast-australia",
+   "ourSeconds": 117,
+   "differenceSeconds": 5
+  },
+  {
+   "date": "2028-01-26",
+   "city": "seville",
+   "label": "Seville, annular phase, 26 January 2028",
+   "publishedSeconds": 420,
+   "source": "Instituto Geográfico Nacional, Spain (about 7 min)",
+   "url": "https://astronomia.ign.es/en/eclipses-de-sol-y-luna/eclipse-anular-sol-de-26-de-enero-2028",
+   "ourSeconds": 431,
+   "differenceSeconds": 11
+  }
+ ],
+ "lunarTests": [
+  {
+   "date": "2028-12-31",
+   "label": "Total lunar eclipse, 31 December 2028",
+   "publishedMinutes": 71,
+   "source": "National Eclipse, lunar eclipse calendar (1 h 11 min)",
+   "url": "https://nationaleclipse.com/calendar_lunar.html",
+   "ourMinutes": 72,
+   "differenceMinutes": 1
+  },
+  {
+   "date": "2029-06-26",
+   "label": "Total lunar eclipse, 26 June 2029",
+   "publishedMinutes": 102,
+   "source": "National Eclipse, lunar eclipse calendar (1 h 42 min)",
+   "url": "https://nationaleclipse.com/calendar_lunar.html",
+   "ourMinutes": 103,
+   "differenceMinutes": 1
+  },
+  {
+   "date": "2029-12-20",
+   "label": "Total lunar eclipse, 20 December 2029",
+   "publishedMinutes": 54,
+   "source": "National Eclipse, lunar eclipse calendar (54 min)",
+   "url": "https://nationaleclipse.com/calendar_lunar.html",
+   "ourMinutes": 55,
+   "differenceMinutes": 1
+  }
+ ]
+}

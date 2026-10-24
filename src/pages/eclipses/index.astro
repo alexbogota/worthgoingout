@@ -1,0 +1,96 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { eclipseList, cityBySlug, solarLabel, lunarLabel, upcoming, dayLabel, utcTime, roughMin } from '../../lib/eclipses';
+import { localTime } from '../../lib/sky';
+import { longDate } from '../../lib/site';
+
+const solar = upcoming(eclipseList.solar);
+const lunar = upcoming(eclipseList.lunar);
+const name = (slug: string) => cityBySlug[slug].name;
+const central = (e: (typeof solar)[number]) => e.cities.filter((c) => c.kind !== 'partial');
+const partial = (e: (typeof solar)[number]) => e.cities.filter((c) => c.kind === 'partial');
+const lunarNote: Record<string, string> = {
+  total: 'The whole Moon passes into Earth’s shadow and usually turns a dull red.',
+  partial: 'Part of the Moon passes into Earth’s dark shadow and looks bitten.',
+  penumbral: 'The Moon only enters Earth’s faint outer shadow. Most people will not notice any change.',
+};
+const anchor = (kind: string, date: string) => `${kind}-${date}`;
+---
+<Layout
+  title="Every solar and lunar eclipse to 2030, and what your city sees"
+  description="Every solar and lunar eclipse from now to the end of 2030, with what 47 cities around the world see of each one. Calculated by us and checked against published figures."
+>
+  <div class="wrap page">
+    <h1>Every eclipse to 2030, and what your city sees</h1>
+    <p class="stamp">Calculated {longDate(eclipseList.calculatedOn)} with {eclipseList.method}. Times in UTC unless marked local.</p>
+    <p class="lead measure">There are {solar.length} solar and {lunar.length} lunar eclipses between now and the end of 2030. For each one we worked out what {eclipseList.cities.length} cities around the world get, so you can see at a glance which ones are worth planning for.</p>
+
+    <nav class="jump measure" aria-label="On this page">
+      <a href="#solar">Solar eclipses</a>
+      <a href="#lunar">Lunar eclipses</a>
+      <a href="#how">How we worked it out</a>
+    </nav>
+
+    <h2 id="solar">Solar eclipses</h2>
+    <p class="measure">Only a total eclipse turns day into night, and only inside a narrow path. An annular eclipse leaves a bright ring of Sun, so the sky stays light. A partial eclipse takes a bite out of the Sun. All three need eclipse glasses, except during the minutes of totality itself.</p>
+    <ol class="events">
+      {solar.map((e) => (
+        <li id={anchor('solar', e.date)}>
+          <div class="head">
+            <h3>{solarLabel[e.kind]}, {dayLabel(e.peak)}</h3>
+            <p class="meta">Greatest eclipse {utcTime(e.peak)} UTC{e.centre && <>, at {Math.abs(e.centre.lat)}° {e.centre.lat >= 0 ? 'N' : 'S'}, {Math.abs(e.centre.lon)}° {e.centre.lon >= 0 ? 'E' : 'W'}</>}</p>
+          </div>
+          {e.date === '2027-08-02' && <p><a class="link" href="/eclipse-2027/">Our full guide to this eclipse</a>, with 30 places on and near the path.</p>}
+          {central(e).length > 0 && (
+            <p><strong>{e.kind === 'total' ? 'Totality' : 'The ring'} from our list of cities:</strong> {central(e).map((c, i) => <>{i > 0 && '; '}{name(c.city)} ({roughMin(c.centralSeconds!)}, {localTime(c.peak, cityBySlug[c.city].tz).time} local)</>)}.</p>
+          )}
+          {partial(e).length > 0 ? (
+            <p><strong>Partial from:</strong> {partial(e).map((c, i) => <>{i > 0 && ', '}{name(c.city)} {Math.round(c.obscuration * 100)}%</>)}.</p>
+          ) : central(e).length === 0 && <p class="muted">None of our {eclipseList.cities.length} cities sees this one. It is visible mainly from high latitudes or the ocean.</p>}
+        </li>
+      ))}
+    </ol>
+    <p class="small muted measure">Percentages are how much of the Sun’s disc is covered at most. We list a city only if the Sun is above its horizon at the time.</p>
+
+    <h2 id="lunar">Lunar eclipses</h2>
+    <p class="measure">A lunar eclipse is safe to watch with your eyes alone and is visible from the whole night side of the Earth, so far more people see it than a solar eclipse. You only need the Moon to be above your horizon.</p>
+    <ol class="events">
+      {lunar.map((e) => (
+        <li id={anchor('lunar', e.date)}>
+          <div class="head">
+            <h3>{lunarLabel[e.kind]}, {dayLabel(e.peak)}</h3>
+            <p class="meta">Middle of the eclipse {utcTime(e.peak)} UTC{e.totalMinutes > 0 && <>. Totality lasts about {e.totalMinutes} minutes</>}{e.partialMinutes > 0 && <>. Partial phases {e.totalMinutes > 0 ? 'and totality together ' : ''}about {Math.floor(e.partialMinutes / 60)} h {e.partialMinutes % 60} min</>}.</p>
+          </div>
+          <p>{lunarNote[e.kind]}</p>
+          <p><strong>Moon up at mid-eclipse in:</strong> {e.cities.map((c, i) => <>{i > 0 && ', '}{name(c.city)}</>)}.</p>
+        </li>
+      ))}
+    </ol>
+
+    <div class="prose measure">
+      <h2 id="how">How we worked it out</h2>
+      <p>We used the open-source Astronomy Engine library to find every eclipse and to calculate, for each city, how much of the Sun is covered, for how long the Sun is fully covered or ringed, and whether the Moon is up during a lunar eclipse. The full method and the comparison with published figures are on <a href="/how-we-make-our-numbers/#eclipse-list">how we make our numbers</a>.</p>
+      <ul>
+        <li>Cities are a single point at the centre. Suburbs can see a different length, and near the edge of a path, none at all.</li>
+        <li>Lengths on this page are not corrected the way our 2027 table is, so they can be a few seconds long. They are close enough to choose an eclipse; check a detailed local source before you choose a spot.</li>
+        <li>Clouds, buildings and hills are not included.</li>
+      </ul>
+      <h2>Sources</h2>
+      <ul class="sources">
+        <li>Our calculation, {eclipseList.method}, run on {longDate(eclipseList.calculatedOn)}.</li>
+        <li>Types and dates checked against NASA, <a href="https://science.nasa.gov/eclipses/future-eclipses/">Future eclipses</a> (2027), and National Eclipse, <a href="https://nationaleclipse.com/calendar_solar.html">solar</a> and <a href="https://nationaleclipse.com/calendar_lunar.html">lunar</a> eclipse calendars (to 2030). All match.</li>
+      </ul>
+    </div>
+  </div>
+</Layout>
+
+<style>
+  .jump { display: flex; flex-wrap: wrap; gap: 8px 24px; margin: 1.6rem 0 0; }
+  .jump a { color: var(--link); text-underline-offset: 3px; }
+  .events { list-style: none; padding: 0; margin: 1rem 0 0; border-top: 2px solid var(--line); }
+  .events li { padding: 22px 0; border-bottom: 1px solid var(--line); max-width: 78ch; }
+  .events h3 { margin: 0 0 4px; }
+  .events .meta { color: var(--muted); font-size: 0.9375rem; margin-bottom: 0.7em; }
+  .events p { margin-bottom: 0.5em; }
+  .events strong { color: var(--heading); }
+</style>

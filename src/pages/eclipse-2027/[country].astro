@@ -1,0 +1,55 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import countries from '../../../data/eclipse-countries.json';
+import { eclipse, fmtDuration, localTime, placeNote } from '../../lib/sky';
+
+export function getStaticPaths() {
+  return countries.countries.map((c) => ({ params: { country: c.slug }, props: { c } }));
+}
+const { c } = Astro.props;
+const places = eclipse.places.filter((p) => c.include.includes(p.country)).sort((a, b) => (b.totalitySeconds ?? 0) - (a.totalitySeconds ?? 0) || b.obscuration - a.obscuration);
+const others = countries.countries.filter((o) => o.slug !== c.slug);
+---
+<Layout title={c.title} description={c.description}>
+  <article class="wrap page prose">
+    <h1>{c.title}</h1>
+    <p class="stamp">Last reviewed 24 October 2026. Place figures calculated by us with {eclipse.method}.</p>
+    <p class="lead measure">{c.lead}</p>
+
+    <h2>Place by place</h2>
+    <ul class="board">
+      {places.map((p) => {
+        const t = localTime(p.totalBegin ?? p.peak, p.tz);
+        return (
+          <li>
+            <span class="when">{p.kind === 'total' ? 'Starts' : 'Deepest'} {t.time}<br />{t.offset}</span>
+            <div>
+              <p class="what">{p.name}{p.country !== c.name && <span class="muted small"> ({p.country})</span>}</p>
+              <p class="why">{p.kind === 'total' ? `Totality ${fmtDuration(p.totalitySeconds!)}. Sun ${p.sunAltitudeAtPeak}° up.` : `No totality: ${(p.obscuration * 100).toFixed(1)}% of the Sun covered at most. Sun ${p.sunAltitudeAtPeak}° up.`}</p>
+              {placeNote(p) && <p class="why small">{placeNote(p)}</p>}
+            </div>
+            <span class={`verdict ${p.kind === 'total' ? 'go' : 'skip'}`}>{p.kind === 'total' ? 'In path' : 'Misses'}</span>
+          </li>
+        );
+      })}
+    </ul>
+
+    <h2>What to know</h2>
+    <ul class="measure">{c.points.map((t) => <li>{t}</li>)}</ul>
+    <p class="measure">{c.extra}</p>
+
+    <div class="callout measure">
+      <p><strong>Eye safety.</strong> Use eclipse glasses that meet ISO 12312-2 for every partial phase. Take them off only when the Sun is completely covered, and put them back on as soon as it reappears. <a href="/guides/eclipse-glasses/">How to tell if your glasses are safe.</a></p>
+    </div>
+
+    <p class="actions"><a class="btn" href="/eclipse-2027/where-to-watch/">All 30 places we calculated</a> <a class="btn quiet" href="/eclipse-2027/">The eclipse guide</a></p>
+    <p class="small">Other countries: {others.map((o, i) => <>{i > 0 && ', '}<a href={`/eclipse-2027/${o.slug}/`}>{o.name}</a></>)}.</p>
+
+    <h2>Sources</h2>
+    <ul class="sources">
+      <li>Our calculation, {eclipse.method}, run on {eclipse.calculatedOn}. <a href="/how-we-make-our-numbers/#eclipse">How we tested it.</a></li>
+      <li>Path and greatest-eclipse figures: EclipseWise, <a href="https://www.eclipsewise.com/solar/SEprime/2001-2100/SE2027Aug02Tprime.html">Total Solar Eclipse of 2027 Aug 02</a>.</li>
+      {c.sources.map(([label, url]) => <li><a href={url}>{label}</a>.</li>)}
+    </ul>
+  </article>
+</Layout>

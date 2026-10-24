@@ -1,0 +1,14 @@
+{
+  "note": "Published figures we compare our eclipse list with. Durations of the central phase (total or annular) at a city, and totality of lunar eclipses. Read 24 October 2026.",
+  "tests": [
+    { "date": "2030-06-01", "city": "athens", "label": "Athens, annular phase, 1 June 2030", "publishedSeconds": 240, "source": "Wikipedia, Solar eclipse of June 1, 2030 (4 min 0 s)", "url": "https://en.wikipedia.org/wiki/Solar_eclipse_of_June_1,_2030" },
+    { "date": "2030-06-01", "city": "istanbul", "label": "Istanbul, annular phase, 1 June 2030", "publishedSeconds": 271, "source": "Wikipedia, Solar eclipse of June 1, 2030 (4 min 31 s)", "url": "https://en.wikipedia.org/wiki/Solar_eclipse_of_June_1,_2030" },
+    { "date": "2030-11-25", "city": "windhoek", "label": "Windhoek, totality, 25 November 2030", "publishedSeconds": 112, "source": "Space.com, Total solar eclipse 2030 (about 1 min 52 s)", "url": "https://space.com/stargazing/solar-eclipses/total-solar-eclipse-2030-everything-you-need-to-know-about-totality-in-southern-africa-and-southeast-australia" },
+    { "date": "2028-01-26", "city": "seville", "label": "Seville, annular phase, 26 January 2028", "publishedSeconds": 420, "source": "Instituto Geográfico Nacional, Spain (about 7 min)", "url": "https://astronomia.ign.es/en/eclipses-de-sol-y-luna/eclipse-anular-sol-de-26-de-enero-2028" }
+  ],
+  "lunar": [
+    { "date": "2028-12-31", "label": "Total lunar eclipse, 31 December 2028", "publishedMinutes": 71, "source": "National Eclipse, lunar eclipse calendar (1 h 11 min)", "url": "https://nationaleclipse.com/calendar_lunar.html" },
+    { "date": "2029-06-26", "label": "Total lunar eclipse, 26 June 2029", "publishedMinutes": 102, "source": "National Eclipse, lunar eclipse calendar (1 h 42 min)", "url": "https://nationaleclipse.com/calendar_lunar.html" },
+    { "date": "2029-12-20", "label": "Total lunar eclipse, 20 December 2029", "publishedMinutes": 54, "source": "National Eclipse, lunar eclipse calendar (54 min)", "url": "https://nationaleclipse.com/calendar_lunar.html" }
+  ]
+}

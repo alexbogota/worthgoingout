@@ -1,0 +1,57 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+import MoreGuides from '../../../components/MoreGuides.astro';
+const levels = [
+  ['0–2', 'Quiet', 'The aurora stays far north and is faint. You need to be at high latitude, such as northern Norway, Iceland or Alaska.'],
+  ['3–5', 'Active', 'Brighter and moving. From a good spot in the auroral zone this can be a very pleasing show.'],
+  ['6–7', 'Strong storm', 'Can be seen from the northern edge of the United States and similar latitudes elsewhere.'],
+  ['8–9', 'Severe storm', 'Can be seen overhead from the northern states of the United States, and low on the horizon much further south.'],
+];
+---
+<Layout title="How to read an aurora forecast: the Kp index explained" description="What the Kp number in an aurora forecast means, how far from the pole each level reaches, the best hours and seasons, and how the Moon and darkness change what you see.">
+  <article class="wrap page prose">
+    <h1>How to read an aurora forecast</h1>
+    <p class="stamp">Last reviewed 24 October 2026. Based on guidance from NOAA’s Space Weather Prediction Center.</p>
+    <p class="lead measure">Aurora forecasts are built around one number, the Kp index. It tells you how disturbed the Earth’s magnetic field is, and so how far from the pole the northern lights are likely to reach. It does not tell you whether it will be cloudy.</p>
+
+    <h2>What the Kp number means</h2>
+    <p class="measure">Kp runs from 0 to 9. The higher it is, the brighter the aurora and the further it spreads towards the equator.</p>
+    <ul class="board">
+      {levels.map(([kp, name, text]) => (
+        <li class="kp"><span class="when">Kp {kp}</span><div><p class="what">{name}</p><p class="why">{text}</p></div></li>
+      ))}
+    </ul>
+    <p class="measure">As a rough rule from NOAA, the southern edge of the aurora sits at about 66° magnetic latitude when Kp is 0 and moves about 2° towards the equator for each step, to around 48° at Kp 9. Magnetic latitude is not the same as the latitude on a map: in North America it is higher than map latitude, in Europe lower. Forecast maps take care of this for you.</p>
+    <p class="measure">Those maps show the furthest point from which the aurora may be <em>seen</em>, low on the horizon, not where it is overhead. The aurora itself can be hundreds of kilometres further north.</p>
+
+    <h2>When to look</h2>
+    <ul class="measure">
+      <li><strong>Time of night:</strong> the best displays usually come within an hour or two of local midnight, roughly 10 pm to 2 am. In a strong storm the window widens.</li>
+      <li><strong>Season:</strong> NOAA says the best seasons are around the spring and autumn equinoxes, in March and September. Far north in summer the sky never gets dark, and the aurora is only visible when it is dark.</li>
+      <li><strong>The Moon:</strong> a full Moon makes the aurora look fainter, though it is not. A dark, moonless night shows more.</li>
+    </ul>
+
+    <h2>Where to stand</h2>
+    <ul class="measure">
+      <li>Get away from town lights and find a clear view to the north (to the south in the southern hemisphere).</li>
+      <li>Height helps. A hill can let you see aurora much further north, over the horizon.</li>
+      <li>From a good spot inside the auroral zone, even Kp 3 or 4 can give a fine display. You do not need a big storm if you go to the right place.</li>
+    </ul>
+
+    <h2>Where to find the forecast</h2>
+    <p class="measure">NOAA’s Space Weather Prediction Center publishes the official Kp forecast and a 30-minute aurora forecast, free. Check it on the day, then check the cloud forecast for where you are: a strong aurora behind clouds is invisible.</p>
+    <p class="actions"><a class="btn quiet" href="https://www.swpc.noaa.gov/products/aurora-30-minute-forecast">NOAA 30-minute aurora forecast</a></p>
+
+    <MoreGuides />
+
+    <h2>Sources</h2>
+    <ul class="sources">
+      <li>NOAA Space Weather Prediction Center, <a href="https://www.spaceweather.gov/content/tips-viewing-aurora">Tips on viewing the aurora</a>: the Kp levels, the 66° to 48° rule, best hours, seasons, the Moon, location and maps.</li>
+    </ul>
+  </article>
+</Layout>
+
+<style>
+  .board li.kp { grid-template-columns: 9.5rem 1fr; }
+  @media (max-width: 640px) { .board li.kp { grid-template-columns: 1fr; } }
+</style>
