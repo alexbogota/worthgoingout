@@ -34,6 +34,19 @@ jobs:
         run: |
           set -o pipefail
           npm run check 2>&1 | tee check.log || { echo "::error::$(tail -c 1500 check.log | tr '\n' ' ')"; exit 1; }
+      - name: Write the sign-up config (key from GitHub Secrets, never in the code)
+        env:
+          SUBSCRIBE_TOKEN: ${{ secrets.SUBSCRIBE_TOKEN }}
+          SUBSCRIBE_REPO: ${{ vars.SUBSCRIBE_REPO || 'alexbogota/worthgoingout-subscribers' }}
+          SUBSCRIBE_SALT: ${{ secrets.FTP_PASSWORD }}
+        run: |
+          node -e "
+            const crypto = require('crypto');
+            const q = (s) => JSON.stringify(String(s || ''));
+            const salt = crypto.createHash('sha256').update('wgo' + (process.env.SUBSCRIBE_SALT || '')).digest('hex').slice(0, 24);
+            require('fs').writeFileSync('dist/private/config.php', '<?php return [\'token\' => ' + q(process.env.SUBSCRIBE_TOKEN) + ', \'repo\' => ' + q(process.env.SUBSCRIBE_REPO) + ', \'salt\' => ' + q(salt) + '];\n');
+          "
+          test -f dist/private/config.php && echo "config written (key present: $([ -n "$SUBSCRIBE_TOKEN" ] && echo yes || echo no))"
       - name: Upload dist/ to the hosting over FTPS
         uses: SamKirkland/FTP-Deploy-Action@v4.3.5
         with:
@@ -44,3 +57,12 @@ jobs:
           protocol: ftps
           local-dir: ./dist/
           server-dir: ${{ vars.FTP_SERVER_DIR || './' }}
+      - name: Check that the sign-up form works on the live site
+        run: |
+          sleep 5
+          out=$(curl -s -m 20 'https://worthgoingout.com/api/subscribe.php?ping=1' || true)
+          echo "$out"
+          echo "::notice title=Sign-up check::$out"
+          blocked=$(curl -s -o /dev/null -w '%{http_code}' -m 20 'https://worthgoingout.com/private/canary.txt' || true)
+          echo "::notice title=Private folder (should be 403)::$blocked"
+          if [ "$blocked" = "200" ]; then echo "::error::The private folder can be read from the web. Sign-ups would leak: fix .htaccess before using the form."; exit 1; fi

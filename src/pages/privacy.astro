@@ -6,13 +6,23 @@ import { site } from '../lib/site';
   <article class="wrap page prose">
     <h1>Privacy policy</h1>
     <p class="stamp">Last updated {site.legalUpdated}.</p>
-    <p class="lead measure">We built this site to collect as little as possible. We have no accounts, no comments, no newsletter form and no advertising scripts.</p>
+    <p class="lead measure">We built this site to collect as little as possible. We have no accounts, no comments and no advertising scripts. The only thing you can give us is your email address, if you sign up for our notes.</p>
 
     <h2>What we collect</h2>
     <ul class="measure">
       <li><strong>Server logs.</strong> Our web host records technical details of each request, such as IP address, time, page and browser type, for security and to keep the site running. We do not use them to identify you.</li>
       <li><strong>Email you send us.</strong> If you write to {site.email}, we keep your message and address to answer you, and delete them when they are no longer needed.</li>
     </ul>
+
+    <h2 id="emails">Email sign-ups</h2>
+    <ul class="measure">
+      <li><strong>What we keep:</strong> your email address, the topics you chose, the page you signed up on and the date. We do not keep your IP address.</li>
+      <li><strong>Why:</strong> only to send you the emails you asked for. We never sell or share the list.</li>
+      <li><strong>Where:</strong> in a private repository on GitHub (GitHub, Inc., United States), which only we can access. Our web host processes the form when you send it.</li>
+      <li><strong>Your consent:</strong> you tick a box to agree. You can withdraw it at any time: use the unsubscribe link in any email, or write to <a href={`mailto:${site.email}`}>{site.email}</a> and we will delete your address.</li>
+      <li><strong>How long:</strong> until you unsubscribe or ask us to delete it.</li>
+    </ul>
+    <p class="measure">If we start using an email service to send these notes, we will name it here before we do.</p>
 
     <h2>What is stored in your browser</h2>
     <p class="measure">If you choose the light or dark theme, we save that choice in your browser's local storage under the name <code>wgo-theme</code>. It never leaves your device. We do not set tracking cookies.</p>

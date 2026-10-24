@@ -1,4 +1,5 @@
 ---
+import SignupForm from '../../components/SignupForm.astro';
 import Photo from '../../components/Photo.astro';
 import Layout from '../../layouts/Layout.astro';
 import { eclipse, daysUntil, fmtDuration, localTime } from '../../lib/sky';
@@ -62,6 +63,8 @@ const t = (p: typeof luxor) => localTime(p.totalBegin!, p.tz);
 
     <p class="actions"><a class="btn" href="/eclipse-2027/where-to-watch/">See every place we calculated</a></p>
     <p class="measure"><a href="/eclipse-2027/trip-planning/">Trip-planning checklist</a>. By country: <a href="/eclipse-2027/spain/">Spain</a>, <a href="/eclipse-2027/morocco/">Morocco</a>, <a href="/eclipse-2027/egypt/">Egypt</a>. Before you buy glasses, read <a href="/guides/eclipse-glasses/">how to tell if they are safe</a>. And if you miss this one, here is <a href="/eclipses/">every eclipse to 2030</a>.</p>
+
+    <SignupForm topic="eclipses" />
 
     <h2 id="sources">Sources</h2>
     <ul class="sources">

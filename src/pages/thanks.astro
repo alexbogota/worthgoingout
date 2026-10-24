@@ -1,0 +1,18 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+<Layout title="Thanks for signing up" description="You are on the Worth Going Out email list. We will write before an eclipse, a strong meteor shower or a dark week worth planning for." noindex>
+  <article class="wrap page prose">
+    <h1 id="title">Thanks, you are on the list</h1>
+    <p class="lead measure" id="text">We will write before an eclipse, a strong meteor shower or a dark week worth planning for. You can unsubscribe at any time.</p>
+    <p class="measure"><a href="/">Back to the home page</a> or see <a href="/meteor-showers/">what is worth going out for next</a>.</p>
+  </article>
+</Layout>
+<script>
+  // Without JavaScript the form lands here; if the server reported a problem, show it instead of the thank-you.
+  const err = new URLSearchParams(location.search).get('error');
+  if (err) {
+    document.getElementById('title')!.textContent = 'That did not work';
+    document.getElementById('text')!.textContent = `${err} Go back and try again.`;
+  }
+</script>

@@ -1,4 +1,5 @@
 ---
+import SignupForm from '../components/SignupForm.astro';
 import Photo from '../components/Photo.astro';
 import Layout from '../layouts/Layout.astro';
 import EclipseGraphic from '../components/EclipseGraphic.astro';
@@ -86,6 +87,8 @@ const nightText = (n: [string, string]) => {
     </ul>
     <p class="small"><a class="link" href="/guides/">All guides</a></p>
   </section>
+
+  <div class="wrap"><SignupForm /></div>
 
   <section class="wrap band">
     <h2>Numbers you can check</h2>
