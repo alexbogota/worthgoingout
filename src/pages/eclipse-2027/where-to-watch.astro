@@ -2,7 +2,7 @@
 import Crumbs from '../../components/Crumbs.astro';
 import Photo from '../../components/Photo.astro';
 import Layout from '../../layouts/Layout.astro';
-import { eclipse, fmtDuration, localTime, placeNote } from '../../lib/sky';
+import { eclipse, allPlaces, fmtDuration, localTime, placeNote } from '../../lib/sky';
 
 const MAX = 400; // seconds that fill a full bar
 const total = eclipse.places.filter((p) => p.kind === 'total').sort((a, b) => b.totalitySeconds! - a.totalitySeconds!);
@@ -28,6 +28,8 @@ const rows = (list: typeof eclipse.places) => list.map((p) => {
 
     <Photo id="corona-detail" wide />
 
+    <p class="measure">Looking for a city that is not here? <a href="/eclipse-2027/cities/">We calculated {allPlaces.length} cities</a>, from London to Dubai.</p>
+
     <h2>Places inside the path</h2>
     <table class="places">
       <caption class="sr">Places inside the path of totality, longest first</caption>
@@ -35,7 +37,7 @@ const rows = (list: typeof eclipse.places) => list.map((p) => {
       <tbody>
         {rows(total).map((p) => (
           <tr>
-            <th scope="row" data-label="Place">{p.name}<span class="country">{p.country}</span>{p.note && <span class="note">{p.note}</span>}</th>
+            <th scope="row" data-label="Place"><a href={`/eclipse-2027/${p.slug}/`}>{p.name}</a><span class="country">{p.country}</span>{p.note && <span class="note">{p.note}</span>}</th>
             <td data-label="Totality"><span class="len">{fmtDuration(p.totalitySeconds!)}</span><span class="bar" aria-hidden="true"><i style={`width:${Math.min(100, (p.totalitySeconds! / MAX) * 100)}%`}></i></span></td>
             <td data-label="Starts (local)">{p.start!.time} <span class="muted small">({p.start!.offset})</span></td>
             <td data-label="Sun height">{p.sunAltitudeAtPeak}°</td>
@@ -52,7 +54,7 @@ const rows = (list: typeof eclipse.places) => list.map((p) => {
       <tbody>
         {rows(outside).map((p) => (
           <tr>
-            <th scope="row" data-label="Place">{p.name}<span class="country">{p.country}</span><span class="note">{p.note}</span></th>
+            <th scope="row" data-label="Place"><a href={`/eclipse-2027/${p.slug}/`}>{p.name}</a><span class="country">{p.country}</span><span class="note">{p.note}</span></th>
             <td data-label="Sun covered at most">{(p.obscuration * 100).toFixed(1)}%</td>
             <td data-label="Greatest eclipse (local)">{p.peak.time} <span class="muted small">({p.peak.offset})</span></td>
             <td data-label="Sun height">{p.sunAltitudeAtPeak}°</td>

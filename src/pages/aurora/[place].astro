@@ -4,6 +4,7 @@ import Photo from '../../components/Photo.astro';
 import Layout from '../../layouts/Layout.astro';
 import DarkBars from '../../components/DarkBars.astro';
 import BookBlock from '../../components/BookBlock.astro';
+import MonthNav from '../../components/MonthNav.astro';
 import { aurora, seasonText, seasonNewMoons, MONTHS_LONG } from '../../lib/aurora';
 import { longDate } from '../../lib/site';
 export function getStaticPaths() {
@@ -20,6 +21,10 @@ const others = aurora.places.filter((o) => o.slug !== p.slug);
     <p class="stamp">{p.country}. Darkness calculated {longDate(aurora.calculatedOn)} with {aurora.method}.</p>
     <p class="lead measure">{p.intro} The sky here is dark enough for the aurora from {seasonText(p.season)}.</p>
     <Photo id={p.photo} />
+
+    <h2>Month by month</h2>
+    <p class="measure">Pick a month for dark-hour times, Moon dates and what to expect.</p>
+    <MonthNav base={`/aurora/${p.slug}/`} current={-1} good={p.season} label={`${p.name}: months`} />
 
     <h2>Hours of darkness, month by month</h2>
     <DarkBars dark={p.dark} season={p.season} />

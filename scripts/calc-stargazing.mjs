@@ -3,10 +3,11 @@
 // each New Moon in which the Moon is down for at least 80% of the dark hours (and at least MIN_HOURS). Writes data/stargazing.json. Run: npm run calc
 import * as A from 'astronomy-engine';
 import { readFileSync, writeFileSync } from 'node:fs';
+import { nightOf } from './lib-sun.mjs';
 const cfg = JSON.parse(readFileSync(new URL('../data/stargazing-places.json', import.meta.url), 'utf8'));
 const lib = JSON.parse(readFileSync(new URL('../node_modules/astronomy-engine/package.json', import.meta.url), 'utf8'));
-const FROM = new Date(process.env.FROM ?? '2026-11-01T00:00:00Z');
-const MONTHS = 14, STEP = 10 * 60000, MIN_HOURS = 4, MIN_SHARE = 0.8;
+const FROM = new Date(process.env.FROM ?? '2026-10-01T00:00:00Z');
+const MONTHS = 15, STEP = 10 * 60000, MIN_HOURS = 4, MIN_SHARE = 0.8;
 const GC = { ra: 17 + 45.7 / 60, dec: -29.0 }; // centre of the Milky Way (Sagittarius A*), J2000
 const alt = (body, t, obs) => { const e = A.Equator(body, t, obs, true, true); return A.Horizon(t, obs, e.ra, e.dec, 'normal').altitude; };
 function night(obs, lon, y, m, d) {
@@ -46,7 +47,16 @@ const places = cfg.places.map((p) => {
   for (let i = 0; i < MONTHS; i++) {
     const y = FROM.getUTCFullYear(), m = FROM.getUTCMonth() + i;
     const mid = night(obs, p.lon, y, m, 15);
-    months.push({ month: iso(y, m, 1).slice(0, 7), dark: mid.dark, core: mid.core });
+    const tw = nightOf(p.lat, p.lon, p.elevation, y, m, 15, -18, 30);
+    // When the Milky Way centre is at least 15 deg up in full darkness, on the 15th.
+    let coreFrom = null, coreTo = null;
+    const start = Date.UTC(y, m, 15, 12) - (p.lon / 15) * 3600000;
+    for (let ms = start; ms < start + 86400000; ms += STEP) {
+      const t = A.MakeTime(new Date(ms));
+      if (alt(A.Body.Sun, t, obs) > -18) continue;
+      if (A.Horizon(t, obs, GC.ra, GC.dec, 'normal').altitude >= 15) { coreFrom ??= new Date(ms).toISOString(); coreTo = new Date(ms).toISOString(); }
+    }
+    months.push({ month: iso(y, m, 1).slice(0, 7), dark: mid.dark, core: mid.core, dusk: tw.dusk, dawn: tw.dawn, coreFrom, coreTo });
   }
   return { ...p, months, windows };
 });

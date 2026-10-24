@@ -4,13 +4,11 @@ import Photo from '../../components/Photo.astro';
 import Layout from '../../layouts/Layout.astro';
 import BookBlock from '../../components/BookBlock.astro';
 import countries from '../../../data/eclipse-countries.json';
-import { eclipse, fmtDuration, localTime, placeNote } from '../../lib/sky';
+import { eclipse, allPlaces, fmtDuration, localTime, placeNote } from '../../lib/sky';
 
-export function getStaticPaths() {
-  return countries.countries.map((c) => ({ params: { country: c.slug }, props: { c } }));
-}
+interface Props { c: (typeof countries.countries)[number] }
 const { c } = Astro.props;
-const places = eclipse.places.filter((p) => c.include.includes(p.country)).sort((a, b) => (b.totalitySeconds ?? 0) - (a.totalitySeconds ?? 0) || b.obscuration - a.obscuration);
+const places = allPlaces.filter((p) => c.include.includes(p.country)).sort((a, b) => (b.totalitySeconds ?? 0) - (a.totalitySeconds ?? 0) || b.obscuration - a.obscuration);
 const others = countries.countries.filter((o) => o.slug !== c.slug);
 ---
 <Layout photo={c.photo} title={c.title} description={c.description}>
@@ -29,7 +27,7 @@ const others = countries.countries.filter((o) => o.slug !== c.slug);
           <li>
             <span class="when">{p.kind === 'total' ? 'Starts' : 'Deepest'} {t.time}<br />{t.offset}</span>
             <div>
-              <p class="what">{p.name}{p.country !== c.name && <span class="muted small"> ({p.country})</span>}</p>
+              <p class="what"><a href={`/eclipse-2027/${p.slug}/`}>{p.name}</a>{p.country !== c.name && <span class="muted small"> ({p.country})</span>}</p>
               <p class="why">{p.kind === 'total' ? `Totality ${fmtDuration(p.totalitySeconds!)}. Sun ${p.sunAltitudeAtPeak}° up.` : `No totality: ${(p.obscuration * 100).toFixed(1)}% of the Sun covered at most. Sun ${p.sunAltitudeAtPeak}° up.`}</p>
               {placeNote(p) && <p class="why small">{placeNote(p)}</p>}
             </div>

@@ -1,0 +1,93 @@
+---
+import Crumbs from '../Crumbs.astro';
+import Layout from '../../layouts/Layout.astro';
+import SignupForm from '../SignupForm.astro';
+import countries from '../../../data/eclipse-countries.json';
+import { allPlaces, fmtDuration, localTime, nearestTotal, type EclipsePlace } from '../../lib/sky';
+interface Props { p: EclipsePlace }
+const { p } = Astro.props;
+const total = p.kind === 'total';
+const pct = (p.obscuration * 100).toFixed(1);
+const t = (iso: string | null) => (iso ? localTime(iso, p.tz).time : null);
+const offset = localTime(p.peak, p.tz).offset;
+const near = nearestTotal(p);
+const country = countries.countries.find((c) => c.include.includes(p.country));
+const siblings = allPlaces.filter((q) => q.country === p.country && q.slug !== p.slug).sort((a, b) => a.name.localeCompare(b.name));
+const minutesLong = Math.round((new Date(p.partialEnd).getTime() - new Date(p.partialBegin).getTime()) / 60000);
+const startsBeforeSunrise = p.sunAltitudeAtStart < 0;
+const endsAfterSunset = p.sunAltitudeAtEnd < 0;
+const headline = total ? `${fmtDuration(p.totalitySeconds!)} of totality` : `${pct}% of the Sun covered`;
+const title = `2 August 2027 solar eclipse in ${p.name}: ${headline}`;
+const description = total
+  ? `${p.name}, ${p.country}, is inside the path of totality on 2 August 2027: ${fmtDuration(p.totalitySeconds!)} of total eclipse from ${t(p.totalBegin)} local time. Times, Sun height and what to know.`
+  : `${p.name}, ${p.country}, sees a partial eclipse on 2 August 2027: up to ${pct}% of the Sun covered at ${t(p.peak)} local time. Start and end times, where to look, and the nearest place with totality.`;
+---
+<Layout title={title} description={description} photo={total ? 'corona-spain-2026' : 'partial-sunset'}>
+  <article class="wrap page prose">
+    <Crumbs items={[['Eclipse 2027', '/eclipse-2027/'], ['Cities', '/eclipse-2027/cities/'], [p.name, `/eclipse-2027/${p.slug}/`]]} />
+    <h1>The 2 August 2027 eclipse in {p.name}</h1>
+    <p class="stamp">{p.country}. Calculated by us for the city centre; times are local ({offset}).</p>
+
+    <div class="answer">
+      <span class={`verdict ${total ? 'go' : 'maybe'}`}>{total ? 'Totality' : 'Partial only'}</span>
+      <p class="lead">{total
+        ? <>Yes, {p.name} is inside the path of totality. The Sun is completely covered for <strong>{fmtDuration(p.totalitySeconds!)}</strong>, from {t(p.totalBegin)} to {t(p.totalEnd)} local time.</>
+        : <>{p.name} is outside the path of totality. At most <strong>{pct}%</strong> of the Sun is covered, at {t(p.peak)} local time. The sky will not go dark.</>}</p>
+    </div>
+
+    <h2>Times in {p.name}</h2>
+    <table class="plain times">
+      <tbody>
+        <tr><th scope="row">Eclipse begins</th><td>{startsBeforeSunrise ? <>already under way at sunrise</> : t(p.partialBegin)}</td></tr>
+        {total && <tr><th scope="row">Totality begins</th><td>{t(p.totalBegin)}</td></tr>}
+        <tr><th scope="row">{total ? 'Middle of totality' : 'Greatest eclipse'}</th><td>{t(p.peak)}</td></tr>
+        {total && <tr><th scope="row">Totality ends</th><td>{t(p.totalEnd)}</td></tr>}
+        <tr><th scope="row">Eclipse ends</th><td>{endsAfterSunset ? <>after sunset</> : t(p.partialEnd)}</td></tr>
+      </tbody>
+    </table>
+    <ul class="measure">
+      <li>At {total ? 'totality' : 'greatest eclipse'} the Sun is <strong>{p.sunAltitudeAtPeak}° above the horizon, in the {p.sunDirectionAtPeak}</strong>{p.sunAltitudeAtPeak < 20 ? '. That is low: find a spot with a clear, open view in that direction.' : p.sunAltitudeAtPeak > 65 ? '. That is nearly overhead, so you will be looking almost straight up.' : '.'}</li>
+      {!startsBeforeSunrise && !endsAfterSunset && <li>The whole eclipse, from first bite to last, lasts about {Math.floor(minutesLong / 60)} h {minutesLong % 60} min.</li>}
+      {!total && near && <li>The nearest place on our list with totality is <a href={`/eclipse-2027/${near.place.slug}/`}>{near.place.name}</a>, {near.place.country}, about {near.km.toLocaleString('en-GB')} km away in a straight line, with {fmtDuration(near.place.totalitySeconds!)} of totality.</li>}
+      {total && (p.totalitySeconds ?? 0) < 120 && <li>{p.name} is near the edge of the path. A few kilometres can change the length a lot; going towards the centre line adds time.</li>}
+    </ul>
+
+    <h2>Is it worth going out?</h2>
+    {total
+      ? <p class="measure">Without question, if the sky is clear. Totality is the only time you can look at the Sun without protection and see its corona. Use eclipse glasses for the partial phases before and after.</p>
+      : p.obscuration >= 0.9
+        ? <p class="measure">Yes, with eclipse glasses. With {pct}% covered you will notice the light change, but it stays daytime. If you can travel, totality is a completely different experience{near ? <>: {near.place.name} is the closest place on our list</> : ''}.</p>
+        : <p class="measure">Worth a look with eclipse glasses or a pinhole projector, especially around {t(p.peak)}. At {pct}% most people would not notice the dimming without them.</p>}
+
+    <div class="callout measure">
+      <p><strong>Never look at the partly covered Sun without eclipse glasses that meet ISO 12312-2.</strong>{total ? ' Only during totality itself is it safe to look without them.' : ' In this city there is no totality, so you need them the whole time.'} <a href="/guides/eclipse-glasses/">How to tell if your glasses are safe.</a></p>
+    </div>
+
+    <SignupForm topic="eclipses" />
+
+    {country && <p class="measure"><a href={`/eclipse-2027/${country.slug}/`}>The eclipse in {country.name}, place by place</a>.</p>}
+    {siblings.length > 0 && <>
+      <h2>Other places in {p.country}</h2>
+      <p class="measure siblings">{siblings.map((q, i) => <>{i > 0 && ', '}<a href={`/eclipse-2027/${q.slug}/`}>{q.name}</a></>)}</p>
+    </>}
+    <p class="small"><a href="/eclipse-2027/cities/">All {allPlaces.length} places we calculated</a>. <a href="/eclipse-2027/">The 2027 eclipse guide</a>.</p>
+
+    <h2>Sources</h2>
+    <ul class="sources">
+      <li>Our calculation with Astronomy Engine for the city centre at sea level. For 12 big cities our times agree with National Eclipse to within about 10 seconds and the share of the Sun covered to within 0.1 percentage points. <a href="/how-we-make-our-numbers/#eclipse-cities">The comparison.</a></li>
+      <li>Local times use the time-zone rules in force today, which can change before 2027.</li>
+    </ul>
+  </article>
+</Layout>
+<style>
+  .answer { display: flex; gap: 18px; align-items: flex-start; border: 1px solid var(--line); background: var(--panel); border-radius: 6px; padding: 18px 20px; max-width: 66ch; margin: 1.2rem 0 0.5rem; }
+  .answer .lead { margin: 0; }
+  .answer .verdict { flex: none; margin-top: 4px; }
+  .times { max-width: 420px; }
+  .plain { width: 100%; border-collapse: collapse; margin: 0.6rem 0 1.2rem; }
+  .plain th, .plain td { text-align: left; padding: 9px 14px 9px 0; border-bottom: 1px solid var(--line); }
+  .plain tbody th { font-weight: 700; color: var(--heading); }
+  .plain td { font-variant-numeric: tabular-nums; }
+  .siblings { line-height: 1.9; }
+  @media (max-width: 560px) { .answer { flex-direction: column; } }
+</style>

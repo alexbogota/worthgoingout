@@ -1,0 +1,47 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Crumbs from '../../components/Crumbs.astro';
+import { allPlaces, fmtDuration, localTime } from '../../lib/sky';
+const byCountry = new Map<string, typeof allPlaces>();
+for (const p of [...allPlaces].sort((a, b) => a.name.localeCompare(b.name))) {
+  if (!byCountry.has(p.country)) byCountry.set(p.country, []);
+  byCountry.get(p.country)!.push(p);
+}
+const countries = [...byCountry.keys()].sort();
+const totals = allPlaces.filter((p) => p.kind === 'total').length;
+const slugify = (s: string) => s.toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '').replace(/[^a-z]+/g, '-');
+---
+<Layout photo="partial-sunset" title="2 August 2027 eclipse: what every city sees" description={`Times and how much of the Sun is covered on 2 August 2027 in ${allPlaces.length} cities across Europe, Africa and the Middle East, from London and Paris to Cairo and Dubai. ${totals} of them get totality.`}>
+  <div class="wrap page">
+    <Crumbs items={[['Eclipse 2027', '/eclipse-2027/'], ['Cities', '/eclipse-2027/cities/']]} />
+    <h1>The 2027 eclipse, city by city</h1>
+    <p class="lead measure">We calculated the 2 August 2027 eclipse for {allPlaces.length} cities and towns in {countries.length} countries. {totals} are inside the path of totality; the rest see a partial eclipse. Pick yours for local times, how high the Sun is and the nearest place with totality.</p>
+    <nav class="countries measure" aria-label="Countries">{countries.map((c, i) => <>{i > 0 && ' '}<a href={`#${slugify(c)}`}>{c}</a></>)}</nav>
+    {countries.map((c) => (
+      <section id={slugify(c)}>
+        <h2>{c}</h2>
+        <ul class="cities">
+          {byCountry.get(c)!.map((p) => (
+            <li>
+              <a href={`/eclipse-2027/${p.slug}/`}>{p.name}</a>
+              <span class={p.kind === 'total' ? 'tot' : 'part'}>{p.kind === 'total' ? `Totality ${fmtDuration(p.totalitySeconds!)}` : `${(p.obscuration * 100).toFixed(0)}% covered`}</span>
+              <span class="muted">{localTime(p.peak, p.tz).time}</span>
+            </li>
+          ))}
+        </ul>
+      </section>
+    ))}
+    <p class="small muted measure">Times are local at greatest eclipse (middle of totality where there is one), for the city centre. <a href="/how-we-make-our-numbers/#eclipse-cities">How we checked them.</a></p>
+  </div>
+</Layout>
+<style>
+  .countries { display: flex; flex-wrap: wrap; gap: 6px 16px; margin: 1.4rem 0 0; }
+  .countries a { color: var(--link); text-underline-offset: 3px; }
+  .cities { list-style: none; padding: 0; margin: 0.6rem 0 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 0 32px; border-top: 1px solid var(--line); }
+  .cities li { display: grid; grid-template-columns: 1fr auto auto; gap: 12px; align-items: baseline; padding: 10px 0; border-bottom: 1px solid var(--line); }
+  .cities a { color: var(--heading); font-weight: 700; text-decoration: underline; text-underline-offset: 3px; text-decoration-thickness: 1px; }
+  .tot { color: var(--go); font-weight: 700; font-size: 0.9375rem; }
+  .part { color: var(--text); font-size: 0.9375rem; }
+  .muted { font-size: 0.9375rem; font-variant-numeric: tabular-nums; }
+  h2 { margin-top: 2.4rem; }
+</style>

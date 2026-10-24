@@ -58,6 +58,21 @@ export function localTime(iso: string, tz: string) {
 
 export type EclipsePlace = (typeof eclipse.places)[number];
 
+// Every place we calculated: the 30 places of the main table plus the extra cities (data/eclipse-cities.json).
+export const allPlaces = [...eclipse.places, ...eclipse.cities] as EclipsePlace[];
+const km = (a: { lat: number; lon: number }, b: { lat: number; lon: number }) => {
+  const r = Math.PI / 180, dLat = (b.lat - a.lat) * r, dLon = (b.lon - a.lon) * r;
+  const h = Math.sin(dLat / 2) ** 2 + Math.cos(a.lat * r) * Math.cos(b.lat * r) * Math.sin(dLon / 2) ** 2;
+  return 2 * 6371 * Math.asin(Math.sqrt(h));
+};
+// The closest place on our list that gets totality, with the straight-line distance in km.
+export const nearestTotal = (p: EclipsePlace) => {
+  let best: EclipsePlace | null = null, d = Infinity;
+  for (const q of allPlaces) if (q.kind === 'total' && q.slug !== p.slug) { const x = km(p, q); if (x < d) { d = x; best = q; } }
+  return best ? { place: best, km: Math.round(d / 10) * 10 } : null;
+};
+export const hhmm = (iso: string, tz: string) => localTime(iso, tz).time;
+
 export function placeNote(p: EclipsePlace): string {
   if (p.kind === 'total') {
     return (p.totalitySeconds ?? 0) < 120

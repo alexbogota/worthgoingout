@@ -4,6 +4,7 @@ import Layout from '../../layouts/Layout.astro';
 import Photo from '../../components/Photo.astro';
 import MonthBars from '../../components/MonthBars.astro';
 import BookBlock from '../../components/BookBlock.astro';
+import MonthNav from '../../components/MonthNav.astro';
 import photos from '../../../data/photos.json';
 import { stargazing, twelve, monthShort, monthLong, nextWindows, windowText, coreSeason } from '../../lib/stargazing';
 import { longDate } from '../../lib/site';
@@ -31,6 +32,7 @@ const others = stargazing.places.filter((o) => o.slug !== p.slug);
     <ul class="measure">{windows.map((w) => <li>{windowText(w)} <span class="muted">({w.nights} nights)</span></li>)}</ul>
 
     <h2>Month by month</h2>
+    <MonthNav base={`/stargazing/${p.slug}/`} current={-1} good={p.months.slice(0, 12).filter((x) => x.core >= 2).map((x) => Number(x.month.slice(5)) - 1)} label={`${p.name}: months`} />
     <MonthBars name="Hours with the Milky Way centre up" values={m.map((x) => x.core)} labels={m.map((x) => monthShort(x.month))} max={12} highlight={(v) => v >= 2} />
     <table class="plain">
       <caption class="muted small">A night in the middle of each month. Full darkness: Sun at least 18° below the horizon.</caption>

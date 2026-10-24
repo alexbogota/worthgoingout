@@ -1,0 +1,85 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+import Crumbs from '../../../components/Crumbs.astro';
+import Photo from '../../../components/Photo.astro';
+import MonthNav from '../../../components/MonthNav.astro';
+import BookBlock from '../../../components/BookBlock.astro';
+import SignupForm from '../../../components/SignupForm.astro';
+import photos from '../../../../data/photos.json';
+import { stargazing, windowText } from '../../../lib/stargazing';
+import { MONTHS_LONG, monthSlug, nextOccurrence, phasesIn } from '../../../lib/aurora';
+import { localTime } from '../../../lib/sky';
+import { longDate } from '../../../lib/site';
+export function getStaticPaths() {
+  return stargazing.places.flatMap((p) => MONTHS_LONG.map((_, m) => ({ params: { place: p.slug, month: monthSlug(m) }, props: { p, m } })));
+}
+const { p, m } = Astro.props as { p: (typeof stargazing.places)[number]; m: number };
+const d = nextOccurrence(p.months, m);
+const year = d.month.slice(0, 4);
+const monthName = MONTHS_LONG[m];
+const t = (iso: string | null) => (iso ? localTime(iso, p.tz).time : null);
+const phases = phasesIn(d.month);
+const monthStart = `${d.month}-01`, monthEnd = new Date(Date.UTC(Number(year), m + 1, 0)).toISOString().slice(0, 10);
+const windows = p.windows.filter((w) => w.to >= monthStart && w.from <= monthEnd);
+const core = d.core >= 4 ? 'high' : d.core >= 2 ? 'some' : d.core > 0 ? 'low' : 'none';
+const title = `Stargazing at ${p.name} in ${monthName}: best dates${core === 'high' || core === 'some' ? ' and the Milky Way' : ''}`;
+const description = `Stargazing at ${p.name} in ${monthName} ${year}: full darkness from ${t(d.dusk)} to ${t(d.dawn)}, the moonless nights of the month${d.core ? `, and the Milky Way centre up for ${d.core} hours` : ''}. Calculated by us.`;
+const photoId = `${p.slug}-night`;
+const hasPhoto = photoId in photos.photos;
+const good = p.months.slice(0, 12).filter((x) => x.core >= 2).map((x) => Number(x.month.slice(5)) - 1);
+---
+<Layout title={title} description={description} photo={hasPhoto ? photoId : 'milky-way'}>
+  <article class="wrap page prose">
+    <Crumbs items={[['Stargazing', '/stargazing/'], [p.name, `/stargazing/${p.slug}/`], [monthName, `/stargazing/${p.slug}/${monthSlug(m)}/`]]} />
+    <h1>Stargazing at {p.name} in {monthName}</h1>
+    <p class="stamp">{p.region}. Figures for {monthName} {year}, calculated by us. Times are local.</p>
+
+    <div class="answer">
+      <span class={`verdict ${core === 'high' ? 'go' : core === 'none' ? 'maybe' : 'go'}`}>{core === 'high' ? 'Milky Way season' : core === 'some' ? 'Good' : core === 'low' ? 'Mostly stars' : 'Stars, no core'}</span>
+      <p class="lead">In mid-{monthName} the sky is fully dark from about <strong>{t(d.dusk)}</strong> to <strong>{t(d.dawn)}</strong>, {d.dark} hours a night. {d.core
+        ? <>The bright centre of the Milky Way is well up from about {t(d.coreFrom)} to {t(d.coreTo)}.</>
+        : <>The bright centre of the Milky Way is only up in daylight this month, but the rest of the sky is still worth the trip.</>}</p>
+    </div>
+
+    <MonthNav base={`/stargazing/${p.slug}/`} current={m} good={good} label={`${p.name}: other months`} />
+
+    <h2>The darkest nights in {monthName} {year}</h2>
+    {windows.length > 0
+      ? <><p class="measure">Nights when the Moon is down for almost all of the dark hours:</p><ul class="measure">{windows.map((w) => <li>{windowText(w)} <span class="muted">({w.nights} nights)</span></li>)}</ul></>
+      : <p class="measure">No fully moonless stretch falls in this month. Look at the weeks either side.</p>}
+    {phases.length > 0 && <ul class="measure">{phases.map((x) => <li>{x.phase}: {longDate(x.at)}</li>)}</ul>}
+
+    <h2>What to know</h2>
+    <ul class="measure">{p.facts.map((f) => <li>{f}</li>)}</ul>
+    <p class="measure">{p.tip}</p>
+
+    {hasPhoto && <Photo id={photoId} />}
+
+    <BookBlock
+      title={`Booking a stargazing night in ${monthName}`}
+      link={`stars-${p.slug}`}
+      cta="See stargazing tours"
+      points={[
+        windows[0] ? `Pick a night between ${windowText(windows[0])}.` : 'Pick a night close to the New Moon.',
+        'Ask whether the guide brings telescopes, and what happens if it is cloudy.',
+        'Check transport from your hotel and the return time.',
+      ]}
+    />
+
+    <SignupForm topic="stargazing" />
+
+    <p class="small"><a href={`/stargazing/${p.slug}/`}>{p.name}: the whole year</a>. <a href="/stargazing/">All five dark-sky places</a>.</p>
+
+    <h2>Sources</h2>
+    <ul class="sources">
+      <li>Darkness, Moon and Milky Way: our calculation, {stargazing.method}. <a href="/stargazing/#how">How we worked it out.</a></li>
+      {p.sources.map(([label, url]) => <li><a href={url}>{label}</a>.</li>)}
+    </ul>
+  </article>
+</Layout>
+<style>
+  .answer { display: flex; gap: 18px; align-items: flex-start; border: 1px solid var(--line); background: var(--panel); border-radius: 6px; padding: 18px 20px; max-width: 66ch; margin: 1.2rem 0 0.5rem; }
+  .answer .lead { margin: 0; }
+  .answer .verdict { flex: none; margin-top: 4px; }
+  @media (max-width: 560px) { .answer { flex-direction: column; } }
+</style>

@@ -66,3 +66,16 @@ jobs:
           blocked=$(curl -s -o /dev/null -w '%{http_code}' -m 20 'https://worthgoingout.com/private/canary.txt' || true)
           echo "::notice title=Private folder (should be 403)::$blocked"
           if [ "$blocked" = "200" ]; then echo "::error::The private folder can be read from the web. Sign-ups would leak: fix .htaccess before using the form."; exit 1; fi
+      - name: Remember which pages were sent to IndexNow last time
+        uses: actions/cache/restore@v4
+        with:
+          path: .indexnow
+          key: indexnow-${{ github.run_id }}
+          restore-keys: indexnow-
+      - name: Tell search engines about changed pages (IndexNow)
+        run: node scripts/indexnow.mjs || echo "IndexNow failed, the site is still deployed"
+      - name: Save the page list for next time
+        uses: actions/cache/save@v4
+        with:
+          path: .indexnow
+          key: indexnow-${{ github.run_id }}

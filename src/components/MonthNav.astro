@@ -1,0 +1,19 @@
+---
+// Links to the twelve month pages of one place, with the current one marked.
+import { MONTHS_LONG } from '../lib/aurora';
+interface Props { base: string; current: number; good: number[]; label: string }
+const { base, current, good, label } = Astro.props;
+---
+<nav class="mnav" aria-label={label}>
+  {MONTHS_LONG.map((m, i) => (
+    i === current ? <span aria-current="page">{m.slice(0, 3)}</span> : <a href={`${base}${m.toLowerCase()}/`} class={good.includes(i) ? 'good' : ''}>{m.slice(0, 3)}</a>
+  ))}
+</nav>
+<style>
+  .mnav { display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); gap: 4px; max-width: 640px; margin: 1rem 0 1.6rem; }
+  .mnav a, .mnav span { display: flex; align-items: center; justify-content: center; min-height: 40px; border: 1px solid var(--line); border-radius: 4px; font-size: 0.875rem; text-decoration: none; color: var(--muted); }
+  .mnav a.good { color: var(--heading); border-color: var(--go); }
+  .mnav a:hover { background: var(--raise); }
+  .mnav span { background: var(--gold); color: var(--on-gold); border-color: var(--gold); font-weight: 700; }
+  @media (max-width: 560px) { .mnav { grid-template-columns: repeat(6, minmax(0, 1fr)); } }
+</style>

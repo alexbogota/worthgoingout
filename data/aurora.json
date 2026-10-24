@@ -37,6 +37,143 @@
     9,
     10,
     11
+   ],
+   "detail": [
+    {
+     "sunMax": 11.8,
+     "month": "2026-10",
+     "darkFirst": 8.3,
+     "darkMid": 10.3,
+     "darkLast": 12.3,
+     "duskMid": "2026-10-15T17:14:08.283Z",
+     "dawnMid": "2026-10-16T03:47:18.880Z"
+    },
+    {
+     "sunMax": 2.1,
+     "month": "2026-11",
+     "darkFirst": 12.3,
+     "darkMid": 13.8,
+     "darkLast": 15.3,
+     "duskMid": "2026-11-15T15:24:38.355Z",
+     "dawnMid": "2026-11-16T05:34:44.687Z"
+    },
+    {
+     "sunMax": -2.3,
+     "month": "2026-12",
+     "darkFirst": 15.3,
+     "darkMid": 15.8,
+     "darkLast": 15.8,
+     "duskMid": "2026-12-15T14:36:48.643Z",
+     "dawnMid": "2026-12-16T06:42:36.289Z"
+    },
+    {
+     "sunMax": -0.2,
+     "month": "2027-01",
+     "darkFirst": 15.8,
+     "darkMid": 15,
+     "darkLast": 13.3,
+     "duskMid": "2027-01-15T15:19:28.896Z",
+     "dawnMid": "2027-01-16T06:26:20.243Z"
+    },
+    {
+     "sunMax": 7.8,
+     "month": "2027-02",
+     "darkFirst": 13.3,
+     "darkMid": 11.8,
+     "darkLast": 10,
+     "duskMid": "2027-02-15T17:00:39.718Z",
+     "dawnMid": "2027-02-16T04:53:58.591Z"
+    },
+    {
+     "sunMax": 18.3,
+     "month": "2027-03",
+     "darkFirst": 9.8,
+     "darkMid": 7.5,
+     "darkLast": 4.5,
+     "duskMid": "2027-03-15T18:54:05.212Z",
+     "dawnMid": "2027-03-16T02:50:17.958Z"
+    },
+    {
+     "sunMax": 30.1,
+     "month": "2027-04",
+     "darkFirst": 4.3,
+     "darkMid": 0,
+     "darkLast": 0,
+     "duskMid": null,
+     "dawnMid": null
+    },
+    {
+     "sunMax": 39.2,
+     "month": "2027-05",
+     "darkFirst": 0,
+     "darkMid": 0,
+     "darkLast": 0,
+     "duskMid": null,
+     "dawnMid": null
+    },
+    {
+     "sunMax": 43.7,
+     "month": "2027-06",
+     "darkFirst": 0,
+     "darkMid": 0,
+     "darkLast": 0,
+     "duskMid": null,
+     "dawnMid": null
+    },
+    {
+     "sunMax": 41.9,
+     "month": "2027-07",
+     "darkFirst": 0,
+     "darkMid": 0,
+     "darkLast": 0,
+     "duskMid": null,
+     "dawnMid": null
+    },
+    {
+     "sunMax": 34.4,
+     "month": "2027-08",
+     "darkFirst": 0,
+     "darkMid": 0,
+     "darkLast": 0,
+     "duskMid": null,
+     "dawnMid": null
+    },
+    {
+     "sunMax": 23.4,
+     "month": "2027-09",
+     "darkFirst": 0,
+     "darkMid": 5.5,
+     "darkLast": 8,
+     "duskMid": "2027-09-15T19:48:13.351Z",
+     "dawnMid": "2027-09-16T01:31:49.831Z"
+    },
+    {
+     "sunMax": 11.9,
+     "month": "2027-10",
+     "darkFirst": 8.3,
+     "darkMid": 10.3,
+     "darkLast": 12.3,
+     "duskMid": "2027-10-15T17:15:09.598Z",
+     "dawnMid": "2027-10-16T03:46:21.856Z"
+    },
+    {
+     "sunMax": 2.2,
+     "month": "2027-11",
+     "darkFirst": 12.3,
+     "darkMid": 13.8,
+     "darkLast": 15.3,
+     "duskMid": "2027-11-15T15:25:18.496Z",
+     "dawnMid": "2027-11-16T05:33:57.717Z"
+    },
+    {
+     "sunMax": -2.3,
+     "month": "2027-12",
+     "darkFirst": 15.3,
+     "darkMid": 15.8,
+     "darkLast": 15.8,
+     "duskMid": "2027-12-15T14:36:51.310Z",
+     "dawnMid": "2027-12-16T06:42:18.796Z"
+    }
    ]
   },
   {
@@ -71,6 +208,143 @@
     9,
     10,
     11
+   ],
+   "detail": [
+    {
+     "sunMax": 13.1,
+     "month": "2026-10",
+     "darkFirst": 8.5,
+     "darkMid": 10.3,
+     "darkLast": 12.3,
+     "duskMid": "2026-10-15T17:12:52.724Z",
+     "dawnMid": "2026-10-16T03:49:30.272Z"
+    },
+    {
+     "sunMax": 3.3,
+     "month": "2026-11",
+     "darkFirst": 12.3,
+     "darkMid": 13.8,
+     "darkLast": 15,
+     "duskMid": "2026-11-15T15:30:40.713Z",
+     "dawnMid": "2026-11-16T05:29:35.920Z"
+    },
+    {
+     "sunMax": -1,
+     "month": "2026-12",
+     "darkFirst": 15,
+     "darkMid": 15.5,
+     "darkLast": 15.5,
+     "duskMid": "2026-12-15T14:47:30.998Z",
+     "dawnMid": "2026-12-16T06:32:53.605Z"
+    },
+    {
+     "sunMax": 0.9,
+     "month": "2027-01",
+     "darkFirst": 15.3,
+     "darkMid": 14.5,
+     "darkLast": 13.3,
+     "duskMid": "2027-01-15T15:27:48.552Z",
+     "dawnMid": "2027-01-16T06:19:11.381Z"
+    },
+    {
+     "sunMax": 9.1,
+     "month": "2027-02",
+     "darkFirst": 13.3,
+     "darkMid": 11.8,
+     "darkLast": 10,
+     "duskMid": "2027-02-15T17:02:10.505Z",
+     "dawnMid": "2027-02-16T04:53:37.758Z"
+    },
+    {
+     "sunMax": 19.6,
+     "month": "2027-03",
+     "darkFirst": 10,
+     "darkMid": 8,
+     "darkLast": 5.3,
+     "duskMid": "2027-03-15T18:47:10.990Z",
+     "dawnMid": "2027-03-16T02:58:19.828Z"
+    },
+    {
+     "sunMax": 31.4,
+     "month": "2027-04",
+     "darkFirst": 5,
+     "darkMid": 0,
+     "darkLast": 0,
+     "duskMid": null,
+     "dawnMid": null
+    },
+    {
+     "sunMax": 40.5,
+     "month": "2027-05",
+     "darkFirst": 0,
+     "darkMid": 0,
+     "darkLast": 0,
+     "duskMid": null,
+     "dawnMid": null
+    },
+    {
+     "sunMax": 45,
+     "month": "2027-06",
+     "darkFirst": 0,
+     "darkMid": 0,
+     "darkLast": 0,
+     "duskMid": null,
+     "dawnMid": null
+    },
+    {
+     "sunMax": 43.2,
+     "month": "2027-07",
+     "darkFirst": 0,
+     "darkMid": 0,
+     "darkLast": 0,
+     "duskMid": null,
+     "dawnMid": null
+    },
+    {
+     "sunMax": 35.7,
+     "month": "2027-08",
+     "darkFirst": 0,
+     "darkMid": 0,
+     "darkLast": 1.8,
+     "duskMid": null,
+     "dawnMid": null
+    },
+    {
+     "sunMax": 24.7,
+     "month": "2027-09",
+     "darkFirst": 2.3,
+     "darkMid": 6,
+     "darkLast": 8.5,
+     "duskMid": "2027-09-15T19:34:39.869Z",
+     "dawnMid": "2027-09-16T01:46:21.298Z"
+    },
+    {
+     "sunMax": 13.2,
+     "month": "2027-10",
+     "darkFirst": 8.5,
+     "darkMid": 10.3,
+     "darkLast": 12.3,
+     "duskMid": "2027-10-15T17:13:50.078Z",
+     "dawnMid": "2027-10-16T03:48:37.234Z"
+    },
+    {
+     "sunMax": 3.4,
+     "month": "2027-11",
+     "darkFirst": 12.3,
+     "darkMid": 13.8,
+     "darkLast": 15,
+     "duskMid": "2027-11-15T15:31:17.711Z",
+     "dawnMid": "2027-11-16T05:28:52.106Z"
+    },
+    {
+     "sunMax": -1,
+     "month": "2027-12",
+     "darkFirst": 15,
+     "darkMid": 15.5,
+     "darkLast": 15.5,
+     "duskMid": "2027-12-15T14:47:32.714Z",
+     "dawnMid": "2027-12-16T06:32:36.958Z"
+    }
    ]
   },
   {
@@ -105,6 +379,143 @@
     9,
     10,
     11
+   ],
+   "detail": [
+    {
+     "sunMax": 15,
+     "month": "2026-10",
+     "darkFirst": 8.8,
+     "darkMid": 10.5,
+     "darkLast": 12.3,
+     "duskMid": "2026-10-15T16:43:15.193Z",
+     "dawnMid": "2026-10-16T03:23:48.060Z"
+    },
+    {
+     "sunMax": 5.1,
+     "month": "2026-11",
+     "darkFirst": 12.3,
+     "darkMid": 13.8,
+     "darkLast": 14.5,
+     "duskMid": "2026-11-15T15:10:02.556Z",
+     "dawnMid": "2026-11-16T04:54:51.240Z"
+    },
+    {
+     "sunMax": 0.7,
+     "month": "2026-12",
+     "darkFirst": 14.5,
+     "darkMid": 15,
+     "darkLast": 15,
+     "duskMid": "2026-12-15T14:32:21.715Z",
+     "dawnMid": "2026-12-16T05:52:46.769Z"
+    },
+    {
+     "sunMax": 2.6,
+     "month": "2027-01",
+     "darkFirst": 15,
+     "darkMid": 14.5,
+     "darkLast": 13.3,
+     "duskMid": "2027-01-15T15:09:49.648Z",
+     "dawnMid": "2027-01-16T05:42:07.133Z"
+    },
+    {
+     "sunMax": 10.9,
+     "month": "2027-02",
+     "darkFirst": 13,
+     "darkMid": 11.8,
+     "darkLast": 10.3,
+     "duskMid": "2027-02-15T16:35:51.279Z",
+     "dawnMid": "2027-02-16T04:24:54.464Z"
+    },
+    {
+     "sunMax": 21.4,
+     "month": "2027-03",
+     "darkFirst": 10,
+     "darkMid": 8.5,
+     "darkLast": 5.8,
+     "duskMid": "2027-03-15T18:10:35.786Z",
+     "dawnMid": "2027-03-16T02:39:50.394Z"
+    },
+    {
+     "sunMax": 33.3,
+     "month": "2027-04",
+     "darkFirst": 5.8,
+     "darkMid": 2.3,
+     "darkLast": 0,
+     "duskMid": "2027-04-15T20:51:43.465Z",
+     "dawnMid": "2027-04-15T23:41:16.960Z"
+    },
+    {
+     "sunMax": 42.4,
+     "month": "2027-05",
+     "darkFirst": 0,
+     "darkMid": 0,
+     "darkLast": 0,
+     "duskMid": null,
+     "dawnMid": null
+    },
+    {
+     "sunMax": 46.8,
+     "month": "2027-06",
+     "darkFirst": 0,
+     "darkMid": 0,
+     "darkLast": 0,
+     "duskMid": null,
+     "dawnMid": null
+    },
+    {
+     "sunMax": 45,
+     "month": "2027-07",
+     "darkFirst": 0,
+     "darkMid": 0,
+     "darkLast": 0,
+     "duskMid": null,
+     "dawnMid": null
+    },
+    {
+     "sunMax": 37.6,
+     "month": "2027-08",
+     "darkFirst": 0,
+     "darkMid": 0,
+     "darkLast": 3.8,
+     "duskMid": null,
+     "dawnMid": null
+    },
+    {
+     "sunMax": 26.6,
+     "month": "2027-09",
+     "darkFirst": 3.8,
+     "darkMid": 6.5,
+     "darkLast": 8.5,
+     "duskMid": "2027-09-15T18:50:53.231Z",
+     "dawnMid": "2027-09-16T01:34:51.059Z"
+    },
+    {
+     "sunMax": 15.1,
+     "month": "2027-10",
+     "darkFirst": 8.8,
+     "darkMid": 10.5,
+     "darkLast": 12.3,
+     "duskMid": "2027-10-15T16:44:07.663Z",
+     "dawnMid": "2027-10-16T03:22:59.945Z"
+    },
+    {
+     "sunMax": 5.2,
+     "month": "2027-11",
+     "darkFirst": 12.3,
+     "darkMid": 13.8,
+     "darkLast": 14.5,
+     "duskMid": "2027-11-15T15:10:35.746Z",
+     "dawnMid": "2027-11-16T04:54:11.250Z"
+    },
+    {
+     "sunMax": 0.7,
+     "month": "2027-12",
+     "darkFirst": 14.5,
+     "darkMid": 15,
+     "darkLast": 15,
+     "duskMid": "2027-12-15T14:32:22.366Z",
+     "dawnMid": "2027-12-16T05:52:31.071Z"
+    }
    ]
   },
   {
@@ -139,6 +550,143 @@
     9,
     10,
     11
+   ],
+   "detail": [
+    {
+     "sunMax": 17.3,
+     "month": "2026-10",
+     "darkFirst": 9,
+     "darkMid": 10.8,
+     "darkLast": 12.3,
+     "duskMid": "2026-10-15T19:51:24.844Z",
+     "dawnMid": "2026-10-16T06:36:47.617Z"
+    },
+    {
+     "sunMax": 7.4,
+     "month": "2026-11",
+     "darkFirst": 12.3,
+     "darkMid": 13.3,
+     "darkLast": 14.3,
+     "duskMid": "2026-11-15T18:28:00.866Z",
+     "dawnMid": "2026-11-16T07:58:06.532Z"
+    },
+    {
+     "sunMax": 2.8,
+     "month": "2026-12",
+     "darkFirst": 14.3,
+     "darkMid": 14.8,
+     "darkLast": 14.8,
+     "duskMid": "2026-12-15T17:56:16.196Z",
+     "dawnMid": "2026-12-16T08:50:18.261Z"
+    },
+    {
+     "sunMax": 4.9,
+     "month": "2027-01",
+     "darkFirst": 14.5,
+     "darkMid": 14,
+     "darkLast": 12.8,
+     "duskMid": "2027-01-15T18:31:11.499Z",
+     "dawnMid": "2027-01-16T08:42:21.790Z"
+    },
+    {
+     "sunMax": 13.3,
+     "month": "2027-02",
+     "darkFirst": 12.8,
+     "darkMid": 11.8,
+     "darkLast": 10.3,
+     "duskMid": "2027-02-15T19:48:31.083Z",
+     "dawnMid": "2027-02-16T07:33:45.410Z"
+    },
+    {
+     "sunMax": 23.8,
+     "month": "2027-03",
+     "darkFirst": 10.3,
+     "darkMid": 8.5,
+     "darkLast": 6.5,
+     "duskMid": "2027-03-15T21:12:30.564Z",
+     "dawnMid": "2027-03-16T05:59:20.272Z"
+    },
+    {
+     "sunMax": 35.7,
+     "month": "2027-04",
+     "darkFirst": 6.3,
+     "darkMid": 3.8,
+     "darkLast": 0,
+     "duskMid": "2027-04-15T23:19:00.902Z",
+     "dawnMid": "2027-04-16T03:35:22.478Z"
+    },
+    {
+     "sunMax": 44.8,
+     "month": "2027-05",
+     "darkFirst": 0,
+     "darkMid": 0,
+     "darkLast": 0,
+     "duskMid": null,
+     "dawnMid": null
+    },
+    {
+     "sunMax": 49.2,
+     "month": "2027-06",
+     "darkFirst": 0,
+     "darkMid": 0,
+     "darkLast": 0,
+     "duskMid": null,
+     "dawnMid": null
+    },
+    {
+     "sunMax": 47.4,
+     "month": "2027-07",
+     "darkFirst": 0,
+     "darkMid": 0,
+     "darkLast": 0,
+     "duskMid": null,
+     "dawnMid": null
+    },
+    {
+     "sunMax": 39.9,
+     "month": "2027-08",
+     "darkFirst": 0,
+     "darkMid": 0,
+     "darkLast": 4.8,
+     "duskMid": "2027-08-16T01:29:23.478Z",
+     "dawnMid": "2027-08-16T01:35:55.235Z"
+    },
+    {
+     "sunMax": 28.8,
+     "month": "2027-09",
+     "darkFirst": 4.8,
+     "darkMid": 7,
+     "darkLast": 9,
+     "duskMid": "2027-09-15T21:44:41.305Z",
+     "dawnMid": "2027-09-16T05:02:12.590Z"
+    },
+    {
+     "sunMax": 17.3,
+     "month": "2027-10",
+     "darkFirst": 9,
+     "darkMid": 10.8,
+     "darkLast": 12.3,
+     "duskMid": "2027-10-15T19:52:12.014Z",
+     "dawnMid": "2027-10-16T06:36:04.762Z"
+    },
+    {
+     "sunMax": 7.5,
+     "month": "2027-11",
+     "darkFirst": 12.3,
+     "darkMid": 13.3,
+     "darkLast": 14.3,
+     "duskMid": "2027-11-15T18:28:29.923Z",
+     "dawnMid": "2027-11-16T07:57:30.589Z"
+    },
+    {
+     "sunMax": 2.8,
+     "month": "2027-12",
+     "darkFirst": 14.3,
+     "darkMid": 14.8,
+     "darkLast": 14.8,
+     "duskMid": "2027-12-15T17:56:15.598Z",
+     "dawnMid": "2027-12-16T08:50:03.656Z"
+    }
    ]
   },
   {
@@ -173,6 +721,143 @@
     9,
     10,
     11
+   ],
+   "detail": [
+    {
+     "sunMax": 16.4,
+     "month": "2026-10",
+     "darkFirst": 9,
+     "darkMid": 10.8,
+     "darkLast": 12.3,
+     "duskMid": "2026-10-16T04:13:54.318Z",
+     "dawnMid": "2026-10-16T15:00:26.118Z"
+    },
+    {
+     "sunMax": 6.6,
+     "month": "2026-11",
+     "darkFirst": 12.3,
+     "darkMid": 13.3,
+     "darkLast": 14.3,
+     "duskMid": "2026-11-16T02:48:18.096Z",
+     "dawnMid": "2026-11-16T16:24:13.830Z"
+    },
+    {
+     "sunMax": 2.2,
+     "month": "2026-12",
+     "darkFirst": 14.5,
+     "darkMid": 14.8,
+     "darkLast": 14.8,
+     "duskMid": "2026-12-16T02:15:45.674Z",
+     "dawnMid": "2026-12-16T17:17:23.275Z"
+    },
+    {
+     "sunMax": 4.3,
+     "month": "2027-01",
+     "darkFirst": 14.8,
+     "darkMid": 14,
+     "darkLast": 12.8,
+     "duskMid": "2027-01-16T02:52:10.839Z",
+     "dawnMid": "2027-01-16T17:07:48.097Z"
+    },
+    {
+     "sunMax": 12.7,
+     "month": "2027-02",
+     "darkFirst": 12.8,
+     "darkMid": 11.8,
+     "darkLast": 10.3,
+     "duskMid": "2027-02-16T04:12:11.588Z",
+     "dawnMid": "2027-02-16T15:56:14.121Z"
+    },
+    {
+     "sunMax": 23.2,
+     "month": "2027-03",
+     "darkFirst": 10,
+     "darkMid": 8.5,
+     "darkLast": 6.3,
+     "duskMid": "2027-03-16T05:39:19.935Z",
+     "dawnMid": "2027-03-16T14:18:31.499Z"
+    },
+    {
+     "sunMax": 35.1,
+     "month": "2027-04",
+     "darkFirst": 6.3,
+     "darkMid": 3.3,
+     "darkLast": 0,
+     "duskMid": "2027-04-16T07:55:03.568Z",
+     "dawnMid": "2027-04-16T11:45:23.017Z"
+    },
+    {
+     "sunMax": 44.2,
+     "month": "2027-05",
+     "darkFirst": 0,
+     "darkMid": 0,
+     "darkLast": 0,
+     "duskMid": null,
+     "dawnMid": null
+    },
+    {
+     "sunMax": 48.5,
+     "month": "2027-06",
+     "darkFirst": 0,
+     "darkMid": 0,
+     "darkLast": 0,
+     "duskMid": null,
+     "dawnMid": null
+    },
+    {
+     "sunMax": 46.6,
+     "month": "2027-07",
+     "darkFirst": 0,
+     "darkMid": 0,
+     "darkLast": 0,
+     "duskMid": null,
+     "dawnMid": null
+    },
+    {
+     "sunMax": 39.1,
+     "month": "2027-08",
+     "darkFirst": 0,
+     "darkMid": 0,
+     "darkLast": 4.8,
+     "duskMid": null,
+     "dawnMid": null
+    },
+    {
+     "sunMax": 28,
+     "month": "2027-09",
+     "darkFirst": 4.8,
+     "darkMid": 7,
+     "darkLast": 9,
+     "duskMid": "2027-09-16T06:10:36.243Z",
+     "dawnMid": "2027-09-16T13:22:18.960Z"
+    },
+    {
+     "sunMax": 16.5,
+     "month": "2027-10",
+     "darkFirst": 9,
+     "darkMid": 10.8,
+     "darkLast": 12.3,
+     "duskMid": "2027-10-16T04:14:42.758Z",
+     "dawnMid": "2027-10-16T14:59:41.808Z"
+    },
+    {
+     "sunMax": 6.7,
+     "month": "2027-11",
+     "darkFirst": 12.3,
+     "darkMid": 13.3,
+     "darkLast": 14.3,
+     "duskMid": "2027-11-16T02:48:47.962Z",
+     "dawnMid": "2027-11-16T16:23:36.887Z"
+    },
+    {
+     "sunMax": 2.2,
+     "month": "2027-12",
+     "darkFirst": 14.5,
+     "darkMid": 14.8,
+     "darkLast": 14.8,
+     "duskMid": "2027-12-16T02:15:44.919Z",
+     "dawnMid": "2027-12-16T17:17:08.764Z"
+    }
    ]
   },
   {
@@ -208,6 +893,143 @@
     9,
     10,
     11
+   ],
+   "detail": [
+    {
+     "sunMax": 18.8,
+     "month": "2026-10",
+     "darkFirst": 9.3,
+     "darkMid": 10.8,
+     "darkLast": 12.3,
+     "duskMid": "2026-10-16T01:59:11.617Z",
+     "dawnMid": "2026-10-16T12:48:14.986Z"
+    },
+    {
+     "sunMax": 9,
+     "month": "2026-11",
+     "darkFirst": 12.3,
+     "darkMid": 13.3,
+     "darkLast": 14,
+     "duskMid": "2026-11-16T00:42:05.463Z",
+     "dawnMid": "2026-11-16T14:03:27.171Z"
+    },
+    {
+     "sunMax": 4.4,
+     "month": "2026-12",
+     "darkFirst": 14,
+     "darkMid": 14.5,
+     "darkLast": 14.3,
+     "duskMid": "2026-12-16T00:14:14.144Z",
+     "dawnMid": "2026-12-16T14:51:59.428Z"
+    },
+    {
+     "sunMax": 6.6,
+     "month": "2027-01",
+     "darkFirst": 14.3,
+     "darkMid": 13.8,
+     "darkLast": 12.8,
+     "duskMid": "2027-01-16T00:47:55.591Z",
+     "dawnMid": "2027-01-16T14:45:19.990Z"
+    },
+    {
+     "sunMax": 15.1,
+     "month": "2027-02",
+     "darkFirst": 12.8,
+     "darkMid": 11.5,
+     "darkLast": 10.3,
+     "duskMid": "2027-02-16T01:59:59.569Z",
+     "dawnMid": "2027-02-16T13:41:47.777Z"
+    },
+    {
+     "sunMax": 25.6,
+     "month": "2027-03",
+     "darkFirst": 10.3,
+     "darkMid": 8.8,
+     "darkLast": 6.8,
+     "duskMid": "2027-03-16T03:17:25.327Z",
+     "dawnMid": "2027-03-16T12:13:48.085Z"
+    },
+    {
+     "sunMax": 37.5,
+     "month": "2027-04",
+     "darkFirst": 6.8,
+     "darkMid": 4.8,
+     "darkLast": 0,
+     "duskMid": "2027-04-16T05:08:21.909Z",
+     "dawnMid": "2027-04-16T10:05:23.991Z"
+    },
+    {
+     "sunMax": 46.5,
+     "month": "2027-05",
+     "darkFirst": 0,
+     "darkMid": 0,
+     "darkLast": 0,
+     "duskMid": null,
+     "dawnMid": null
+    },
+    {
+     "sunMax": 50.9,
+     "month": "2027-06",
+     "darkFirst": 0,
+     "darkMid": 0,
+     "darkLast": 0,
+     "duskMid": null,
+     "dawnMid": null
+    },
+    {
+     "sunMax": 49,
+     "month": "2027-07",
+     "darkFirst": 0,
+     "darkMid": 0,
+     "darkLast": 0,
+     "duskMid": null,
+     "dawnMid": null
+    },
+    {
+     "sunMax": 41.5,
+     "month": "2027-08",
+     "darkFirst": 0,
+     "darkMid": 2.3,
+     "darkLast": 5.3,
+     "duskMid": "2027-08-16T06:17:36.177Z",
+     "dawnMid": "2027-08-16T09:07:00.032Z"
+    },
+    {
+     "sunMax": 30.5,
+     "month": "2027-09",
+     "darkFirst": 5.8,
+     "darkMid": 7.5,
+     "darkLast": 9,
+     "duskMid": "2027-09-16T03:43:49.054Z",
+     "dawnMid": "2027-09-16T11:22:16.150Z"
+    },
+    {
+     "sunMax": 18.9,
+     "month": "2027-10",
+     "darkFirst": 9.3,
+     "darkMid": 10.8,
+     "darkLast": 12.3,
+     "duskMid": "2027-10-16T01:59:55.419Z",
+     "dawnMid": "2027-10-16T12:47:35.384Z"
+    },
+    {
+     "sunMax": 9.1,
+     "month": "2027-11",
+     "darkFirst": 12.3,
+     "darkMid": 13.3,
+     "darkLast": 14,
+     "duskMid": "2027-11-16T00:42:31.849Z",
+     "dawnMid": "2027-11-16T14:02:53.741Z"
+    },
+    {
+     "sunMax": 4.4,
+     "month": "2027-12",
+     "darkFirst": 14,
+     "darkMid": 14.5,
+     "darkLast": 14.3,
+     "duskMid": "2027-12-16T00:14:12.628Z",
+     "dawnMid": "2027-12-16T14:51:45.604Z"
+    }
    ]
   },
   {
@@ -244,6 +1066,143 @@
     9,
     10,
     11
+   ],
+   "detail": [
+    {
+     "sunMax": 23.9,
+     "month": "2026-10",
+     "darkFirst": 9.5,
+     "darkMid": 10.8,
+     "darkLast": 11.8,
+     "duskMid": "2026-10-15T18:37:12.327Z",
+     "dawnMid": "2026-10-16T05:28:56.501Z"
+    },
+    {
+     "sunMax": 14,
+     "month": "2026-11",
+     "darkFirst": 11.8,
+     "darkMid": 12.8,
+     "darkLast": 13.5,
+     "duskMid": "2026-11-15T17:33:53.018Z",
+     "dawnMid": "2026-11-16T06:30:06.880Z"
+    },
+    {
+     "sunMax": 9.3,
+     "month": "2026-12",
+     "darkFirst": 13.5,
+     "darkMid": 13.8,
+     "darkLast": 13.8,
+     "duskMid": "2026-12-15T17:13:12.345Z",
+     "dawnMid": "2026-12-16T07:11:28.558Z"
+    },
+    {
+     "sunMax": 11.5,
+     "month": "2027-01",
+     "darkFirst": 13.8,
+     "darkMid": 13.3,
+     "darkLast": 12.5,
+     "duskMid": "2027-01-15T17:42:30.664Z",
+     "dawnMid": "2027-01-16T07:09:33.173Z"
+    },
+    {
+     "sunMax": 19.9,
+     "month": "2027-02",
+     "darkFirst": 12.3,
+     "darkMid": 11.5,
+     "darkLast": 10.5,
+     "duskMid": "2027-02-15T18:41:39.953Z",
+     "dawnMid": "2027-02-16T06:19:12.235Z"
+    },
+    {
+     "sunMax": 30.4,
+     "month": "2027-03",
+     "darkFirst": 10.5,
+     "darkMid": 9.3,
+     "darkLast": 7.8,
+     "duskMid": "2027-03-15T19:43:26.163Z",
+     "dawnMid": "2027-03-16T05:06:57.362Z"
+    },
+    {
+     "sunMax": 42.3,
+     "month": "2027-04",
+     "darkFirst": 7.8,
+     "darkMid": 6.3,
+     "darkLast": 4.5,
+     "duskMid": "2027-04-15T21:04:12.601Z",
+     "dawnMid": "2027-04-16T03:28:38.301Z"
+    },
+    {
+     "sunMax": 51.4,
+     "month": "2027-05",
+     "darkFirst": 4.3,
+     "darkMid": 2,
+     "darkLast": 0,
+     "duskMid": "2027-05-15T22:59:29.692Z",
+     "dawnMid": "2027-05-16T01:26:26.497Z"
+    },
+    {
+     "sunMax": 55.8,
+     "month": "2027-06",
+     "darkFirst": 0,
+     "darkMid": 0,
+     "darkLast": 0,
+     "duskMid": null,
+     "dawnMid": null
+    },
+    {
+     "sunMax": 54,
+     "month": "2027-07",
+     "darkFirst": 0,
+     "darkMid": 0,
+     "darkLast": 2.5,
+     "duskMid": null,
+     "dawnMid": null
+    },
+    {
+     "sunMax": 46.5,
+     "month": "2027-08",
+     "darkFirst": 3,
+     "darkMid": 5,
+     "darkLast": 6.8,
+     "duskMid": "2027-08-15T21:48:45.927Z",
+     "dawnMid": "2027-08-16T02:54:38.517Z"
+    },
+    {
+     "sunMax": 35.5,
+     "month": "2027-09",
+     "darkFirst": 6.8,
+     "darkMid": 8.3,
+     "darkLast": 9.5,
+     "duskMid": "2027-09-15T20:03:06.884Z",
+     "dawnMid": "2027-09-16T04:21:49.047Z"
+    },
+    {
+     "sunMax": 24,
+     "month": "2027-10",
+     "darkFirst": 9.5,
+     "darkMid": 10.8,
+     "darkLast": 11.8,
+     "duskMid": "2027-10-15T18:37:48.587Z",
+     "dawnMid": "2027-10-16T05:28:24.632Z"
+    },
+    {
+     "sunMax": 14.1,
+     "month": "2027-11",
+     "darkFirst": 11.8,
+     "darkMid": 12.8,
+     "darkLast": 13.5,
+     "duskMid": "2027-11-15T17:34:13.895Z",
+     "dawnMid": "2027-11-16T06:29:39.127Z"
+    },
+    {
+     "sunMax": 9.3,
+     "month": "2027-12",
+     "darkFirst": 13.5,
+     "darkMid": 13.8,
+     "darkLast": 13.8,
+     "duskMid": "2027-12-15T17:13:09.774Z",
+     "dawnMid": "2027-12-16T07:11:15.731Z"
+    }
    ]
   }
  ]

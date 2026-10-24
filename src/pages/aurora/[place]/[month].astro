@@ -1,0 +1,97 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+import Crumbs from '../../../components/Crumbs.astro';
+import Photo from '../../../components/Photo.astro';
+import MonthNav from '../../../components/MonthNav.astro';
+import BookBlock from '../../../components/BookBlock.astro';
+import SignupForm from '../../../components/SignupForm.astro';
+import { aurora, MONTHS_LONG, monthSlug, nextOccurrence, phasesIn, type AuroraPlace } from '../../../lib/aurora';
+import { localTime } from '../../../lib/sky';
+import { longDate } from '../../../lib/site';
+export function getStaticPaths() {
+  return aurora.places.flatMap((p) => MONTHS_LONG.map((_, m) => ({ params: { place: p.slug, month: monthSlug(m) }, props: { p, m } })));
+}
+const { p, m } = Astro.props as { p: AuroraPlace; m: number };
+const d = nextOccurrence(p.detail, m);
+const year = d.month.slice(0, 4);
+const monthName = MONTHS_LONG[m];
+const t = (iso: string | null) => (iso ? localTime(iso, p.tz).time : null);
+const phases = phasesIn(d.month);
+const level = d.darkMid >= 8 ? 'go' : d.darkMid >= 4 ? 'go' : d.darkMid > 0 ? 'maybe' : 'skip';
+const answer = d.darkMid >= 8 ? 'Yes: long, dark nights' : d.darkMid >= 4 ? 'Yes, with shorter nights' : d.darkMid > 0 ? 'Only a short dark spell' : 'No: it never gets dark enough';
+const trend = d.darkLast > d.darkFirst + 0.5 ? 'getting longer' : d.darkLast < d.darkFirst - 0.5 ? 'getting shorter' : 'about the same';
+const equinox = m === 2 || m === 8;
+const title = `Northern lights in ${p.name} in ${monthName}: ${d.darkMid > 0 ? `${d.darkMid} hours of darkness` : 'too light to see them'}`;
+const description = d.darkMid > 0
+  ? `Can you see the northern lights in ${p.name} in ${monthName}? Dark from about ${t(d.duskMid)} to ${t(d.dawnMid)} in mid-${monthName} ${year}, ${d.darkMid} hours a night. New and full Moon dates, and what to plan for.`
+  : `Can you see the northern lights in ${p.name} in ${monthName}? No: the sky does not get dark enough in mid-${monthName}. When the dark season starts and ends, calculated by us.`;
+const good = aurora.places.find((x) => x.slug === p.slug)!.season;
+---
+<Layout title={title} description={description} photo={p.photo}>
+  <article class="wrap page prose">
+    <Crumbs items={[['Northern lights', '/aurora/'], [p.name, `/aurora/${p.slug}/`], [monthName, `/aurora/${p.slug}/${monthSlug(m)}/`]]} />
+    <h1>Northern lights in {p.name} in {monthName}</h1>
+    <p class="stamp">{p.country}. Figures for {monthName} {year}, calculated by us. Times are local.</p>
+
+    <div class="answer">
+      <span class={`verdict ${level}`}>{level === 'go' ? 'Go' : level === 'maybe' ? 'Maybe' : 'Skip'}</span>
+      <p class="lead">{answer}. {d.darkMid > 0
+        ? <>In mid-{monthName} the sky is dark enough for the aurora from about <strong>{t(d.duskMid)}</strong> to <strong>{t(d.dawnMid)}</strong>, {d.darkMid} hours a night.</>
+        : <>In mid-{monthName} the Sun never gets more than 12° below the horizon, so the sky stays too bright to see the aurora, however active it is.</>}</p>
+    </div>
+
+    <MonthNav base={`/aurora/${p.slug}/`} current={m} good={good} label={`${p.name}: other months`} />
+
+    <h2>Darkness through the month</h2>
+    <ul class="measure">
+      <li>1 {monthName}: {d.darkFirst ? `${d.darkFirst} hours of darkness` : 'no real darkness'}.</li>
+      <li>15 {monthName}: {d.darkMid ? `${d.darkMid} hours` : 'no real darkness'}.</li>
+      <li>End of {monthName}: {d.darkLast ? `${d.darkLast} hours` : 'no real darkness'}. The nights are {trend} through the month.</li>
+      {d.sunMax < 0 && <li>Around the middle of the month the Sun does not rise at all: this is the polar night. There are still some hours of twilight around midday.</li>}
+    </ul>
+    <p class="measure small muted">“Dark” here means the Sun is more than 12° below the horizon. Faint aurora needs a darker sky; a strong display can show earlier in the evening.</p>
+
+    {phases.length > 0 && <>
+      <h2>The Moon in {monthName} {year}</h2>
+      <ul class="measure">{phases.map((x) => <li>{x.phase}: {longDate(x.at)}{x.phase === 'New Moon' ? '. The week around it has the darkest skies.' : '. A bright Moon makes the aurora look fainter, though it is still there.'}</li>)}</ul>
+    </>}
+
+    <h2>What to expect</h2>
+    <ul class="measure">
+      {d.darkMid >= 4 && <li>The aurora appears only on active nights, and only where it is clear. Plan several nights and check the forecast each day: <a href="/guides/aurora-forecast-kp/">how to read it</a>.</li>}
+      {equinox && <li>NOAA’s Space Weather Prediction Center names the weeks around the equinoxes, in March and September, as the best season for aurora watching.</li>}
+      {d.darkMid > 0 && d.darkMid < 4 && <li>There is only a short window of darkness around the middle of the night. It is possible to catch a strong display, but this is the edge of the season.</li>}
+      {d.darkMid === 0 && <li>Come back between {MONTHS_LONG[good[good.findIndex((x) => x > 6)] ?? 8]} and {MONTHS_LONG[good.filter((x) => x < 6).at(-1) ?? 3]}, when there is real darkness.</li>}
+      <li>{p.tip}</li>
+    </ul>
+
+    <Photo id={p.photo} />
+
+    {d.darkMid >= 4 && <BookBlock
+      title={`Booking a northern lights tour in ${monthName}`}
+      link={`tours-${p.slug}`}
+      cta="See northern lights tours"
+      points={[
+        'Book for one of your first nights, so you can try again if it is cloudy or quiet.',
+        phases.find((x) => x.phase === 'New Moon') ? `Aim for the days around the New Moon on ${longDate(phases.find((x) => x.phase === 'New Moon')!.at)}.` : 'Check the Moon phase for your dates: darker is better.',
+        'Ask what happens if there is no aurora, and whether warm clothing is lent.',
+      ]}
+    />}
+
+    <SignupForm topic="aurora" />
+
+    <p class="small"><a href={`/aurora/${p.slug}/`}>{p.name}: the whole year</a>. <a href="/aurora/">All northern lights destinations</a>.</p>
+
+    <h2>Sources</h2>
+    <ul class="sources">
+      <li>Darkness, sunrise and Moon phases: our calculation, {aurora.method}. <a href="/aurora/#how">How we worked it out.</a></li>
+      <li>NOAA Space Weather Prediction Center, <a href="https://www.spaceweather.gov/content/tips-viewing-aurora">Tips on viewing the aurora</a>.</li>
+    </ul>
+  </article>
+</Layout>
+<style>
+  .answer { display: flex; gap: 18px; align-items: flex-start; border: 1px solid var(--line); background: var(--panel); border-radius: 6px; padding: 18px 20px; max-width: 66ch; margin: 1.2rem 0 0.5rem; }
+  .answer .lead { margin: 0; }
+  .answer .verdict { flex: none; margin-top: 4px; }
+  @media (max-width: 560px) { .answer { flex-direction: column; } }
+</style>

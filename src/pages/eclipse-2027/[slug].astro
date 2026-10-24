@@ -1,0 +1,18 @@
+---
+// One route for the country pages (spain, egypt, morocco) and the page of every place we calculated.
+import CountryPage from '../../components/eclipse/CountryPage.astro';
+import CityPage from '../../components/eclipse/CityPage.astro';
+import countries from '../../../data/eclipse-countries.json';
+import { allPlaces } from '../../lib/sky';
+export function getStaticPaths() {
+  const reserved = new Set(countries.countries.map((c) => c.slug).concat(['where-to-watch', 'trip-planning', 'cities']));
+  const clash = allPlaces.find((p) => reserved.has(p.slug));
+  if (clash) throw new Error(`Place slug clashes with a page: ${clash.slug}`);
+  return [
+    ...countries.countries.map((c) => ({ params: { slug: c.slug }, props: { kind: 'country' as const, c, p: undefined } })),
+    ...allPlaces.map((p) => ({ params: { slug: p.slug }, props: { kind: 'city' as const, p, c: undefined } })),
+  ];
+}
+const { kind, c, p } = Astro.props;
+---
+{kind === 'country' ? <CountryPage c={c!} /> : <CityPage p={p!} />}

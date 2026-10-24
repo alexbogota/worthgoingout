@@ -31,6 +31,8 @@ console.log(`${pages.length} pages checked`);
 const showers = JSON.parse(readFileSync('data/showers.json', 'utf8')).showers;
 const lastShower = showers.map((s) => s.night[1]).sort().at(-1);
 const daysLeft = (new Date(lastShower) - new Date()) / 86400000;
+const auroraEnd = JSON.parse(readFileSync('data/aurora.json', 'utf8')).places[0].detail.at(-1).month;
+if ((new Date(`${auroraEnd}-28`) - new Date()) / 86400000 < 90) console.log(`::warning::Aurora and stargazing month data end ${auroraEnd}. Move the start month forward in scripts/calc-aurora.mjs and scripts/calc-stargazing.mjs and run npm run calc.`);
 if (daysLeft < 90) console.log(`::warning::Meteor shower data ends ${lastShower}. Add the next year's showers to data/showers.json (IMO calendar) and run npm run calc.`);
 if (errors.length) { console.error([...new Set(errors)].join('\n')); process.exit(1); }
 console.log('OK');

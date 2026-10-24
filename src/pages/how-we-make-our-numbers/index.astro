@@ -2,6 +2,9 @@
 import Layout from '../../layouts/Layout.astro';
 import { eclipse, RULE, calendar } from '../../lib/sky';
 import { eclipseList } from '../../lib/eclipses';
+import partial from '../../../data/eclipse-2027-partial-tests.json';
+import { allPlaces, localTime } from '../../lib/sky';
+const ptests = partial.tests.map(([slug, time, pct]) => { const p = allPlaces.find((x) => x.slug === slug)!; const ours = new Date(p.peak).toLocaleTimeString('en-GB', { timeZone: p.tz }); const [h1, m1, s1] = String(time).split(':').map(Number); const [h2, m2, s2] = ours.split(':').map(Number); return { name: p.name, time, pct, ours, oursPct: (p.obscuration * 100).toFixed(1), diff: (h2 * 3600 + m2 * 60 + s2) - (h1 * 3600 + m1 * 60 + s1) }; });
 const c = eclipse.calibration;
 ---
 <Layout
@@ -42,6 +45,14 @@ const c = eclipse.calibration;
       <li>Totality can be shortened by hills, buildings and cloud on the horizon. We do not model any of these.</li>
       <li>Calculated on {eclipse.calculatedOn}. We will recalculate if the time-zone rules or the library change.</li>
     </ul>
+
+    <h2 id="eclipse-cities">The 2027 eclipse in {allPlaces.length} cities</h2>
+    <p class="measure">For <a href="/eclipse-2027/cities/">the city pages</a> we run the same calculation for each city centre. We compared twelve big cities with <a href={partial.url}>{partial.source}</a> (read {partial.read}). Their figures were not used to set anything.</p>
+    <table class="plain">
+      <thead><tr><th scope="col">City</th><th scope="col">Greatest eclipse, published</th><th scope="col">Ours</th><th scope="col">Sun covered, published</th><th scope="col">Ours</th></tr></thead>
+      <tbody>{ptests.map((t) => <tr><th scope="row">{t.name}</th><td>{t.time}</td><td>{t.ours} <span class="src">{t.diff > 0 ? '+' : ''}{t.diff} s</span></td><td>{t.pct}%</td><td>{t.oursPct}%</td></tr>)}</tbody>
+    </table>
+    <p class="measure">Our times run about eight to ten seconds earlier throughout, most likely a small difference in how the two calculations model the Earth’s rotation. City pages show times to the minute, so it does not change what you read there.</p>
 
     <h2 id="eclipse-list">Every eclipse to 2030</h2>
     <p class="measure">For <a href="/eclipses/">the list of eclipses</a> we use the same library to find every solar and lunar eclipse to the end of 2030, and work out what {eclipseList.cities.length} cities see. We do not apply the 2027 correction there, so lengths can run a few seconds long. We compared them with published figures that we did not use to set anything:</p>
