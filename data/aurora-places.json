@@ -1,0 +1,81 @@
+{
+  "places": [
+    {
+      "slug": "tromso",
+      "name": "Tromsø",
+      "country": "Norway",
+      "lat": 69.65,
+      "lon": 18.96,
+      "tz": "Europe/Oslo",
+      "intro": "Norway’s largest city above the Arctic Circle, with a busy airport and many tour operators.",
+      "tip": "On the coast the weather changes quickly. Tours often drive inland to look for gaps in the cloud, so a guided night can help even if you have a car.",
+      "photo": "aurora-tromso"
+    },
+    {
+      "slug": "abisko",
+      "name": "Abisko",
+      "country": "Sweden",
+      "lat": 68.35,
+      "lon": 18.83,
+      "tz": "Europe/Stockholm",
+      "intro": "A small village in Swedish Lapland at the edge of Abisko National Park, on the railway line between Kiruna and Narvik.",
+      "tip": "There is very little artificial light, and the national park is right next to the village.",
+      "photo": "aurora-abisko"
+    },
+    {
+      "slug": "rovaniemi",
+      "name": "Rovaniemi",
+      "country": "Finland",
+      "lat": 66.5,
+      "lon": 25.73,
+      "tz": "Europe/Helsinki",
+      "intro": "The capital of Finnish Lapland, right on the Arctic Circle, with an airport served by winter flights from across Europe.",
+      "tip": "The town is bright at night. Go a few kilometres out, to a lake shore or a clearing, for darker skies.",
+      "photo": "aurora-inari"
+    },
+    {
+      "slug": "reykjavik",
+      "name": "Reykjavík",
+      "country": "Iceland",
+      "lat": 64.15,
+      "lon": -21.94,
+      "tz": "Atlantic/Reykjavik",
+      "intro": "Iceland’s capital, where most visitors to the country stay.",
+      "tip": "City lights wash out faint aurora. Þingvellir National Park, about 40 km away, or any dark stretch of coast is a far better place to wait.",
+      "photo": "aurora-thingvellir"
+    },
+    {
+      "slug": "fairbanks",
+      "name": "Fairbanks",
+      "country": "Alaska, United States",
+      "lat": 64.84,
+      "lon": -147.72,
+      "tz": "America/Anchorage",
+      "intro": "A city in interior Alaska, far from the coast.",
+      "tip": "Being inland, winter nights are very cold. Dress for well below freezing.",
+      "photo": "aurora-eielson"
+    },
+    {
+      "slug": "yellowknife",
+      "name": "Yellowknife",
+      "country": "Canada",
+      "lat": 62.45,
+      "lon": -114.37,
+      "tz": "America/Edmonton",
+      "intro": "The capital of Canada’s Northwest Territories, on the north shore of Great Slave Lake.",
+      "tip": "Winter nights are very cold. Several operators run heated viewing cabins outside town.",
+      "photo": "aurora-yellowknife"
+    },
+    {
+      "slug": "inverness",
+      "name": "Inverness",
+      "country": "Scotland, United Kingdom",
+      "lat": 57.48,
+      "lon": -4.22,
+      "tz": "Europe/London",
+      "intro": "The main town of the Scottish Highlands.",
+      "tip": "Scotland only sees the aurora during stronger geomagnetic storms, low in the northern sky. Treat it as a bonus, not a reason to travel; watch the NOAA forecast and look north from somewhere dark.",
+      "photo": "aurora-shetland"
+    }
+  ]
+}

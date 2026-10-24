@@ -1,0 +1,30 @@
+---
+// One photo from data/photos.json with its caption and credit. Every photo has alt text and a visible credit (licence terms).
+import photos from '../../data/photos.json';
+interface Props { id: string; eager?: boolean; wide?: boolean; caption?: string }
+const { id, eager = false, wide = false, caption } = Astro.props;
+const p = (photos.photos as Record<string, any>)[id];
+if (!p) throw new Error(`Unknown photo: ${id}`);
+const author = p.author || 'Unknown author';
+---
+<figure class:list={['photo', { wide }]}>
+  <img
+    src={`/photos/${id}-1600.webp`}
+    srcset={`/photos/${id}-800.webp 800w, /photos/${id}-1600.webp 1600w`}
+    sizes={wide ? '(max-width: 1168px) 100vw, 1120px' : '(max-width: 760px) 100vw, 720px'}
+    width={p.width} height={p.height} alt={p.alt}
+    loading={eager ? 'eager' : 'lazy'} decoding="async" fetchpriority={eager ? 'high' : undefined}
+  />
+  <figcaption>
+    {caption ?? p.caption}.{' '}<span class="credit">Photo: <a href={p.page}>{author}</a>, {p.licenseUrl ? <a href={p.licenseUrl}>{p.license}</a> : p.license}, via Wikimedia Commons.</span>
+  </figcaption>
+</figure>
+<style>
+  .photo { margin: 2rem 0; max-width: 720px; }
+  .photo.wide { max-width: none; }
+  .photo img { display: block; width: 100%; height: auto; border-radius: 6px; background: var(--raise); }
+  .photo.wide img { max-height: 560px; object-fit: cover; }
+  figcaption { margin-top: 10px; font-size: 0.9375rem; color: var(--muted); line-height: 1.5; max-width: 72ch; }
+  .credit { font-size: 0.8125rem; }
+  figcaption a { color: inherit; text-decoration: underline; text-underline-offset: 2px; }
+</style>

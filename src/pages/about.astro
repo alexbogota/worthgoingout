@@ -1,4 +1,5 @@
 ---
+import Photo from '../components/Photo.astro';
 import Layout from '../layouts/Layout.astro';
 import { site } from '../lib/site';
 ---
@@ -6,6 +7,8 @@ import { site } from '../lib/site';
   <article class="wrap page prose">
     <h1>About Worth Going Out</h1>
     <p class="lead measure">Eclipses and meteor showers are easy to read about and hard to plan for. Hype is everywhere, and the facts that decide a trip, such as how long it lasts where you are, how bright the Moon is, whether you are on the right side of the path, are scattered or missing. We put them in one place and say plainly whether it is worth going out.</p>
+
+    <Photo id="milky-way" />
 
     <h2>What we do</h2>
     <ul class="measure">

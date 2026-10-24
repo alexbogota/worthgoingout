@@ -1,0 +1,23 @@
+---
+import Layout from '../layouts/Layout.astro';
+import photos from '../../data/photos.json';
+const list = Object.entries(photos.photos as Record<string, any>);
+---
+<Layout title="Photo credits" description="Every photo on Worth Going Out, who took it, and the free licence it is used under. All come from Wikimedia Commons.">
+  <article class="wrap page prose">
+    <h1>Photo credits</h1>
+    <p class="lead measure">The photos on this site were taken by other people and shared under free licences on Wikimedia Commons. We are grateful to them. Each photo is credited where it appears and listed here.</p>
+    <p class="measure">Photos under a CC BY-SA licence remain under that licence, including the resized copies we show. Follow the link to the original for the full file and terms.</p>
+    <ul class="measure credits">
+      {list.map(([id, p]) => (
+        <li><img src={`/photos/${id}-800.webp`} alt={p.alt} width="160" height={Math.round(160 * p.height / p.width)} loading="lazy" /><span><strong>{p.caption}</strong><br />{p.author || 'Unknown author'}. {p.licenseUrl ? <a href={p.licenseUrl}>{p.license}</a> : p.license}. <a href={p.page}>Original on Wikimedia Commons</a>.</span></li>
+      ))}
+    </ul>
+  </article>
+</Layout>
+<style>
+  .credits { list-style: none; padding: 0; }
+  .credits li { display: grid; grid-template-columns: 160px 1fr; gap: 16px; align-items: start; padding: 14px 0; border-bottom: 1px solid var(--line); font-size: 0.9375rem; }
+  .credits img { width: 160px; height: auto; border-radius: 4px; }
+  @media (max-width: 520px) { .credits li { grid-template-columns: 1fr; } }
+</style>

@@ -1,4 +1,5 @@
 ---
+import Photo from '../../components/Photo.astro';
 import Layout from '../../layouts/Layout.astro';
 import { eclipse, daysUntil, fmtDuration, localTime } from '../../lib/sky';
 import { longDate } from '../../lib/site';
@@ -18,6 +19,8 @@ const t = (p: typeof luxor) => localTime(p.totalBegin!, p.tz);
 
     <p class="lead measure">On {longDate('2027-08-02')} the Moon will completely cover the Sun for people inside a band about 258 km wide. Outside it, the Sun is only partly covered and the day stays bright. That difference is the whole point of choosing a spot carefully.</p>
     <p class="measure"><strong>{days} days to go.</strong> The path starts over the Atlantic, crosses southern Spain and Gibraltar, northern Morocco, Algeria, Tunisia, Libya and Egypt, then the Red Sea, south-western Saudi Arabia, Yemen and Somalia, and ends over the Indian Ocean.</p>
+
+    <Photo id="diamond-ring" />
 
     <h2>The numbers that matter</h2>
     <ul class="measure">
@@ -47,6 +50,7 @@ const t = (p: typeof luxor) => localTime(p.totalBegin!, p.tz);
     </ul>
 
     <h2 id="safe">Watching safely</h2>
+    <Photo id="eclipse-watchers" />
     <div class="callout measure">
       <p><strong>Never look at the Sun without proper protection, except during the short time of total eclipse.</strong> NASA's rule: use eclipse glasses or handheld viewers that meet the ISO 12312-2 standard, check them for damage first, and put them back on as soon as any bright Sun reappears.</p>
       <p>Ordinary sunglasses are not safe. Do not look at the Sun through a camera, binoculars or a telescope unless a proper solar filter is on the front of the lens, and never wear eclipse glasses together with such optics.</p>

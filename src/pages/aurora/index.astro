@@ -1,0 +1,55 @@
+---
+import Photo from '../../components/Photo.astro';
+import Layout from '../../layouts/Layout.astro';
+import DarkBars from '../../components/DarkBars.astro';
+import { aurora, seasonText } from '../../lib/aurora';
+import { longDate } from '../../lib/site';
+---
+<Layout title="Northern lights: where and when it is worth going" description="Seven places to see the northern lights, with the months that are dark enough at each, calculated by us, and how to read the aurora forecast before you go.">
+  <div class="wrap page">
+    <h1>Northern lights: where and when it is worth going</h1>
+    <p class="stamp">Darkness calculated {longDate(aurora.calculatedOn)} with {aurora.method}.</p>
+    <p class="lead measure">To see the aurora you need three things at once: an active night, a dark sky and no clouds. Activity comes from the Sun and is forecast a few days ahead. Clouds are local and last-minute. Darkness is the one you can plan months ahead, so that is what we calculated for each place.</p>
+
+    <Photo id="aurora-eielson" wide eager />
+
+    <h2>Seven places, and when they are dark enough</h2>
+    <p class="measure muted">Bars show hours of darkness on the 15th of each month, with the Sun more than 12° below the horizon. Green months have at least {aurora.seasonHours} dark hours.</p>
+    <ul class="board">
+      {aurora.places.map((p) => (
+        <li class="aur">
+          <div>
+            <a class="what" href={`/aurora/${p.slug}/`}>{p.name}</a>
+            <p class="why">{p.country}. Dark enough {seasonText(p.season)}; {p.dark[11]} dark hours in mid-December.</p>
+          </div>
+          <DarkBars dark={p.dark} season={p.season} />
+        </li>
+      ))}
+    </ul>
+
+    <div class="prose measure">
+      <h2>What this means for planning</h2>
+      <ul>
+        <li>In June and July none of these places gets real darkness, so there is no aurora to see however active the Sun is. May is too light everywhere on the list except, briefly, Inverness.</li>
+        <li>Midwinter has the longest nights, and so the most hours in which a display can happen. It is also the coldest time.</li>
+        <li>NOAA’s Space Weather Prediction Center says the best seasons for aurora are around the equinoxes, in September and March.</li>
+        <li>Plan around the New Moon if you can. A full Moon does not stop the aurora, but it makes it look fainter.</li>
+        <li>Stay several nights. Activity and clouds both change from night to night, and one night is a gamble.</li>
+      </ul>
+      <p><a href="/guides/aurora-forecast-kp/">How to read the aurora forecast and the Kp index.</a></p>
+
+      <h2 id="how">How we worked it out</h2>
+      <p>For each place we calculated the Sun’s height every five minutes through the night of the 15th of each month in {aurora.year}, and counted the time it spends more than 12° below the horizon. Faint aurora needs a darker sky than that, and a strong display can show in brighter twilight, so treat the bars as a guide to the season, not a promise. Other years are almost the same.</p>
+      <h2>Sources</h2>
+      <ul class="sources">
+        <li>Our calculation, {aurora.method}, run on {longDate(aurora.calculatedOn)}.</li>
+        <li>NOAA Space Weather Prediction Center, <a href="https://www.spaceweather.gov/content/tips-viewing-aurora">Tips on viewing the aurora</a>: seasons, darkness and the Moon.</li>
+      </ul>
+    </div>
+  </div>
+</Layout>
+<style>
+  .board li.aur { grid-template-columns: 1fr 300px; align-items: center; }
+  .board li.aur a.what { text-decoration: underline; text-underline-offset: 4px; text-decoration-thickness: 1px; }
+  @media (max-width: 720px) { .board li.aur { grid-template-columns: 1fr; } }
+</style>

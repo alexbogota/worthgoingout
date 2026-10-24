@@ -1,0 +1,58 @@
+---
+import Photo from '../../components/Photo.astro';
+import Layout from '../../layouts/Layout.astro';
+import DarkBars from '../../components/DarkBars.astro';
+import { aurora, seasonText, seasonNewMoons, MONTHS_LONG } from '../../lib/aurora';
+import { longDate } from '../../lib/site';
+export function getStaticPaths() {
+  return aurora.places.map((p) => ({ params: { place: p.slug }, props: { p } }));
+}
+const { p } = Astro.props;
+const moons = seasonNewMoons(p.season).slice(0, 6);
+const others = aurora.places.filter((o) => o.slug !== p.slug);
+---
+<Layout title={`Northern lights in ${p.name}: when it is dark enough`} description={`When the sky over ${p.name}, ${p.country}, is dark enough for the northern lights, month by month, with the darkest New Moon weeks and practical tips.`}>
+  <article class="wrap page prose">
+    <h1>Northern lights in {p.name}</h1>
+    <p class="stamp">{p.country}. Darkness calculated {longDate(aurora.calculatedOn)} with {aurora.method}.</p>
+    <p class="lead measure">{p.intro} The sky here is dark enough for the aurora from {seasonText(p.season)}.</p>
+    <Photo id={p.photo} />
+
+    <h2>Hours of darkness, month by month</h2>
+    <DarkBars dark={p.dark} season={p.season} />
+    <table class="plain">
+      <caption class="muted small">Hours with the Sun more than 12° below the horizon, on the 15th of each month</caption>
+      <thead><tr><th scope="col">Month</th><th scope="col">Dark hours</th><th scope="col">Aurora possible?</th></tr></thead>
+      <tbody>
+        {p.dark.map((h, i) => (
+          <tr><th scope="row">{MONTHS_LONG[i]}</th><td>{h === 0 ? 'none' : `${h} h`}</td><td>{p.season.includes(i) ? 'Yes, if active and clear' : h > 0 ? 'Only a short dark spell' : 'No: too light'}</td></tr>
+        ))}
+      </tbody>
+    </table>
+
+    {moons.length > 0 && <>
+      <h2>The darkest weeks ahead</h2>
+      <p class="measure">New Moons in the dark season. The week around each one has the least moonlight.</p>
+      <ul class="measure">{moons.map((m) => <li>{longDate(m.at)}</li>)}</ul>
+    </>}
+
+    <h2>On the ground</h2>
+    <p class="measure">{p.tip}</p>
+    <p class="measure">Whatever the month, check two forecasts on the day: the aurora forecast from NOAA and the cloud forecast for where you are. <a href="/guides/aurora-forecast-kp/">How to read the aurora forecast.</a></p>
+
+    <p class="small">Other places: {others.map((o, i) => <>{i > 0 && ', '}<a href={`/aurora/${o.slug}/`}>{o.name}</a></>)}. <a href="/aurora/">Compare all seven.</a></p>
+
+    <h2>Sources</h2>
+    <ul class="sources">
+      <li>Darkness and Moon phases: our calculation, {aurora.method}. <a href="/aurora/#how">How we worked it out.</a></li>
+      <li>NOAA Space Weather Prediction Center, <a href="https://www.spaceweather.gov/content/tips-viewing-aurora">Tips on viewing the aurora</a>.</li>
+    </ul>
+  </article>
+</Layout>
+<style>
+  .plain { width: 100%; max-width: 560px; border-collapse: collapse; margin: 1rem 0 1.4rem; }
+  .plain caption { text-align: left; padding-bottom: 6px; }
+  .plain th, .plain td { text-align: left; padding: 8px 14px 8px 0; border-bottom: 1px solid var(--line); }
+  .plain thead th { color: var(--muted); font-size: 0.9375rem; border-bottom: 2px solid var(--line); }
+  .plain tbody th { font-weight: 700; color: var(--heading); }
+</style>

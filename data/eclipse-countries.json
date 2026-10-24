@@ -26,7 +26,8 @@
           "Instituto Geográfico Nacional, eclipses 2026–2028",
           "https://eclipses.ign.es/en/introduccion.html"
         ]
-      ]
+      ],
+      "photo": "tarifa-beach"
     },
     {
       "slug": "egypt",
@@ -50,7 +51,8 @@
           "Space.com, 8 things you need to know before booking the 2027 eclipse",
           "https://space.com/stargazing/solar-eclipses/8-things-you-need-to-know-before-booking-the-2027-eclipse-of-the-century"
         ]
-      ]
+      ],
+      "photo": "luxor-temple"
     },
     {
       "slug": "morocco",
@@ -68,7 +70,8 @@
         "Ceuta, the Spanish city next to the Moroccan border, gets a similar length to Tangier."
       ],
       "extra": "Times on this page use Morocco’s clock rules as they are today (UTC+1 outside Ramadan). Ramadan is not expected to fall in August 2027, but check your booking for the official time.",
-      "sources": []
+      "sources": [],
+      "photo": "cape-spartel"
     }
   ]
 }

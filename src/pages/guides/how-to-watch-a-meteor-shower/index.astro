@@ -1,4 +1,5 @@
 ---
+import Photo from '../../../components/Photo.astro';
 import Layout from '../../../layouts/Layout.astro';
 import Verdict from '../../../components/Verdict.astro';
 import MoreGuides from '../../../components/MoreGuides.astro';
@@ -11,6 +12,8 @@ const night = (n: [string, string]) => new Date(`${n[0]}T00:00:00Z`).toLocaleDat
     <h1>How to watch a meteor shower</h1>
     <p class="stamp">Last reviewed 24 October 2026.</p>
     <p class="lead measure">You need no equipment, only a dark sky, a clear night and patience. The two things that decide how many meteors you see are how dark your sky is and where the Moon is.</p>
+
+    <Photo id="geminids" />
 
     <h2>Pick the right night</h2>
     <p class="measure">Every shower has a peak, usually one night, when the most meteors arrive. The headline rates you read about are best-case numbers for a perfectly dark sky; from a town you will see far fewer. A bright Moon on the peak night can wipe out most of a shower, so a strong shower under a full Moon can be worse than a modest one on a dark night. That is why our <a href="/meteor-showers/">meteor shower list</a> gives each peak a verdict from both numbers.</p>

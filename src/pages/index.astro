@@ -1,4 +1,5 @@
 ---
+import Photo from '../components/Photo.astro';
 import Layout from '../layouts/Layout.astro';
 import EclipseGraphic from '../components/EclipseGraphic.astro';
 import Verdict from '../components/Verdict.astro';
@@ -34,6 +35,8 @@ const nightText = (n: [string, string]) => {
     <div class="art"><EclipseGraphic /></div>
   </section>
 
+  <div class="wrap"><Photo id="corona-spain-2026" wide /></div>
+
   <section class="wrap band">
     <h2>Worth going out, coming up</h2>
     <p class="muted measure">Meteor showers on their peak nights, judged by how many meteors you can expect and how bright the Moon will be. <a class="link" href="/how-we-make-our-numbers/#verdicts">The rule is public.</a></p>
@@ -51,6 +54,8 @@ const nightText = (n: [string, string]) => {
     </ul>
     <p class="small"><a class="link" href="/meteor-showers/">All meteor showers to mid-2027</a></p>
   </section>
+
+  <div class="wrap"><Photo id="aurora-eielson" wide caption="The northern lights over Bear Lake, near Fairbanks, Alaska. Our northern lights pages show when each destination is dark enough" /></div>
 
   <section class="wrap band">
     <h2>Guides</h2>

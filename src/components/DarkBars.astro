@@ -1,0 +1,22 @@
+---
+// Twelve bars, one per month: hours of darkness on the 15th. The numbers are written out for screen readers and in the title.
+import { MONTHS } from '../lib/aurora';
+interface Props { dark: number[]; season: number[] }
+const { dark, season } = Astro.props;
+const label = dark.map((h, i) => `${MONTHS[i]} ${h} h`).join(', ');
+---
+<div class="bars" role="img" aria-label={`Hours of darkness by month: ${label}`}>
+  {dark.map((h, i) => (
+    <span class="m" title={`${MONTHS[i]}: ${h} h`}>
+      <i class={season.includes(i) ? 'on' : ''} style={`height:${Math.max(2, (h / 18) * 100)}%`}></i>
+      <b>{MONTHS[i][0]}</b>
+    </span>
+  ))}
+</div>
+<style>
+  .bars { display: grid; grid-template-columns: repeat(12, 1fr); gap: 3px; height: 64px; align-items: end; max-width: 300px; padding-bottom: 16px; position: relative; }
+  .m { position: relative; height: 48px; display: flex; align-items: flex-end; }
+  .m i { display: block; width: 100%; background: var(--line); border-radius: 2px 2px 0 0; }
+  .m i.on { background: var(--go); }
+  .m b { position: absolute; bottom: -17px; left: 0; right: 0; text-align: center; font-size: 0.7rem; font-weight: 400; color: var(--muted); }
+</style>

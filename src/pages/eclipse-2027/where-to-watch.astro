@@ -1,4 +1,5 @@
 ---
+import Photo from '../../components/Photo.astro';
 import Layout from '../../layouts/Layout.astro';
 import { eclipse, fmtDuration, localTime, placeNote } from '../../lib/sky';
 
@@ -22,6 +23,8 @@ const rows = (list: typeof eclipse.places) => list.map((p) => {
     <div class="callout measure">
       <p><strong>How to read it.</strong> Lengths are for the point we calculated, usually the town centre. A few kilometres can change them by several seconds, and near the edge of the path by a lot. Times are local, using the time-zone rules known today. The eclipse is on 2 August 2027. We have not ranked places by cloud, because we have no checked cloud figures yet.</p>
     </div>
+
+    <Photo id="corona-detail" wide />
 
     <h2>Places inside the path</h2>
     <table class="places">
