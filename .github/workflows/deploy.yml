@@ -28,9 +28,11 @@ jobs:
       - name: Build the site into dist/
         run: |
           node -v
+          set -o pipefail
           npm run build 2>&1 | tee build.log || { echo "::error::$(tail -c 1500 build.log | tr '\n' ' ')"; exit 1; }
       - name: Check the built site
         run: |
+          set -o pipefail
           npm run check 2>&1 | tee check.log || { echo "::error::$(tail -c 1500 check.log | tr '\n' ' ')"; exit 1; }
       - name: Upload dist/ to the hosting over FTPS
         uses: SamKirkland/FTP-Deploy-Action@v4.3.5
