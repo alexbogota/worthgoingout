@@ -1,0 +1,53 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Photo from '../../components/Photo.astro';
+import { eclipse, fmtDuration, localTime } from '../../lib/sky';
+import { daysUntil } from '../../lib/sky';
+const get = (slug: string) => eclipse.places.find((p) => p.slug === slug)!;
+const luxor = get('luxor'), tangier = get('tangier'), tarifa = get('tarifa');
+const t = (p: typeof luxor) => localTime(p.totalBegin!, p.tz);
+---
+<Layout title="Planning a trip for the 2 August 2027 eclipse: a checklist" description="How to plan a trip for the 2 August 2027 total solar eclipse: picking a spot inside the path, when to arrive, heat, clouds, glasses and what to book, step by step.">
+  <article class="wrap page prose">
+    <h1>Planning a trip for the 2 August 2027 eclipse</h1>
+    <p class="stamp">Last reviewed 24 October 2026. {daysUntil('2027-08-02')} days to go.</p>
+    <p class="lead measure">Totality lasts minutes and happens once. Most of the planning comes down to being inside the path, on time, under a clear sky, with eyes protected. Here is the checklist, in the order we would do it.</p>
+    <Photo id="eclipse-watchers" />
+
+    <h2>1. Choose a region</h2>
+    <ul class="measure">
+      <li><strong>Egypt</strong> has the longest totality: about {fmtDuration(luxor.totalitySeconds!)} in Luxor, starting at {t(luxor).time} local time with the Sun almost overhead. <a href="/eclipse-2027/egypt/">Egypt in detail.</a></li>
+      <li><strong>Northern Morocco</strong> gets close to five minutes in Tangier ({fmtDuration(tangier.totalitySeconds!)}), in the morning. <a href="/eclipse-2027/morocco/">Morocco in detail.</a></li>
+      <li><strong>Southern Spain</strong> gets up to {fmtDuration(tarifa.totalitySeconds!)} in Tarifa, less further east. <a href="/eclipse-2027/spain/">Spain in detail.</a></li>
+    </ul>
+
+    <h2>2. Check your exact spot is inside the path</h2>
+    <p class="measure">This is the step people get wrong. Cairo, Giza, Aswan, Seville and Granada all miss totality, some by a small margin. <a href="/eclipse-2027/where-to-watch/">Check every place we calculated</a>, then check your hotel or viewing spot on a detailed map of the path.</p>
+
+    <h2>3. Book where you sleep</h2>
+    <ul class="measure">
+      <li>Rooms inside the path, and especially near the centre line, are a limited supply for one particular night. Book early, ideally with free cancellation so you can change plans.</li>
+      <li>Arrive at least a day before. Roads into the path can be busy on the morning itself.</li>
+      <li>If you are on a cruise or a tour, ask exactly where you will be at the time of totality.</li>
+    </ul>
+
+    <h2>4. Plan for heat and clouds</h2>
+    <ul class="measure">
+      <li>Early August is hot along most of the path. Space.com’s guide warns of around 45 °C in places. Shade, water and a hat matter.</li>
+      <li>Nobody can promise a clear sky. Being able to move on the day, with a car or a flexible tour, is your best insurance.</li>
+    </ul>
+
+    <h2>5. Get safe glasses early</h2>
+    <p class="measure">You need eclipse glasses for every minute except totality itself. Buy from a supplier on the American Astronomical Society’s list, well before the trip. <a href="/guides/eclipse-glasses/">How to tell if they are safe.</a></p>
+
+    <h2>6. Paperwork</h2>
+    <p class="measure">Check visa rules, your government’s travel advice and your insurance for each country. Some places on the path, such as Libya and Yemen, may have travel warnings.</p>
+
+    <h2>Sources</h2>
+    <ul class="sources">
+      <li>Place figures: our calculation, {eclipse.method}. <a href="/how-we-make-our-numbers/#eclipse">How we tested it.</a></li>
+      <li>Space.com, <a href="https://space.com/stargazing/solar-eclipses/8-things-you-need-to-know-before-booking-the-2027-eclipse-of-the-century">8 things you need to know before booking the 2027 eclipse</a>.</li>
+      <li>American Astronomical Society, <a href="https://eclipse.aas.org/node/273">safe eclipse glasses</a>.</li>
+    </ul>
+  </article>
+</Layout>

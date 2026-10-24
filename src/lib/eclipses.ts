@@ -13,4 +13,4 @@ export const upcoming = <T extends { peak: string }>(list: T[], now = buildDate)
 
 export const dayLabel = (iso: string) => new Date(iso).toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric', timeZone: 'UTC' });
 export const utcTime = (iso: string) => new Date(iso).toLocaleTimeString('en-GB', { hour: '2-digit', minute: '2-digit', timeZone: 'UTC' });
-export const roughMin = (sec: number) => (sec < 90 ? `about ${Math.round(sec)} s` : `about ${Math.floor(sec / 60)} min ${String(Math.round(sec % 60)).padStart(2, '0')} s`);
+export const roughMin = (sec: number) => { const s = Math.round(sec); return s < 90 ? `about ${s} s` : `about ${Math.floor(s / 60)} min ${String(s % 60).padStart(2, '0')} s`; };

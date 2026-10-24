@@ -1,0 +1,17 @@
+---
+// Bars for a run of months. `values` in hours, `labels` one letter or short month names. Numbers are in the aria-label.
+interface Props { values: number[]; labels: string[]; max: number; highlight?: (v: number) => boolean; name: string }
+const { values, labels, max, highlight = () => true, name } = Astro.props;
+---
+<div class="bars" role="img" aria-label={`${name}: ${values.map((v, i) => `${labels[i]} ${v} h`).join(', ')}`}>
+  {values.map((v, i) => (
+    <span class="m" title={`${labels[i]}: ${v} h`}><i class={highlight(v) ? 'on' : ''} style={`height:${Math.max(2, (v / max) * 100)}%`}></i><b>{labels[i].slice(0, 1)}</b></span>
+  ))}
+</div>
+<style>
+  .bars { display: grid; grid-template-columns: repeat(12, 1fr); gap: 3px; height: 64px; align-items: end; max-width: 300px; padding-bottom: 16px; }
+  .m { position: relative; height: 48px; display: flex; align-items: flex-end; }
+  .m i { display: block; width: 100%; background: var(--line); border-radius: 2px 2px 0 0; }
+  .m i.on { background: var(--gold); }
+  .m b { position: absolute; bottom: -17px; left: 0; right: 0; text-align: center; font-size: 0.7rem; font-weight: 400; color: var(--muted); }
+</style>

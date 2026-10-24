@@ -1,0 +1,54 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Photo from '../../components/Photo.astro';
+import MonthBars from '../../components/MonthBars.astro';
+import { stargazing, twelve, monthShort, nextWindows, windowText, coreSeason, monthLong } from '../../lib/stargazing';
+import { longDate } from '../../lib/site';
+---
+<Layout title="Stargazing trips: five of the darkest skies, and the best dates" description="Teide, La Palma, the Atacama, NamibRand and Aoraki Mackenzie: when the Milky Way is at its best at each, and the darkest moonless weeks for the next year, calculated by us.">
+  <div class="wrap page">
+    <h1>Stargazing trips: the darkest skies, and when to go</h1>
+    <p class="stamp">Calculated {longDate(stargazing.calculatedOn)} with {stargazing.method}.</p>
+    <p class="lead measure">A dark-sky trip is only as good as the nights you pick. The Moon decides most of it: around Full Moon even the best sky in the world looks washed out. We worked out, for five famous dark-sky places, the moonless weeks of the coming year and the months when the bright centre of the Milky Way is up.</p>
+    <Photo id="milky-way" wide />
+
+    <h2>Five places, and when the Milky Way is up</h2>
+    <p class="measure muted">Bars: hours in a mid-month night when the centre of the Milky Way is at least 15° high in full darkness, for the next twelve months.</p>
+    <ul class="board">
+      {stargazing.places.map((p) => {
+        const m = twelve(p); const cs = coreSeason(p); const w = nextWindows(p, 1)[0];
+        return (
+          <li class="sg">
+            <div>
+              <a class="what" href={`/stargazing/${p.slug}/`}>{p.name}</a>
+              <p class="why">{p.region}. Milky Way centre best in {monthLong(cs.best.month).split(' ')[0]}.{w && <> Next dark, moonless week: {windowText(w)}.</>}</p>
+            </div>
+            <MonthBars name="Hours with the Milky Way centre up" values={m.map((x) => x.core)} labels={m.map((x) => monthShort(x.month))} max={12} highlight={(v) => v >= 2} />
+          </li>
+        );
+      })}
+    </ul>
+
+    <div class="prose measure">
+      <h2>How to pick your dates</h2>
+      <ul>
+        <li><strong>Go in the week around New Moon.</strong> Each place page lists the stretches of nights when the Moon is down for at least 80% of the dark hours.</li>
+        <li><strong>The Milky Way’s bright centre has a season.</strong> In both hemispheres it is best seen from about March to September, and it climbs highest in the southern winter, from the Atacama, Namibia or New Zealand. From November to January it is up only in daylight everywhere.</li>
+        <li><strong>Stay several nights.</strong> Clouds are the one thing nobody can calculate a year ahead.</li>
+        <li><strong>Altitude helps.</strong> The Canary Islands and Atacama sites sit above much of the haze and low cloud.</li>
+      </ul>
+      <h2 id="how">How we worked it out</h2>
+      <p>For every night of the next year we stepped through the dark hours in ten-minute steps and checked the height of the Sun, the Moon and the centre of the Milky Way. “Full darkness” means the Sun is at least 18° below the horizon. A night counts as moonless when the Moon is below the horizon for at least 80% of the full-dark hours and for at least {stargazing.minHours} hours.</p>
+      <h2>Sources</h2>
+      <ul class="sources">
+        <li>Our calculation, {stargazing.method}, run on {longDate(stargazing.calculatedOn)}.</li>
+        <li>Place facts are sourced on each place page.</li>
+      </ul>
+    </div>
+  </div>
+</Layout>
+<style>
+  .board li.sg { grid-template-columns: 1fr 300px; align-items: center; }
+  .board li.sg a.what { text-decoration: underline; text-underline-offset: 4px; text-decoration-thickness: 1px; }
+  @media (max-width: 720px) { .board li.sg { grid-template-columns: 1fr; } }
+</style>

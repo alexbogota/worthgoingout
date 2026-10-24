@@ -1,0 +1,24 @@
+---
+// "What to book" box: a short checklist that is useful on its own. When the partner for `link` is approved, a marked
+// affiliate button appears under it. Until then, no link and no ad label.
+import { liveLink } from '../lib/partners';
+interface Props { title: string; points: string[]; link?: string; cta?: string }
+const { title, points, link, cta = 'See tours' } = Astro.props;
+const live = link ? liveLink(link) : null;
+---
+<aside class="book" aria-label={title}>
+  <h2>{title}</h2>
+  <ul>{points.map((p) => <li>{p}</li>)}</ul>
+  {live && (
+    <p class="go"><a class="btn" href={live.href} rel="sponsored nofollow">{cta} on {live.partner}</a> <span class="ad">Affiliate link: we may earn a commission. <a href="/disclosure/">Details</a></span></p>
+  )}
+</aside>
+<style>
+  .book { border: 1px solid var(--line); border-left: 4px solid var(--gold); background: var(--panel); border-radius: 6px; padding: 18px 22px 8px; margin: 2.2rem 0; max-width: 66ch; }
+  .book h2 { margin: 0 0 0.6rem; font-size: 1.35rem; }
+  .book ul { padding-left: 1.2em; margin: 0 0 1em; }
+  .book li { margin-bottom: 0.4em; }
+  .go { display: flex; flex-wrap: wrap; gap: 8px 14px; align-items: center; }
+  .ad { font-size: 0.875rem; color: var(--muted); }
+  .ad a { color: inherit; }
+</style>

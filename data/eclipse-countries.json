@@ -27,7 +27,8 @@
           "https://eclipses.ign.es/en/introduccion.html"
         ]
       ],
-      "photo": "tarifa-beach"
+      "photo": "tarifa-beach",
+      "bookLink": "trips-cadiz"
     },
     {
       "slug": "egypt",
@@ -52,7 +53,8 @@
           "https://space.com/stargazing/solar-eclipses/8-things-you-need-to-know-before-booking-the-2027-eclipse-of-the-century"
         ]
       ],
-      "photo": "luxor-temple"
+      "photo": "luxor-temple",
+      "bookLink": "trips-luxor"
     },
     {
       "slug": "morocco",
@@ -71,7 +73,8 @@
       ],
       "extra": "Times on this page use Morocco’s clock rules as they are today (UTC+1 outside Ramadan). Ramadan is not expected to fall in August 2027, but check your booking for the official time.",
       "sources": [],
-      "photo": "cape-spartel"
+      "photo": "cape-spartel",
+      "bookLink": "trips-tangier"
     }
   ]
 }

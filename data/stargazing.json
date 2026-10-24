@@ -1,0 +1,860 @@
+{
+ "calculatedOn": "2026-10-24",
+ "method": "Astronomy Engine 2.1.19 (MIT licence)",
+ "minHours": 4,
+ "minShare": 0.8,
+ "places": [
+  {
+   "slug": "teide",
+   "name": "Teide National Park",
+   "region": "Tenerife, Canary Islands, Spain",
+   "lat": 28.27,
+   "lon": -16.64,
+   "elevation": 2100,
+   "tz": "Atlantic/Canary",
+   "intro": "The high crater floor of Las Cañadas around Mount Teide, an hour or so by road from the coastal resorts of Tenerife.",
+   "facts": [
+    "Teide National Park holds Starlight certification both as a tourist destination and as a reserve.",
+    "The Teide Observatory, run by the Instituto de Astrofísica de Canarias, sits at about 2,390 m in the park.",
+    "Canary Islands law has protected the sky over the observatories from light pollution since 1988.",
+    "Low clouds usually form below a temperature inversion that sits well under the peaks, so the park can be clear when the coast is cloudy."
+   ],
+   "tip": "It is cold at night up here even in summer. Bring warm layers, and check the road and weather before you drive up.",
+   "sources": [
+    [
+     "Tenerife Tourism, astronomy",
+     "https://www.webtenerife.co.uk/tenerife/the-island/astronomy/"
+    ],
+    [
+     "Instituto de Astrofísica de Canarias, observatories leaflet",
+     "https://iac.edu.es/system/files/documents/2019-09/enofolleto.pdf"
+    ]
+   ],
+   "months": [
+    {
+     "month": "2026-11",
+     "dark": 10.3,
+     "core": 0
+    },
+    {
+     "month": "2026-12",
+     "dark": 10.7,
+     "core": 0
+    },
+    {
+     "month": "2027-01",
+     "dark": 10.5,
+     "core": 0
+    },
+    {
+     "month": "2027-02",
+     "dark": 10,
+     "core": 0.7
+    },
+    {
+     "month": "2027-03",
+     "dark": 9.3,
+     "core": 2
+    },
+    {
+     "month": "2027-04",
+     "dark": 8.3,
+     "core": 3.3
+    },
+    {
+     "month": "2027-05",
+     "dark": 7.3,
+     "core": 4.8
+    },
+    {
+     "month": "2027-06",
+     "dark": 6.8,
+     "core": 6.7
+    },
+    {
+     "month": "2027-07",
+     "dark": 7,
+     "core": 5
+    },
+    {
+     "month": "2027-08",
+     "dark": 8,
+     "core": 3.5
+    },
+    {
+     "month": "2027-09",
+     "dark": 9,
+     "core": 2.2
+    },
+    {
+     "month": "2027-10",
+     "dark": 9.8,
+     "core": 0.7
+    },
+    {
+     "month": "2027-11",
+     "dark": 10.3,
+     "core": 0
+    },
+    {
+     "month": "2027-12",
+     "dark": 10.7,
+     "core": 0
+    }
+   ],
+   "windows": [
+    {
+     "from": "2026-11-05",
+     "to": "2026-11-13",
+     "nights": 9
+    },
+    {
+     "from": "2026-12-04",
+     "to": "2026-12-12",
+     "nights": 9
+    },
+    {
+     "from": "2027-01-03",
+     "to": "2027-01-11",
+     "nights": 9
+    },
+    {
+     "from": "2027-02-01",
+     "to": "2027-02-09",
+     "nights": 9
+    },
+    {
+     "from": "2027-03-02",
+     "to": "2027-03-11",
+     "nights": 10
+    },
+    {
+     "from": "2027-04-01",
+     "to": "2027-04-09",
+     "nights": 9
+    },
+    {
+     "from": "2027-05-01",
+     "to": "2027-05-08",
+     "nights": 8
+    },
+    {
+     "from": "2027-05-31",
+     "to": "2027-06-07",
+     "nights": 8
+    },
+    {
+     "from": "2027-07-01",
+     "to": "2027-07-07",
+     "nights": 7
+    },
+    {
+     "from": "2027-07-30",
+     "to": "2027-08-06",
+     "nights": 8
+    },
+    {
+     "from": "2027-08-28",
+     "to": "2027-09-05",
+     "nights": 9
+    },
+    {
+     "from": "2027-09-26",
+     "to": "2027-10-04",
+     "nights": 9
+    },
+    {
+     "from": "2027-10-25",
+     "to": "2027-11-02",
+     "nights": 9
+    },
+    {
+     "from": "2027-11-24",
+     "to": "2027-12-01",
+     "nights": 8
+    },
+    {
+     "from": "2027-12-23",
+     "to": "2027-12-31",
+     "nights": 9
+    }
+   ]
+  },
+  {
+   "slug": "la-palma",
+   "name": "La Palma",
+   "region": "Canary Islands, Spain",
+   "lat": 28.76,
+   "lon": -17.89,
+   "elevation": 2400,
+   "tz": "Atlantic/Canary",
+   "intro": "The island of La Palma, home of the Roque de los Muchachos Observatory on its highest ridge.",
+   "facts": [
+    "The Roque de los Muchachos Observatory stands at about 2,396 m.",
+    "The Canary Islands’ ‘Sky Law’, approved in 1988, limits light pollution to protect the observatories.",
+    "As on Tenerife, low clouds generally stay well below the summit ridge."
+   ],
+   "tip": "The summit road is long and winding. Allow plenty of time, and do not drive it for the first time in the dark if you can avoid it.",
+   "sources": [
+    [
+     "Instituto de Astrofísica de Canarias, observatories leaflet",
+     "https://iac.edu.es/system/files/documents/2019-09/enofolleto.pdf"
+    ]
+   ],
+   "months": [
+    {
+     "month": "2026-11",
+     "dark": 10.3,
+     "core": 0
+    },
+    {
+     "month": "2026-12",
+     "dark": 10.7,
+     "core": 0
+    },
+    {
+     "month": "2027-01",
+     "dark": 10.5,
+     "core": 0
+    },
+    {
+     "month": "2027-02",
+     "dark": 10,
+     "core": 0.5
+    },
+    {
+     "month": "2027-03",
+     "dark": 9.3,
+     "core": 1.8
+    },
+    {
+     "month": "2027-04",
+     "dark": 8.2,
+     "core": 3.3
+    },
+    {
+     "month": "2027-05",
+     "dark": 7.3,
+     "core": 4.7
+    },
+    {
+     "month": "2027-06",
+     "dark": 6.8,
+     "core": 6.7
+    },
+    {
+     "month": "2027-07",
+     "dark": 7,
+     "core": 5
+    },
+    {
+     "month": "2027-08",
+     "dark": 8,
+     "core": 3.3
+    },
+    {
+     "month": "2027-09",
+     "dark": 9,
+     "core": 2
+    },
+    {
+     "month": "2027-10",
+     "dark": 9.8,
+     "core": 0.5
+    },
+    {
+     "month": "2027-11",
+     "dark": 10.3,
+     "core": 0
+    },
+    {
+     "month": "2027-12",
+     "dark": 10.7,
+     "core": 0
+    }
+   ],
+   "windows": [
+    {
+     "from": "2026-11-05",
+     "to": "2026-11-13",
+     "nights": 9
+    },
+    {
+     "from": "2026-12-04",
+     "to": "2026-12-12",
+     "nights": 9
+    },
+    {
+     "from": "2027-01-03",
+     "to": "2027-01-11",
+     "nights": 9
+    },
+    {
+     "from": "2027-02-01",
+     "to": "2027-02-09",
+     "nights": 9
+    },
+    {
+     "from": "2027-03-02",
+     "to": "2027-03-11",
+     "nights": 10
+    },
+    {
+     "from": "2027-04-01",
+     "to": "2027-04-09",
+     "nights": 9
+    },
+    {
+     "from": "2027-05-01",
+     "to": "2027-05-08",
+     "nights": 8
+    },
+    {
+     "from": "2027-05-31",
+     "to": "2027-06-07",
+     "nights": 8
+    },
+    {
+     "from": "2027-06-30",
+     "to": "2027-07-07",
+     "nights": 8
+    },
+    {
+     "from": "2027-07-30",
+     "to": "2027-08-06",
+     "nights": 8
+    },
+    {
+     "from": "2027-08-28",
+     "to": "2027-09-05",
+     "nights": 9
+    },
+    {
+     "from": "2027-09-26",
+     "to": "2027-10-04",
+     "nights": 9
+    },
+    {
+     "from": "2027-10-25",
+     "to": "2027-11-02",
+     "nights": 9
+    },
+    {
+     "from": "2027-11-24",
+     "to": "2027-12-01",
+     "nights": 8
+    },
+    {
+     "from": "2027-12-23",
+     "to": "2027-12-31",
+     "nights": 9
+    }
+   ]
+  },
+  {
+   "slug": "atacama",
+   "name": "Atacama Desert",
+   "region": "near San Pedro de Atacama, Chile",
+   "lat": -22.91,
+   "lon": -68.2,
+   "elevation": 2400,
+   "tz": "America/Santiago",
+   "intro": "The high desert of northern Chile around San Pedro de Atacama, the base for most stargazing trips in the region.",
+   "facts": [
+    "The European Southern Observatory calls the Atacama one of the driest places on Earth, with over 300 clear nights a year.",
+    "Several of the world’s major observatories are in northern Chile, including ESO’s Paranal and La Silla sites and ALMA.",
+    "It is in the southern hemisphere, so the centre of the Milky Way passes high overhead in the southern winter."
+   ],
+   "tip": "Plan more than one night. A local operator in San Pedro warns that coming for a single night is risky, and advises avoiding the full Moon.",
+   "sources": [
+    [
+     "ESO, Reflections of Paranal",
+     "https://eso.org/public/poland/images/potw1629a"
+    ],
+    [
+     "San Pedro de Atacama Celestial Explorations, the astronomical Chile",
+     "https://www.spaceobs.com/en/Informations/The-astronomical-Chile"
+    ]
+   ],
+   "months": [
+    {
+     "month": "2026-11",
+     "dark": 8,
+     "core": 0
+    },
+    {
+     "month": "2026-12",
+     "dark": 7.3,
+     "core": 0
+    },
+    {
+     "month": "2027-01",
+     "dark": 7.8,
+     "core": 0
+    },
+    {
+     "month": "2027-02",
+     "dark": 8.3,
+     "core": 2
+    },
+    {
+     "month": "2027-03",
+     "dark": 9.2,
+     "core": 4.2
+    },
+    {
+     "month": "2027-04",
+     "dark": 9.8,
+     "core": 6.5
+    },
+    {
+     "month": "2027-05",
+     "dark": 10.3,
+     "core": 8.5
+    },
+    {
+     "month": "2027-06",
+     "dark": 10.5,
+     "core": 10.5
+    },
+    {
+     "month": "2027-07",
+     "dark": 10.3,
+     "core": 9
+    },
+    {
+     "month": "2027-08",
+     "dark": 10,
+     "core": 6.7
+    },
+    {
+     "month": "2027-09",
+     "dark": 9.3,
+     "core": 4.5
+    },
+    {
+     "month": "2027-10",
+     "dark": 8.7,
+     "core": 2.3
+    },
+    {
+     "month": "2027-11",
+     "dark": 8,
+     "core": 0
+    },
+    {
+     "month": "2027-12",
+     "dark": 7.3,
+     "core": 0
+    }
+   ],
+   "windows": [
+    {
+     "from": "2026-11-03",
+     "to": "2026-11-11",
+     "nights": 9
+    },
+    {
+     "from": "2026-12-04",
+     "to": "2026-12-12",
+     "nights": 9
+    },
+    {
+     "from": "2027-01-03",
+     "to": "2027-01-11",
+     "nights": 9
+    },
+    {
+     "from": "2027-02-02",
+     "to": "2027-02-11",
+     "nights": 10
+    },
+    {
+     "from": "2027-03-04",
+     "to": "2027-03-12",
+     "nights": 9
+    },
+    {
+     "from": "2027-04-02",
+     "to": "2027-04-10",
+     "nights": 9
+    },
+    {
+     "from": "2027-05-02",
+     "to": "2027-05-09",
+     "nights": 8
+    },
+    {
+     "from": "2027-05-31",
+     "to": "2027-06-07",
+     "nights": 8
+    },
+    {
+     "from": "2027-06-30",
+     "to": "2027-07-06",
+     "nights": 7
+    },
+    {
+     "from": "2027-07-29",
+     "to": "2027-08-04",
+     "nights": 7
+    },
+    {
+     "from": "2027-08-27",
+     "to": "2027-09-02",
+     "nights": 7
+    },
+    {
+     "from": "2027-09-25",
+     "to": "2027-10-02",
+     "nights": 8
+    },
+    {
+     "from": "2027-10-24",
+     "to": "2027-10-31",
+     "nights": 8
+    },
+    {
+     "from": "2027-11-23",
+     "to": "2027-11-30",
+     "nights": 8
+    },
+    {
+     "from": "2027-12-23",
+     "to": "2027-12-31",
+     "nights": 9
+    }
+   ]
+  },
+  {
+   "slug": "namibrand",
+   "name": "NamibRand Nature Reserve",
+   "region": "southern Namibia",
+   "lat": -25,
+   "lon": 16,
+   "elevation": 1000,
+   "tz": "Africa/Windhoek",
+   "intro": "A private nature reserve in the south-west Namib Desert, with lodges and camps rather than towns.",
+   "facts": [
+    "It was named an International Dark Sky Reserve in 2012, the first in Africa.",
+    "It holds Gold Tier status, the darkest and strictest category."
+   ],
+   "tip": "There is no town nearby, so the sky is dark from horizon to horizon. Stays are at lodges and camps inside or next to the reserve.",
+   "sources": [
+    [
+     "NamibRand Nature Reserve, dark sky",
+     "https://namibrand.org/dark-sky.html"
+    ]
+   ],
+   "months": [
+    {
+     "month": "2026-11",
+     "dark": 7.7,
+     "core": 0
+    },
+    {
+     "month": "2026-12",
+     "dark": 7.3,
+     "core": 0
+    },
+    {
+     "month": "2027-01",
+     "dark": 7.5,
+     "core": 0
+    },
+    {
+     "month": "2027-02",
+     "dark": 8.3,
+     "core": 2.2
+    },
+    {
+     "month": "2027-03",
+     "dark": 9.2,
+     "core": 4.3
+    },
+    {
+     "month": "2027-04",
+     "dark": 9.8,
+     "core": 6.5
+    },
+    {
+     "month": "2027-05",
+     "dark": 10.3,
+     "core": 8.7
+    },
+    {
+     "month": "2027-06",
+     "dark": 10.5,
+     "core": 10.5
+    },
+    {
+     "month": "2027-07",
+     "dark": 10.5,
+     "core": 9
+    },
+    {
+     "month": "2027-08",
+     "dark": 10,
+     "core": 6.8
+    },
+    {
+     "month": "2027-09",
+     "dark": 9.3,
+     "core": 4.7
+    },
+    {
+     "month": "2027-10",
+     "dark": 8.7,
+     "core": 2.5
+    },
+    {
+     "month": "2027-11",
+     "dark": 7.7,
+     "core": 0
+    },
+    {
+     "month": "2027-12",
+     "dark": 7.3,
+     "core": 0
+    }
+   ],
+   "windows": [
+    {
+     "from": "2026-11-04",
+     "to": "2026-11-11",
+     "nights": 8
+    },
+    {
+     "from": "2026-12-04",
+     "to": "2026-12-12",
+     "nights": 9
+    },
+    {
+     "from": "2027-01-04",
+     "to": "2027-01-12",
+     "nights": 9
+    },
+    {
+     "from": "2027-02-03",
+     "to": "2027-02-11",
+     "nights": 9
+    },
+    {
+     "from": "2027-03-04",
+     "to": "2027-03-12",
+     "nights": 9
+    },
+    {
+     "from": "2027-04-03",
+     "to": "2027-04-10",
+     "nights": 8
+    },
+    {
+     "from": "2027-05-02",
+     "to": "2027-05-09",
+     "nights": 8
+    },
+    {
+     "from": "2027-06-01",
+     "to": "2027-06-07",
+     "nights": 7
+    },
+    {
+     "from": "2027-06-30",
+     "to": "2027-07-06",
+     "nights": 7
+    },
+    {
+     "from": "2027-07-29",
+     "to": "2027-08-04",
+     "nights": 7
+    },
+    {
+     "from": "2027-08-27",
+     "to": "2027-09-03",
+     "nights": 8
+    },
+    {
+     "from": "2027-09-25",
+     "to": "2027-10-02",
+     "nights": 8
+    },
+    {
+     "from": "2027-10-24",
+     "to": "2027-10-31",
+     "nights": 8
+    },
+    {
+     "from": "2027-11-23",
+     "to": "2027-12-01",
+     "nights": 9
+    },
+    {
+     "from": "2027-12-24",
+     "to": "2027-12-31",
+     "nights": 8
+    }
+   ]
+  },
+  {
+   "slug": "aoraki-mackenzie",
+   "name": "Aoraki Mackenzie",
+   "region": "Lake Tekapo, South Island, New Zealand",
+   "lat": -44,
+   "lon": 170.48,
+   "elevation": 710,
+   "tz": "Pacific/Auckland",
+   "intro": "The Aoraki Mackenzie International Dark Sky Reserve on New Zealand’s South Island, with Lake Tekapo as its main base.",
+   "facts": [
+    "The reserve covers over 4,300 km² and holds Gold Tier status.",
+    "Lake Tekapo is its stargazing hub."
+   ],
+   "tip": "Being far south, winter nights from May to August are long and cold. Summer nights are short.",
+   "sources": [
+    [
+     "Dark Sky Project, Dark Sky Reserve NZ",
+     "https://darkskyproject.co.nz/our-story/blog/dark-sky-reserve-nz-a-world-class-stargazing-destination/"
+    ]
+   ],
+   "months": [
+    {
+     "month": "2026-11",
+     "dark": 5,
+     "core": 0
+    },
+    {
+     "month": "2026-12",
+     "dark": 3.7,
+     "core": 0
+    },
+    {
+     "month": "2027-01",
+     "dark": 4.2,
+     "core": 0
+    },
+    {
+     "month": "2027-02",
+     "dark": 6.3,
+     "core": 1.8
+    },
+    {
+     "month": "2027-03",
+     "dark": 8.2,
+     "core": 4.5
+    },
+    {
+     "month": "2027-04",
+     "dark": 9.8,
+     "core": 7.2
+    },
+    {
+     "month": "2027-05",
+     "dark": 11,
+     "core": 9.7
+    },
+    {
+     "month": "2027-06",
+     "dark": 11.5,
+     "core": 11.5
+    },
+    {
+     "month": "2027-07",
+     "dark": 11.3,
+     "core": 10.3
+    },
+    {
+     "month": "2027-08",
+     "dark": 10.3,
+     "core": 7.7
+    },
+    {
+     "month": "2027-09",
+     "dark": 9,
+     "core": 5.2
+    },
+    {
+     "month": "2027-10",
+     "dark": 7.2,
+     "core": 2.3
+    },
+    {
+     "month": "2027-11",
+     "dark": 5,
+     "core": 0
+    },
+    {
+     "month": "2027-12",
+     "dark": 3.7,
+     "core": 0
+    }
+   ],
+   "windows": [
+    {
+     "from": "2026-11-02",
+     "to": "2026-11-11",
+     "nights": 10
+    },
+    {
+     "from": "2027-01-08",
+     "to": "2027-01-14",
+     "nights": 7
+    },
+    {
+     "from": "2027-02-03",
+     "to": "2027-02-14",
+     "nights": 12
+    },
+    {
+     "from": "2027-03-05",
+     "to": "2027-03-14",
+     "nights": 10
+    },
+    {
+     "from": "2027-04-03",
+     "to": "2027-04-12",
+     "nights": 10
+    },
+    {
+     "from": "2027-05-03",
+     "to": "2027-05-10",
+     "nights": 8
+    },
+    {
+     "from": "2027-06-01",
+     "to": "2027-06-08",
+     "nights": 8
+    },
+    {
+     "from": "2027-06-30",
+     "to": "2027-07-07",
+     "nights": 8
+    },
+    {
+     "from": "2027-07-29",
+     "to": "2027-08-05",
+     "nights": 8
+    },
+    {
+     "from": "2027-08-26",
+     "to": "2027-09-03",
+     "nights": 9
+    },
+    {
+     "from": "2027-09-24",
+     "to": "2027-10-02",
+     "nights": 9
+    },
+    {
+     "from": "2027-10-23",
+     "to": "2027-10-31",
+     "nights": 9
+    },
+    {
+     "from": "2027-11-23",
+     "to": "2027-11-30",
+     "nights": 8
+    }
+   ]
+  }
+ ]
+}

@@ -2,6 +2,7 @@
 import Photo from '../../components/Photo.astro';
 import Layout from '../../layouts/Layout.astro';
 import DarkBars from '../../components/DarkBars.astro';
+import BookBlock from '../../components/BookBlock.astro';
 import { aurora, seasonText, seasonNewMoons, MONTHS_LONG } from '../../lib/aurora';
 import { longDate } from '../../lib/site';
 export function getStaticPaths() {
@@ -39,6 +40,19 @@ const others = aurora.places.filter((o) => o.slug !== p.slug);
     <h2>On the ground</h2>
     <p class="measure">{p.tip}</p>
     <p class="measure">Whatever the month, check two forecasts on the day: the aurora forecast from NOAA and the cloud forecast for where you are. <a href="/guides/aurora-forecast-kp/">How to read the aurora forecast.</a></p>
+
+    <BookBlock
+      title={`Booking a northern lights tour from ${p.name}`}
+      link={`tours-${p.slug}`}
+      cta="See northern lights tours"
+      points={[
+        'Book for one of your first nights, so you can try again if the sky does not cooperate.',
+        'Ask whether the tour chases clear skies by car or stays at one camp.',
+        'Ask what happens if there is no aurora: a free second try, a discount, or nothing.',
+        'Check group size, whether warm clothing is lent, and what time you will be back.',
+      ]}
+    />
+    <p class="small"><a href="/aurora/tours/">Full checklist for choosing a tour.</a></p>
 
     <p class="small">Other places: {others.map((o, i) => <>{i > 0 && ', '}<a href={`/aurora/${o.slug}/`}>{o.name}</a></>)}. <a href="/aurora/">Compare all seven.</a></p>
 

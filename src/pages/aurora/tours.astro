@@ -1,0 +1,40 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Photo from '../../components/Photo.astro';
+import { aurora, seasonText } from '../../lib/aurora';
+---
+<Layout title="Northern lights tours: what to check before you book" description="What separates a good northern lights tour from a long night on a bus: group size, chasing clear skies, what happens if there is no aurora, clothing, photos and timing.">
+  <article class="wrap page prose">
+    <h1>Northern lights tours: what to check before you book</h1>
+    <p class="stamp">Last reviewed 24 October 2026.</p>
+    <p class="lead measure">You can see the aurora on your own with a car, a dark spot and luck. A good tour improves the odds: guides know where the clear gaps in the cloud are likely to be, drive you there on winter roads, and know when it is worth waiting. A bad one is a long night on a bus. These are the questions that tell them apart.</p>
+    <Photo id="aurora-ringvassoya" />
+
+    <h2>Before you book</h2>
+    <ol class="measure">
+      <li><strong>Do they chase or stay put?</strong> A “chase” goes wherever the forecast is clearest that night, sometimes a long drive. A fixed camp or cabin is more comfortable but cannot move if clouds roll in. Both can be right; know which you are buying.</li>
+      <li><strong>How big is the group?</strong> A minibus and a coach are very different nights, especially when everyone wants the same photo spot.</li>
+      <li><strong>What if there is no aurora?</strong> Ask directly whether you can come again for free or at a discount, and for how long the offer lasts. Policies differ a lot.</li>
+      <li><strong>What if the weather cancels it?</strong> Ask about refunds and rebooking when the tour is called off for storms or road conditions.</li>
+      <li><strong>Is warm clothing included?</strong> Some operators lend thermal suits and boots. If not, plan for long hours standing in deep cold.</li>
+      <li><strong>Are photos included?</strong> Many guides photograph guests under the aurora. If you want your own photos, ask whether they help set up phones and cameras and whether tripods are available.</li>
+      <li><strong>How long, and back when?</strong> Chases can return well after midnight. Check before booking an early start the next day.</li>
+    </ol>
+
+    <h2>When to go</h2>
+    <ul class="measure">
+      <li><strong>Book a tour for one of your first nights.</strong> If the sky does not cooperate, you still have nights left to try again.</li>
+      <li><strong>Pick the right months.</strong> None of the places we cover has real darkness in June or July. Our <a href="/aurora/">northern lights page</a> shows the dark season for each, from Tromsø ({seasonText(aurora.places[0].season)}) to Yellowknife.</li>
+      <li><strong>Check the forecast on the day,</strong> both the aurora forecast and the cloud forecast. <a href="/guides/aurora-forecast-kp/">How to read the aurora forecast.</a></li>
+    </ul>
+
+    <h2>Places we cover</h2>
+    <ul class="measure">{aurora.places.map((p) => <li><a href={`/aurora/${p.slug}/`}>{p.name}</a>, {p.country}: dark enough {seasonText(p.season)}.</li>)}</ul>
+
+    <h2>Sources</h2>
+    <ul class="sources">
+      <li>Dark season for each place: our calculation, {aurora.method}. <a href="/aurora/#how">How we worked it out.</a></li>
+      <li>NOAA Space Weather Prediction Center, <a href="https://www.spaceweather.gov/content/tips-viewing-aurora">Tips on viewing the aurora</a>.</li>
+    </ul>
+  </article>
+</Layout>

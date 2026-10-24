@@ -252,6 +252,54 @@
    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
    "width": 1600,
    "height": 915
+  },
+  "teide-night": {
+   "from": "candidates/teide-night/1.webp",
+   "alt": "Circular star trails over the dark peak of Mount Teide and the rocks of the Cañadas crater",
+   "caption": "Star trails over Mount Teide, from the Cañadas crater at about 2,000 m",
+   "title": "File:Circumpolar star trails and ISS transit over the Teide volcano, Tenerife, Spain.jpg",
+   "page": "https://commons.wikimedia.org/wiki/File:Circumpolar_star_trails_and_ISS_transit_over_the_Teide_volcano,_Tenerife,_Spain.jpg",
+   "author": "Benedikt Markus",
+   "license": "CC BY-SA 4.0",
+   "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+   "width": 1500,
+   "height": 927
+  },
+  "la-palma-night": {
+   "from": "candidates/la-palma-observatory/1.webp",
+   "alt": "The white dome of a large telescope on a mountain ridge above the sea, with a comet’s tail in the twilight sky",
+   "caption": "The William Herschel Telescope at the Roque de los Muchachos Observatory, La Palma, with comet Tsuchinshan–ATLAS",
+   "title": "File:William Herschel Telescope and Comet Tsuchinshan–ATLAS.jpg",
+   "page": "https://commons.wikimedia.org/wiki/File:William_Herschel_Telescope_and_Comet_Tsuchinshan%E2%80%93ATLAS.jpg",
+   "author": "Whyistheskyblue1",
+   "license": "CC BY-SA 4.0",
+   "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+   "width": 1600,
+   "height": 1067
+  },
+  "atacama-night": {
+   "from": "candidates/atacama-night/8.webp",
+   "alt": "The Milky Way arching over twisted rock formations in the Atacama Desert",
+   "caption": "A night in the Atacama Desert, Chile",
+   "title": "File:A magical night in the Atacama Desert (potw2348a).jpg",
+   "page": "https://commons.wikimedia.org/wiki/File:A_magical_night_in_the_Atacama_Desert_(potw2348a).jpg",
+   "author": "P. Horálek/ESO",
+   "license": "CC BY 4.0",
+   "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
+   "width": 1600,
+   "height": 1763
+  },
+  "aoraki-mackenzie-night": {
+   "from": "candidates/tekapo-night/2.webp",
+   "alt": "The Milky Way over the small stone Church of the Good Shepherd at Lake Tekapo",
+   "caption": "The Church of the Good Shepherd under the stars, Lake Tekapo, New Zealand",
+   "title": "File:Church of good Shepherd, lake Tekapo, stargazing view 4.jpg",
+   "page": "https://commons.wikimedia.org/wiki/File:Church_of_good_Shepherd,_lake_Tekapo,_stargazing_view_4.jpg",
+   "author": "Sky_xe",
+   "license": "CC BY-SA 4.0",
+   "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+   "width": 1600,
+   "height": 1067
   }
  }
 }

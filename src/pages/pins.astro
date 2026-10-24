@@ -1,0 +1,24 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { pins } from '../lib/pins';
+---
+<Layout title="Charts to save: eclipses, northern lights, meteor showers" description="Our sky charts in one place, sized for Pinterest: eclipse 2027 totality by place, the dark season for the northern lights, meteor shower verdicts, every eclipse to 2030 and more.">
+  <div class="wrap page">
+    <h1>Charts to save</h1>
+    <p class="lead measure">Our numbers as tall charts you can save or pin. Every one is drawn from the same calculations as the pages, and links to the page with the details and sources.</p>
+    <ul class="pins">
+      {pins.map((p) => (
+        <li>
+          <a href={p.href}><img src={`/pins/${p.id}.jpg`} alt={p.alt} width="1000" height="1500" loading="lazy" data-pin-description={p.description} data-pin-url={`https://worthgoingout.com${p.href}`} /></a>
+          <p><a href={p.href}>{p.title}</a></p>
+        </li>
+      ))}
+    </ul>
+  </div>
+</Layout>
+<style>
+  .pins { list-style: none; padding: 0; margin: 2rem 0 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 32px 28px; }
+  .pins img { width: 100%; height: auto; display: block; border-radius: 6px; border: 1px solid var(--line); }
+  .pins p { margin: 10px 0 0; font-weight: 700; }
+  .pins p a { color: var(--heading); text-decoration: underline; text-underline-offset: 3px; text-decoration-thickness: 1px; }
+</style>

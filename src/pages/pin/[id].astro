@@ -1,0 +1,107 @@
+---
+// One Pinterest pin, drawn at 1000x1500 for scripts/make-pins.mjs to photograph. Not linked from the site and not indexed.
+import '@fontsource/young-serif/400.css';
+import '@fontsource/atkinson-hyperlegible-next/400.css';
+import '@fontsource/atkinson-hyperlegible-next/700.css';
+import { pins } from '../../lib/pins';
+import { eclipse, fmtDuration, upcomingShowers, verdictLabel } from '../../lib/sky';
+import { aurora, MONTHS } from '../../lib/aurora';
+import { eclipseList, solarLabel, lunarLabel, dayLabel } from '../../lib/eclipses';
+import { stargazing, monthShort } from '../../lib/stargazing';
+export function getStaticPaths() { return pins.map((p) => ({ params: { id: p.id }, props: { pin: p } })); }
+const { pin } = Astro.props;
+const total = eclipse.places.filter((p) => p.kind === 'total').sort((a, b) => b.totalitySeconds! - a.totalitySeconds!);
+const shown = total.filter((p) => ['luxor', 'asyut', 'jeddah', 'sfax', 'oran', 'tangier', 'tarifa', 'gibraltar', 'marbella', 'cadiz', 'malaga'].includes(p.slug));
+const misses = eclipse.places.filter((p) => p.kind !== 'total').sort((a, b) => b.obscuration - a.obscuration).slice(0, 8);
+const showers = upcomingShowers().slice(0, 9);
+const big = [...eclipseList.solar.filter((e) => e.kind !== 'partial').map((e) => ({ ...e, t: 'solar' })), ...eclipseList.lunar.filter((e) => e.kind === 'total').map((e) => ({ ...e, t: 'lunar' }))].sort((a, b) => a.peak.localeCompare(b.peak));
+const where: Record<string, string> = {
+  '2027-02-06': 'South America, West Africa', '2027-08-02': 'Spain, North Africa, Arabia', '2028-01-26': 'South America, Portugal, Spain',
+  '2028-07-22': 'Australia, New Zealand', '2030-06-01': 'North Africa, Greece, Turkey, Russia, Japan', '2030-11-25': 'Southern Africa, Australia',
+  '2028-12-31': 'Asia, Australia, Europe', '2029-06-26': 'Americas, Africa, western Europe', '2029-12-20': 'Europe, Africa, Asia',
+};
+const sg = stargazing.places.map((p) => ({ name: p.name, months: p.months.slice(2, 14) }));
+---
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8" /><meta name="robots" content="noindex" /><title>{pin.title}</title></head>
+<body>
+<div class="pin">
+  <header><span class="brand">Worth Going Out</span></header>
+  <h1>{pin.title}</h1>
+
+  {pin.id === 'eclipse-2027-totality' && <>
+    <p class="sub">Total solar eclipse, 2 August 2027. Minutes of darkness at each place, calculated by us.</p>
+    <ul class="bars">{shown.map((p) => <li><span class="n">{p.name}<em>{p.country}</em></span><span class="b"><i style={`width:${(p.totalitySeconds! / 400) * 100}%`}></i></span><span class="v">{fmtDuration(p.totalitySeconds!)}</span></li>)}</ul>
+    <p class="note">No totality at all in Cairo, Giza, Aswan, Seville or Granada.</p>
+  </>}
+
+  {pin.id === 'eclipse-2027-misses' && <>
+    <p class="sub">2 August 2027. These places get only a partial eclipse: the sky does not go dark.</p>
+    <ul class="list">{misses.map((p) => <li><span class="n">{p.name}<em>{p.country}</em></span><span class="v gold">{(p.obscuration * 100).toFixed(1)}%</span></li>)}</ul>
+    <p class="note">Percent of the Sun covered at most. Only 100% brings totality.</p>
+  </>}
+
+  {pin.id === 'aurora-dark-months' && <>
+    <p class="sub">Months with at least 4 hours of real darkness. No darkness, no aurora.</p>
+    <table class="grid"><thead><tr><th></th>{MONTHS.map((m) => <th>{m[0]}</th>)}</tr></thead>
+      <tbody>{aurora.places.map((p) => <tr><th>{p.name}</th>{p.dark.map((h, i) => <td class={p.season.includes(i) ? 'on' : h > 0 ? 'half' : ''}></td>)}</tr>)}</tbody></table>
+    <p class="note">Green: dark enough. Best of all around the equinoxes in September and March.</p>
+  </>}
+
+  {pin.id === 'meteor-showers' && <>
+    <p class="sub">Strong shower plus a dark, moonless sky: Go. Judged by meteors per hour and Moon light.</p>
+    <ul class="list">{showers.map((s) => <li><span class="n">{s.name}<em>{new Date(`${s.night[0]}T00:00:00Z`).toLocaleDateString('en-GB', { day: 'numeric', month: 'short', year: 'numeric', timeZone: 'UTC' })}</em></span><span class={`vd ${s.verdict}`}>{verdictLabel[s.verdict]}</span></li>)}</ul>
+  </>}
+
+  {pin.id === 'eclipses-to-2030' && <>
+    <p class="sub">The eclipses worth travelling for.</p>
+    <ul class="list tl">{big.map((e) => <li><span class="n">{e.t === 'solar' ? solarLabel[e.kind] : lunarLabel[e.kind]}<em>{where[e.date] ?? ''}</em></span><span class="v">{dayLabel(e.peak)}</span></li>)}</ul>
+  </>}
+
+  {pin.id === 'milky-way-season' && <>
+    <p class="sub">Months when the bright centre of the Milky Way is up in full darkness.</p>
+    <table class="grid"><thead><tr><th></th>{sg[0].months.map((m) => <th>{monthShort(m.month)[0]}</th>)}</tr></thead>
+      <tbody>{sg.map((p) => <tr><th>{p.name}</th>{p.months.map((m) => <td class={m.core >= 4 ? 'on' : m.core >= 2 ? 'half' : ''}></td>)}</tr>)}</tbody></table>
+    <p class="note">Bright green: 4 hours or more. Dark green: 2 to 4 hours. Go in the week around New Moon.</p>
+  </>}
+
+  {pin.id === 'eclipse-glasses' && <>
+    <p class="sub">A printed “ISO 12312-2” label proves nothing on its own. Buy from a supplier on the American Astronomical Society list, then:</p>
+    <ol class="steps">
+      <li><b>Indoors</b>Put them on. You should see nothing, except very bright lights, faintly.</li>
+      <li><b>Outdoors</b>In daylight you should see almost nothing.</li>
+      <li><b>The Sun</b>Glance for under a second: a sharp, round, comfortable disc.</li>
+    </ol>
+    <p class="note">Torn, scratched or loose filter? Throw them away.</p>
+  </>}
+
+  <footer><span>worthgoingout.com</span><span class="small">Plain answers: is it worth going out?</span></footer>
+</div>
+<style is:global>
+  html, body { margin: 0; background: #0f1230; }
+  .pin { width: 1000px; height: 1500px; box-sizing: border-box; padding: 70px 72px 60px; display: flex; flex-direction: column; color: #e4e7f7; font-family: 'Atkinson Hyperlegible Next', sans-serif; background: radial-gradient(circle at 85% 8%, #2a2f6e 0, #0f1230 46%); }
+  header .brand { font-family: 'Young Serif', serif; color: #f4c86a; font-size: 34px; }
+  h1 { font-family: 'Young Serif', serif; font-weight: 400; color: #fff; font-size: 74px; line-height: 1.05; margin: 34px 0 20px; letter-spacing: -0.01em; }
+  .sub { font-size: 31px; line-height: 1.35; color: #c9cdee; margin: 0 0 34px; }
+  .note { font-size: 27px; color: #a6acd8; margin-top: auto; padding-top: 24px; }
+  footer { display: flex; justify-content: space-between; align-items: baseline; border-top: 2px solid #2d3373; padding-top: 22px; margin-top: 26px; font-size: 32px; color: #f4c86a; font-weight: 700; }
+  footer .small { font-size: 23px; color: #a6acd8; font-weight: 400; }
+  ul { list-style: none; padding: 0; margin: 0; }
+  .bars li { display: grid; grid-template-columns: 300px 1fr 170px; align-items: center; gap: 18px; padding: 9px 0; font-size: 28px; }
+  .n { color: #fff; font-weight: 700; } .n em { display: block; font-style: normal; font-weight: 400; color: #a6acd8; font-size: 21px; }
+  .b { height: 22px; background: #20255a; border-radius: 4px; overflow: hidden; } .b i { display: block; height: 100%; background: #f4c86a; }
+  .v { text-align: right; font-weight: 700; } .gold { color: #f4c86a; font-size: 34px; }
+  .list li { display: flex; justify-content: space-between; align-items: center; padding: 16px 0; border-bottom: 2px solid #2d3373; font-size: 32px; }
+  .tl li { padding: 13px 0; font-size: 28px; } .tl .v { font-size: 26px; color: #f4c86a; }
+  .vd { font-weight: 700; font-size: 28px; padding: 6px 18px; border: 3px solid currentColor; border-radius: 6px; min-width: 110px; text-align: center; }
+  .vd.go { color: #62d9a6; background: #123a3a; } .vd.maybe { color: #f2ab55; background: #3d2d1b; } .vd.skip { color: #f58983; background: #432234; }
+  .grid { border-collapse: separate; border-spacing: 6px; width: 100%; font-size: 26px; }
+  .grid th { color: #a6acd8; font-weight: 400; text-align: center; } .grid tbody th { text-align: left; color: #fff; font-weight: 700; white-space: nowrap; padding-right: 10px; font-size: 27px; }
+  .grid td { height: 64px; background: #20255a; border-radius: 6px; } .grid td.on { background: #62d9a6; } .grid td.half { background: #2f6b63; }
+  .pin .grid td.on { background: #62d9a6; }
+  .steps { padding: 0; margin: 10px 0 0; list-style: none; counter-reset: s; }
+  .steps li { counter-increment: s; position: relative; padding: 26px 0 26px 110px; border-bottom: 2px solid #2d3373; font-size: 33px; line-height: 1.35; }
+  .steps li::before { content: counter(s); position: absolute; left: 0; top: 22px; width: 76px; height: 76px; border-radius: 50%; background: #f4c86a; color: #1c1600; font-family: 'Young Serif', serif; font-size: 44px; display: flex; align-items: center; justify-content: center; }
+  .steps b { display: block; color: #fff; font-size: 38px; font-family: 'Young Serif', serif; font-weight: 400; margin-bottom: 4px; }
+</style>
+</body></html>

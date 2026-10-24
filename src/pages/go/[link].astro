@@ -1,0 +1,11 @@
+---
+// Redirect pages for affiliate links: /go/<link>/ sends the visitor on to the partner. Built only for approved partners.
+import { liveLinks } from '../../lib/partners';
+export function getStaticPaths() {
+  return liveLinks().map(([id, l]) => ({ params: { link: id }, props: { url: l.url } }));
+}
+const { url } = Astro.props;
+---
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8" /><meta name="robots" content="noindex, nofollow" /><meta http-equiv="refresh" content={`0; url=${url}`} /><title>Redirecting</title></head>
+<body><p><a href={url} rel="sponsored nofollow">Continue to the partner site</a></p></body></html>

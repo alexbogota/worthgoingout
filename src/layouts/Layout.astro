@@ -32,6 +32,7 @@ const ogImage = new URL('/og-image.png', Astro.site).href;
     <meta property="og:image:alt" content="Worth Going Out: a total solar eclipse with the Moon covering the Sun." />
     <meta name="twitter:card" content="summary_large_image" />
     {noindex && <meta name="robots" content="noindex" />}
+    {site.pinterestVerify && <meta name="p:domain_verify" content={site.pinterestVerify} />}
     <meta name="theme-color" content="#0f1230" />
     <script is:inline>
       (function () {

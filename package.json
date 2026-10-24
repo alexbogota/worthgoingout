@@ -7,9 +7,10 @@
     "dev": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "calc": "node scripts/calc-eclipse.mjs && node scripts/calc-sky.mjs && node scripts/calc-eclipse-list.mjs && node scripts/calc-aurora.mjs",
+    "calc": "node scripts/calc-eclipse.mjs && node scripts/calc-sky.mjs && node scripts/calc-eclipse-list.mjs && node scripts/calc-aurora.mjs && node scripts/calc-stargazing.mjs",
     "og": "node scripts/make-og.mjs",
-    "check": "node scripts/check-site.mjs"
+    "check": "node scripts/check-site.mjs",
+    "pins": "node scripts/make-pins.mjs"
   },
   "dependencies": {
     "@astrojs/sitemap": "^3.7.4",

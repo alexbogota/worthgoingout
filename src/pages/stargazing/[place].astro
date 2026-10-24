@@ -1,0 +1,72 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Photo from '../../components/Photo.astro';
+import MonthBars from '../../components/MonthBars.astro';
+import BookBlock from '../../components/BookBlock.astro';
+import photos from '../../../data/photos.json';
+import { stargazing, twelve, monthShort, monthLong, nextWindows, windowText, coreSeason } from '../../lib/stargazing';
+import { longDate } from '../../lib/site';
+export function getStaticPaths() {
+  return stargazing.places.map((p) => ({ params: { place: p.slug }, props: { p } }));
+}
+const { p } = Astro.props;
+const m = twelve(p);
+const cs = coreSeason(p);
+const windows = nextWindows(p, 8);
+const photoId = `${p.slug}-night`;
+const hasPhoto = photoId in photos.photos;
+const others = stargazing.places.filter((o) => o.slug !== p.slug);
+---
+<Layout title={`Stargazing at ${p.name}: the best dates in the next year`} description={`When to go stargazing at ${p.name}, ${p.region}: the darkest moonless weeks of the coming year and the months when the Milky Way is at its best, calculated by us.`}>
+  <article class="wrap page prose">
+    <h1>Stargazing at {p.name}</h1>
+    <p class="stamp">{p.region}. Calculated {longDate(stargazing.calculatedOn)} with {stargazing.method}.</p>
+    <p class="lead measure">{p.intro}</p>
+    {hasPhoto && <Photo id={photoId} />}
+
+    <h2>The darkest weeks ahead</h2>
+    <p class="measure">Runs of nights when the Moon is down for almost all of the dark hours. Plan your stay inside one of these.</p>
+    <ul class="measure">{windows.map((w) => <li>{windowText(w)} <span class="muted">({w.nights} nights)</span></li>)}</ul>
+
+    <h2>Month by month</h2>
+    <MonthBars name="Hours with the Milky Way centre up" values={m.map((x) => x.core)} labels={m.map((x) => monthShort(x.month))} max={12} highlight={(v) => v >= 2} />
+    <table class="plain">
+      <caption class="muted small">A night in the middle of each month. Full darkness: Sun at least 18° below the horizon.</caption>
+      <thead><tr><th scope="col">Month</th><th scope="col">Full darkness</th><th scope="col">Milky Way centre up</th></tr></thead>
+      <tbody>{m.map((x) => <tr><th scope="row">{monthLong(x.month)}</th><td>{x.dark} h</td><td>{x.core ? `${x.core} h` : 'not in the dark hours'}</td></tr>)}</tbody>
+    </table>
+    <p class="measure">The bright centre of the Milky Way is best here in {monthLong(cs.best.month).split(' ')[0]}. From November to January it is up only in daylight, but the rest of the sky is still worth the trip.</p>
+
+    <h2>What to know</h2>
+    <ul class="measure">{p.facts.map((f) => <li>{f}</li>)}</ul>
+    <p class="measure">{p.tip}</p>
+
+    <BookBlock
+      title="Booking a stargazing night"
+      link={`stars-${p.slug}`}
+      cta="See stargazing tours"
+      points={[
+        'Pick a date inside one of the dark weeks above. A tour sold on a Full Moon night shows you the Moon, not the Milky Way.',
+        'Ask whether the guide brings telescopes or binoculars, and how many people share them.',
+        'Ask what happens if it is cloudy: a new date, a refund, or nothing.',
+        'Check whether transport from your hotel is included, and what time you will be back.',
+        'Warm clothes matter more than you expect, even in a desert or in summer.',
+      ]}
+    />
+
+    <p class="small">Other dark-sky places: {others.map((o, i) => <>{i > 0 && ', '}<a href={`/stargazing/${o.slug}/`}>{o.name}</a></>)}. <a href="/stargazing/">Compare all five.</a></p>
+
+    <h2>Sources</h2>
+    <ul class="sources">
+      <li>Darkness, Moon and Milky Way: our calculation, {stargazing.method}. <a href="/stargazing/#how">How we worked it out.</a></li>
+      {p.sources.map(([label, url]) => <li><a href={url}>{label}</a>.</li>)}
+    </ul>
+  </article>
+</Layout>
+<style>
+  .plain { width: 100%; max-width: 560px; border-collapse: collapse; margin: 1rem 0 1.4rem; }
+  .plain caption { text-align: left; padding-bottom: 6px; }
+  .plain th, .plain td { text-align: left; padding: 8px 14px 8px 0; border-bottom: 1px solid var(--line); }
+  .plain thead th { color: var(--muted); font-size: 0.9375rem; border-bottom: 2px solid var(--line); }
+  .plain tbody th { font-weight: 700; color: var(--heading); }
+</style>

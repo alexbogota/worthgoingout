@@ -1,6 +1,7 @@
 ---
 import Photo from '../../components/Photo.astro';
 import Layout from '../../layouts/Layout.astro';
+import BookBlock from '../../components/BookBlock.astro';
 import countries from '../../../data/eclipse-countries.json';
 import { eclipse, fmtDuration, localTime, placeNote } from '../../lib/sky';
 
@@ -43,6 +44,19 @@ const others = countries.countries.filter((o) => o.slug !== c.slug);
     <div class="callout measure">
       <p><strong>Eye safety.</strong> Use eclipse glasses that meet ISO 12312-2 for every partial phase. Take them off only when the Sun is completely covered, and put them back on as soon as it reappears. <a href="/guides/eclipse-glasses/">How to tell if your glasses are safe.</a></p>
     </div>
+
+    <BookBlock
+      title={`Booking an eclipse trip to ${c.name}`}
+      link={c.bookLink}
+      cta="See tours and activities"
+      points={[
+        'Make sure where you sleep, or where you will stand at totality, is inside the path. Use the place list above.',
+        'Book early and, if you can, with free cancellation.',
+        'Arrive at least a day before the eclipse.',
+        'If you join a tour on the day, ask exactly where it will be at the time of totality.',
+      ]}
+    />
+    <p class="small"><a href="/eclipse-2027/trip-planning/">The full trip-planning checklist.</a></p>
 
     <p class="actions"><a class="btn" href="/eclipse-2027/where-to-watch/">All 30 places we calculated</a> <a class="btn quiet" href="/eclipse-2027/">The eclipse guide</a></p>
     <p class="small">Other countries: {others.map((o, i) => <>{i > 0 && ', '}<a href={`/eclipse-2027/${o.slug}/`}>{o.name}</a></>)}.</p>

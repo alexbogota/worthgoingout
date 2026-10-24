@@ -1,0 +1,26 @@
+{
+  "note": "Affiliate partners and links. Nothing shows as a link until the partner is approved: set enabled to true and fill in the link url. Pages then show a marked button that goes through /go/<link>/ (noindex, nofollow). Never put a partner's brand name in a URL path (Viator on Awin forbids it), so link ids are generic.",
+  "partners": {
+    "viator": { "name": "Viator", "enabled": false, "program": "Viator Partner Program (direct) or Awin" },
+    "getyourguide": { "name": "GetYourGuide", "enabled": false, "program": "Travelpayouts" },
+    "unistellar": { "name": "Unistellar", "enabled": false, "program": "Awin" },
+    "dwarflab": { "name": "DwarfLab", "enabled": false, "program": "Awin" }
+  },
+  "links": {
+    "tours-tromso": { "partner": "viator", "url": "" },
+    "tours-abisko": { "partner": "viator", "url": "" },
+    "tours-rovaniemi": { "partner": "viator", "url": "" },
+    "tours-reykjavik": { "partner": "viator", "url": "" },
+    "tours-fairbanks": { "partner": "viator", "url": "" },
+    "tours-yellowknife": { "partner": "viator", "url": "" },
+    "tours-inverness": { "partner": "viator", "url": "" },
+    "stars-teide": { "partner": "viator", "url": "" },
+    "stars-la-palma": { "partner": "viator", "url": "" },
+    "stars-atacama": { "partner": "viator", "url": "" },
+    "stars-namibrand": { "partner": "viator", "url": "" },
+    "stars-aoraki-mackenzie": { "partner": "viator", "url": "" },
+    "trips-luxor": { "partner": "viator", "url": "" },
+    "trips-tangier": { "partner": "viator", "url": "" },
+    "trips-cadiz": { "partner": "viator", "url": "" }
+  }
+}

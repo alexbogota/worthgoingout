@@ -10,7 +10,7 @@ for (const p of pages) { const h = readFileSync(p, 'utf8'); htmls.set(p, h); ids
 const errors = [];
 for (const [p, h] of htmls) {
   const u = urlOf(p);
-  if (u === '/404') continue;
+  if (u === '/404' || u.startsWith('/pin/') || u.startsWith('/go/')) continue;
   if (!/<title>[^<]{5,}/.test(h)) errors.push(`${u}: no title`);
   if (!/<meta name="description" content="[^"]{50,}/.test(h)) errors.push(`${u}: description missing or short`);
   if ((h.match(/<h1[\s>]/g) || []).length !== 1) errors.push(`${u}: needs exactly one h1`);

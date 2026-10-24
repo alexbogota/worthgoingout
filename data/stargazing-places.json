@@ -1,0 +1,48 @@
+{
+  "places": [
+    { "slug": "teide", "name": "Teide National Park", "region": "Tenerife, Canary Islands, Spain", "lat": 28.27, "lon": -16.64, "elevation": 2100, "tz": "Atlantic/Canary",
+      "intro": "The high crater floor of Las Cañadas around Mount Teide, an hour or so by road from the coastal resorts of Tenerife.",
+      "facts": [
+        "Teide National Park holds Starlight certification both as a tourist destination and as a reserve.",
+        "The Teide Observatory, run by the Instituto de Astrofísica de Canarias, sits at about 2,390 m in the park.",
+        "Canary Islands law has protected the sky over the observatories from light pollution since 1988.",
+        "Low clouds usually form below a temperature inversion that sits well under the peaks, so the park can be clear when the coast is cloudy."
+      ],
+      "tip": "It is cold at night up here even in summer. Bring warm layers, and check the road and weather before you drive up.",
+      "sources": [["Tenerife Tourism, astronomy", "https://www.webtenerife.co.uk/tenerife/the-island/astronomy/"], ["Instituto de Astrofísica de Canarias, observatories leaflet", "https://iac.edu.es/system/files/documents/2019-09/enofolleto.pdf"]] },
+    { "slug": "la-palma", "name": "La Palma", "region": "Canary Islands, Spain", "lat": 28.76, "lon": -17.89, "elevation": 2400, "tz": "Atlantic/Canary",
+      "intro": "The island of La Palma, home of the Roque de los Muchachos Observatory on its highest ridge.",
+      "facts": [
+        "The Roque de los Muchachos Observatory stands at about 2,396 m.",
+        "The Canary Islands’ ‘Sky Law’, approved in 1988, limits light pollution to protect the observatories.",
+        "As on Tenerife, low clouds generally stay well below the summit ridge."
+      ],
+      "tip": "The summit road is long and winding. Allow plenty of time, and do not drive it for the first time in the dark if you can avoid it.",
+      "sources": [["Instituto de Astrofísica de Canarias, observatories leaflet", "https://iac.edu.es/system/files/documents/2019-09/enofolleto.pdf"]] },
+    { "slug": "atacama", "name": "Atacama Desert", "region": "near San Pedro de Atacama, Chile", "lat": -22.91, "lon": -68.20, "elevation": 2400, "tz": "America/Santiago",
+      "intro": "The high desert of northern Chile around San Pedro de Atacama, the base for most stargazing trips in the region.",
+      "facts": [
+        "The European Southern Observatory calls the Atacama one of the driest places on Earth, with over 300 clear nights a year.",
+        "Several of the world’s major observatories are in northern Chile, including ESO’s Paranal and La Silla sites and ALMA.",
+        "It is in the southern hemisphere, so the centre of the Milky Way passes high overhead in the southern winter."
+      ],
+      "tip": "Plan more than one night. A local operator in San Pedro warns that coming for a single night is risky, and advises avoiding the full Moon.",
+      "sources": [["ESO, Reflections of Paranal", "https://eso.org/public/poland/images/potw1629a"], ["San Pedro de Atacama Celestial Explorations, the astronomical Chile", "https://www.spaceobs.com/en/Informations/The-astronomical-Chile"]] },
+    { "slug": "namibrand", "name": "NamibRand Nature Reserve", "region": "southern Namibia", "lat": -25.0, "lon": 16.0, "elevation": 1000, "tz": "Africa/Windhoek",
+      "intro": "A private nature reserve in the south-west Namib Desert, with lodges and camps rather than towns.",
+      "facts": [
+        "It was named an International Dark Sky Reserve in 2012, the first in Africa.",
+        "It holds Gold Tier status, the darkest and strictest category."
+      ],
+      "tip": "There is no town nearby, so the sky is dark from horizon to horizon. Stays are at lodges and camps inside or next to the reserve.",
+      "sources": [["NamibRand Nature Reserve, dark sky", "https://namibrand.org/dark-sky.html"]] },
+    { "slug": "aoraki-mackenzie", "name": "Aoraki Mackenzie", "region": "Lake Tekapo, South Island, New Zealand", "lat": -44.0, "lon": 170.48, "elevation": 710, "tz": "Pacific/Auckland",
+      "intro": "The Aoraki Mackenzie International Dark Sky Reserve on New Zealand’s South Island, with Lake Tekapo as its main base.",
+      "facts": [
+        "The reserve covers over 4,300 km² and holds Gold Tier status.",
+        "Lake Tekapo is its stargazing hub."
+      ],
+      "tip": "Being far south, winter nights from May to August are long and cold. Summer nights are short.",
+      "sources": [["Dark Sky Project, Dark Sky Reserve NZ", "https://darkskyproject.co.nz/our-story/blog/dark-sky-reserve-nz-a-world-class-stargazing-destination/"]] }
+  ]
+}

@@ -46,7 +46,7 @@ export { eclipse, calendar };
 export const daysUntil = (date: string, now = buildDate) =>
   Math.max(0, Math.ceil((new Date(`${date}T00:00:00Z`).getTime() - now.getTime()) / 86_400_000));
 
-export const fmtDuration = (sec: number) => `${Math.floor(sec / 60)} min ${String(Math.round(sec % 60)).padStart(2, '0')} s`;
+export const fmtDuration = (sec: number) => { const s = Math.round(sec); return `${Math.floor(s / 60)} min ${String(s % 60).padStart(2, '0')} s`; };
 
 // Local clock time at a place, using the time-zone rules known today (they can change before 2027).
 export function localTime(iso: string, tz: string) {
