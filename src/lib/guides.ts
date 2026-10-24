@@ -7,5 +7,6 @@ export const guides = [
   { href: '/aurora/tours/', title: 'Northern lights tours: what to check before you book', blurb: 'Chase or camp, group size, what happens if there is no aurora, and when to go.' },
   { href: '/stargazing/', title: 'Stargazing trips: the darkest skies, and when to go', blurb: 'Five dark-sky places with the moonless weeks of the coming year, calculated by us.' },
   { href: '/eclipse-2027/trip-planning/', title: 'Planning a trip for the 2027 eclipse', blurb: 'A step-by-step checklist, from picking a spot inside the path to glasses and paperwork.' },
+  { href: '/guides/smart-telescopes/', title: 'Smart telescopes: what they can and cannot do', blurb: 'How app-controlled telescopes work, what they show well, and how the main models compare.' },
   { href: '/eclipses/', title: 'Every eclipse to 2030, and what your city sees', blurb: 'Solar and lunar eclipses with what 47 cities get from each, calculated by us.' },
 ];

@@ -1,0 +1,76 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+import MoreGuides from '../../../components/MoreGuides.astro';
+import BookBlock from '../../../components/BookBlock.astro';
+const scopes = [
+  { name: 'DwarfLab Dwarf 3', aperture: '35 mm', focal: '150 mm', weight: '1.3 kg', eyepiece: 'No', extra: 'Two lenses (telephoto and wide). Clip-on solar filters included.', src: 'sky' },
+  { name: 'Unistellar Odyssey', aperture: '85 mm', focal: '320 mm', weight: '4 kg', eyepiece: 'No', extra: 'Battery about 5 hours.', src: 'ss' },
+  { name: 'Unistellar Odyssey Pro', aperture: '85 mm', focal: '320 mm', weight: '4 kg', eyepiece: 'Yes (digital)', extra: 'Battery about 5 hours.', src: 'ss' },
+  { name: 'Unistellar eVscope 2', aperture: '114 mm', focal: '450 mm', weight: '8.9 kg', eyepiece: 'Yes (digital)', extra: 'Battery about 9 hours.', src: 'ss' },
+];
+---
+<Layout title="Smart telescopes: what they can and cannot do" description="How app-controlled smart telescopes such as the Dwarf 3 and Unistellar models work, what they show well, where they fall short, and how the main models compare on size, weight and optics.">
+  <article class="wrap page prose">
+    <h1>Smart telescopes: what they can and cannot do</h1>
+    <p class="stamp">Last reviewed 24 October 2026. We have not tested these telescopes ourselves; specifications are from the sources listed below.</p>
+    <p class="lead measure">A smart telescope is a small telescope, a camera and a motorised mount in one box, run from a phone app. You choose a target, it finds it, and over a few minutes it builds up an image on your screen. It is a different thing from looking through a traditional telescope, and worth understanding before you spend the money.</p>
+
+    <h2>What they do well</h2>
+    <ul class="measure">
+      <li><strong>Faint things in colour.</strong> By adding up many short exposures, they show galaxies and nebulae in colour that your eye would never see through an eyepiece of the same size.</li>
+      <li><strong>Setting up in minutes.</strong> No star charts or alignment by hand: the app finds where it is pointing by itself.</li>
+      <li><strong>Sharing.</strong> Everyone looks at the same image on their phones, which makes them popular for families and groups.</li>
+      <li><strong>Travel.</strong> The smallest weigh about a kilogram, easy to take to a <a href="/stargazing/">dark-sky destination</a>.</li>
+    </ul>
+
+    <h2>Where they fall short</h2>
+    <ul class="measure">
+      <li><strong>Planets look small.</strong> Short focal lengths, typically 150 to 450 mm, suit wide nebulae better than close-ups of Jupiter or Saturn.</li>
+      <li><strong>It is a screen, not a view.</strong> Even models with an eyepiece show you a digital image, not light straight from the sky.</li>
+      <li><strong>Light pollution still matters.</strong> Stacking and filters help, but a dark site still gives a far better result than a city balcony.</li>
+      <li><strong>You depend on the app.</strong> Updates, phone compatibility and the maker’s support become part of owning the telescope.</li>
+    </ul>
+
+    <h2>The main models compared</h2>
+    <table class="plain">
+      <thead><tr><th scope="col">Model</th><th scope="col">Aperture</th><th scope="col">Focal length</th><th scope="col">Weight</th><th scope="col">Eyepiece</th></tr></thead>
+      <tbody>{scopes.map((s) => <tr><th scope="row">{s.name}<span class="src">{s.extra}</span></th><td>{s.aperture}</td><td>{s.focal}</td><td>{s.weight}</td><td>{s.eyepiece}</td></tr>)}</tbody>
+    </table>
+    <p class="measure">Aperture, the width of the main lens or mirror, decides how much light the telescope collects; the eVscope 2 collects about ten times more than the Dwarf 3. The trade-off is size: it weighs almost seven times as much. Prices differ a lot too. Sky at Night Magazine reviewed the Dwarf 3 at about £500, while the Unistellar models cost thousands of dollars. Check current prices with the maker or a dealer.</p>
+
+    <h2>Which kind suits you</h2>
+    <ul class="measure">
+      <li><strong>Travelling to dark skies, or just curious:</strong> a light, small-aperture model is easy to carry and a modest outlay.</li>
+      <li><strong>Showing the sky to groups or children at home:</strong> a larger model with an eyepiece gives a more “telescope-like” experience and brighter images.</li>
+      <li><strong>Mainly the Moon and planets:</strong> a traditional telescope with a longer focal length may suit you better than any smart telescope.</li>
+    </ul>
+
+    <BookBlock
+      title="Before you buy"
+      links={['scope-dwarf', 'scope-unistellar']}
+      cta="See current price"
+      points={[
+        'Check that the app supports your phone, and read recent reviews of the app, not just the hardware.',
+        'For the Sun, use only the solar filter made for that model, fitted over the front of the lens.',
+        'Look at the warranty and where repairs are done.',
+        'Compare total weight with what you will actually carry, including the tripod.',
+      ]}
+    />
+
+    <MoreGuides />
+
+    <h2>Sources</h2>
+    <ul class="sources">
+      <li>Sky at Night Magazine, <a href="https://www.skyatnightmagazine.com/reviews/dwarflab-dwarf-3">Dwarflab Dwarf 3 smart telescope review</a>: aperture, focal length, weight, filters, price.</li>
+      <li>Skies and Scopes, <a href="https://skiesandscopes.com/unistellar-evscope-2-vs-odyssey/">eVscope 2 vs Odyssey</a> and <a href="https://skiesandscopes.com/unistellar-odyssey-vs-odyssey-pro">Odyssey vs Odyssey Pro</a>: Unistellar specifications.</li>
+    </ul>
+  </article>
+</Layout>
+<style>
+  .plain { width: 100%; border-collapse: collapse; margin: 0.8rem 0 1.4rem; }
+  .plain th, .plain td { text-align: left; padding: 10px 14px 10px 0; border-bottom: 1px solid var(--line); vertical-align: top; }
+  .plain thead th { color: var(--muted); font-size: 0.9375rem; border-bottom: 2px solid var(--line); }
+  .plain tbody th { font-weight: 700; color: var(--heading); }
+  .src { display: block; font-weight: 400; font-size: 0.875rem; color: var(--muted); }
+  @media (max-width: 640px) { .plain { font-size: 0.9rem; } .plain th, .plain td { padding-right: 8px; } }
+</style>
