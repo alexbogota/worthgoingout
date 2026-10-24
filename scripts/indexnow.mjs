@@ -19,7 +19,7 @@ for (const p of pages) {
   const html = readFileSync(p, 'utf8').replace(/<strong id="days">\d+<\/strong>/g, '').replace(/\d+ days to go/g, '');
   hashes[url] = createHash('sha1').update(html).digest('hex');
 }
-const store = '.indexnow/hashes.json';
+const store = '.indexnow/hashes-v2.json'; // v2: the first send was refused, so start again
 const old = existsSync(store) ? JSON.parse(readFileSync(store, 'utf8')) : null;
 const changed = Object.keys(hashes).filter((u) => !old || old[u] !== hashes[u]);
 mkdirSync('.indexnow', { recursive: true });
