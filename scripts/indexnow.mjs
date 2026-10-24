@@ -23,9 +23,14 @@ const store = '.indexnow/hashes.json';
 const old = existsSync(store) ? JSON.parse(readFileSync(store, 'utf8')) : null;
 const changed = Object.keys(hashes).filter((u) => !old || old[u] !== hashes[u]);
 mkdirSync('.indexnow', { recursive: true });
-writeFileSync(store, JSON.stringify(hashes));
-if (!changed.length) { console.log('IndexNow: no changed pages'); process.exit(0); }
+if (!changed.length) { writeFileSync(store, JSON.stringify(hashes)); console.log('IndexNow: no changed pages'); process.exit(0); }
+// The search engine fetches the key file from the live site; check it is there first.
+const kf = await fetch(`https://${HOST}/${keyFile}`).then(async (r) => ({ status: r.status, text: (await r.text()).trim() })).catch((e) => ({ status: 0, text: String(e) }));
+console.log(`key file on the site: HTTP ${kf.status}, ${kf.text === key ? 'matches' : 'DOES NOT match'}`);
 const body = { host: HOST, key, keyLocation: `https://${HOST}/${keyFile}`, urlList: changed.slice(0, 10000) };
 const r = await fetch('https://api.indexnow.org/indexnow', { method: 'POST', headers: { 'Content-Type': 'application/json; charset=utf-8' }, body: JSON.stringify(body) });
 console.log(`IndexNow: sent ${changed.length} changed page(s), answer ${r.status}`);
-console.log(`::notice title=IndexNow::sent ${changed.length} changed page(s), answer ${r.status}`);
+// Remember the pages only when the search engines accepted them, so a failed send is retried next time.
+if (r.status === 200 || r.status === 202) writeFileSync(store, JSON.stringify(hashes));
+else console.log(await r.text().catch(() => ''));
+console.log(`::notice title=IndexNow::sent ${changed.length} changed page(s), answer ${r.status} (key file HTTP ${kf.status}, ${kf.text === key ? 'matches' : 'does not match'})`);
