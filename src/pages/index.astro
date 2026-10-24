@@ -6,6 +6,14 @@ import Verdict from '../components/Verdict.astro';
 import { upcomingShowers, daysUntil, eclipse, fmtDuration, localTime } from '../lib/sky';
 import { longDate } from '../lib/site';
 import { guides } from '../lib/guides';
+import photos from '../../data/photos.json';
+const photoAlt = (id: string) => (photos.photos as Record<string, { alt: string }>)[id].alt;
+const doors = [
+  { href: '/eclipse-2027/', photo: 'diamond-ring', title: 'Eclipse 2027', text: 'Where totality lasts longest, and the famous places that miss it.' },
+  { href: '/aurora/', photo: 'aurora-tromso', title: 'Northern lights', text: 'Seven destinations and the months that are dark enough.' },
+  { href: '/stargazing/', photo: 'teide-night', title: 'Stargazing trips', text: 'The darkest moonless weeks of the year at five famous skies.' },
+  { href: '/meteor-showers/', photo: 'geminids', title: 'Meteor showers', text: 'Every peak night with a plain Go, Maybe or Skip.' },
+];
 
 const days = daysUntil('2027-08-02');
 const luxor = eclipse.places.find((p) => p.slug === 'luxor')!;
@@ -55,15 +63,28 @@ const nightText = (n: [string, string]) => {
     <p class="small"><a class="link" href="/meteor-showers/">All meteor showers to mid-2027</a></p>
   </section>
 
-  <div class="wrap"><Photo id="aurora-eielson" wide caption="The northern lights over Bear Lake, near Fairbanks, Alaska. Our northern lights pages show when each destination is dark enough" /></div>
+  <section class="wrap band">
+    <h2>Plan a night out</h2>
+    <ul class="doors">
+      {doors.map((d) => (
+        <li>
+          <a href={d.href}><img src={`/photos/${d.photo}-800.webp`} alt={photoAlt(d.photo)} width="800" height="533" loading="lazy" /></a>
+          <a class="what" href={d.href}>{d.title}</a>
+          <p class="why">{d.text}</p>
+        </li>
+      ))}
+    </ul>
+    <p class="small muted">Photos: Wikimedia Commons contributors. <a class="link" href="/photo-credits/">Credits and licences</a>.</p>
+  </section>
 
   <section class="wrap band">
     <h2>Guides</h2>
     <ul class="board">
-      {guides.map((g) => (
+      {guides.slice(0, 5).map((g) => (
         <li class="two"><div><a class="what" href={g.href}>{g.title}</a><p class="why">{g.blurb}</p></div></li>
       ))}
     </ul>
+    <p class="small"><a class="link" href="/guides/">All guides</a></p>
   </section>
 
   <section class="wrap band">
@@ -105,9 +126,15 @@ const nightText = (n: [string, string]) => {
   .band { padding-top: 8px; padding-bottom: 8px; }
   .trio { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px 40px; margin-top: 1rem; }
   .trio h3 { margin-top: 0; }
+  .doors { list-style: none; padding: 0; margin: 1.2rem 0 0.8rem; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 28px 24px; }
+  .doors img { display: block; width: 100%; height: auto; aspect-ratio: 3 / 2; object-fit: cover; border-radius: 6px; margin-bottom: 12px; background: var(--raise); }
+  .doors .what { font-family: var(--font-head); font-size: 1.3rem; color: var(--heading); text-decoration: underline; text-underline-offset: 4px; text-decoration-thickness: 1px; }
+  .doors .why { margin: 6px 0 0; color: var(--muted); font-size: 1rem; }
   @media (max-width: 860px) {
     .hero { grid-template-columns: 1fr; padding-top: 28px; }
     .art { max-width: 300px; order: -1; justify-self: start; }
     .trio { grid-template-columns: 1fr; }
+    .doors { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   }
+  @media (max-width: 520px) { .doors { grid-template-columns: 1fr; } }
 </style>

@@ -1,10 +1,12 @@
 ---
+import Crumbs from '../../components/Crumbs.astro';
 import Layout from '../../layouts/Layout.astro';
 import Photo from '../../components/Photo.astro';
 import { aurora, seasonText } from '../../lib/aurora';
 ---
-<Layout title="Northern lights tours: what to check before you book" description="What separates a good northern lights tour from a long night on a bus: group size, chasing clear skies, what happens if there is no aurora, clothing, photos and timing.">
+<Layout photo="aurora-ringvassoya" title="Northern lights tours: what to check before you book" description="What separates a good northern lights tour from a long night on a bus: group size, chasing clear skies, what happens if there is no aurora, clothing, photos and timing.">
   <article class="wrap page prose">
+    <Crumbs items={[['Northern lights', '/aurora/'], ['Choosing a tour', '/aurora/tours/']]} />
     <h1>Northern lights tours: what to check before you book</h1>
     <p class="stamp">Last reviewed 24 October 2026.</p>
     <p class="lead measure">You can see the aurora on your own with a car, a dark spot and luck. A good tour improves the odds: guides know where the clear gaps in the cloud are likely to be, drive you there on winter roads, and know when it is worth waiting. A bad one is a long night on a bus. These are the questions that tell them apart.</p>

@@ -8,6 +8,11 @@ export const site = {
   legalUpdated: '24 October 2026',
   // Pinterest site verification code (the content of the p:domain_verify meta tag). Empty until the owner claims the site on Pinterest.
   pinterestVerify: '',
+  // Google Search Console and Bing Webmaster Tools verification codes (meta tag content). Empty until the owner adds the site there.
+  googleVerify: '',
+  bingVerify: '',
+  // Date the content was last reviewed as a whole; used in structured data.
+  reviewed: '2026-10-24',
 };
 
 // The date the site was built. Pages that count down or list "coming up" use it, so the site is rebuilt every day (see .github/workflows/deploy.yml).

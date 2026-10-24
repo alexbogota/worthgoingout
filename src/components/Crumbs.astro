@@ -1,0 +1,20 @@
+---
+// Breadcrumbs for pages below a section, with matching BreadcrumbList structured data. The current page is the last item.
+import { site } from '../lib/site';
+interface Props { items: [string, string][] } // [label, href] pairs, from the section down to the current page
+const { items } = Astro.props;
+const all: [string, string][] = [['Home', '/'], ...items];
+const ld = { '@context': 'https://schema.org', '@type': 'BreadcrumbList', itemListElement: all.map(([name, href], i) => ({ '@type': 'ListItem', position: i + 1, name, item: new URL(href, site.url).href })) };
+---
+<nav class="crumbs" aria-label="Breadcrumb">
+  <ol>{all.map(([label, href], i) => <li>{i === all.length - 1 ? <span aria-current="page">{label}</span> : <a href={href}>{label}</a>}</li>)}</ol>
+</nav>
+<script type="application/ld+json" set:html={JSON.stringify(ld)} />
+<style>
+  .crumbs { margin: 0 0 1.4rem; font-size: 0.9375rem; color: var(--muted); }
+  .crumbs ol { list-style: none; padding: 0; margin: 0; display: flex; flex-wrap: wrap; gap: 4px 0; }
+  .crumbs li:not(:last-child)::after { content: '/'; margin: 0 10px; color: var(--line); }
+  .crumbs a { color: var(--muted); text-decoration: underline; text-underline-offset: 3px; text-decoration-thickness: 1px; }
+  .crumbs a:hover { color: var(--heading); }
+  .crumbs [aria-current] { color: var(--text); }
+</style>

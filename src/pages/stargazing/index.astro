@@ -5,7 +5,7 @@ import MonthBars from '../../components/MonthBars.astro';
 import { stargazing, twelve, monthShort, nextWindows, windowText, coreSeason, monthLong } from '../../lib/stargazing';
 import { longDate } from '../../lib/site';
 ---
-<Layout title="Stargazing trips: five of the darkest skies, and the best dates" description="Teide, La Palma, the Atacama, NamibRand and Aoraki Mackenzie: when the Milky Way is at its best at each, and the darkest moonless weeks for the next year, calculated by us.">
+<Layout photo="milky-way" title="Stargazing trips: five of the darkest skies, and the best dates" description="Teide, La Palma, the Atacama, NamibRand and Aoraki Mackenzie: when the Milky Way is at its best at each, and the darkest moonless weeks for the next year, calculated by us.">
   <div class="wrap page">
     <h1>Stargazing trips: the darkest skies, and when to go</h1>
     <p class="stamp">Calculated {longDate(stargazing.calculatedOn)} with {stargazing.method}.</p>

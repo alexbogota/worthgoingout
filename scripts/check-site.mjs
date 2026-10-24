@@ -27,5 +27,10 @@ for (const [p, h] of htmls) {
   }
 }
 console.log(`${pages.length} pages checked`);
+// Data that runs out: warn 90 days ahead so the lists never go empty.
+const showers = JSON.parse(readFileSync('data/showers.json', 'utf8')).showers;
+const lastShower = showers.map((s) => s.night[1]).sort().at(-1);
+const daysLeft = (new Date(lastShower) - new Date()) / 86400000;
+if (daysLeft < 90) console.log(`::warning::Meteor shower data ends ${lastShower}. Add the next year's showers to data/showers.json (IMO calendar) and run npm run calc.`);
 if (errors.length) { console.error([...new Set(errors)].join('\n')); process.exit(1); }
 console.log('OK');

@@ -1,4 +1,5 @@
 ---
+import Crumbs from '../../components/Crumbs.astro';
 import Photo from '../../components/Photo.astro';
 import Layout from '../../layouts/Layout.astro';
 import DarkBars from '../../components/DarkBars.astro';
@@ -12,8 +13,9 @@ const { p } = Astro.props;
 const moons = seasonNewMoons(p.season).slice(0, 6);
 const others = aurora.places.filter((o) => o.slug !== p.slug);
 ---
-<Layout title={`Northern lights in ${p.name}: when it is dark enough`} description={`When the sky over ${p.name}, ${p.country}, is dark enough for the northern lights, month by month, with the darkest New Moon weeks and practical tips.`}>
+<Layout photo={p.photo} title={`Northern lights in ${p.name}: when it is dark enough`} description={`When the sky over ${p.name}, ${p.country}, is dark enough for the northern lights, month by month, with the darkest New Moon weeks and practical tips.`}>
   <article class="wrap page prose">
+    <Crumbs items={[['Northern lights', '/aurora/'], [p.name, `/aurora/${p.slug}/`]]} />
     <h1>Northern lights in {p.name}</h1>
     <p class="stamp">{p.country}. Darkness calculated {longDate(aurora.calculatedOn)} with {aurora.method}.</p>
     <p class="lead measure">{p.intro} The sky here is dark enough for the aurora from {seasonText(p.season)}.</p>

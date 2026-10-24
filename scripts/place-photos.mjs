@@ -1,5 +1,5 @@
 // Copies the photos chosen in data/photos.json from the candidates folder (branch photos, extracted to $PHOTOS_DIR)
-// into public/photos as <id>-1600.webp and <id>-800.webp, and records their sizes in data/photos.json.
+// into public/photos as <id>-1600.webp, <id>-800.webp and a 1200x630 <id>-og.jpg for social cards, and records their sizes in data/photos.json.
 import sharp from 'sharp';
 import { readFileSync, writeFileSync, existsSync } from 'node:fs';
 const dir = process.env.PHOTOS_DIR ?? 'out';
@@ -11,6 +11,8 @@ for (const [id, p] of Object.entries(data.photos)) {
     await sharp(src).resize({ width: 1600, withoutEnlargement: true }).webp({ quality: 76 }).toFile(big);
     await sharp(src).resize({ width: 800 }).webp({ quality: 74 }).toFile(`public/photos/${id}-800.webp`);
   }
+  const og = `public/photos/${id}-og.jpg`;
+  if (!existsSync(og)) await sharp(big).resize(1200, 630, { fit: 'cover', position: 'attention' }).jpeg({ quality: 82, mozjpeg: true }).toFile(og);
   const m = await sharp(big).metadata();
   p.width = m.width; p.height = m.height;
 }

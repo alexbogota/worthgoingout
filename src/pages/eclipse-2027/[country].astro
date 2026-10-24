@@ -1,4 +1,5 @@
 ---
+import Crumbs from '../../components/Crumbs.astro';
 import Photo from '../../components/Photo.astro';
 import Layout from '../../layouts/Layout.astro';
 import BookBlock from '../../components/BookBlock.astro';
@@ -12,8 +13,9 @@ const { c } = Astro.props;
 const places = eclipse.places.filter((p) => c.include.includes(p.country)).sort((a, b) => (b.totalitySeconds ?? 0) - (a.totalitySeconds ?? 0) || b.obscuration - a.obscuration);
 const others = countries.countries.filter((o) => o.slug !== c.slug);
 ---
-<Layout title={c.title} description={c.description}>
+<Layout photo={c.photo} title={c.title} description={c.description}>
   <article class="wrap page prose">
+    <Crumbs items={[['Eclipse 2027', '/eclipse-2027/'], [c.name, `/eclipse-2027/${c.slug}/`]]} />
     <h1>{c.title}</h1>
     <p class="stamp">Last reviewed 24 October 2026. Place figures calculated by us with {eclipse.method}.</p>
     <p class="lead measure">{c.lead}</p>

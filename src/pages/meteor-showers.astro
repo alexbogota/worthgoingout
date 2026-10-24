@@ -10,7 +10,7 @@ const night = (n: [string, string]) => `${new Date(`${n[0]}T00:00:00Z`).toLocale
 const range = (a: string, b: string) => `${new Date(a).toLocaleDateString('en-GB', { day: 'numeric', month: 'short', timeZone: 'UTC' })} to ${new Date(b).toLocaleDateString('en-GB', { day: 'numeric', month: 'short', timeZone: 'UTC' })}`;
 const moons = nextMoon().filter((p) => p.phase === 'New Moon' || p.phase === 'Full Moon').slice(0, 4);
 ---
-<Layout
+<Layout photo="perseids-aurora"
   title="Meteor showers to mid-2027: which are worth going out for"
   description="Every major meteor shower from now to August 2027 with its peak night, how many meteors to expect, how bright the Moon will be, and a plain verdict: Go, Maybe or Skip."
 >

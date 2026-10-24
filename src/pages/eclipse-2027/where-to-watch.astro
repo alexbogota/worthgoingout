@@ -1,4 +1,5 @@
 ---
+import Crumbs from '../../components/Crumbs.astro';
 import Photo from '../../components/Photo.astro';
 import Layout from '../../layouts/Layout.astro';
 import { eclipse, fmtDuration, localTime, placeNote } from '../../lib/sky';
@@ -12,11 +13,12 @@ const rows = (list: typeof eclipse.places) => list.map((p) => {
   return { ...p, start, peak, note: placeNote(p) };
 });
 ---
-<Layout
+<Layout photo="corona-detail"
   title="Where to watch the 2027 eclipse: every place we calculated"
   description={`Totality length, start time and Sun height for ${eclipse.places.length} places from Cádiz to Luxor to Yemen, plus the well-known places that miss totality, such as Cairo and Aswan.`}
 >
   <div class="wrap page">
+    <Crumbs items={[['Eclipse 2027', '/eclipse-2027/'], ['Where to watch', '/eclipse-2027/where-to-watch/']]} />
     <h1>Where to watch: every place we calculated</h1>
     <p class="stamp">Last reviewed 24 October 2026. Calculated with {eclipse.method}.</p>
     <p class="lead measure">Totality lasts longest near Luxor and shrinks as you move towards the edge of the path. This table shows what each place gets, and which well-known places miss it.</p>

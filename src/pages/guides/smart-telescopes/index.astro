@@ -1,4 +1,5 @@
 ---
+import Crumbs from '../../../components/Crumbs.astro';
 import Layout from '../../../layouts/Layout.astro';
 import MoreGuides from '../../../components/MoreGuides.astro';
 import BookBlock from '../../../components/BookBlock.astro';
@@ -9,8 +10,9 @@ const scopes = [
   { name: 'Unistellar eVscope 2', aperture: '114 mm', focal: '450 mm', weight: '8.9 kg', eyepiece: 'Yes (digital)', extra: 'Battery about 9 hours.', src: 'ss' },
 ];
 ---
-<Layout title="Smart telescopes: what they can and cannot do" description="How app-controlled smart telescopes such as the Dwarf 3 and Unistellar models work, what they show well, where they fall short, and how the main models compare on size, weight and optics.">
+<Layout photo="la-palma-night" title="Smart telescopes: what they can and cannot do" description="How app-controlled smart telescopes such as the Dwarf 3 and Unistellar models work, what they show well, where they fall short, and how the main models compare on size, weight and optics.">
   <article class="wrap page prose">
+    <Crumbs items={[['Guides', '/guides/'], ['Smart telescopes', '/guides/smart-telescopes/']]} />
     <h1>Smart telescopes: what they can and cannot do</h1>
     <p class="stamp">Last reviewed 24 October 2026. We have not tested these telescopes ourselves; specifications are from the sources listed below.</p>
     <p class="lead measure">A smart telescope is a small telescope, a camera and a motorised mount in one box, run from a phone app. You choose a target, it finds it, and over a few minutes it builds up an image on your screen. It is a different thing from looking through a traditional telescope, and worth understanding before you spend the money.</p>

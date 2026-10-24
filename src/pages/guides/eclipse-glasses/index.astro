@@ -1,10 +1,12 @@
 ---
+import Crumbs from '../../../components/Crumbs.astro';
 import Photo from '../../../components/Photo.astro';
 import Layout from '../../../layouts/Layout.astro';
 import MoreGuides from '../../../components/MoreGuides.astro';
 ---
-<Layout title="Eclipse glasses: how to tell if yours are safe" description="What the ISO 12312-2 label does and does not prove, where to buy safe eclipse glasses, three checks you can do at home, and when to throw a pair away.">
+<Layout photo="eclipse-watchers" title="Eclipse glasses: how to tell if yours are safe" description="What the ISO 12312-2 label does and does not prove, where to buy safe eclipse glasses, three checks you can do at home, and when to throw a pair away.">
   <article class="wrap page prose">
+    <Crumbs items={[['Guides', '/guides/'], ['Eclipse glasses', '/guides/eclipse-glasses/']]} />
     <h1>Eclipse glasses: how to tell if yours are safe</h1>
     <p class="stamp">Last reviewed 24 October 2026.</p>
     <p class="lead measure">Looking at the partly covered Sun without proper protection can damage your eyes permanently, and you will not feel it happening. Safe eclipse glasses are cheap and easy to find, but so are fakes. Here is how to tell them apart.</p>

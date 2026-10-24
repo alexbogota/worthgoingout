@@ -1,4 +1,5 @@
 ---
+import Crumbs from '../../../components/Crumbs.astro';
 import Photo from '../../../components/Photo.astro';
 import Layout from '../../../layouts/Layout.astro';
 import Verdict from '../../../components/Verdict.astro';
@@ -7,8 +8,9 @@ import { upcomingShowers } from '../../../lib/sky';
 const next = upcomingShowers().filter((s) => s.verdict !== 'skip').slice(0, 3);
 const night = (n: [string, string]) => new Date(`${n[0]}T00:00:00Z`).toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric', timeZone: 'UTC' });
 ---
-<Layout title="How to watch a meteor shower" description="When to go out, where to go, how long to give your eyes, and why the Moon matters more than the shower's name. A short practical guide with sources.">
+<Layout photo="geminids" title="How to watch a meteor shower" description="When to go out, where to go, how long to give your eyes, and why the Moon matters more than the shower's name. A short practical guide with sources.">
   <article class="wrap page prose">
+    <Crumbs items={[['Guides', '/guides/'], ['Watching a meteor shower', '/guides/how-to-watch-a-meteor-shower/']]} />
     <h1>How to watch a meteor shower</h1>
     <p class="stamp">Last reviewed 24 October 2026.</p>
     <p class="lead measure">You need no equipment, only a dark sky, a clear night and patience. The two things that decide how many meteors you see are how dark your sky is and where the Moon is.</p>

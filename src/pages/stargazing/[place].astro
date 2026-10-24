@@ -1,4 +1,5 @@
 ---
+import Crumbs from '../../components/Crumbs.astro';
 import Layout from '../../layouts/Layout.astro';
 import Photo from '../../components/Photo.astro';
 import MonthBars from '../../components/MonthBars.astro';
@@ -17,8 +18,9 @@ const photoId = `${p.slug}-night`;
 const hasPhoto = photoId in photos.photos;
 const others = stargazing.places.filter((o) => o.slug !== p.slug);
 ---
-<Layout title={`Stargazing at ${p.name}: the best dates in the next year`} description={`When to go stargazing at ${p.name}, ${p.region}: the darkest moonless weeks of the coming year and the months when the Milky Way is at its best, calculated by us.`}>
+<Layout photo={hasPhoto ? photoId : undefined} title={`Stargazing at ${p.name}: the best dates in the next year`} description={`When to go stargazing at ${p.name}, ${p.region}: the darkest moonless weeks of the coming year and the months when the Milky Way is at its best, calculated by us.`}>
   <article class="wrap page prose">
+    <Crumbs items={[['Stargazing', '/stargazing/'], [p.name, `/stargazing/${p.slug}/`]]} />
     <h1>Stargazing at {p.name}</h1>
     <p class="stamp">{p.region}. Calculated {longDate(stargazing.calculatedOn)} with {stargazing.method}.</p>
     <p class="lead measure">{p.intro}</p>

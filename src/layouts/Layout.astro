@@ -7,11 +7,18 @@ import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import { site } from '../lib/site';
 
-interface Props { title: string; description: string; noindex?: boolean; home?: boolean }
-const { title, description, noindex = false, home = false } = Astro.props;
+import photos from '../../data/photos.json';
+interface Props { title: string; description: string; noindex?: boolean; home?: boolean; photo?: string }
+const { title, description, noindex = false, home = false, photo } = Astro.props;
+const ph = photo ? (photos.photos as Record<string, { alt: string }>)[photo] : undefined;
 const canonical = new URL(Astro.url.pathname, Astro.site);
 const fullTitle = home ? title : `${title} | ${site.name}`;
-const ogImage = new URL('/og-image.png', Astro.site).href;
+const ogImage = new URL(ph ? `/photos/${photo}-og.jpg` : '/og-image.png', Astro.site).href;
+const ogAlt = ph ? ph.alt : 'Worth Going Out: a total solar eclipse with the Moon covering the Sun.';
+const org = { '@type': 'Organization', name: site.name, url: site.url, email: site.email, logo: new URL('/apple-touch-icon.png', Astro.site).href };
+const ld = home
+  ? { '@context': 'https://schema.org', '@type': 'WebSite', name: site.name, url: site.url, description, publisher: org }
+  : { '@context': 'https://schema.org', '@type': 'Article', headline: title, description, url: canonical.href, image: ogImage, dateModified: site.reviewed, datePublished: site.reviewed, author: org, publisher: org, inLanguage: 'en' };
 ---
 <!doctype html>
 <html lang="en">
@@ -29,10 +36,13 @@ const ogImage = new URL('/og-image.png', Astro.site).href;
     <meta property="og:image" content={ogImage} />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
-    <meta property="og:image:alt" content="Worth Going Out: a total solar eclipse with the Moon covering the Sun." />
+    <meta property="og:image:alt" content={ogAlt} />
     <meta name="twitter:card" content="summary_large_image" />
     {noindex && <meta name="robots" content="noindex" />}
     {site.pinterestVerify && <meta name="p:domain_verify" content={site.pinterestVerify} />}
+    {site.googleVerify && <meta name="google-site-verification" content={site.googleVerify} />}
+    {site.bingVerify && <meta name="msvalidate.01" content={site.bingVerify} />}
+    {!noindex && <script type="application/ld+json" set:html={JSON.stringify(ld)} />}
     <meta name="theme-color" content="#0f1230" />
     <script is:inline>
       (function () {
@@ -45,6 +55,8 @@ const ogImage = new URL('/og-image.png', Astro.site).href;
       })();
     </script>
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48.png" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
     <link rel="sitemap" href="/sitemap-index.xml" />
   </head>
   <body>

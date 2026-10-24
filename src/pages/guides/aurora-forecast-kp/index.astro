@@ -1,4 +1,5 @@
 ---
+import Crumbs from '../../../components/Crumbs.astro';
 import Photo from '../../../components/Photo.astro';
 import Layout from '../../../layouts/Layout.astro';
 import MoreGuides from '../../../components/MoreGuides.astro';
@@ -9,8 +10,9 @@ const levels = [
   ['8–9', 'Severe storm', 'Can be seen overhead from the northern states of the United States, and low on the horizon much further south.'],
 ];
 ---
-<Layout title="How to read an aurora forecast: the Kp index explained" description="What the Kp number in an aurora forecast means, how far from the pole each level reaches, the best hours and seasons, and how the Moon and darkness change what you see.">
+<Layout photo="aurora-ringvassoya" title="How to read an aurora forecast: the Kp index explained" description="What the Kp number in an aurora forecast means, how far from the pole each level reaches, the best hours and seasons, and how the Moon and darkness change what you see.">
   <article class="wrap page prose">
+    <Crumbs items={[['Guides', '/guides/'], ['Aurora forecast', '/guides/aurora-forecast-kp/']]} />
     <h1>How to read an aurora forecast</h1>
     <p class="stamp">Last reviewed 24 October 2026. Based on guidance from NOAA’s Space Weather Prediction Center.</p>
     <p class="lead measure">Aurora forecasts are built around one number, the Kp index. It tells you how disturbed the Earth’s magnetic field is, and so how far from the pole the northern lights are likely to reach. It does not tell you whether it will be cloudy.</p>
