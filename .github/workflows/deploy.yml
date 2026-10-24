@@ -26,7 +26,9 @@ jobs:
           cache: npm
       - run: npm ci
       - name: Build the site into dist/
-        run: npm run build
+        run: |
+          node -v
+          npm run build 2>&1 | tee build.log || { echo "::error::$(tail -c 1500 build.log | tr '\n' ' ')"; exit 1; }
       - name: Check the built site
         run: npm run check
       - name: Upload dist/ to the hosting over FTPS
