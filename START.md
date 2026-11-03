@@ -19,6 +19,7 @@ worthgoingout.com: сайт про затмения и метеорные пот
 3. Решить подпись автора на About: бренд (рекомендую) или имя. Сейчас написано нейтрально «одна небольшая команда».
 4. Юридические страницы (Privacy, Terms) шаблонные, юристом не проверены.
 5. Когда сайт откроется по домену: заявки в Viator, GetYourGuide, Awin.
+6. Search Console (2.11): код вписан в `googleVerify`, после деплоя владелец нажимает «Подтвердить» и отправляет `sitemap-index.xml`. Ждём от владельца: имя счётчика GoatCounter (или `G-…`), решение по About.
 
 ## Страницы под поиск (24.10)
 - Затмение 2027 по городам: `/eclipse-2027/<город>/` (215 мест: 30 из `data/eclipse-places.json` + 185 из `data/eclipse-cities.json`, считает `scripts/calc-eclipse.mjs`), список `/eclipse-2027/cities/`. Новый город = строка в `data/eclipse-cities.json` → `npm run calc`. Сверка с National Eclipse на странице методологии.

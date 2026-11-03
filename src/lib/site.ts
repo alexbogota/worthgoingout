@@ -9,7 +9,7 @@ export const site = {
   // Pinterest site verification code (the content of the p:domain_verify meta tag). Empty until the owner claims the site on Pinterest.
   pinterestVerify: '',
   // Google Search Console and Bing Webmaster Tools verification codes (meta tag content). Empty until the owner adds the site there.
-  googleVerify: '',
+  googleVerify: 'Vp8S19lndKO1-oPeDIonOwJ0tj0X_4dDuJSjP1GX5wA',
   bingVerify: '',
   // Date the content was last reviewed as a whole; used in structured data.
   reviewed: '2026-10-24',
