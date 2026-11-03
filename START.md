@@ -19,7 +19,8 @@ worthgoingout.com: сайт про затмения и метеорные пот
 3. ~~Подпись автора на About~~: решено 2.11, бренд «Worth Going Out», без имён и без «команды»; про ИИ написано на `/editorial-policy/`.
 4. Юридические страницы (Privacy, Terms) шаблонные, юристом не проверены.
 5. Когда сайт откроется по домену: заявки в Viator, GetYourGuide, Awin.
-6. Search Console подтверждён 2.11 (код в `googleVerify`). Ждём от владельца: sitemap в Search Console, имя счётчика GoatCounter (или `G-…`).
+6. Search Console подтверждён 2.11 (код в `googleVerify`). Ждём от владельца: sitemap в Search Console.
+7. Статистика: GoatCounter подключён 2.11 (`site.goatcounter` в `src/lib/site.ts`, скрипт в `Layout.astro`, кабинет worthgoingout.goatcounter.com). В Privacy раздел «Analytics» назван сервис. Страницы `/pin/` без счётчика.
 
 ## Страницы под поиск (24.10)
 - Затмение 2027 по городам: `/eclipse-2027/<город>/` (215 мест: 30 из `data/eclipse-places.json` + 185 из `data/eclipse-cities.json`, считает `scripts/calc-eclipse.mjs`), список `/eclipse-2027/cities/`. Новый город = строка в `data/eclipse-cities.json` → `npm run calc`. Сверка с National Eclipse на странице методологии.

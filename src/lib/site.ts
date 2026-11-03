@@ -5,7 +5,9 @@ export const site = {
   url: 'https://worthgoingout.com',
   email: 'contact@worthgoingout.com',
   // Date of the last edit of the legal pages (change when they change).
-  legalUpdated: '24 October 2026',
+  legalUpdated: '2 November 2026',
+  // GoatCounter site code (privacy-friendly analytics, no cookies): https://worthgoingout.goatcounter.com
+  goatcounter: 'worthgoingout',
   // Pinterest site verification code (the content of the p:domain_verify meta tag). Empty until the owner claims the site on Pinterest.
   pinterestVerify: '',
   // Google Search Console and Bing Webmaster Tools verification codes (meta tag content). Empty until the owner adds the site there.
