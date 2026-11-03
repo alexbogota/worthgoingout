@@ -16,10 +16,10 @@ worthgoingout.com: сайт про затмения и метеорные пот
 ## Что ждёт владельца
 1. В File Manager удалить лишнюю папку `public_html` внутри папки домена (копия сайта от первого деплоя) и проверить, что за папка `github` там же.
 2. Создать почту contact@worthgoingout.com (она на страницах).
-3. Решить подпись автора на About: бренд (рекомендую) или имя. Сейчас написано нейтрально «одна небольшая команда».
+3. ~~Подпись автора на About~~: решено 2.11, бренд «Worth Going Out», без имён и без «команды»; про ИИ написано на `/editorial-policy/`.
 4. Юридические страницы (Privacy, Terms) шаблонные, юристом не проверены.
 5. Когда сайт откроется по домену: заявки в Viator, GetYourGuide, Awin.
-6. Search Console (2.11): код вписан в `googleVerify`, после деплоя владелец нажимает «Подтвердить» и отправляет `sitemap-index.xml`. Ждём от владельца: имя счётчика GoatCounter (или `G-…`), решение по About.
+6. Search Console подтверждён 2.11 (код в `googleVerify`). Ждём от владельца: sitemap в Search Console, имя счётчика GoatCounter (или `G-…`).
 
 ## Страницы под поиск (24.10)
 - Затмение 2027 по городам: `/eclipse-2027/<город>/` (215 мест: 30 из `data/eclipse-places.json` + 185 из `data/eclipse-cities.json`, считает `scripts/calc-eclipse.mjs`), список `/eclipse-2027/cities/`. Новый город = строка в `data/eclipse-cities.json` → `npm run calc`. Сверка с National Eclipse на странице методологии.
