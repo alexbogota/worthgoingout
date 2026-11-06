@@ -7,6 +7,8 @@ import BookBlock from '../../components/BookBlock.astro';
 import TourPicks from '../../components/TourPicks.astro';
 import MonthNav from '../../components/MonthNav.astro';
 import photos from '../../../data/photos.json';
+import PlaceGallery from '../../components/PlaceGallery.astro';
+import stargazingPlaces from '../../../data/stargazing-places.json';
 import { stargazing, twelve, monthShort, monthLong, nextWindows, windowText, coreSeason } from '../../lib/stargazing';
 import { longDate } from '../../lib/site';
 export function getStaticPaths() {
@@ -16,6 +18,7 @@ const { p } = Astro.props;
 const m = twelve(p);
 const cs = coreSeason(p);
 const windows = nextWindows(p, 8);
+const galleryIds: string[] = ((Array.isArray(stargazingPlaces) ? stargazingPlaces : (stargazingPlaces as any).places) as any[]).find((x) => x.slug === p.slug)?.gallery ?? [];
 const photoId = `${p.slug}-night`;
 const hasPhoto = photoId in photos.photos;
 const others = stargazing.places.filter((o) => o.slug !== p.slug);
@@ -45,6 +48,8 @@ const others = stargazing.places.filter((o) => o.slug !== p.slug);
     <h2>What to know</h2>
     <ul class="measure">{p.facts.map((f) => <li>{f}</li>)}</ul>
     <p class="measure">{p.tip}</p>
+
+    <PlaceGallery ids={galleryIds} />
 
     <BookBlock
       title="Booking a stargazing night"

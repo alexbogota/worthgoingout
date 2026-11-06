@@ -28,7 +28,12 @@
         ]
       ],
       "photo": "tarifa-beach",
-      "bookLink": "trips-cadiz"
+      "bookLink": "trips-cadiz",
+      "gallery": [
+        "cadiz-cathedral",
+        "cadiz-rooftops",
+        "tarifa-mediterranean"
+      ]
     },
     {
       "slug": "egypt",
@@ -54,7 +59,12 @@
         ]
       ],
       "photo": "luxor-temple",
-      "bookLink": "trips-luxor"
+      "bookLink": "trips-luxor",
+      "gallery": [
+        "luxor-karnak-rams",
+        "luxor-hatshepsut",
+        "luxor-nile-sunset"
+      ]
     },
     {
       "slug": "morocco",
@@ -74,7 +84,12 @@
       "extra": "Times on this page use Morocco’s clock rules as they are today (UTC+1 outside Ramadan). Ramadan is not expected to fall in August 2027, but check your booking for the official time.",
       "sources": [],
       "photo": "cape-spartel",
-      "bookLink": "trips-tangier"
+      "bookLink": "trips-tangier",
+      "gallery": [
+        "tangier-hercules-caves",
+        "tangier-medina",
+        "chefchaouen-blue-stairs"
+      ]
     }
   ]
 }

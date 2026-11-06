@@ -9,11 +9,13 @@ const items = ids.map((id) => {
   if (!p) throw new Error(`Unknown photo: ${id}`);
   return { id, p, pano: p.width / p.height > 2.4 };
 });
+// Three ordinary photos: the first one leads, wide, above the other two.
+const lead = items.length === 3 && items.every((i) => !i.pano) ? items[0].id : null;
 ---
 {items.length > 0 && (
   <div class="gallery">
     {items.map(({ id, p, pano }) => (
-      <figure class:list={{ pano }}>
+      <figure class:list={{ pano, lead: id === lead }}>
         <img
           src={`/photos/${id}-1600.webp`}
           srcset={`/photos/${id}-800.webp 800w, /photos/${id}-1600.webp 1600w`}
@@ -33,11 +35,12 @@ const items = ids.map((id) => {
   figure { margin: 0; min-width: 0; }
   img { display: block; width: 100%; height: auto; border-radius: 6px; background: var(--raise); }
   figure:not(.pano) img { aspect-ratio: 4 / 3; object-fit: cover; }
+  figure.lead img { aspect-ratio: 16 / 9; }
   figcaption { margin-top: 8px; font-size: 0.9375rem; color: var(--muted); line-height: 1.5; }
   .credit { font-size: 0.8125rem; }
   figcaption a { color: inherit; text-decoration: underline; text-underline-offset: 2px; }
   @media (min-width: 760px) {
     .gallery { grid-template-columns: 3fr 2fr; align-items: start; max-width: 960px; }
-    figure.pano { grid-column: 1 / -1; }
+    figure.pano, figure.lead { grid-column: 1 / -1; }
   }
 </style>
