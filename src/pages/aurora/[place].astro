@@ -5,13 +5,16 @@ import Layout from '../../layouts/Layout.astro';
 import DarkBars from '../../components/DarkBars.astro';
 import BookBlock from '../../components/BookBlock.astro';
 import TourPicks from '../../components/TourPicks.astro';
+import PlaceGallery from '../../components/PlaceGallery.astro';
 import MonthNav from '../../components/MonthNav.astro';
 import { aurora, seasonText, seasonNewMoons, MONTHS_LONG } from '../../lib/aurora';
 import { longDate } from '../../lib/site';
+import placeData from '../../../data/aurora-places.json';
 export function getStaticPaths() {
   return aurora.places.map((p) => ({ params: { place: p.slug }, props: { p } }));
 }
 const { p } = Astro.props;
+const galleryIds: string[] = ((Array.isArray(placeData) ? placeData : (placeData as any).places) as any[]).find((x) => x.slug === p.slug)?.gallery ?? [];
 const moons = seasonNewMoons(p.season).slice(0, 6);
 const others = aurora.places.filter((o) => o.slug !== p.slug);
 ---
@@ -48,6 +51,8 @@ const others = aurora.places.filter((o) => o.slug !== p.slug);
     <h2>On the ground</h2>
     <p class="measure">{p.tip}</p>
     <p class="measure">Whatever the month, check two forecasts on the day: the aurora forecast from NOAA and the cloud forecast for where you are. <a href="/guides/aurora-forecast-kp/">How to read the aurora forecast.</a></p>
+
+    <PlaceGallery ids={galleryIds} />
 
     <BookBlock
       title={`Booking a northern lights tour from ${p.name}`}
