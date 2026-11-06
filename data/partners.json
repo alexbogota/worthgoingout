@@ -3,8 +3,8 @@
   "partners": {
     "viator": {
       "name": "Viator",
-      "enabled": false,
-      "program": "Viator Partner Program (direct) or Awin"
+      "enabled": true,
+      "program": "Viator Partner Program (direct), approved 5 Nov 2026"
     },
     "getyourguide": {
       "name": "GetYourGuide",
@@ -25,63 +25,63 @@
   "links": {
     "tours-tromso": {
       "partner": "viator",
-      "url": ""
+      "url": "https://www.viator.com/Tromso/d4362-ttd?pid=P00329707&mcid=42383&medium=link&campaign=tours-tromso"
     },
     "tours-abisko": {
       "partner": "viator",
-      "url": ""
+      "url": "https://www.viator.com/Sweden-attractions/Abisko-National-Park/d68-a20860?pid=P00329707&mcid=42383&medium=link&campaign=tours-abisko"
     },
     "tours-rovaniemi": {
       "partner": "viator",
-      "url": ""
+      "url": "https://www.viator.com/Rovaniemi/d22130-ttd?pid=P00329707&mcid=42383&medium=link&campaign=tours-rovaniemi"
     },
     "tours-reykjavik": {
       "partner": "viator",
-      "url": ""
+      "url": "https://www.viator.com/Reykjavik/d905-ttd?pid=P00329707&mcid=42383&medium=link&campaign=tours-reykjavik"
     },
     "tours-fairbanks": {
       "partner": "viator",
-      "url": ""
+      "url": "https://www.viator.com/Fairbanks/d5269-ttd?pid=P00329707&mcid=42383&medium=link&campaign=tours-fairbanks"
     },
     "tours-yellowknife": {
       "partner": "viator",
-      "url": ""
+      "url": "https://www.viator.com/Yellowknife/d23637-ttd?pid=P00329707&mcid=42383&medium=link&campaign=tours-yellowknife"
     },
     "tours-inverness": {
       "partner": "viator",
-      "url": ""
+      "url": "https://www.viator.com/Inverness/d5051-ttd?pid=P00329707&mcid=42383&medium=link&campaign=tours-inverness"
     },
     "stars-teide": {
       "partner": "viator",
-      "url": ""
+      "url": "https://www.viator.com/Tenerife-tours/Night-Tours/d5404-g12-c96?pid=P00329707&mcid=42383&medium=link&campaign=stars-teide"
     },
     "stars-la-palma": {
       "partner": "viator",
-      "url": ""
+      "url": "https://www.viator.com/La-Palma/d4487-ttd?pid=P00329707&mcid=42383&medium=link&campaign=stars-la-palma"
     },
     "stars-atacama": {
       "partner": "viator",
-      "url": ""
+      "url": "https://www.viator.com/San-Pedro-de-Atacama/d5499-ttd?pid=P00329707&mcid=42383&medium=link&campaign=stars-atacama"
     },
     "stars-namibrand": {
       "partner": "viator",
-      "url": ""
+      "url": "https://www.viator.com/Namibia-attractions/Sossusvlei/d10-a15756?pid=P00329707&mcid=42383&medium=link&campaign=stars-namibrand"
     },
     "stars-aoraki-mackenzie": {
       "partner": "viator",
-      "url": ""
+      "url": "https://www.viator.com/Lake-Tekapo/d51201-ttd?pid=P00329707&mcid=42383&medium=link&campaign=stars-aoraki-mackenzie"
     },
     "trips-luxor": {
       "partner": "viator",
-      "url": ""
+      "url": "https://www.viator.com/Luxor/d826?pid=P00329707&mcid=42383&medium=link&campaign=trips-luxor"
     },
     "trips-tangier": {
       "partner": "viator",
-      "url": ""
+      "url": "https://www.viator.com/Tangier/d4388-ttd?pid=P00329707&mcid=42383&medium=link&campaign=trips-tangier"
     },
     "trips-cadiz": {
       "partner": "viator",
-      "url": ""
+      "url": "https://www.viator.com/Cadiz/d22439-ttd?pid=P00329707&mcid=42383&medium=link&campaign=trips-cadiz"
     },
     "scope-unistellar": {
       "partner": "unistellar",
