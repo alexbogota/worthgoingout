@@ -4,6 +4,7 @@ import Layout from '../../layouts/Layout.astro';
 import Photo from '../../components/Photo.astro';
 import MonthBars from '../../components/MonthBars.astro';
 import BookBlock from '../../components/BookBlock.astro';
+import TourPicks from '../../components/TourPicks.astro';
 import MonthNav from '../../components/MonthNav.astro';
 import photos from '../../../data/photos.json';
 import { stargazing, twelve, monthShort, monthLong, nextWindows, windowText, coreSeason } from '../../lib/stargazing';
@@ -57,6 +58,7 @@ const others = stargazing.places.filter((o) => o.slug !== p.slug);
         'Warm clothes matter more than you expect, even in a desert or in summer.',
       ]}
     />
+    <TourPicks place={p.slug} />
 
     <p class="small">Other dark-sky places: {others.map((o, i) => <>{i > 0 && ', '}<a href={`/stargazing/${o.slug}/`}>{o.name}</a></>)}. <a href="/stargazing/">Compare all five.</a></p>
 

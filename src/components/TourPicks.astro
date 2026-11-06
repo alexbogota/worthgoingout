@@ -2,21 +2,24 @@
 // A short list of hand-picked tour listings for one place. Shows nothing until the partner is approved and the links have URLs.
 import { liveLink } from '../lib/partners';
 import picks from '../../data/tour-picks.json';
-interface Props { place: string; title: string }
-const { place, title } = Astro.props;
-const all = ((picks.places as Record<string, { link: string; label: string; note: string; duration: string }[]>)[place] ?? [])
+interface Props { place: string; title?: string }
+const { place } = Astro.props;
+const title = (picks as any).titles?.[place] ?? Astro.props.title ?? 'Tours to look at';
+const intro: string | undefined = (picks as any).intros?.[place];
+const all = (((picks.places as unknown) as Record<string, { link: string; label: string; note: string; duration: string }[]>)[place] ?? [])
   .map((t) => ({ ...t, live: liveLink(t.link) }))
   .filter((t) => t.live !== null);
 ---
 {all.length > 0 && (
   <section class="picks" aria-labelledby={`picks-${place}`}>
     <h2 id={`picks-${place}`}>{title}</h2>
+    {intro && <p class="measure">{intro}</p>}
     <p class="measure">A few listings that show the different formats, not a ranking. Prices, dates and reviews change, so check them on {all[0].live!.partner} before you book. Details read on {picks.checked}.</p>
     <ul class="ruled">
       {all.map((t) => (
         <li>
           <a href={t.live!.href} rel="sponsored nofollow">{t.label}</a>
-          <span class="meta">{t.duration}</span>
+          {t.duration && <span class="meta">{t.duration}</span>}
           <span class="note">{t.note}</span>
         </li>
       ))}

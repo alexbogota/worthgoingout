@@ -3,14 +3,661 @@
   "checked": "5 November 2026",
   "places": {
     "tromso": [
-      { "link": "tours-tromso-small-group", "label": "Small-group aurora chase, all-inclusive", "note": "A small group follows the clear sky by vehicle, with food and drink in the price.", "duration": "6 to 9 hours" },
-      { "link": "tours-tromso-bonfire", "label": "Aurora hunt with a bonfire meal", "note": "Small group; the listing includes a warm winter suit, a meal by a bonfire and photos.", "duration": "5 to 8 hours" },
-      { "link": "tours-tromso-campfire", "label": "Small-group chase with campfire meal and photos", "note": "Same idea with a campfire meal and photos of your group.", "duration": "6 to 9 hours" },
-      { "link": "tours-tromso-border", "label": "Long chase across the border", "note": "Drives a long way, across a border, to find clear sky; hot food and drinks included.", "duration": "7 hours" },
-      { "link": "tours-tromso-cruise", "label": "Evening aurora cruise", "note": "A boat instead of a bus: a shorter outing from the harbour.", "duration": "3 hours" },
-      { "link": "tours-tromso-yacht", "label": "Yacht cruise with dinner and hot tub", "note": "The comfortable option: a yacht with dinner and a hot tub on board.", "duration": "4 hours" },
-      { "link": "tours-tromso-reindeer", "label": "Night reindeer sledding with camp dinner", "note": "An evening with reindeer and a camp dinner, with a chance of northern lights; not a chase.", "duration": "4 hours 30 minutes" },
-      { "link": "tours-tromso-husky", "label": "Evening husky visit under the aurora sky", "note": "Meet the sled dogs at night; a chance of lights, not a chase.", "duration": "4 hours 15 minutes" }
+      {
+        "link": "tours-tromso-small-group",
+        "label": "Small-group aurora chase, all-inclusive",
+        "note": "A small group follows the clear sky by vehicle, with food and drink in the price.",
+        "duration": "6 to 9 hours"
+      },
+      {
+        "link": "tours-tromso-bonfire",
+        "label": "Aurora hunt with a bonfire meal",
+        "note": "Small group; the listing includes a warm winter suit, a meal by a bonfire and photos.",
+        "duration": "5 to 8 hours"
+      },
+      {
+        "link": "tours-tromso-campfire",
+        "label": "Small-group chase with campfire meal and photos",
+        "note": "Same idea with a campfire meal and photos of your group.",
+        "duration": "6 to 9 hours"
+      },
+      {
+        "link": "tours-tromso-border",
+        "label": "Long chase across the border",
+        "note": "Drives a long way, across a border, to find clear sky; hot food and drinks included.",
+        "duration": "7 hours"
+      },
+      {
+        "link": "tours-tromso-cruise",
+        "label": "Evening aurora cruise",
+        "note": "A boat instead of a bus: a shorter outing from the harbour.",
+        "duration": "3 hours"
+      },
+      {
+        "link": "tours-tromso-yacht",
+        "label": "Yacht cruise with dinner and hot tub",
+        "note": "The comfortable option: a yacht with dinner and a hot tub on board.",
+        "duration": "4 hours"
+      },
+      {
+        "link": "tours-tromso-reindeer",
+        "label": "Night reindeer sledding with camp dinner",
+        "note": "An evening with reindeer and a camp dinner, with a chance of northern lights; not a chase.",
+        "duration": "4 hours 30 minutes"
+      },
+      {
+        "link": "tours-tromso-husky",
+        "label": "Evening husky visit under the aurora sky",
+        "note": "Meet the sled dogs at night; a chance of lights, not a chase.",
+        "duration": "4 hours 15 minutes"
+      }
+    ],
+    "rovaniemi": [
+      {
+        "link": "tours-rovaniemi-campfire",
+        "label": "Aurora hunt with campfire and barbecue",
+        "note": "A short outing with a transfer, a campfire and a Lappish barbecue.",
+        "duration": "3 hours"
+      },
+      {
+        "link": "tours-rovaniemi-photo",
+        "label": "Small-group aurora photography tour",
+        "note": "A small group with a guide who helps you photograph the lights.",
+        "duration": ""
+      },
+      {
+        "link": "tours-rovaniemi-icefloat",
+        "label": "Aurora ice floating, small group",
+        "note": "Float in icy water in a protective suit while you watch the sky.",
+        "duration": ""
+      },
+      {
+        "link": "tours-rovaniemi-allnight",
+        "label": "All-night small-group photo safari",
+        "note": "A long night out with a small group, chasing the lights.",
+        "duration": "5 to 12 hours"
+      },
+      {
+        "link": "tours-rovaniemi-snowmobile",
+        "label": "Snowmobile night tour, small group",
+        "note": "Ride a snowmobile after dark with a small group.",
+        "duration": ""
+      },
+      {
+        "link": "tours-rovaniemi-husky-taiga",
+        "label": "10 km husky safari with a kennel visit",
+        "note": "A family kennel and a long ride through taiga forest. A chance of lights, not a chase.",
+        "duration": "4 hours 30 minutes"
+      },
+      {
+        "link": "tours-rovaniemi-reindeer-husky",
+        "label": "Reindeer and husky safari",
+        "note": "Both animals in one outing from Rovaniemi.",
+        "duration": "3 hours"
+      },
+      {
+        "link": "tours-rovaniemi-husky-farm",
+        "label": "Husky farm visit and short sled ride",
+        "note": "A visit to the kennel and a 2 km sled ride.",
+        "duration": "2 hours"
+      }
+    ],
+    "reykjavik": [
+      {
+        "link": "tours-reykjavik-bus",
+        "label": "Northern lights bus tour with hot chocolate",
+        "note": "A coach tour out of the city lights, with hot chocolate.",
+        "duration": "4 hours"
+      },
+      {
+        "link": "tours-reykjavik-minibus",
+        "label": "4x4 minibus tour with photos and cocoa",
+        "note": "A smaller vehicle; the listing includes photos and cocoa.",
+        "duration": ""
+      },
+      {
+        "link": "tours-reykjavik-photo",
+        "label": "Small-group tour with pro aurora photos",
+        "note": "A small group with a photographer.",
+        "duration": ""
+      },
+      {
+        "link": "tours-reykjavik-boat",
+        "label": "Northern lights boat cruise",
+        "note": "A boat out of the harbour, away from the city lights.",
+        "duration": "2 hours"
+      },
+      {
+        "link": "tours-reykjavik-perlan",
+        "label": "Perlan: indoor northern lights experience",
+        "note": "A planetarium show with an ice cave exhibit; an option when the sky is cloudy.",
+        "duration": "2 to 3 hours"
+      },
+      {
+        "link": "tours-reykjavik-golden",
+        "label": "Golden Circle and northern lights in one trip",
+        "note": "A long day of daytime sights, then a night search for the lights.",
+        "duration": "12 hours 30 minutes"
+      }
+    ],
+    "fairbanks": [
+      {
+        "link": "tours-fairbanks-glass-house",
+        "label": "Aurora glass house at Cleary Summit",
+        "note": "Watch from a glass house on a summit outside town; photos are in the listing.",
+        "duration": "5 hours"
+      },
+      {
+        "link": "tours-fairbanks-chena",
+        "label": "Northern lights and Chena Hot Springs",
+        "note": "A day trip to the hot springs that stays out for the night sky.",
+        "duration": "10 hours"
+      },
+      {
+        "link": "tours-fairbanks-cabin",
+        "label": "Mountaintop cabin aurora viewing with photography",
+        "note": "A cabin on a mountaintop, with photography in the listing.",
+        "duration": "4 hours 30 minutes"
+      },
+      {
+        "link": "tours-fairbanks-arctic-circle",
+        "label": "Arctic Circle day tour with aurora viewing",
+        "note": "Crosses the Arctic Circle by day and looks for the lights after dark.",
+        "duration": "12 hours 30 minutes"
+      },
+      {
+        "link": "tours-fairbanks-chase",
+        "label": "Aurora chasing with photography",
+        "note": "A vehicle trip to find clear sky, with photography.",
+        "duration": "4 hours"
+      },
+      {
+        "link": "tours-fairbanks-sphere",
+        "label": "Aurora Sphere experience in North Pole, Alaska",
+        "note": "A viewing experience in the town of North Pole, near Fairbanks.",
+        "duration": "4 hours"
+      },
+      {
+        "link": "tours-fairbanks-dog-sled",
+        "label": "Dog sled adventure with a homestead visit",
+        "note": "A ride behind a dog team, with a homestead tour. Not a chase.",
+        "duration": "1 to 2 hours"
+      },
+      {
+        "link": "tours-fairbanks-reindeer",
+        "label": "Walking with reindeer",
+        "note": "A short outing with reindeer. Not a chase.",
+        "duration": "1 hour"
+      }
+    ],
+    "yellowknife": [
+      {
+        "link": "tours-yellowknife-lodge",
+        "label": "Aurora chase with an aurora lodge",
+        "note": "A chase with a lodge to warm up in.",
+        "duration": "4 hours"
+      },
+      {
+        "link": "tours-yellowknife-photo",
+        "label": "Small-group aurora hunt with photography",
+        "note": "A small group with photography services.",
+        "duration": "4 hours 30 minutes"
+      },
+      {
+        "link": "tours-yellowknife-cabin",
+        "label": "Intimate aurora tour from a cozy cabin",
+        "note": "A smaller, quieter format built around a cabin.",
+        "duration": "4 hours"
+      },
+      {
+        "link": "tours-yellowknife-skydome",
+        "label": "Skydome aurora viewing",
+        "note": "Viewing the lights from a skydome.",
+        "duration": "4 hours"
+      },
+      {
+        "link": "tours-yellowknife-bus",
+        "label": "One-night aurora hunt by bus",
+        "note": "A coach hunt for the lights.",
+        "duration": "4 to 5 hours"
+      },
+      {
+        "link": "tours-yellowknife-tipi",
+        "label": "Two-night aurora quest with a glass tipi",
+        "note": "A longer stay that gives you more than one night to try.",
+        "duration": "3 days"
+      },
+      {
+        "link": "tours-yellowknife-dog-sled",
+        "label": "Traditional dog sledding",
+        "note": "A ride behind a dog team. Not a chase.",
+        "duration": "2 hours"
+      },
+      {
+        "link": "tours-yellowknife-snowmobile",
+        "label": "Snowmobile adventure for beginners",
+        "note": "A guided ride, with no experience needed.",
+        "duration": "2 hours"
+      }
+    ],
+    "inverness": [
+      {
+        "link": "tours-inverness-loch-ness-cruise",
+        "label": "Loch Ness cruise with Urquhart Castle views",
+        "note": "A short cruise on the loch.",
+        "duration": "50 minutes"
+      },
+      {
+        "link": "tours-inverness-outlander",
+        "label": "Loch Ness, Outlander and Urquhart Castle",
+        "note": "A day trip from Inverness.",
+        "duration": "9 hours"
+      },
+      {
+        "link": "tours-inverness-skye",
+        "label": "Isle of Skye and Eilean Donan Castle",
+        "note": "A long day trip to the island.",
+        "duration": "12 hours"
+      },
+      {
+        "link": "tours-inverness-skye-small",
+        "label": "Isle of Skye and Fairy Pools, small group",
+        "note": "The same island with a small group.",
+        "duration": "12 hours"
+      },
+      {
+        "link": "tours-inverness-glenfinnan",
+        "label": "Glenfinnan, Mallaig and Loch Ness",
+        "note": "A west-coast day trip that ends at the loch.",
+        "duration": "12 hours"
+      },
+      {
+        "link": "tours-inverness-culloden",
+        "label": "Glen Affric and Culloden with admissions",
+        "note": "A quieter day among glens and a battlefield.",
+        "duration": "9 hours"
+      },
+      {
+        "link": "tours-inverness-walk",
+        "label": "Inverness city walking tour with a local guide",
+        "note": "A short walk through the city.",
+        "duration": "1 hour 30 minutes"
+      }
+    ],
+    "abisko": [
+      {
+        "link": "tours-abisko-chase",
+        "label": "Abisko aurora chase",
+        "note": "A chase with a local guide.",
+        "duration": "4 hours"
+      },
+      {
+        "link": "tours-abisko-photo",
+        "label": "Aurora photo adventure in Abisko",
+        "note": "A photography-led evening.",
+        "duration": "4 hours"
+      },
+      {
+        "link": "tours-abisko-dinner",
+        "label": "Aurora tour with dinner in Abisko",
+        "note": "An evening that includes dinner.",
+        "duration": "5 hours 30 minutes"
+      },
+      {
+        "link": "tours-abisko-kiruna",
+        "label": "Northern lights tour from Kiruna to Abisko",
+        "note": "Starts in Kiruna and drives to Abisko.",
+        "duration": "6 hours"
+      },
+      {
+        "link": "tours-abisko-minibus",
+        "label": "Minibus aurora hunt to Abisko, 7:30 pm",
+        "note": "A minibus departure from Kiruna.",
+        "duration": ""
+      },
+      {
+        "link": "tours-abisko-two-night",
+        "label": "Two-night aurora photography tour",
+        "note": "Two nights give you a second try.",
+        "duration": "2 days"
+      },
+      {
+        "link": "tours-abisko-hike",
+        "label": "Morning hike in Abisko National Park",
+        "note": "A daytime option.",
+        "duration": "2 hours"
+      }
+    ],
+    "teide": [
+      {
+        "link": "stars-teide-astro",
+        "label": "Small-group stargazing with astrophotography",
+        "note": "A small group at Teide National Park.",
+        "duration": "1 hour 20 minutes"
+      },
+      {
+        "link": "stars-teide-telescope",
+        "label": "Stargazing with a 20-inch telescope and Teide sunset",
+        "note": "A big telescope and a sunset first.",
+        "duration": "3 hours"
+      },
+      {
+        "link": "stars-teide-coach",
+        "label": "Teide sunset and stargazing coach tour",
+        "note": "Hotel pickup by coach.",
+        "duration": "8 hours"
+      },
+      {
+        "link": "stars-teide-dinner",
+        "label": "Teide night tour with dinner and hotel pickup",
+        "note": "Stargazing with dinner included.",
+        "duration": "7 hours"
+      },
+      {
+        "link": "stars-teide-plain",
+        "label": "Stargazing tour in Tenerife",
+        "note": "A shorter evening session.",
+        "duration": "3 hours"
+      },
+      {
+        "link": "stars-teide-bus",
+        "label": "Teide night bus tour with meal and drinks",
+        "note": "A bus tour with a meal and drinks.",
+        "duration": "6 hours"
+      }
+    ],
+    "la-palma": [
+      {
+        "link": "stars-la-palma-roque",
+        "label": "Private stargazing at Roque de los Muchachos",
+        "note": "A private night under one of the best skies in Europe.",
+        "duration": "1 hour 30 minutes"
+      },
+      {
+        "link": "stars-la-palma-astronomer",
+        "label": "Stargazing guided by an expert astronomer",
+        "note": "A guided session with an astronomer.",
+        "duration": "2 hours"
+      },
+      {
+        "link": "stars-la-palma-lava-tube",
+        "label": "Speleology tour in a lava tube",
+        "note": "A daytime option underground.",
+        "duration": "2 hours"
+      },
+      {
+        "link": "stars-la-palma-volcanoes",
+        "label": "Half-day private tour of the La Palma volcanoes",
+        "note": "A daytime option on the volcanic ridge.",
+        "duration": "4 hours"
+      }
+    ],
+    "atacama": [
+      {
+        "link": "stars-atacama-astronomer",
+        "label": "Stargazing tour with an astronomer",
+        "note": "A guided night session.",
+        "duration": "2 hours 30 minutes"
+      },
+      {
+        "link": "stars-atacama-astrotour",
+        "label": "Astronomical tour with astrophotography",
+        "note": "A tour with photos of the sky.",
+        "duration": "2 hours 30 minutes"
+      },
+      {
+        "link": "stars-atacama-roofless",
+        "label": "Premium small-group stargazing",
+        "note": "A small group.",
+        "duration": "2 hours 30 minutes to 3 hours"
+      },
+      {
+        "link": "stars-atacama-tasting",
+        "label": "Astronomical tour with photos and night tasting",
+        "note": "Adds photos and a tasting.",
+        "duration": "3 hours"
+      },
+      {
+        "link": "stars-atacama-private",
+        "label": "Private astronomical tour under the night sky",
+        "note": "A private session.",
+        "duration": "2 hours 30 minutes"
+      },
+      {
+        "link": "stars-atacama-moon-valley",
+        "label": "Valley of the Moon sunset tour",
+        "note": "A daytime option that ends at sunset.",
+        "duration": "4 hours 30 minutes"
+      }
+    ],
+    "namibrand": [
+      {
+        "link": "stars-namibrand-scenic-2day",
+        "label": "2-day scenic Sossusvlei trip from Swakopmund",
+        "note": "A short trip from the coast.",
+        "duration": "2 days"
+      },
+      {
+        "link": "stars-namibrand-safari-3day",
+        "label": "3-day Sossusvlei and Namib Desert small-group safari",
+        "note": "A small group from Windhoek.",
+        "duration": "3 days"
+      },
+      {
+        "link": "stars-namibrand-camping",
+        "label": "3-day budget camping safari",
+        "note": "Camping in the desert.",
+        "duration": "3 days"
+      },
+      {
+        "link": "stars-namibrand-luxury",
+        "label": "3-day all-inclusive luxury adventure",
+        "note": "A lodge-based version.",
+        "duration": "3 days"
+      },
+      {
+        "link": "stars-namibrand-photography",
+        "label": "5-day Namib Desert photography tour",
+        "note": "Built around photography.",
+        "duration": "5 days"
+      }
+    ],
+    "aoraki-mackenzie": [
+      {
+        "link": "stars-aoraki-mackenzie-mt-john",
+        "label": "Guided stargazing at Mt John Observatory",
+        "note": "A guided session at the observatory.",
+        "duration": "1 hour 45 minutes"
+      },
+      {
+        "link": "stars-aoraki-mackenzie-cowans",
+        "label": "Stargazing at Cowan's private observatory",
+        "note": "A private observatory.",
+        "duration": "1 hour 30 minutes"
+      },
+      {
+        "link": "stars-aoraki-mackenzie-indoor",
+        "label": "Indoor Maori cultural astronomy experience",
+        "note": "An indoor option for cloudy nights.",
+        "duration": "1 hour"
+      },
+      {
+        "link": "stars-aoraki-mackenzie-silver-river",
+        "label": "Silver River stargazing experience",
+        "note": "An evening session by the river.",
+        "duration": "1 hour 15 minutes"
+      },
+      {
+        "link": "stars-aoraki-mackenzie-chameleon",
+        "label": "Shared stargazing tour",
+        "note": "A shared group session.",
+        "duration": "1 hour 30 minutes"
+      },
+      {
+        "link": "stars-aoraki-mackenzie-ultimate",
+        "label": "Ultimate stargazing experience",
+        "note": "A longer session.",
+        "duration": "2 hours"
+      },
+      {
+        "link": "stars-aoraki-mackenzie-mt-cook",
+        "label": "Mt Cook day tour from Tekapo, small group",
+        "note": "A daytime option.",
+        "duration": "6 hours"
+      }
+    ],
+    "spain": [
+      {
+        "link": "trips-cadiz-walk",
+        "label": "Walking tour through Cádiz with a local guide",
+        "note": "Stories of the old city.",
+        "duration": "1 hour 50 minutes"
+      },
+      {
+        "link": "trips-cadiz-food",
+        "label": "Cádiz food tour: tapas and drinks",
+        "note": "A tapas walk with a local.",
+        "duration": "3 hours 30 minutes"
+      },
+      {
+        "link": "trips-cadiz-bus",
+        "label": "Hop-on hop-off bus tour",
+        "note": "An easy way to see the city.",
+        "duration": "1 hour 15 minutes"
+      },
+      {
+        "link": "trips-cadiz-jerez",
+        "label": "Guided winery tour with tastings in Jerez",
+        "note": "A short wine visit.",
+        "duration": "1 hour 30 minutes"
+      },
+      {
+        "link": "trips-cadiz-gibraltar",
+        "label": "Gibraltar private day trip",
+        "note": "A full day trip.",
+        "duration": "7 to 8 hours"
+      },
+      {
+        "link": "trips-cadiz-white-towns",
+        "label": "White Towns private day trip",
+        "note": "A day among the hill towns.",
+        "duration": "7 to 8 hours"
+      },
+      {
+        "link": "trips-cadiz-catamaran",
+        "label": "Catamaran trip from Cádiz",
+        "note": "A short sail.",
+        "duration": "1 hour 15 minutes"
+      }
+    ],
+    "egypt": [
+      {
+        "link": "trips-luxor-east-west",
+        "label": "Full-day tour to the East and West Banks",
+        "note": "The main sights of both banks.",
+        "duration": "8 hours"
+      },
+      {
+        "link": "trips-luxor-valley-kings",
+        "label": "Valley of the Kings, Hatshepsut, Karnak and Luxor Temple",
+        "note": "A private day tour.",
+        "duration": "8 hours"
+      },
+      {
+        "link": "trips-luxor-balloon",
+        "label": "Sunrise hot air balloon with transfers",
+        "note": "Over the valley at dawn.",
+        "duration": "2 hours"
+      },
+      {
+        "link": "trips-luxor-half-day",
+        "label": "Half-day tour: Valley of the Kings and Hatshepsut Temple",
+        "note": "A shorter option.",
+        "duration": "4 to 5 hours"
+      },
+      {
+        "link": "trips-luxor-dendara",
+        "label": "Dendara and Abydos temples day tour",
+        "note": "Further from the city.",
+        "duration": "8 hours"
+      },
+      {
+        "link": "trips-luxor-edfu",
+        "label": "Edfu and Kom Ombo temples private tour",
+        "note": "A day trip south.",
+        "duration": "8 hours"
+      },
+      {
+        "link": "trips-luxor-horse",
+        "label": "Private horse riding on the West Bank",
+        "note": "A different way to see the area.",
+        "duration": "2 hours"
+      },
+      {
+        "link": "trips-luxor-nile-cruise",
+        "label": "5-day Nile cruise from Luxor to Aswan",
+        "note": "A multi-day cruise.",
+        "duration": "5 days"
+      }
+    ],
+    "morocco": [
+      {
+        "link": "trips-tangier-cape-spartel",
+        "label": "Cape Spartel and Hercules Caves with a camel ride",
+        "note": "The coast west of the city.",
+        "duration": "5 hours"
+      },
+      {
+        "link": "trips-tangier-medina",
+        "label": "Private walking tour of the Kasbah, medina and souks",
+        "note": "On foot through the old town.",
+        "duration": "3 hours"
+      },
+      {
+        "link": "trips-tangier-chefchaouen",
+        "label": "Chefchaouen day trip with a local guide",
+        "note": "The blue city.",
+        "duration": "10 hours"
+      },
+      {
+        "link": "trips-tangier-chefchaouen-tetouan",
+        "label": "Chefchaouen and Tetouan day trip",
+        "note": "Two towns in one day.",
+        "duration": "9 to 10 hours"
+      },
+      {
+        "link": "trips-tangier-asilah",
+        "label": "Tangier and Asilah coastal tour",
+        "note": "The city and a coastal town.",
+        "duration": "7 hours"
+      },
+      {
+        "link": "trips-tangier-from-tarifa",
+        "label": "Tangier day tour from Tarifa, ferry and camel ride included",
+        "note": "For travellers on the Spanish side of the strait.",
+        "duration": "8 hours"
+      }
     ]
+  },
+  "titles": {
+    "rovaniemi": "Northern lights tours from Rovaniemi",
+    "reykjavik": "Northern lights tours from Reykjavik",
+    "fairbanks": "Northern lights tours from Fairbanks",
+    "yellowknife": "Northern lights tours from Yellowknife",
+    "inverness": "Tours from Inverness: Loch Ness, Skye and the Highlands",
+    "abisko": "Northern lights tours from Abisko and Kiruna",
+    "teide": "Stargazing tours on Tenerife",
+    "la-palma": "Stargazing and volcano tours on La Palma",
+    "atacama": "Stargazing tours from San Pedro de Atacama",
+    "namibrand": "Desert trips toward Sossusvlei",
+    "aoraki-mackenzie": "Stargazing tours at Lake Tekapo",
+    "spain": "Tours around Cádiz",
+    "egypt": "Tours around Luxor",
+    "morocco": "Tours around Tangier",
+    "tromso": "Northern lights tours from Tromsø"
+  },
+  "intros": {
+    "inverness": "The northern lights are rare this far south, so these are the day trips Inverness is known for.",
+    "namibrand": "Viator lists no stargazing tours for NamibRand itself. These are desert trips to nearby Sossusvlei, so ask the operator where you sleep and how dark it is there."
   }
 }

@@ -3,6 +3,7 @@ import Crumbs from '../../components/Crumbs.astro';
 import Photo from '../../components/Photo.astro';
 import Layout from '../../layouts/Layout.astro';
 import BookBlock from '../../components/BookBlock.astro';
+import TourPicks from '../../components/TourPicks.astro';
 import countries from '../../../data/eclipse-countries.json';
 import { eclipse, allPlaces, fmtDuration, localTime, placeNote } from '../../lib/sky';
 
@@ -56,6 +57,7 @@ const others = countries.countries.filter((o) => o.slug !== c.slug);
         'If you join a tour on the day, ask exactly where it will be at the time of totality.',
       ]}
     />
+    <TourPicks place={c.slug} />
     <p class="small"><a href="/eclipse-2027/trip-planning/">The full trip-planning checklist.</a></p>
 
     <p class="actions"><a class="btn" href="/eclipse-2027/where-to-watch/">All 30 places we calculated</a> <a class="btn quiet" href="/eclipse-2027/">The eclipse guide</a></p>

@@ -122,6 +122,378 @@
     "tours-tromso-husky": {
       "partner": "viator",
       "url": "https://www.viator.com/tours/Tromso/Aurora-Husky-Visit/d4362-35313P19?pid=P00329707&mcid=42383&medium=link&campaign=tours-tromso-husky"
+    },
+    "tours-rovaniemi-campfire": {
+      "partner": "viator",
+      "url": "https://www.viator.com/tours/Rovaniemi/Hunting-Northern-Lights-with-Lappish-Barbecue/d22130-65490P18?pid=P00329707&mcid=42383&medium=link&campaign=tours-rovaniemi-campfire"
+    },
+    "tours-rovaniemi-photo": {
+      "partner": "viator",
+      "url": "https://www.viator.com/tours/Rovaniemi/Discover-Northern-Lights-Photography-Tour-from-Rovaniemi/d22130-46120P1?pid=P00329707&mcid=42383&medium=link&campaign=tours-rovaniemi-photo"
+    },
+    "tours-rovaniemi-icefloat": {
+      "partner": "viator",
+      "url": "https://www.viator.com/tours/Rovaniemi/Rovaniemi-Aurora-Ice-Floating-small-group-travel/d22130-59425P23?pid=P00329707&mcid=42383&medium=link&campaign=tours-rovaniemi-icefloat"
+    },
+    "tours-rovaniemi-allnight": {
+      "partner": "viator",
+      "url": "https://www.viator.com/tours/Rovaniemi/All-Night-Long-Northern-Lights-Photo-Safari/d22130-481391P1?pid=P00329707&mcid=42383&medium=link&campaign=tours-rovaniemi-allnight"
+    },
+    "tours-rovaniemi-snowmobile": {
+      "partner": "viator",
+      "url": "https://www.viator.com/tours/Rovaniemi/Free-Product-4/d22130-5517636P6?pid=P00329707&mcid=42383&medium=link&campaign=tours-rovaniemi-snowmobile"
+    },
+    "tours-rovaniemi-husky-taiga": {
+      "partner": "viator",
+      "url": "https://www.viator.com/tours/Rovaniemi/Husky-Ride-in-the-Taiga-Forest-and-Visiting-the-Kennel/d22130-5494534P11?pid=P00329707&mcid=42383&medium=link&campaign=tours-rovaniemi-husky-taiga"
+    },
+    "tours-rovaniemi-reindeer-husky": {
+      "partner": "viator",
+      "url": "https://www.viator.com/tours/Rovaniemi/Lapland-Reindeer-and-Husky-Safari-from-Rovaniemi/d22130-13975P9?pid=P00329707&mcid=42383&medium=link&campaign=tours-rovaniemi-reindeer-husky"
+    },
+    "tours-rovaniemi-husky-farm": {
+      "partner": "viator",
+      "url": "https://www.viator.com/tours/Rovaniemi/WINTER-Husky-Kennel-Visit-and-Husky-2km-Sledding/d22130-182465P18?pid=P00329707&mcid=42383&medium=link&campaign=tours-rovaniemi-husky-farm"
+    },
+    "tours-reykjavik-bus": {
+      "partner": "viator",
+      "url": "https://www.viator.com/tours/Reykjavik/Northern-Lights-Bus/d905-16698P7?pid=P00329707&mcid=42383&medium=link&campaign=tours-reykjavik-bus"
+    },
+    "tours-reykjavik-minibus": {
+      "partner": "viator",
+      "url": "https://www.viator.com/tours/Reykjavik/Northern-Lights-Tour-in-4x4-with-chocolate-pastries-Small-group/d905-73939P6?pid=P00329707&mcid=42383&medium=link&campaign=tours-reykjavik-minibus"
+    },
+    "tours-reykjavik-photo": {
+      "partner": "viator",
+      "url": "https://www.viator.com/tours/Reykjavik/Northern-Lights-Hunt-with-the-Aurora-Viking/d905-380422P1?pid=P00329707&mcid=42383&medium=link&campaign=tours-reykjavik-photo"
+    },
+    "tours-reykjavik-boat": {
+      "partner": "viator",
+      "url": "https://www.viator.com/tours/Reykjavik/Northern-Lights-by-Boat-from-Reykjavik/d905-293883P9?pid=P00329707&mcid=42383&medium=link&campaign=tours-reykjavik-boat"
+    },
+    "tours-reykjavik-perlan": {
+      "partner": "viator",
+      "url": "https://www.viator.com/tours/Reykjavik/Wonders-of-Iceland-and-Arora-Northern-Lights-Planetarium-Show/d905-57722P5?pid=P00329707&mcid=42383&medium=link&campaign=tours-reykjavik-perlan"
+    },
+    "tours-reykjavik-golden": {
+      "partner": "viator",
+      "url": "https://www.viator.com/tours/Reykjavik/South-Iceland-and-Northern-Lights-Tour-from-Reykjavik/d905-16698P53?pid=P00329707&mcid=42383&medium=link&campaign=tours-reykjavik-golden"
+    },
+    "tours-fairbanks-glass-house": {
+      "partner": "viator",
+      "url": "https://www.viator.com/tours/Fairbanks/Aurora-Viewing-at-Lodge-5-Hours/d5269-467876P2?pid=P00329707&mcid=42383&medium=link&campaign=tours-fairbanks-glass-house"
+    },
+    "tours-fairbanks-chena": {
+      "partner": "viator",
+      "url": "https://www.viator.com/tours/Fairbanks/Northern-Lights-and-Chena-Hot-Springs-Tour-from-Fairbanks/d5269-5957NLIGHTS?pid=P00329707&mcid=42383&medium=link&campaign=tours-fairbanks-chena"
+    },
+    "tours-fairbanks-cabin": {
+      "partner": "viator",
+      "url": "https://www.viator.com/tours/Fairbanks/4-Hour-Aurora-Viewing-with-FREE-Photography-at-Aurora-Camp/d5269-446793P1?pid=P00329707&mcid=42383&medium=link&campaign=tours-fairbanks-cabin"
+    },
+    "tours-fairbanks-arctic-circle": {
+      "partner": "viator",
+      "url": "https://www.viator.com/tours/Fairbanks/Alaskan-Aurora-viewing-and-chasing/d5269-435553P2?pid=P00329707&mcid=42383&medium=link&campaign=tours-fairbanks-arctic-circle"
+    },
+    "tours-fairbanks-chase": {
+      "partner": "viator",
+      "url": "https://www.viator.com/tours/Fairbanks/Aurora-Chasing-Tours/d5269-285562P1?pid=P00329707&mcid=42383&medium=link&campaign=tours-fairbanks-chase"
+    },
+    "tours-fairbanks-sphere": {
+      "partner": "viator",
+      "url": "https://www.viator.com/tours/Fairbanks/Aurora-Sphere-Northern-Lights-Experience-in-North-Pole-AK/d5269-5530310P15?pid=P00329707&mcid=42383&medium=link&campaign=tours-fairbanks-sphere"
+    },
+    "tours-fairbanks-dog-sled": {
+      "partner": "viator",
+      "url": "https://www.viator.com/tours/Fairbanks/Dog-Sled-Adventure/d5269-214842P3?pid=P00329707&mcid=42383&medium=link&campaign=tours-fairbanks-dog-sled"
+    },
+    "tours-fairbanks-reindeer": {
+      "partner": "viator",
+      "url": "https://www.viator.com/tours/Fairbanks/Walking-with-Reindeer-Experience/d5269-165060P13?pid=P00329707&mcid=42383&medium=link&campaign=tours-fairbanks-reindeer"
+    },
+    "tours-yellowknife-lodge": {
+      "partner": "viator",
+      "url": "https://www.viator.com/tours/Yellowknife/Aurora-Tour-Lodge/d23637-451245P6?pid=P00329707&mcid=42383&medium=link&campaign=tours-yellowknife-lodge"
+    },
+    "tours-yellowknife-photo": {
+      "partner": "viator",
+      "url": "https://www.viator.com/tours/Yellowknife/Yellowknife-Aurora-Hunting-by-Small-Group-Photography-Services/d23637-483966P3?pid=P00329707&mcid=42383&medium=link&campaign=tours-yellowknife-photo"
+    },
+    "tours-yellowknife-cabin": {
+      "partner": "viator",
+      "url": "https://www.viator.com/tours/Yellowknife/Intimate-Aurora-Tours/d23637-180483P1?pid=P00329707&mcid=42383&medium=link&campaign=tours-yellowknife-cabin"
+    },
+    "tours-yellowknife-skydome": {
+      "partner": "viator",
+      "url": "https://www.viator.com/tours/Yellowknife/Skydome-Aurora-Viewing/d23637-248339P2?pid=P00329707&mcid=42383&medium=link&campaign=tours-yellowknife-skydome"
+    },
+    "tours-yellowknife-bus": {
+      "partner": "viator",
+      "url": "https://www.viator.com/tours/Yellowknife/Yellowknife-One-Night-Aurora-Hunting-By-Bus-4-5-Hours/d23637-464543P1?pid=P00329707&mcid=42383&medium=link&campaign=tours-yellowknife-bus"
+    },
+    "tours-yellowknife-tipi": {
+      "partner": "viator",
+      "url": "https://www.viator.com/tours/Yellowknife/Northern-Lights-Adventure-in-Yellowknife-2-Nights-Guided-Tour/d23637-11583P24?pid=P00329707&mcid=42383&medium=link&campaign=tours-yellowknife-tipi"
+    },
+    "tours-yellowknife-dog-sled": {
+      "partner": "viator",
+      "url": "https://www.viator.com/tours/Yellowknife/Traditional-Dog-Sledding-Adventure-in-Yellowknife/d23637-248339P3?pid=P00329707&mcid=42383&medium=link&campaign=tours-yellowknife-dog-sled"
+    },
+    "tours-yellowknife-snowmobile": {
+      "partner": "viator",
+      "url": "https://www.viator.com/tours/Yellowknife/Guided-Snowmobile-Adventure/d23637-451245P1?pid=P00329707&mcid=42383&medium=link&campaign=tours-yellowknife-snowmobile"
+    },
+    "tours-inverness-loch-ness-cruise": {
+      "partner": "viator",
+      "url": "https://www.viator.com/tours/Inverness/Loch-Ness-Sightseeing-Cruise/d5051-6570INS?pid=P00329707&mcid=42383&medium=link&campaign=tours-inverness-loch-ness-cruise"
+    },
+    "tours-inverness-outlander": {
+      "partner": "viator",
+      "url": "https://www.viator.com/tours/Inverness/Loch-Ness-Whisky-and-Outlander-Day-Tour-from-Inverness/d5051-5211P27?pid=P00329707&mcid=42383&medium=link&campaign=tours-inverness-outlander"
+    },
+    "tours-inverness-skye": {
+      "partner": "viator",
+      "url": "https://www.viator.com/tours/Inverness/Isle-of-Skye-Explorer/d5051-6898P27?pid=P00329707&mcid=42383&medium=link&campaign=tours-inverness-skye"
+    },
+    "tours-inverness-skye-small": {
+      "partner": "viator",
+      "url": "https://www.viator.com/tours/Inverness/Small-Group-day-tour-to-Isle-of-Skye-Day-Trip-from-Inverness/d5051-5256P62?pid=P00329707&mcid=42383&medium=link&campaign=tours-inverness-skye-small"
+    },
+    "tours-inverness-glenfinnan": {
+      "partner": "viator",
+      "url": "https://www.viator.com/tours/Inverness/Glenfinnan-Mallaig-and-Loch-Ness-Adventure/d5051-6898P44?pid=P00329707&mcid=42383&medium=link&campaign=tours-inverness-glenfinnan"
+    },
+    "tours-inverness-culloden": {
+      "partner": "viator",
+      "url": "https://www.viator.com/tours/Inverness/Glen-Affric-Culloden-and-Clava-Cairns-Small-Group-Tour-from-Inverness/d5051-2250P102?pid=P00329707&mcid=42383&medium=link&campaign=tours-inverness-culloden"
+    },
+    "tours-inverness-walk": {
+      "partner": "viator",
+      "url": "https://www.viator.com/tours/Inverness/Inverness-City-Centre-Walking-Tour/d5051-171338P1?pid=P00329707&mcid=42383&medium=link&campaign=tours-inverness-walk"
+    },
+    "tours-abisko-chase": {
+      "partner": "viator",
+      "url": "https://www.viator.com/tours/Sweden/Abisko-Aurora-Chase/d68-15481P6?pid=P00329707&mcid=42383&medium=link&campaign=tours-abisko-chase"
+    },
+    "tours-abisko-photo": {
+      "partner": "viator",
+      "url": "https://www.viator.com/tours/Sweden/The-Ultimate-Aurora-Photo-Adventure/d68-15481P5?pid=P00329707&mcid=42383&medium=link&campaign=tours-abisko-photo"
+    },
+    "tours-abisko-dinner": {
+      "partner": "viator",
+      "url": "https://www.viator.com/tours/Kiruna/Aurora-tour-with-dinner-in-Abisko/d50546-197938P10?pid=P00329707&mcid=42383&medium=link&campaign=tours-abisko-dinner"
+    },
+    "tours-abisko-kiruna": {
+      "partner": "viator",
+      "url": "https://www.viator.com/tours/Kiruna/Northern-Lights-tour-to-Abisko/d50546-212885P1?pid=P00329707&mcid=42383&medium=link&campaign=tours-abisko-kiruna"
+    },
+    "tours-abisko-minibus": {
+      "partner": "viator",
+      "url": "https://www.viator.com/tours/Kiruna/Northern-Light-hunt-with-minibus-to-Abisko/d50546-331153P5?pid=P00329707&mcid=42383&medium=link&campaign=tours-abisko-minibus"
+    },
+    "tours-abisko-two-night": {
+      "partner": "viator",
+      "url": "https://www.viator.com/tours/Kiruna/Arctic-Aurora-Lapland-Photography-Tour-Two-Day-Tour/d50546-108012P15?pid=P00329707&mcid=42383&medium=link&campaign=tours-abisko-two-night"
+    },
+    "tours-abisko-hike": {
+      "partner": "viator",
+      "url": "https://www.viator.com/tours/Sweden/Morning-hike-in-Abisko-National-Park/d68-15481P3?pid=P00329707&mcid=42383&medium=link&campaign=tours-abisko-hike"
+    },
+    "stars-teide-astro": {
+      "partner": "viator",
+      "url": "https://www.viator.com/tours/Tenerife/Universe-In-Your-Hands/d5404-85752P1?pid=P00329707&mcid=42383&medium=link&campaign=stars-teide-astro"
+    },
+    "stars-teide-telescope": {
+      "partner": "viator",
+      "url": "https://www.viator.com/tours/Tenerife/Stargazing-with-a-20-Inch-Telescope-and-Teide-Sunset/d5404-5684076P2?pid=P00329707&mcid=42383&medium=link&campaign=stars-teide-telescope"
+    },
+    "stars-teide-coach": {
+      "partner": "viator",
+      "url": "https://www.viator.com/tours/Tenerife/Sunset-and-Stars/d5404-187529P1?pid=P00329707&mcid=42383&medium=link&campaign=stars-teide-coach"
+    },
+    "stars-teide-dinner": {
+      "partner": "viator",
+      "url": "https://www.viator.com/tours/Tenerife/Teide-by-Night/d5404-24167P12?pid=P00329707&mcid=42383&medium=link&campaign=stars-teide-dinner"
+    },
+    "stars-teide-plain": {
+      "partner": "viator",
+      "url": "https://www.viator.com/tours/Tenerife/Stargazing-Tenerife/d5404-185357P11?pid=P00329707&mcid=42383&medium=link&campaign=stars-teide-plain"
+    },
+    "stars-teide-bus": {
+      "partner": "viator",
+      "url": "https://www.viator.com/tours/Tenerife/BEST-STARGAZING-TENERIFE-TOUR-Volcano-Teide-at-Night-food-and-drinks-included/d5404-110166P9?pid=P00329707&mcid=42383&medium=link&campaign=stars-teide-bus"
+    },
+    "stars-la-palma-roque": {
+      "partner": "viator",
+      "url": "https://www.viator.com/tours/La-Palma/A-Night-Among-the-Stars-at-Roque-de-los-Muchachos/d4487-5593930P4?pid=P00329707&mcid=42383&medium=link&campaign=stars-la-palma-roque"
+    },
+    "stars-la-palma-astronomer": {
+      "partner": "viator",
+      "url": "https://www.viator.com/tours/La-Palma/Stargazing-tour-in-La-Palma-assisted-by-an-experienced-astronomer/d4487-5697430P3?pid=P00329707&mcid=42383&medium=link&campaign=stars-la-palma-astronomer"
+    },
+    "stars-la-palma-lava-tube": {
+      "partner": "viator",
+      "url": "https://www.viator.com/tours/La-Palma/Speleology-Tour-in-Cueva-de-Las-Palomas-in-La-Palma/d4487-41935P145?pid=P00329707&mcid=42383&medium=link&campaign=stars-la-palma-lava-tube"
+    },
+    "stars-la-palma-volcanoes": {
+      "partner": "viator",
+      "url": "https://www.viator.com/tours/La-Palma/Half-Day-Private-Shore-Tour-to-La-Palma-Volcanoes/d4487-320728P2731?pid=P00329707&mcid=42383&medium=link&campaign=stars-la-palma-volcanoes"
+    },
+    "stars-atacama-astronomer": {
+      "partner": "viator",
+      "url": "https://www.viator.com/tours/San-Pedro-de-Atacama/Stargazing-Tour-with-Astronomer/d5499-356273P1?pid=P00329707&mcid=42383&medium=link&campaign=stars-atacama-astronomer"
+    },
+    "stars-atacama-astrotour": {
+      "partner": "viator",
+      "url": "https://www.viator.com/tours/San-Pedro-de-Atacama/ASTROTOUR-ASTRONOMIC-TOUR/d5499-195395P1?pid=P00329707&mcid=42383&medium=link&campaign=stars-atacama-astrotour"
+    },
+    "stars-atacama-roofless": {
+      "partner": "viator",
+      "url": "https://www.viator.com/tours/San-Pedro-de-Atacama/Astronomical-tour-in-San-Pedro-de-Atacama-in-a-small-group/d5499-230399P6?pid=P00329707&mcid=42383&medium=link&campaign=stars-atacama-roofless"
+    },
+    "stars-atacama-tasting": {
+      "partner": "viator",
+      "url": "https://www.viator.com/tours/San-Pedro-de-Atacama/Atacama-Astronomical-Tour-with-Photos-and-Nighttime-Tasting/d5499-5645039P2?pid=P00329707&mcid=42383&medium=link&campaign=stars-atacama-tasting"
+    },
+    "stars-atacama-private": {
+      "partner": "viator",
+      "url": "https://www.viator.com/tours/San-Pedro-de-Atacama/Private-Astronomical-Tour-Under-the-Atacama-Night/d5499-396238P1?pid=P00329707&mcid=42383&medium=link&campaign=stars-atacama-private"
+    },
+    "stars-atacama-moon-valley": {
+      "partner": "viator",
+      "url": "https://www.viator.com/tours/San-Pedro-de-Atacama/Half-Day-Tour-to-Valle-de-la-Luna/d5499-422580P5?pid=P00329707&mcid=42383&medium=link&campaign=stars-atacama-moon-valley"
+    },
+    "stars-namibrand-scenic-2day": {
+      "partner": "viator",
+      "url": "https://www.viator.com/tours/Swakopmund/Scenic-Sossusvlei/d5541-185138P9?pid=P00329707&mcid=42383&medium=link&campaign=stars-namibrand-scenic-2day"
+    },
+    "stars-namibrand-safari-3day": {
+      "partner": "viator",
+      "url": "https://www.viator.com/tours/Windhoek/3-Day-Unforgettable-Sossusvlei-and-Namib-Desert-Safari/d5574-12189P164?pid=P00329707&mcid=42383&medium=link&campaign=stars-namibrand-safari-3day"
+    },
+    "stars-namibrand-camping": {
+      "partner": "viator",
+      "url": "https://www.viator.com/tours/Windhoek/3-Day-Desert-Explorer-Camping-Safari-from-Swakopmund/d5574-9289P18?pid=P00329707&mcid=42383&medium=link&campaign=stars-namibrand-camping"
+    },
+    "stars-namibrand-luxury": {
+      "partner": "viator",
+      "url": "https://www.viator.com/tours/Windhoek/Sossusvlei-All-Inclusive-3-Day-Luxury-Adventure/d5574-5680089P3?pid=P00329707&mcid=42383&medium=link&campaign=stars-namibrand-luxury"
+    },
+    "stars-namibrand-photography": {
+      "partner": "viator",
+      "url": "https://www.viator.com/tours/Windhoek/Namib-Desert-Sossusvlei-and-Coast-5-Day-Tour/d5574-184176P7?pid=P00329707&mcid=42383&medium=link&campaign=stars-namibrand-photography"
+    },
+    "stars-aoraki-mackenzie-mt-john": {
+      "partner": "viator",
+      "url": "https://www.viator.com/tours/Lake-Tekapo/Mount-John-Observatory-Tour/d51201-105977P1?pid=P00329707&mcid=42383&medium=link&campaign=stars-aoraki-mackenzie-mt-john"
+    },
+    "stars-aoraki-mackenzie-cowans": {
+      "partner": "viator",
+      "url": "https://www.viator.com/tours/Lake-Tekapo/Cowans-observatory-tour/d51201-105977P2?pid=P00329707&mcid=42383&medium=link&campaign=stars-aoraki-mackenzie-cowans"
+    },
+    "stars-aoraki-mackenzie-indoor": {
+      "partner": "viator",
+      "url": "https://www.viator.com/tours/Lake-Tekapo/Dark-Sky-Experience/d51201-105977P3?pid=P00329707&mcid=42383&medium=link&campaign=stars-aoraki-mackenzie-indoor"
+    },
+    "stars-aoraki-mackenzie-silver-river": {
+      "partner": "viator",
+      "url": "https://www.viator.com/tours/Lake-Tekapo/Silver-River-Stargazing-Experience-in-Lake-Tekapo/d51201-466651P4?pid=P00329707&mcid=42383&medium=link&campaign=stars-aoraki-mackenzie-silver-river"
+    },
+    "stars-aoraki-mackenzie-chameleon": {
+      "partner": "viator",
+      "url": "https://www.viator.com/tours/Lake-Tekapo/Shared-Stargazing-Tour/d51201-307036P1?pid=P00329707&mcid=42383&medium=link&campaign=stars-aoraki-mackenzie-chameleon"
+    },
+    "stars-aoraki-mackenzie-ultimate": {
+      "partner": "viator",
+      "url": "https://www.viator.com/tours/Lake-Tekapo/Lake-Tekapo-Ultimate-Stargazing-Experience/d51201-466651P8?pid=P00329707&mcid=42383&medium=link&campaign=stars-aoraki-mackenzie-ultimate"
+    },
+    "stars-aoraki-mackenzie-mt-cook": {
+      "partner": "viator",
+      "url": "https://www.viator.com/tours/Lake-Tekapo/Mt-Cook-Day-Tour-From-Tekapo-small-group-carbon-neutral/d51201-312127P22?pid=P00329707&mcid=42383&medium=link&campaign=stars-aoraki-mackenzie-mt-cook"
+    },
+    "trips-cadiz-walk": {
+      "partner": "viator",
+      "url": "https://www.viator.com/tours/Cadiz/Walking-tour-through-Cadiz-stories-from-the-hand-of-a-local-guide/d22439-471976P1?pid=P00329707&mcid=42383&medium=link&campaign=trips-cadiz-walk"
+    },
+    "trips-cadiz-food": {
+      "partner": "viator",
+      "url": "https://www.viator.com/tours/Cadiz/Cadiz-Food-Tour/d22439-48293P12?pid=P00329707&mcid=42383&medium=link&campaign=trips-cadiz-food"
+    },
+    "trips-cadiz-bus": {
+      "partner": "viator",
+      "url": "https://www.viator.com/tours/Cadiz/City-Sightseeing-Cadiz-Hop-On-Hop-Off-Tour/d22439-2916CAD?pid=P00329707&mcid=42383&medium=link&campaign=trips-cadiz-bus"
+    },
+    "trips-cadiz-jerez": {
+      "partner": "viator",
+      "url": "https://www.viator.com/tours/Cadiz/Guided-Winery-Tour-with-Wine-Tastings-in-Jerez/d22439-5587348P1?pid=P00329707&mcid=42383&medium=link&campaign=trips-cadiz-jerez"
+    },
+    "trips-cadiz-gibraltar": {
+      "partner": "viator",
+      "url": "https://www.viator.com/tours/Cadiz/Gibraltar-private-daytrip-from-Cadiz/d22439-307099P77?pid=P00329707&mcid=42383&medium=link&campaign=trips-cadiz-gibraltar"
+    },
+    "trips-cadiz-white-towns": {
+      "partner": "viator",
+      "url": "https://www.viator.com/tours/Cadiz/White-Towns-Private-Daytrip-From-Cadiz/d22439-307099P83?pid=P00329707&mcid=42383&medium=link&campaign=trips-cadiz-white-towns"
+    },
+    "trips-cadiz-catamaran": {
+      "partner": "viator",
+      "url": "https://www.viator.com/tours/Cadiz/Cadiz-Trimillennial-Catamaran-Navigation/d22439-484763P1?pid=P00329707&mcid=42383&medium=link&campaign=trips-cadiz-catamaran"
+    },
+    "trips-luxor-east-west": {
+      "partner": "viator",
+      "url": "https://www.viator.com/tours/Luxor/Full-Day-Tour-to-East-and-West-Banks-of-Luxor/d826-15974P3?pid=P00329707&mcid=42383&medium=link&campaign=trips-luxor-east-west"
+    },
+    "trips-luxor-valley-kings": {
+      "partner": "viator",
+      "url": "https://www.viator.com/tours/Luxor/Private-Day-Tour-Valley-of-the-Kings-Colossi-of-Memnon-Hatshepsut-Karnak-and-Luxor-Temples/d826-8672P31?pid=P00329707&mcid=42383&medium=link&campaign=trips-luxor-valley-kings"
+    },
+    "trips-luxor-balloon": {
+      "partner": "viator",
+      "url": "https://www.viator.com/tours/Luxor/Hot-air-balloon-luxor-ride-at-sunrise/d826-256729P1?pid=P00329707&mcid=42383&medium=link&campaign=trips-luxor-balloon"
+    },
+    "trips-luxor-half-day": {
+      "partner": "viator",
+      "url": "https://www.viator.com/tours/Luxor/Valley-of-Kings-and-Hatshepsut/d826-247370P138?pid=P00329707&mcid=42383&medium=link&campaign=trips-luxor-half-day"
+    },
+    "trips-luxor-dendara": {
+      "partner": "viator",
+      "url": "https://www.viator.com/tours/Luxor/Dendara-and-Abydos-Temples-Day-Tour-from-Luxor/d826-15974P5?pid=P00329707&mcid=42383&medium=link&campaign=trips-luxor-dendara"
+    },
+    "trips-luxor-edfu": {
+      "partner": "viator",
+      "url": "https://www.viator.com/tours/Luxor/Edfu-and-Kom-Ombo-Temples-From-Luxor/d826-15974P6?pid=P00329707&mcid=42383&medium=link&campaign=trips-luxor-edfu"
+    },
+    "trips-luxor-horse": {
+      "partner": "viator",
+      "url": "https://www.viator.com/tours/Luxor/Horse-Riding-Tours-of-the-West-Bank-of-Luxor/d826-161574P1?pid=P00329707&mcid=42383&medium=link&campaign=trips-luxor-horse"
+    },
+    "trips-luxor-nile-cruise": {
+      "partner": "viator",
+      "url": "https://www.viator.com/tours/Luxor/From-Luxor-to-Aswan-5-Day-5-Star-Nile-Cruise-Guided-Tours/d826-43942P14?pid=P00329707&mcid=42383&medium=link&campaign=trips-luxor-nile-cruise"
+    },
+    "trips-tangier-cape-spartel": {
+      "partner": "viator",
+      "url": "https://www.viator.com/tours/Tangier/Cap-Spartel-and-Hercules-Cave-3H-Tour-Camel-Ride-Included/d4388-417304P13?pid=P00329707&mcid=42383&medium=link&campaign=trips-tangier-cape-spartel"
+    },
+    "trips-tangier-medina": {
+      "partner": "viator",
+      "url": "https://www.viator.com/tours/Tangier/3-Hour-Walking-Tour-of-Tangier/d4388-167637P4?pid=P00329707&mcid=42383&medium=link&campaign=trips-tangier-medina"
+    },
+    "trips-tangier-chefchaouen": {
+      "partner": "viator",
+      "url": "https://www.viator.com/tours/Tangier/Excursion-to-the-blue-city-from-Tangier/d4388-111117P2?pid=P00329707&mcid=42383&medium=link&campaign=trips-tangier-chefchaouen"
+    },
+    "trips-tangier-chefchaouen-tetouan": {
+      "partner": "viator",
+      "url": "https://www.viator.com/tours/Tangier/Excursion-to-Chefchaouen-and-Tetouan-from-Tangier/d4388-10195P57?pid=P00329707&mcid=42383&medium=link&campaign=trips-tangier-chefchaouen-tetouan"
+    },
+    "trips-tangier-asilah": {
+      "partner": "viator",
+      "url": "https://www.viator.com/tours/Tangier/Tangier-and-Asilah-Coastal-Tour-with-port-pickup/d4388-471215P8?pid=P00329707&mcid=42383&medium=link&campaign=trips-tangier-asilah"
+    },
+    "trips-tangier-from-tarifa": {
+      "partner": "viator",
+      "url": "https://www.viator.com/tours/Tangier/Tangier-Privat-Full-Day-Trip-from-Algeciras-Tarifa/d4388-167637P7?pid=P00329707&mcid=42383&medium=link&campaign=trips-tangier-from-tarifa"
     }
   }
 }

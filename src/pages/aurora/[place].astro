@@ -65,7 +65,7 @@ const others = aurora.places.filter((o) => o.slug !== p.slug);
         'Check group size, whether warm clothing is lent, and what time you will be back.',
       ]}
     />
-    <TourPicks place={p.slug} title={`Northern lights tours from ${p.name}`} />
+    <TourPicks place={p.slug} />
     <p class="small"><a href="/aurora/tours/">Full checklist for choosing a tour.</a></p>
 
     <p class="small">Other places: {others.map((o, i) => <>{i > 0 && ', '}<a href={`/aurora/${o.slug}/`}>{o.name}</a></>)}. <a href="/aurora/">Compare all seven.</a></p>
