@@ -40,3 +40,4 @@ worthgoingout.com: сайт про затмения и метеорные пот
 2: раздел Aurora (живой Kp с NOAA, CORS не проверен), страницы городов затмения, техника/телескопы. 3: партнёрские блоки, Sky this month. Подробнее в проекте «astro» на claude.ai (worthgoingout-site-concept, -blueprint, -decisions).
 
 8. Viator включён 5.11: ссылки на страницы направлений (не на отдельные туры). Abisko ведёт на страницу парка Abisko, NamibRand на Sossusvlei, Aoraki/Mackenzie на Lake Tekapo, Teide на ночные туры Тенерифе. Следующее: GetYourGuide (Travelpayouts), Awin (Unistellar, DwarfLab), Bing.
+9. Подборки туров (5.11): `data/tour-picks.json` (описания) + ссылки `tours-<место>-<имя>` в `data/partners.json`, компонент `TourPicks.astro` на `/aurora/<место>/`. Сейчас только Тромсё (8 вариантов про сияние). Без цен и рейтингов, дата чтения в файле. Чтобы добавить место: блок в `tour-picks.json` + ссылки в `partners.json` (формат как у других).

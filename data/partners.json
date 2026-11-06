@@ -90,6 +90,38 @@
     "scope-dwarf": {
       "partner": "dwarflab",
       "url": ""
+    },
+    "tours-tromso-small-group": {
+      "partner": "viator",
+      "url": "https://www.viator.com/tours/Tromso/Small-group-Northern-Lights-tour-All-inclusive-Northern-Horizon/d4362-62615P1?pid=P00329707&mcid=42383&medium=link&campaign=tours-tromso-small-group"
+    },
+    "tours-tromso-bonfire": {
+      "partner": "viator",
+      "url": "https://www.viator.com/tours/Tromso/Small-Group-Aurora-Hunting-Northern-Lights-Tour-from-Tromso/d4362-7700P4?pid=P00329707&mcid=42383&medium=link&campaign=tours-tromso-bonfire"
+    },
+    "tours-tromso-campfire": {
+      "partner": "viator",
+      "url": "https://www.viator.com/tours/Tromso/Small-Group-Northern-Lights-Chase-with-Campfire-Meal-and-Photos/d4362-5544504P1?pid=P00329707&mcid=42383&medium=link&campaign=tours-tromso-campfire"
+    },
+    "tours-tromso-border": {
+      "partner": "viator",
+      "url": "https://www.viator.com/tours/Tromso/Tromso-Northern-Lights-Tour-with-Hot-Food-and-Drinks/d4362-450498P1?pid=P00329707&mcid=42383&medium=link&campaign=tours-tromso-border"
+    },
+    "tours-tromso-cruise": {
+      "partner": "viator",
+      "url": "https://www.viator.com/tours/Tromso/Northern-Light-Chase-with-boat/d4362-25455P11?pid=P00329707&mcid=42383&medium=link&campaign=tours-tromso-cruise"
+    },
+    "tours-tromso-yacht": {
+      "partner": "viator",
+      "url": "https://www.viator.com/tours/Tromso/Stella-Oceanas-Aurora-Paradise-Cruise/d4362-149607P7?pid=P00329707&mcid=42383&medium=link&campaign=tours-tromso-yacht"
+    },
+    "tours-tromso-reindeer": {
+      "partner": "viator",
+      "url": "https://www.viator.com/tours/Tromso/Night-Reindeer-Sledding-with-Camp-Dinner-and-Chance-of-Northern-Lights/d4362-29507P8?pid=P00329707&mcid=42383&medium=link&campaign=tours-tromso-reindeer"
+    },
+    "tours-tromso-husky": {
+      "partner": "viator",
+      "url": "https://www.viator.com/tours/Tromso/Aurora-Husky-Visit/d4362-35313P19?pid=P00329707&mcid=42383&medium=link&campaign=tours-tromso-husky"
     }
   }
 }

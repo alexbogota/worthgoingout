@@ -1,0 +1,36 @@
+---
+// A short list of hand-picked tour listings for one place. Shows nothing until the partner is approved and the links have URLs.
+import { liveLink } from '../lib/partners';
+import picks from '../../data/tour-picks.json';
+interface Props { place: string; title: string }
+const { place, title } = Astro.props;
+const all = ((picks.places as Record<string, { link: string; label: string; note: string; duration: string }[]>)[place] ?? [])
+  .map((t) => ({ ...t, live: liveLink(t.link) }))
+  .filter((t) => t.live !== null);
+---
+{all.length > 0 && (
+  <section class="picks" aria-labelledby={`picks-${place}`}>
+    <h2 id={`picks-${place}`}>{title}</h2>
+    <p class="measure">A few listings that show the different formats, not a ranking. Prices, dates and reviews change, so check them on {all[0].live!.partner} before you book. Details read on {picks.checked}.</p>
+    <ul class="ruled">
+      {all.map((t) => (
+        <li>
+          <a href={t.live!.href} rel="sponsored nofollow">{t.label}</a>
+          <span class="meta">{t.duration}</span>
+          <span class="note">{t.note}</span>
+        </li>
+      ))}
+    </ul>
+    <p class="ad">Affiliate links: we may earn a commission if you book. <a href="/disclosure/">Details</a></p>
+  </section>
+)}
+<style>
+  .picks { margin: 2.2rem 0; max-width: 66ch; }
+  .ruled { list-style: none; padding: 0; margin: 0.8rem 0; border-top: 1px solid var(--line); }
+  .ruled li { padding: 12px 0; border-bottom: 1px solid var(--line); display: grid; gap: 2px; }
+  .ruled a { font-weight: 600; }
+  .meta { color: var(--muted); font-size: 0.875rem; }
+  .note { font-size: 0.95rem; }
+  .ad { font-size: 0.875rem; color: var(--muted); }
+  .ad a { color: inherit; }
+</style>

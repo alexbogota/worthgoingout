@@ -1,0 +1,16 @@
+{
+  "note": "Hand-picked tour listings per place, shown under the booking checklist when the partner is approved. Each pick needs a matching link id in data/partners.json. Do not add prices or ratings: they change daily. Details were read from the listing on the date in 'checked'.",
+  "checked": "5 November 2026",
+  "places": {
+    "tromso": [
+      { "link": "tours-tromso-small-group", "label": "Small-group aurora chase, all-inclusive", "note": "A small group follows the clear sky by vehicle, with food and drink in the price.", "duration": "6 to 9 hours" },
+      { "link": "tours-tromso-bonfire", "label": "Aurora hunt with a bonfire meal", "note": "Small group; the listing includes a warm winter suit, a meal by a bonfire and photos.", "duration": "5 to 8 hours" },
+      { "link": "tours-tromso-campfire", "label": "Small-group chase with campfire meal and photos", "note": "Same idea with a campfire meal and photos of your group.", "duration": "6 to 9 hours" },
+      { "link": "tours-tromso-border", "label": "Long chase across the border", "note": "Drives a long way, across a border, to find clear sky; hot food and drinks included.", "duration": "7 hours" },
+      { "link": "tours-tromso-cruise", "label": "Evening aurora cruise", "note": "A boat instead of a bus: a shorter outing from the harbour.", "duration": "3 hours" },
+      { "link": "tours-tromso-yacht", "label": "Yacht cruise with dinner and hot tub", "note": "The comfortable option: a yacht with dinner and a hot tub on board.", "duration": "4 hours" },
+      { "link": "tours-tromso-reindeer", "label": "Night reindeer sledding with camp dinner", "note": "An evening with reindeer and a camp dinner, with a chance of northern lights; not a chase.", "duration": "4 hours 30 minutes" },
+      { "link": "tours-tromso-husky", "label": "Evening husky visit under the aurora sky", "note": "Meet the sled dogs at night; a chance of lights, not a chase.", "duration": "4 hours 15 minutes" }
+    ]
+  }
+}
