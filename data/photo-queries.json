@@ -189,6 +189,98 @@
   {
    "id": "scotland-highlands",
    "search": "Scottish Highlands winter Glen Coe"
+  },
+  {
+   "id": "teide-landscape",
+   "search": "Teide National Park landscape"
+  },
+  {
+   "id": "teide-observatory",
+   "search": "Teide Observatory Izaña"
+  },
+  {
+   "id": "la-palma-caldera",
+   "search": "Caldera de Taburiente La Palma"
+  },
+  {
+   "id": "la-palma-roque",
+   "search": "Roque de los Muchachos"
+  },
+  {
+   "id": "la-palma-volcano",
+   "search": "Teneguía volcano La Palma"
+  },
+  {
+   "id": "atacama-landscape",
+   "search": "San Pedro de Atacama landscape"
+  },
+  {
+   "id": "atacama-moon-valley",
+   "search": "Valle de la Luna Atacama"
+  },
+  {
+   "id": "atacama-lagoon",
+   "search": "Laguna Chaxa flamingos Atacama"
+  },
+  {
+   "id": "namibrand-reserve",
+   "search": "NamibRand Nature Reserve"
+  },
+  {
+   "id": "sossusvlei-dunes",
+   "search": "Sossusvlei dunes"
+  },
+  {
+   "id": "namib-deadvlei",
+   "search": "Deadvlei Namibia"
+  },
+  {
+   "id": "tekapo-church",
+   "search": "Church of the Good Shepherd Lake Tekapo"
+  },
+  {
+   "id": "aoraki-mount-cook",
+   "search": "Aoraki Mount Cook"
+  },
+  {
+   "id": "tekapo-lake",
+   "search": "Lake Tekapo lupins"
+  },
+  {
+   "id": "cadiz-cathedral",
+   "search": "Cádiz Cathedral"
+  },
+  {
+   "id": "strait-gibraltar",
+   "search": "Strait of Gibraltar Tarifa"
+  },
+  {
+   "id": "karnak",
+   "search": "Karnak Temple Luxor"
+  },
+  {
+   "id": "hatshepsut",
+   "search": "Temple of Hatshepsut Deir el-Bahari"
+  },
+  {
+   "id": "nile-luxor",
+   "search": "Nile Luxor felucca sunset"
+  },
+  {
+   "id": "philae-aswan",
+   "search": "Philae temple Aswan"
+  },
+  {
+   "id": "tangier-medina",
+   "search": "Tangier medina"
+  },
+  {
+   "id": "hercules-caves",
+   "search": "Caves of Hercules Tangier"
+  },
+  {
+   "id": "chefchaouen",
+   "search": "Chefchaouen blue city"
   }
  ]
 }
