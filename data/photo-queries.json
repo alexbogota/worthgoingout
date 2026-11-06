@@ -1,110 +1,194 @@
 {
-  "note": "What scripts/fetch-photos.mjs looks for on Wikimedia Commons. Only free licences are kept (public domain, CC0, CC BY, CC BY-SA). Featured and quality images are tried first.",
-  "perQuery": 8,
-  "queries": [
-    {
-      "id": "eclipse-corona",
-      "search": "total solar eclipse corona"
-    },
-    {
-      "id": "eclipse-diamond-ring",
-      "search": "diamond ring solar eclipse"
-    },
-    {
-      "id": "eclipse-watchers",
-      "search": "people watching solar eclipse glasses"
-    },
-    {
-      "id": "eclipse-annular",
-      "search": "annular solar eclipse"
-    },
-    {
-      "id": "eclipse-partial",
-      "search": "partial solar eclipse sunset"
-    },
-    {
-      "id": "lunar-total",
-      "search": "total lunar eclipse"
-    },
-    {
-      "id": "meteor-perseids",
-      "search": "Perseid meteor"
-    },
-    {
-      "id": "meteor-geminids",
-      "search": "Geminid meteor"
-    },
-    {
-      "id": "milky-way",
-      "search": "Milky Way night sky"
-    },
-    {
-      "id": "aurora-iceland",
-      "search": "aurora borealis Iceland"
-    },
-    {
-      "id": "aurora-norway",
-      "search": "aurora borealis Tromsø"
-    },
-    {
-      "id": "aurora-finland",
-      "search": "aurora borealis Finland Lapland"
-    },
-    {
-      "id": "aurora-sweden",
-      "search": "aurora borealis Abisko"
-    },
-    {
-      "id": "aurora-alaska",
-      "search": "aurora borealis Alaska"
-    },
-    {
-      "id": "aurora-canada",
-      "search": "aurora borealis Yellowknife"
-    },
-    {
-      "id": "aurora-scotland",
-      "search": "aurora borealis Scotland"
-    },
-    {
-      "id": "luxor",
-      "search": "Luxor Temple"
-    },
-    {
-      "id": "tangier",
-      "search": "Tangier Morocco"
-    },
-    {
-      "id": "cadiz",
-      "search": "Cádiz Spain"
-    },
-    {
-      "id": "tarifa",
-      "search": "Tarifa Spain"
-    },
-    {
-      "id": "teide-night",
-      "search": "Teide night stars"
-    },
-    {
-      "id": "la-palma-observatory",
-      "search": "Roque de los Muchachos Observatory night"
-    },
-    {
-      "id": "atacama-night",
-      "search": "Atacama desert night sky"
-    },
-    {
-      "id": "namibrand-night",
-      "search": "Namib desert night sky stars"
-    },
-    {
-      "id": "tekapo-night",
-      "search": "Lake Tekapo night sky"
-    },
-    {
-      "id": "aurora-people",
-      "search": "people watching aurora borealis"
-    }
-  ]
+ "note": "What scripts/fetch-photos.mjs looks for on Wikimedia Commons. Only free licences are kept (public domain, CC0, CC BY, CC BY-SA). Featured and quality images are tried first.",
+ "perQuery": 8,
+ "queries": [
+  {
+   "id": "eclipse-corona",
+   "search": "total solar eclipse corona"
+  },
+  {
+   "id": "eclipse-diamond-ring",
+   "search": "diamond ring solar eclipse"
+  },
+  {
+   "id": "eclipse-watchers",
+   "search": "people watching solar eclipse glasses"
+  },
+  {
+   "id": "eclipse-annular",
+   "search": "annular solar eclipse"
+  },
+  {
+   "id": "eclipse-partial",
+   "search": "partial solar eclipse sunset"
+  },
+  {
+   "id": "lunar-total",
+   "search": "total lunar eclipse"
+  },
+  {
+   "id": "meteor-perseids",
+   "search": "Perseid meteor"
+  },
+  {
+   "id": "meteor-geminids",
+   "search": "Geminid meteor"
+  },
+  {
+   "id": "milky-way",
+   "search": "Milky Way night sky"
+  },
+  {
+   "id": "aurora-iceland",
+   "search": "aurora borealis Iceland"
+  },
+  {
+   "id": "aurora-norway",
+   "search": "aurora borealis Tromsø"
+  },
+  {
+   "id": "aurora-finland",
+   "search": "aurora borealis Finland Lapland"
+  },
+  {
+   "id": "aurora-sweden",
+   "search": "aurora borealis Abisko"
+  },
+  {
+   "id": "aurora-alaska",
+   "search": "aurora borealis Alaska"
+  },
+  {
+   "id": "aurora-canada",
+   "search": "aurora borealis Yellowknife"
+  },
+  {
+   "id": "aurora-scotland",
+   "search": "aurora borealis Scotland"
+  },
+  {
+   "id": "luxor",
+   "search": "Luxor Temple"
+  },
+  {
+   "id": "tangier",
+   "search": "Tangier Morocco"
+  },
+  {
+   "id": "cadiz",
+   "search": "Cádiz Spain"
+  },
+  {
+   "id": "tarifa",
+   "search": "Tarifa Spain"
+  },
+  {
+   "id": "teide-night",
+   "search": "Teide night stars"
+  },
+  {
+   "id": "la-palma-observatory",
+   "search": "Roque de los Muchachos Observatory night"
+  },
+  {
+   "id": "atacama-night",
+   "search": "Atacama desert night sky"
+  },
+  {
+   "id": "namibrand-night",
+   "search": "Namib desert night sky stars"
+  },
+  {
+   "id": "tekapo-night",
+   "search": "Lake Tekapo night sky"
+  },
+  {
+   "id": "aurora-people",
+   "search": "people watching aurora borealis"
+  },
+  {
+   "id": "tromso-city",
+   "search": "Tromsø city winter"
+  },
+  {
+   "id": "tromso-cathedral",
+   "search": "Arctic Cathedral Tromsø"
+  },
+  {
+   "id": "tromso-huskies",
+   "search": "husky sledding Norway winter"
+  },
+  {
+   "id": "tromso-reindeer",
+   "search": "reindeer sled Sami Norway winter"
+  },
+  {
+   "id": "abisko-winter",
+   "search": "Abisko National Park winter"
+  },
+  {
+   "id": "abisko-lapporten",
+   "search": "Lapporten Abisko"
+  },
+  {
+   "id": "abisko-station",
+   "search": "Abisko Sky Station"
+  },
+  {
+   "id": "rovaniemi-winter",
+   "search": "Rovaniemi winter"
+  },
+  {
+   "id": "lapland-huskies",
+   "search": "husky safari Lapland"
+  },
+  {
+   "id": "lapland-reindeer",
+   "search": "reindeer sleigh Lapland"
+  },
+  {
+   "id": "reykjavik-church",
+   "search": "Hallgrímskirkja Reykjavik winter"
+  },
+  {
+   "id": "reykjavik-harpa",
+   "search": "Harpa Reykjavik"
+  },
+  {
+   "id": "iceland-winter",
+   "search": "Þingvellir winter"
+  },
+  {
+   "id": "fairbanks-winter",
+   "search": "Fairbanks Alaska winter"
+  },
+  {
+   "id": "chena-hot-springs",
+   "search": "Chena Hot Springs Alaska"
+  },
+  {
+   "id": "alaska-dogsled",
+   "search": "dog sled Alaska"
+  },
+  {
+   "id": "yellowknife-winter",
+   "search": "Yellowknife winter"
+  },
+  {
+   "id": "yellowknife-old-town",
+   "search": "Yellowknife Old Town Great Slave Lake"
+  },
+  {
+   "id": "inverness-castle",
+   "search": "Inverness Castle River Ness"
+  },
+  {
+   "id": "loch-ness",
+   "search": "Loch Ness Urquhart Castle"
+  },
+  {
+   "id": "scotland-highlands",
+   "search": "Scottish Highlands winter Glen Coe"
+  }
+ ]
 }
