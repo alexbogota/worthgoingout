@@ -42,6 +42,7 @@ const ld = home
     {site.pinterestVerify && <meta name="p:domain_verify" content={site.pinterestVerify} />}
     {site.googleVerify && <meta name="google-site-verification" content={site.googleVerify} />}
     {site.bingVerify && <meta name="msvalidate.01" content={site.bingVerify} />}
+    <link rel="me" href="https://mastodon.social/@worthgoingout" />
     {!noindex && <script type="application/ld+json" set:html={JSON.stringify(ld)} />}
     <meta name="theme-color" content="#0f1230" />
     <script is:inline>

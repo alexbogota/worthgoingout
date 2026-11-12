@@ -9,7 +9,7 @@ export const site = {
   // GoatCounter site code (privacy-friendly analytics, no cookies): https://worthgoingout.goatcounter.com
   goatcounter: 'worthgoingout',
   // Pinterest site verification code (the content of the p:domain_verify meta tag). Empty until the owner claims the site on Pinterest.
-  pinterestVerify: '',
+  pinterestVerify: '791445754660275786150115160e24da',
   // Google Search Console and Bing Webmaster Tools verification codes (meta tag content). Empty until the owner adds the site there.
   googleVerify: 'Vp8S19lndKO1-oPeDIonOwJ0tj0X_4dDuJSjP1GX5wA',
   bingVerify: '',
